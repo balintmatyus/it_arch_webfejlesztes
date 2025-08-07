@@ -1,0 +1,6 @@
+{
+    "markdown.marp.themes": [
+        "./2025/corvinus-theme.css",
+        "./2025/github-markdown.css"
+    ]
+}

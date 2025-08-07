@@ -1,0 +1,16 @@
+- name: Tantárgy célja és követelményei
+  href: todo.md
+- name: 1. hét	
+  items:
+  - name: 💡 Hogyan működik a web? # 1.1 és 1.3
+    href: week01/01-how-the-web-works.md
+  - name: 💡 Full-stack fejlesztő eszköztára # 1.2
+    href: week01/01-fullstack.md
+  - name: 💡 HTML5 alapjai # 1.4
+    href: week01/01-html5.md
+  - name: 🛠 Gyakorló feladatok
+    href: week01/01-html5-gyak.md
+- name: 2. hét
+  items:
+  - name: HTML5 alapjai (folyt.) # 2.1
+    href: todo.md

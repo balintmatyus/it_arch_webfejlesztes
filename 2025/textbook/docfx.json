@@ -1,0 +1,43 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**",
+          "_textbook_html/**",
+          "**/obj/**",
+          "**/bin/**",
+          "api/**",
+          "**/includes/**",
+          "xrefmap.yml"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**",
+          "**.png",
+          "**.txt",
+          "**.jpg"
+        ]
+      }
+    ],
+    "output": "../_textbook_html",
+    "template": [
+      "default",
+      "modern",
+      "templates/material"
+    ],
+    "globalMetadata": {
+      "_appName": "Informatika \u00E9s IT Architekt\u00FAra alapjai",
+      "_appTitle": "Informatika \u00E9s IT Architekt\u00FAra alapjai",
+      "_enableSearch": false,
+      "pdf": false
+    }
+  }
+}
