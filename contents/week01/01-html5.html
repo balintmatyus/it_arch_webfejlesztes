@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>A HTML alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="A HTML alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/01-html5.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="a-html-alapjai">A HTML alapjai</h1>
+
+<h2 id="elemek-attribútumok-és-a-dokumentum-szerkezete">Elemek, attribútumok és a dokumentum szerkezete</h2>
+<p>A <strong>HTML</strong> (HyperText Markup Language) egy leíró nyelv, amely a weboldalak tartalmának strukturálására szolgál. Nem egy programozási nyelv, hanem egy <strong>jelölőnyelv</strong>, amely megmondja a böngészőnek, hogyan jelenítse meg az egyes tartalmi részeket, például címeket, bekezdéseket vagy képeket. A HTML dokumentumok egyszerű szöveges fájlok, általában <code>.html</code> kiterjesztéssel.</p>
+<p>A HTML alapvető építőkövei az <strong>elemek</strong>. Egy elem segítségével jelöljük meg, zárjuk körbe vagy csomagoljuk be a tartalom különböző részeit, hogy azok egy bizonyos módon jelenjenek meg vagy viselkedjenek. Például egy szövegrészt bekezdésként (<code>&lt;p&gt;</code>) vagy félkövérként (<code>&lt;strong&gt;</code>) jelölhetünk meg.</p>
+<p>Minden HTML elem egy meghatározott anatómia szerint épül fel. Ez általában három részből áll: <strong>a nyitó tagből</strong> (pl. <code>&lt;p&gt;</code>), a <strong>tartalomból</strong> (a szöveg vagy más elem, amit formázni szeretnénk), és a <strong>záró tagből</strong> (pl. <code>&lt;/p&gt;</code>). A záró tag megegyezik a nyitóval, de egy perjel (<code>/</code>) található benne. A tag-ek nevei nem számítanak kis- és nagybetűérzékenynek, de a bevett gyakorlat a kisbetűs írásmód.</p>
+<pre><code class="lang-html">&lt;p&gt;Ez egy bekezdés.&lt;/p&gt;
+&lt;p&gt;Ez egy másik bekezdés.&lt;/p&gt;
+</code></pre>
+<p>Az elemek egymásba is ágyazhatók, ezt nevezzük <strong>beágyazásnak</strong> (nesting). Ha például egy bekezdésen belül egy szót különösen hangsúlyozni szeretnénk, a <code>&lt;strong&gt;</code> elemet a <code>&lt;p&gt;</code> elemen belül helyezhetjük el. A helyes beágyazás kulcsfontosságú: a belső elem záró tagjének meg kell előznie a külső elem záró tagjét. A helytelen sorrend hibás megjelenítéshez vezethet.</p>
+<pre><code class="lang-html">&lt;p&gt;Ez egy &lt;strong&gt;kiemelt&lt;/strong&gt; üzenet.&lt;/p&gt;
+</code></pre>
+<p>Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket <strong>üres elemeknek</strong> (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az <code>&lt;img&gt;</code> elem, amely egy képfájlt jelenít meg az oldalon.</p>
+<p>Az elemek rendelkezhetnek <strong>attribútumokkal</strong> is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. <code>class=&quot;kiemelt&quot;</code>). Az <code>&lt;img&gt;</code> elem <code>src</code> (forrás) és <code>alt</code> (alternatív szöveg) attribútumai például megadják a kép elérési útját és egy rövid leírást róla.</p>
+<p>Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, karakterreferenciát kell használnunk.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A böngésző az általa fel nem ismert elemeket jellemzően figyelmen kívül hagyja. Gondoljuk végig, ennek a megoldásnak milyen előnyei és hátrányai vannak? (Elgépelés a HTML-ben, kompatibilitás böngészőverziók között)</p>
+</div>
+<p>Egy teljes HTML dokumentum nem csak egyedi elemekből áll, hanem egy meghatározott alapstruktúrával is rendelkezik. Minden dokumentum a <code>&lt;!doctype html&gt;</code> deklarációval kezdődik, amely a böngészőnek jelzi a dokumentum típusát. Ezt követi a <code>&lt;html&gt;</code> elem, amely az egész oldalt körbeveszi. A <code>&lt;html&gt;</code> elemen belül található a <code>&lt;head&gt;</code> és a <code>&lt;body&gt;</code> rész.</p>
+<p>A <code>&lt;head&gt;</code> szekció tartalmazza az oldal meta-információit, amelyeket a felhasználó közvetlenül nem lát. Ide tartozik például az oldal címe (<code>&lt;title&gt;</code>), amely a böngésző fülén jelenik meg, a karakterkódolás beállítása (<code>&lt;meta charset=&quot;utf-8&quot;&gt;</code>), valamint a stíluslapokra (CSS) és szkriptekre (JavaScript) mutató hivatkozások. Ezzel szemben a <code>&lt;body&gt;</code> elem tartalmazza az összes látható tartalmat: szövegeket, képeket, videókat és minden mást. A <code>&lt;meta name=&quot;description&quot; content=&quot;...&quot;&gt;</code> egy rövid leírást ad az oldalról, amelyet a keresőmotorok (pl. Google) gyakran megjelenítenek a találati listában a cím alatt. A <code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</code> elengedhetetlen a reszponzív, mobilbarát weboldalak készítéséhez. (Utóbbiról a későbbiekben lesz még szó.)</p>
+<pre><code class="lang-html">&lt;!doctype html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Példa weboldalra&lt;/title&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;Ez egy rövid, informatív leírás a weboldal tartalmáról.&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;stilusok.css&quot;&gt;
+    &lt;script src=&quot;script.js&quot; defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Ez egy &lt;strong&gt;kiemelt&lt;/strong&gt; üzenet.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Végül fontos megemlíteni a <strong>kommenteket</strong> és a <strong>speciális karaktereket</strong>. A HTML-ben a <code>&lt;!--</code> és <code>--&gt;</code> jelek közé írt szöveg kommentnek minősül, amelyet a böngésző figyelmen kívül hagy. Ez hasznos jegyzetek elhelyezésére a kódban. Ha olyan speciális karaktereket szeretnénk megjeleníteni, mint a <code>&lt;</code> vagy <code>&amp;</code>, amelyek a HTML szintaxis részét képezik, <strong>karakterreferenciákat</strong> (pl. <code>&amp;lt;</code> és <code>&amp;amp;</code>) kell használnunk, hogy a böngésző ne kódként értelmezze őket. Teljes lista <a href="https://quickref.me/html-char.html">itt</a> található.</p>
+<h2 id="címsorok-és-bekezdések-a-tartalom-strukturálása">Címsorok és bekezdések: A tartalom strukturálása</h2>
+<p>A HTML egyik legfontosabb feladata, hogy <strong>struktúrát</strong> adjon a szöveges tartalomnak. Ennek alapvető eszközei a címsorok és a bekezdések, amelyek nélkül a böngésző a teljes szöveget egyetlen, formázatlan szövegtömbként jelenítené meg. A helyes strukturálás nemcsak a vizuális megjelenést javítja, hanem a felhasználói élményt, a keresőoptimalizálást (SEO) és az akadálymentesítést is alapjaiban határozza meg.</p>
+<p>A HTML hat különböző szintű címsort (<code>&lt;h1&gt;</code>-től <code>&lt;h6&gt;</code>-ig) és egy bekezdés elemet (<code>&lt;p&gt;</code>) kínál a tartalom tagolására. Az <code>&lt;h1&gt;</code> jelöli a legmagasabb szintű címsort, általában a dokumentum főcímét, míg az <code>&lt;h2&gt;</code> az alcímeket, az <code>&lt;h3&gt;</code> pedig az al-alcímeket jelöli, és így tovább. Minden bekezdést egy <code>&lt;p&gt;</code> elembe kell csomagolni. Ezek az elemek alkotják a dokumentum logikai vázát.</p>
+<p>A címsorok használatakor kulcsfontosságú a <strong>logikai hierarchia</strong> betartása. Bevett gyakorlat, hogy egy oldalon csak egyetlen <code>&lt;h1&gt;</code> elemet használunk a főcímhez. A címsorok szintjeit nem szabad átugrani (pl. egy <code>&lt;h2&gt;</code> után nem következhet <code>&lt;h4&gt;</code>), mivel ez megzavarja a dokumentum szerkezetét. A címsorokat nem szabad pusztán vizuális céllal, a betűméret megváltoztatására használni; ez a feladat a CSS-re tartozik.</p>
+<p>De miért van szükség erre a szigorú struktúrára? Először is, a felhasználók gyorsan átfuttatják a weboldalakat, és a címsorok segítenek nekik megtalálni a releváns információt. Másodszor, a keresőmotorok a címsorokban található kulcsszavakat fontosabbnak tekintik, így a helyes használat javítja az oldal <strong>SEO</strong> helyezését. Harmadszor, a látássérült felhasználók által használt <strong>képernyőolvasó szoftverek</strong> a címsorokat használják „útjelző táblaként” a tartalomban való navigáláshoz, így a címsorok hiánya szinte használhatatlanná teszi számukra az oldalt.</p>
+<p>A strukturálás mögött meghúzódó legfontosabb elv a <strong>szemantika</strong>: a megfelelő HTML elem használata a megfelelő célra. Egy <code>&lt;h1&gt;</code> elem nemcsak nagyobbra formázza a szöveget, hanem közli a böngészővel és a segítő technológiákkal, hogy az a szöveg „az oldal legfontosabb címe”. Ezzel szemben a <code>&lt;span&gt;</code> egy általános, soron belüli (inline) konténer, amely önmagában nem hordoz jelentést. Arra használjuk, hogy egy szövegrészletet megjelöljünk, tipikusan azért, hogy CSS-sel stílust adjunk neki, vagy JavaScripttel célozzuk meg, anélkül, hogy a dokumentum szerkezetét megváltoztatnánk. Ha tehát egy <code>&lt;span&gt;</code> elemet formázunk úgy, hogy címsornak tűnjön, az elveszíti a szemantikai értékét, és nem fogja segíteni sem a SEO-t, sem az akadálymentesítést. A helyes elemek használata olyan, mint a közlekedési lámpák: a pirosnak azt kell jelentenie, hogy „állj” – ha más jelentést adnánk neki, káosz alakulna ki.</p>
+<pre><code class="lang-html">&lt;body&gt;
+    &lt;!-- 1. HELYES HIERARCHIA --&gt;
+    &lt;h1&gt;A Webfejlesztés Alapjai (Főcím)&lt;/h1&gt;
+    &lt;p&gt;Ez a bekezdés a főcímhez tartozó bevezető szöveget tartalmazza.&lt;/p&gt;
+
+    &lt;h2&gt;HTML Alapok (Alcím)&lt;/h2&gt;
+    &lt;p&gt;Itt a HTML alapjairól esik szó, amely a weboldalak vázát adja.&lt;/p&gt;
+
+    &lt;h3&gt;Elemek és Attribútumok (Al-alcím)&lt;/h3&gt;
+    &lt;p&gt;Ez a rész részletesebben foglalkozik az elemekkel és attribútumokkal.&lt;/p&gt;
+
+    &lt;h2&gt;CSS Alapok (Másik alcím)&lt;/h2&gt;
+    &lt;p&gt;A CSS felel a weboldalak vizuális megjelenéséért, a színekért és elrendezésért.&lt;/p&gt;
+
+    &lt;hr&gt;
+
+    &lt;!-- 2. HELYTELEN HIERARCHIA (KERÜLENDŐ PÉLDA) --&gt;
+    &lt;h1&gt;Ez egy főcím&lt;/h1&gt;
+    &lt;h4&gt;Ez egy helytelenül használt címsor, mert átugrottuk a h2 és h3 szinteket.&lt;/h4&gt;
+    &lt;p&gt;Ez a gyakorlat megzavarja a dokumentum szerkezetét és rontja az akadálymentességet.&lt;/p&gt;
+
+    &lt;hr&gt;
+
+    &lt;!-- 3. SZEMANTIKUS VS. VIZUÁLIS CÍMSOR --&gt;
+    
+    &lt;!-- Helyes, szemantikus címsor --&gt;
+    &lt;h2&gt;Ez egy valódi, szemantikus alcím&lt;/h2&gt;
+    &lt;p&gt;A keresőmotorok és képernyőolvasók ezt alcímként fogják értelmezni.&lt;/p&gt;
+
+    &lt;!-- Helytelen, csak vizuálisan formázott &quot;címsor&quot; --&gt;
+    &lt;span style=&quot;font-size: 1.5em; font-weight: bold; display: block; margin-top: 1em;&quot;&gt;
+        Ez csak egy formázott szöveg, nem valódi címsor
+    &lt;/span&gt;
+    &lt;p&gt;Bár kinézetre hasonlít egy alcímre, a böngésző és a segítő technológiák számára ez csak egy egyszerű szövegrészlet, jelentés nélkül.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A <code>&lt;hr&gt;</code> utasítás egy horizontális vonalat ad hozzá az oldalhoz.</p>
+</div>
+<h2 id="hangsúly-és-fontosság-szemantikus-kiemelés">Hangsúly és fontosság: Szemantikus kiemelés</h2>
+<p>A HTML nemcsak a tartalom strukturálására, hanem a szövegrészek <strong>jelentésének finomítására</strong> is lehetőséget ad. Erre szolgál a hangsúlyozás és a fontosság jelölése. A két legfontosabb szemantikus elem erre a célra az <code>&lt;em&gt;</code> (emphasis - hangsúly) és a <code>&lt;strong&gt;</code> (strong importance - erős fontosság). Az <code>&lt;em&gt;</code> elem a mondat jelentését megváltoztató hangsúlyt jelöl (ahogy a beszédben is hangsúlyozunk egy szót), és a böngészők alapértelmezetten dőlt betűvel jelenítik meg. A <code>&lt;strong&gt;</code> elem ezzel szemben a tartalom nagy fontosságát, sürgősségét vagy komolyságát jelöli (pl. egy figyelmeztetés), és általában félkövér stílust kap. Kulcsfontosságú, hogy ezeket az elemeket a szemantikai jelentésük miatt használjuk, nem pedig pusztán a vizuális stílus (dőlt vagy félkövér) eléréséért.</p>
+<p>A helyzet bonyolultabb az <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code> és <code>&lt;u&gt;</code> elemekkel. Ezeket eredetileg tisztán <strong>prezentációs célokra</strong> hozták létre (italic, bold, underline), egy olyan korban, amikor a CSS még nem volt elterjedt. Mivel a modern weben a szemantika kulcsfontosságú (a SEO és az akadálymentesítés miatt), az ilyen, jelentés nélküli prezentációs elemek használata elavulttá vált. A HTML5 azonban nem távolította el őket teljesen, hanem új, specifikus szemantikai jelentéssel ruházta fel őket.</p>
+<p>A modern szabály szerint az <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code> vagy <code>&lt;u&gt;</code> elemeket csak akkor helyénvaló használni, ha nincs náluk megfelelőbb szemantikus elem (mint az <code>&lt;em&gt;</code> vagy <code>&lt;strong&gt;</code>), és a jelentés hagyományosan dőlt, félkövér vagy aláhúzott stílust kíván. Az <code>&lt;i&gt;</code> elemet ma már olyan esetekben használjuk, mint <strong>idegen szavak</strong>, taxonómiai megnevezések vagy gondolatok jelölése. A <code>&lt;b&gt;</code> elem <strong>kulcsszavak</strong>, terméknevek vagy egy bekezdés bevezető mondatának kiemelésére szolgál, anélkül, hogy különösebb fontosságot adna neki. Az <code>&lt;u&gt;</code> használata a legritkább, mivel az aláhúzást erősen a hiperhivatkozásokhoz kötik; elsősorban <strong>helyesírási hibák</strong> vagy tulajdonnevek jelölésére javasolt, de a stílusát CSS-sel érdemes lehet módosítani.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Hangsúly és Fontosság Példa&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Használati útmutató&lt;/h1&gt;
+    &lt;p&gt;
+        Ez a kávéfőző &lt;em&gt;nem&lt;/em&gt; játék. A használata előtt figyelmesen olvassa el az útmutatót!
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;strong&gt;FIGYELEM:&lt;/strong&gt; A forró részekhez ne érjen hozzá, mert súlyos égési sérülést okozhat!
+    &lt;/p&gt;
+    &lt;p&gt;
+        A gép egy speciális, &lt;i&gt;dekalcináló&lt;/i&gt; folyadékot igényel a vízkőmentesítéshez.
+        A &lt;b&gt;vízkőmentesítés&lt;/b&gt; kulcsfontosságú a hosszú élettartamhoz.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Ellenőrizze, hogy a &lt;u class=&quot;helyesirasi-hiba&quot;&gt;kapocsoló&lt;/u&gt; ki van-e kapcsolva, mielőtt csatlakoztatja a hálózathoz.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A CSS-ről (<code>&lt;style&gt;</code> tag) a későbbiekben lesz még szó.</p>
+</div>
+<p>A szövegek kiemelésén túl a HTML lehetőséget ad speciális tipográfiai jelölésekre is, amelyek elengedhetetlenek tudományos vagy matematikai tartalmak esetén.</p>
+<ul>
+<li><strong>Felső index</strong> (<code>&lt;sup&gt;</code>): A <code>&lt;sup&gt;</code> (superscript) elem a tartalmát az alapszöveg fölé, kisebb méretben jeleníti meg. Tipikusan hatványkitevők (10<sup>3</sup>), mértékegységek (100 ⁰C), vagy sorszámok (pl. 1<sup>st</sup>) jelölésére használjuk.</li>
+<li><strong>Alsó index</strong> (<sub>): A <sub> (subscript) elem a tartalmát az alapszöveg alá, kisebb méretben pozícionálja. Leggyakoribb felhasználási területe a kémiai képletek (pl. H₂O) vagy lábjegyzetek jelölése.</sub></sub></li>
+</ul>
+<pre><code class="lang-html">&lt;p&gt;
+    A víz (kémiai képlete: H&lt;sub&gt;2&lt;/sub&gt;O) egy rendkívüli anyag.
+    Forráspontja normál légköri nyomáson 100 &lt;sup&gt;o&lt;/sup&gt;C.
+&lt;/p&gt;
+</code></pre>
+<h2 id="html-listák-a-tartalom-rendezése">HTML Listák: A tartalom rendezése</h2>
+<p>A HTML három különböző típusú listát kínál a tartalmak logikus csoportosítására és strukturálására. A listák a weboldalak alapvető elemei, a navigációs menüktől a receptekig mindenhol megtalálhatók. A megfelelő lista típus kiválasztása kulcsfontosságú a szemantikus, jól strukturált és akadálymentes tartalom létrehozásához. A három fő típus a <strong>rendezetlen (unordered)</strong>, a <strong>rendezett (ordered)</strong> és a <strong>leíró (description)</strong> lista.</p>
+<h3 id="rendezett-és-rendezetlen-listák">Rendezett és Rendezetlen Listák</h3>
+<p>A <strong>rendezetlen listát</strong> (<code>&lt;ul&gt;</code> - unordered list) akkor használjuk, ha az elemek sorrendje nem számít. Tipikus példa erre egy bevásárlólista. A teljes listát egy <code>&lt;ul&gt;</code> elembe zárjuk, és minden egyes listaelem egy <code>&lt;li&gt;</code> (list item) elemen belül kap helyet. A böngészők ezeket alapértelmezetten valamilyen listajellel (pl. ponttal) jelenítik meg.</p>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;Tej&lt;/li&gt;
+  &lt;li&gt;Kenyér&lt;/li&gt;
+  &lt;li&gt;Tojás&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>Ezzel szemben a <strong>rendezett listát</strong> (<code>&lt;ol&gt;</code> - ordered list) akkor alkalmazzuk, ha az elemek sorrendje lényeges, például egy recept lépéseinél vagy egy útbaigazításnál. A szerkezete megegyezik a rendezetlen listáéval, azzal a különbséggel, hogy a <code>&lt;ul&gt;</code> helyett <code>&lt;ol&gt;</code> elemet használunk a <code>&lt;li&gt;</code> elemek körbezárására. A böngészők ezeket a listákat sorszámokkal (1, 2, 3...) jelölik.</p>
+<pre><code class="lang-html">&lt;ol&gt;
+  &lt;li&gt;Tedd a vizet forrni.&lt;/li&gt;
+  &lt;li&gt;Helyezd a teafiltert a csészébe.&lt;/li&gt;
+  &lt;li&gt;Öntsd rá a forró vizet.&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h3 id="listák-egymásba-ágyazása">Listák egymásba ágyazása</h3>
+<p>A HTML lehetővé teszi a listák egymásba ágyazását is. Ez különösen hasznos, ha egy listaelemhez további alpontokat szeretnénk rendelni. Ezt úgy tehetjük meg, hogy egy teljes listát (legyen az <code>&lt;ol&gt;</code> vagy <code>&lt;ul&gt;</code>) egy másik lista <code>&lt;li&gt;</code> elemén belül helyezünk el. Egy recept utasításainál például egy lépéshez tartozó alternatívákat vagy pontosításokat egy beágyazott, rendezetlen listában adhatunk meg.</p>
+<pre><code class="lang-html">&lt;ol&gt;
+  &lt;li&gt;Reggeli teendők
+    &lt;ul&gt;
+      &lt;li&gt;Fogmosás&lt;/li&gt;
+      &lt;li&gt;Öltözködés&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Indulás a munkába&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+<h3 id="leíró-listák">Leíró Listák</h3>
+<p>A <strong>leíró lista</strong> (<code>&lt;dl&gt;</code> - description list) egy speciálisabb lista típus, amely kifejezetten <strong>kifejezések és azok definícióinak</strong>, vagy kérdés-válasz párok megjelenítésére szolgál. Ez a lista három elemből épül fel:</p>
+<ul>
+<li><strong><code>&lt;dl&gt;</code>:</strong> Maga a leíró lista, amely körbeveszi a teljes szerkezetet.</li>
+<li><strong><code>&lt;dt&gt;</code>:</strong> (description term) A definiálandó kifejezés.</li>
+<li><strong><code>&lt;dd&gt;</code>:</strong> (description definition) A kifejezéshez tartozó leírás vagy definíció.</li>
+</ul>
+<p>Egy <code>&lt;dl&gt;</code> listán belül több <code>&lt;dt&gt;</code>/<code>&lt;dd&gt;</code> pár is lehet. Arra is van lehetőség, hogy egyetlen kifejezéshez (<code>&lt;dt&gt;</code>) több definíciót (<code>&lt;dd&gt;</code>) is társítsunk. A böngészők a leíró listákat általában úgy jelenítik meg, hogy a definíciókat beljebb húzzák a kifejezésekhez képest, így vizuálisan is elkülönülnek.</p>
+<pre><code class="lang-html">&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;HyperText Markup Language, a weboldalak vázának leírására szolgáló nyelv.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Cascading Style Sheets, a weboldalak vizuális stílusának definiálására szolgáló nyelv.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h2 id="képek-hozzáadása">Képek hozzáadása</h2>
+<p>A képek beágyazásának alapvető eszköze a HTML-ben az <code>&lt;img&gt;</code> elem. Ez egy úgynevezett &quot;üres elem&quot;, ami azt jelenti, hogy nincs záró tagje. A működéséhez két alapvető attribútumra van szükség: az <code>src</code>-re (source), amely a képfájl URL-címét (legyen az relatív vagy abszolút) tartalmazza, és az <code>alt</code>-ra, amely egy alternatív szöveges leírást ad a képről. Az <code>&lt;img&gt;</code> elemeket &quot;helyettesített elemeknek&quot; is nevezik, mivel a tartalmukat és méretüket egy külső erőforrás (a képfájl) határozza meg, nem pedig a HTML kód.</p>
+<p>Az <code>alt</code> attribútum (alternatív szöveg) kritikus fontosságú az akadálymentesség és a felhasználói élmény szempontjából. Ez a szöveg jelenik meg, ha a kép valamilyen okból nem töltődik be (pl. elgépelt URL vagy lassú internetkapcsolat miatt). A képernyőolvasót használó látássérült felhasználók számára ez a leírás teszi &quot;láthatóvá&quot; a képet. A jó <code>alt</code> szöveg tömören leírja a kép tartalmát és funkcióját. Ha a kép pusztán dekoráció, az <code>alt</code> attribútumot üresen kell hagyni (<code>alt=&quot;&quot;</code>), hogy a segítő technológiák átugorhassák.</p>
+<p>A kép méretének megadása a <code>width</code> (szélesség) és <code>height</code> (magasság) attribútumokkal szintén kulcsfontosságú. Bár ezeket nem a kép átméretezésére kell használni (arra a CSS való), a kép eredeti méreteinek megadásával a böngésző már a kép letöltése előtt &quot;lefoglalja&quot; a helyét az oldalon. Ezzel elkerülhető az a zavaró jelenség, amikor a tartalom a kép betöltődésekor hirtelen &quot;ugrik&quot; egyet, ami rontja az olvashatóságot és a felhasználói élményt.</p>
+<p>Amikor egy képhez képaláírást szeretnénk fűzni, a szemantikailag helyes megoldás a <code>&lt;figure&gt;</code> és <code>&lt;figcaption&gt;</code> elemek használata. A <code>&lt;figure&gt;</code> elem egy önálló tartalmi egységet (ami lehet kép, kódrészlet, diagram stb.) jelöl, a <code>&lt;figcaption&gt;</code> pedig a hozzá tartozó képaláírást tartalmazza. Ez a szerkezet egyértelműen összekapcsolja a képet a leírásával, ami a segítő technológiák és a keresőmotorok számára is hasznos információt nyújt.</p>
+<pre><code class="lang-html">&lt;h1&gt;Budapest nevezetességei&lt;/h1&gt;
+
+&lt;p&gt;Az Országház a magyar főváros egyik legismertebb jelképe.&lt;/p&gt;
+
+&lt;!-- Itt a példa a figure és figcaption használatára --&gt;
+&lt;figure&gt;
+    &lt;img 
+        src=&quot;https://placehold.co/400x250/003366/FFFFFF?text=Orsz%C3%A1gh%C3%A1z&quot; 
+        alt=&quot;Az Országház épülete a Duna partján, esti kivilágításban.&quot;
+        width=&quot;400&quot; 
+        height=&quot;250&quot;&gt;
+    
+    &lt;figcaption&gt;
+        Az Országház a Duna partján. Steindl Imre tervei alapján épült.
+    &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;A fenti kép és a hozzá tartozó képaláírás szemantikailag összetartozik a `figure` és `figcaption` elemeknek köszönhetően.&lt;/p&gt;
+</code></pre>
+<h2 id="linkek-létrehozása">Linkek létrehozása</h2>
+<p>A <strong>hiperhivatkozások</strong>, vagy röviden linkek, a web alapvető építőkövei; ezek teszik a webet egy valódi, összekapcsolt hálózattá. A linkek lehetővé teszik, hogy dokumentumokat más dokumentumokhoz vagy erőforrásokhoz (képekhez, videókhoz) kapcsoljunk, sőt, akár egy dokumentum egy adott részére ugorjunk. A linkek létrehozásának alapja az <code>&lt;a&gt;</code> (anchor) elem, amelynek legfontosabb attribútuma a <code>href</code> (Hypertext Reference), ami a cél webcímét (URL) tartalmazza.</p>
+<pre><code class="lang-html">&lt;p&gt;
+    Ez egy egyszerű mondat, amely tartalmaz egy linket a &lt;a href=&quot;https://www.mozilla.org/hu/&quot;&gt;Mozilla Kezdőlapra&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre>
+<p>Szinte bármilyen webes tartalom átalakítható linkké. Nemcsak egyszerű szövegrészeket, hanem akár komplett <strong>blokk-szintű elemeket</strong> is, mint például egy címsort (<code>&lt;h1&gt;</code>) vagy egy képet (<code>&lt;img&gt;</code>). Ehhez egyszerűen az adott elemet kell az <code>&lt;a&gt;</code> elemen belül elhelyezni. A <code>title</code> attribútummal kiegészítő információt adhatunk a linkhez, amely az egérkurzor fölé mozgatásakor egy kis buborékban jelenik meg, de fontos tudni, hogy ez az információ a billentyűzettel vagy érintőképernyővel navigáló felhasználók számára nehezen hozzáférhető.</p>
+<pre><code class="lang-html">&lt;a href=&quot;https://www.mozilla.org/hu/firefox/&quot;&gt;
+    &lt;img 
+        src=&quot;https://placehold.co/200x80/E66000/FFF?text=Firefox+Let%C3%B6lt%C3%A9se&quot; 
+        alt=&quot;Firefox böngésző letöltése&quot;&gt;
+&lt;/a&gt;
+</code></pre>
+<p>A linkek céljának megértéséhez elengedhetetlen az <strong>URL-ek és az útvonalak</strong> ismerete. Az URL (Uniform Resource Locator) egy erőforrás címe a weben. Két fő típust különböztetünk meg: az abszolút URL a cél teljes webcímét tartalmazza (pl. <a href="https://www.example.com/oldal.html">https://www.example.com/oldal.html</a>), és mindig ugyanoda mutat. Ezzel szemben a relatív URL a hivatkozó fájlhoz képest adja meg a cél helyét (pl. rolunk.html vagy kepek/logo.png), ami rövidebb és rugalmasabb, különösen a weboldal fejlesztése és költöztetése során.</p>
+<pre><code class="lang-html">&lt;!-- Abszolút URL: Teljes webcímet használ, ami egy külső oldalra mutat. --&gt;
+&lt;p&gt;
+    Ez egy abszolút link a &lt;a href=&quot;https://www.google.com&quot;&gt;Google keresőre&lt;/a&gt;.
+&lt;/p&gt;
+
+&lt;!-- Relatív URL: Csak a fájlnevet használja, mert a 'kapcsolat.html'
+        ugyanabban a mappában van, mint ez a fájl. --&gt;
+&lt;p&gt;
+    Ez pedig egy relatív link a &lt;a href=&quot;kapcsolat.html&quot;&gt;kapcsolati oldalunkra&lt;/a&gt;.
+&lt;/p&gt;
+</code></pre>
+<p>Lehetőség van arra is, hogy egy dokumentum konkrét részére, úgynevezett <strong>dokumentumrészletre</strong> (document fragment) hivatkozzunk. Ehhez először a cél elemnek adnunk kell egy egyedi <code>id</code> attribútumot (pl. <code>&lt;h2 id=&quot;fejezet2&quot;&gt;</code>). A link <code>href</code> attribútumában ezt az azonosítót egy kettőskereszt (<code>#</code>) előzi meg (pl. <code>href=&quot;oldal.html#fejezet2&quot;</code>). Ha ugyanazon az oldalon belüli részre ugranánk, elég csak a <code>#</code> és az azonosító használata.</p>
+<pre><code class="lang-html">&lt;h1&gt;Hosszú Dokumentum Példa&lt;/h1&gt;
+
+&lt;!-- TARTALOMJEGYZÉK: Ezek a linkek az oldal különböző pontjaira mutatnak --&gt;
+&lt;nav&gt;
+    &lt;h2&gt;Tartalomjegyzék&lt;/h2&gt;
+    &lt;ul&gt;
+        &lt;!-- A href=&quot;#fejezet1&quot; az oldal azon elemére ugrik, amelynek id=&quot;fejezet1&quot; --&gt;
+        &lt;li&gt;&lt;a href=&quot;#fejezet1&quot;&gt;Ugrás az 1. fejezethez&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#fejezet2&quot;&gt;Ugrás a 2. fejezethez&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#fejezet3&quot;&gt;Ugrás a 3. fejezethez&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;
+        &lt;em&gt;(Ha egy másik oldalra, pl. 'masik_oldal.html' második fejezetére hivatkoznánk, a link így nézne ki: 
+        &lt;code&gt;&amp;lt;a href=&quot;masik_oldal.html#fejezet2&quot;&amp;gt;&lt;/code&gt;)&lt;/em&gt;
+    &lt;/p&gt;
+&lt;/nav&gt;
+
+&lt;hr&gt;
+
+&lt;!-- TARTALOM: A címsorok megkapják az egyedi 'id' attribútumot, amire a linkek hivatkoznak --&gt;
+
+&lt;h2 id=&quot;fejezet1&quot;&gt;1. Fejezet: A Kezdetek&lt;/h2&gt;
+&lt;p&gt;Ez az első fejezet tartalma. Ahhoz, hogy a link működését lássuk, szükség van elegendő szövegre, ami kitölti a képernyőt és görgetést tesz szükségessé.&lt;/p&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus tortor. Nulla facilisi. Duis aliquet egestas purus in blandit.&lt;/p&gt;
+&lt;p&gt;Curabitur vulputate, ligula lacinia scelerisque tempor, lacus lacus ornare ante, ac egestas est urna sit amet arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie augue sit amet leo consequat posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin vel ante a orci tempus eleifend ut et magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id quam. Morbi porta, sem quis iaculis ullamcorper, elit erat condimentum orci, vel interdum pid at nulla. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.&lt;/p&gt;
+
+&lt;h2 id=&quot;fejezet2&quot;&gt;2. Fejezet: A Fejlődés&lt;/h2&gt;
+&lt;p&gt;Ez a második fejezet. Ha az &quot;Ugrás a 2. fejezethez&quot; linkre kattintottál, a böngészőnek ide kellett görgetnie az oldalt.&lt;/p&gt;
+&lt;p&gt;Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna.&lt;/p&gt;
+&lt;p&gt;Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.&lt;/p&gt;
+
+&lt;h2 id=&quot;fejezet3&quot;&gt;3. Fejezet: A Befejezés&lt;/h2&gt;
+&lt;p&gt;Ez pedig a harmadik, egyben utolsó fejezet. A dokumentumrészletekre való hivatkozás nagyon hasznos hosszú oldalak, például GY.I.K. (Gyakran Ismételt Kérdések) vagy dokumentációk esetében a könnyebb navigáció érdekében.&lt;/p&gt;
+&lt;p&gt;Praesent blandit, eros vel aliquam blandit, enim est consectetur purus, ut ullamcorper nunc neque vitae tellus. Integer nec orci. Praesent eu pede. In hac habitasse platea dictumst. Nam sed est. Sed vel ipsum. Proin et est. Vivamus sed justo. Pellentesque ac nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam bibendum, turpis eu mattis iaculis, ex lorem mollis sem, ut sollicitudin risus orci quis tellus. Cras ut dui. Morbi vitae diam. Nulla quis mi. Duis arcu. Praesent egestas. Curabitur lorem. Mauris et dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.&lt;/p&gt;
+&lt;p&gt;Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque.&lt;/p&gt;
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A jó linkek készítésének vannak bevált gyakorlatai. A legfontosabb a <strong>világos és leíró link-szöveg</strong> használata. Kerülni kell az olyan általános kifejezéseket, mint a &quot;Kattints ide!&quot;, mert ezek nem informatívak sem a felhasználók, sem a keresőmotorok, sem a képernyőolvasót használók számára. Ehelyett a link szövegének tükröznie kell, hogy hová vezet (pl. &quot;Firefox letöltése&quot;). A link szövege legyen rövid, és ne ismételje meg magát az URL-t.</p>
+</div>
+<p>Amikor nem egy másik HTML oldalra, hanem egy letöltendő erőforrásra (pl. PDF, ZIP) hivatkozunk, érdemes ezt a link szövegében jelezni, és a <code>download</code> attribútumot is használni. Ez utóbbi jelzi a böngészőnek, hogy a fájlt töltse le, és akár alapértelmezett fájlnevet is megadhatunk neki. A <code>target=&quot;_blank&quot;</code> attribútummal pedig elérhetjük, hogy a link egy új böngészőfülön nyíljon meg, ami külső hivatkozások esetén bevett gyakorlat, de használatát érdemes megfontolni a felhasználói élmény szempontjából.</p>
+<pre><code class="lang-html">&lt;h1&gt;Erőforrások&lt;/h1&gt;
+
+&lt;!-- 1. Példa: Link egy letölthető fájlhoz --&gt;
+&lt;p&gt;
+    Kattints ide a legfrissebb jelentés letöltéséhez. A `download` attribútum
+    biztosítja, hogy a böngésző a letöltést indítsa el, ahelyett, hogy megpróbálná
+    megnyitni a fájlt.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&quot;/eleresi/ut/egy/dokumentumhoz.pdf&quot; download=&quot;eves_jelentes_2025.pdf&quot;&gt;
+        Éves jelentés letöltése (PDF, 2.5MB)
+    &lt;/a&gt;
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;!-- 2. Példa: Link, ami új fülön nyílik meg --&gt;
+&lt;p&gt;
+    Külső hivatkozások esetén gyakran használjuk a `target=&quot;_blank&quot;` attribútumot,
+    hogy a felhasználó ne hagyja el az oldalunkat.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&quot;https://www.mozilla.org/hu/&quot; target=&quot;_blank&quot;&gt;
+        Látogass el a Mozilla hivatalos oldalára (új fülön nyílik meg)
+    &lt;/a&gt;
+&lt;/p&gt;
+</code></pre>
+<p>Végül, a linkek nemcsak weboldalakra mutathatnak. A <code>mailto:</code> séma segítségével olyan linkeket is létrehozhatunk, amelyekre kattintva a felhasználó alapértelmezett levelezőprogramja nyílik meg egy új üzenettel. A <code>mailto:</code> után megadhatjuk a címzett e-mail címét, és további paraméterekkel (pl. <code>?subject=...&amp;body=...</code>) előre kitölthetjük a tárgyat vagy a levél törzsét is, ezzel megkönnyítve a felhasználó dolgát.</p>
+<pre><code class="lang-html">&lt;p&gt;
+    További paramétereket (pl. `body`) az '&amp;' jellel fűzhetünk hozzá.
+    Fontos, hogy a szóközöket és speciális karaktereket kódolni kell (pl. a szóköz helyett '%20'-t használunk).
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&quot;mailto:ajanlat@peldaoldal.hu?subject=Ajánlatkérés%20egy%20termékre&amp;body=Tisztelt%20Cím!%0A%0AÉrdeklődni%20szeretnék%20a%20következő%20termékük%20iránt:%0A%0A&quot;&gt;
+        Ajánlatkérés küldése
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;(Megjegyzés: a `%0A` sortörést hoz létre a levél szövegében.)&lt;/em&gt;&lt;/p&gt;
+</code></pre>
+<p>Forrás: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content</a></p>
+<p>A szöveg AI felhasználásával készült.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/01-html5.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

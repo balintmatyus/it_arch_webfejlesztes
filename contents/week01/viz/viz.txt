@@ -1,0 +1,3 @@
+Képlet: H2O
+Forráspont: 100 Celsius
+Olvadáspont: 0 Celsius

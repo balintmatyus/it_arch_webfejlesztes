@@ -1,0 +1,220 @@
+{
+  "source_base_path": "/home/runner/work/it_arch_webfejlesztes/it_arch_webfejlesztes/2025/textbook",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Toc",
+      "source_relative_path": "contents/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "contents/toc.html"
+        },
+        ".json": {
+          "relative_path": "contents/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/todo.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/todo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week01/01-fullstack.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/01-fullstack.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week01/01-how-the-web-works.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/01-how-the-web-works.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week01/01-html5-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/01-html5-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week01/01-html5.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/01-html5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/arpanet.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/arpanet.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/budapest-building.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/budapest-building.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/egyetem/lista.txt",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/egyetem/lista.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viccek/vicc.txt",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viccek/vicc.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viccek/viccek.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viccek/viccek.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viz/viz.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viz/viz.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viz/viz.txt",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viz/viz.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viz/viz2d.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viz/viz2d.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/viz/viz3d.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/viz/viz3d.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
