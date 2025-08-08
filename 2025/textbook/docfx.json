@@ -38,6 +38,12 @@
       "_appTitle": "Informatika \u00E9s IT Architekt\u00FAra alapjai",
       "_enableSearch": false,
       "pdf": false
+    },
+    "markdownEngineProperties": {
+      "alerts": {
+        "QUESTION": "alert alert-question",
+        "TASK": "alert alert-task"
+      }
     }
   }
 }

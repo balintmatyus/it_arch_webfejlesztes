@@ -55,6 +55,16 @@
   --material-danger-background: #ffebe9;
   --material-danger-background-dark: #6e1515;
   --material-danger-border: #ff7b72;
+
+/* === MÓDOSÍTSD EZEKET A VÁLTOZÓKAT LILÁRA === */
+  --material-question-background: #f5f0ff;
+  --material-question-background-dark: #291c40;
+  --material-question-border: #a291fb;
+
+  /* === MÓDOSÍTSD EZEKET A VÁLTOZÓKAT TÜRKIZRE === */
+  --material-task-background: #eefcfc;
+  --material-task-background-dark: #0e383f;
+  --material-task-border: #48d1e0;
 }
 
 /* === BASE STYLES === */
@@ -407,6 +417,72 @@ nav.navbar {
   color: var(--gh-danger-emphasis);
   background-color: var(--material-danger-background);
   border-color: var(--material-danger-border);
+}
+
+/* === EZT A TELJES BLOKKOT CSERÉLD LE === */
+
+/* === QUESTION ALERT (LILA) === */
+.alert-question {
+  color: #8a63d2; /* egyedi lila a szövegnek */
+  background-color: var(--material-question-background);
+  border-color: var(--material-question-border);
+}
+
+[data-bs-theme='dark'] .alert-question {
+  color: #c8a6ff; /* egyedi lila a sötét módú szövegnek */
+  background-color: var(--material-question-background-dark);
+  border-color: #c8a6ff;
+}
+
+/* --- Icon for Light Theme --- */
+.alert-question h5::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: -0.125em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238a63d2'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-.92.45-1.75 1.17-2.47l1.26-1.26C13.8 10.4 14 9.95 14 9.5c0-.83-.67-1.5-1.5-1.5S11 8.67 11 9.5H9c0-1.66 1.34-3 3-3s3 1.34 3 3c0 .65-.25 1.25-.73 1.75z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* --- Icon for Dark Theme --- */
+[data-bs-theme='dark'] .alert-question h5::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c8a6ff'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-.92.45-1.75 1.17-2.47l1.26-1.26C13.8 10.4 14 9.95 14 9.5c0-.83-.67-1.5-1.5-1.5S11 8.67 11 9.5H9c0-1.66 1.34-3 3-3s3 1.34 3 3c0 .65-.25 1.25-.73 1.75z'/%3E%3C/svg%3E");
+}
+
+/* === EZT A TELJES BLOKKOT IS CSERÉLD LE === */
+
+/* === TASK ALERT (TÜRKIZ) === */
+.alert-task {
+  color: #1199a9; /* egyedi türkiz a szövegnek */
+  background-color: var(--material-task-background);
+  border-color: var(--material-task-border);
+}
+
+[data-bs-theme='dark'] .alert-task {
+  color: #48d1e0; /* egyedi türkiz a sötét módú szövegnek */
+  background-color: var(--material-task-background-dark);
+  border-color: #48d1e0;
+}
+
+/* --- Icon for Light Theme --- */
+.alert-task h5::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  vertical-align: -0.125em;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231199a9'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zm2-8h8v2H8v-2zm0-4h8v2H8V8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* --- Icon for Dark Theme --- */
+[data-bs-theme='dark'] .alert-task h5::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2348d1e0'%3E%3Cpath d='M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6zm2-8h8v2H8v-2zm0-4h8v2H8V8z'/%3E%3C/svg%3E");
 }
 
 [data-bs-theme='dark'] .alert-danger {

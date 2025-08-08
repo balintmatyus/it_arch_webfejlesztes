@@ -18,7 +18,8 @@ Egy tipikus weboldal főbb részei a következők:
 
 ![website structure](website-structure3.png)
 
-**Feladat**: Azonosítsd be a weboldal főbb részeit a fenti képen!
+>[!TASK]
+>Azonosítsd be a weboldal főbb részeit a fenti képen!
 
 ### HTML5 strukturális elemek
 
@@ -32,7 +33,7 @@ Ahelyett, hogy mindenre általános `<div>` elemeket használnánk, a HTML5 dedi
 * `<aside>`: Olyan tartalmat jelöl, amely nem szorosan kapcsolódik a főtartalomhoz, de közvetve kiegészítő információt nyújthat (pl. egy szószedet, a szerző életrajza, kapcsolódó linkek).
 * `<footer>`: Az oldal vagy egy szekció lezáró tartalmát képviseli.
 
-Az alábbi példa a fenti weboldal vázát mutatja be ezekkel az elemekkel:
+Az alábbi példa a fenti weboldalhoz hasonló vázat mutat be említett elemekkel:
 
 ```html
 <!DOCTYPE html>
@@ -98,6 +99,9 @@ Az alábbi példa a fenti weboldal vázát mutatja be ezekkel az elemekkel:
 </body>
 </html>
 ```
+
+> [!QUESTION]
+> Miben tér el a megadott HTML kód a képen szereplő weboldaltól?
 
 ### Nem szemantikus konténerek: `<div>` és `<span>`
 
