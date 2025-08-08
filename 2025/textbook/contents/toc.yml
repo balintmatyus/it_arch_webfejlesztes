@@ -2,15 +2,79 @@
   href: todo.md
 - name: 1. hét	
   items:
-  - name: 💡 Hogyan működik a web? # 1.1 és 1.3
+  - name: 💡 Hogyan működik a web?
     href: week01/01-how-the-web-works.md
-  - name: 💡 Full-stack fejlesztő eszköztára # 1.2
+  - name: 💡 Full-stack fejlesztő eszköztára
     href: week01/01-fullstack.md
-  - name: 💡 HTML5 alapjai # 1.4
+  - name: 💡 HTML5 alapjai
     href: week01/01-html5.md
   - name: 🛠 Gyakorló feladatok
     href: week01/01-html5-gyak.md
 - name: 2. hét
   items:
-  - name: HTML5 alapjai (folyt.) # 2.1
+  - name: 💡 HTML5 táblázatok és struktúrák
+    href: todo.md
+  - name: 💡 Verziókezelés
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 3. hét
+  items:
+  - name: 💡 Felhasználói felület tervezése
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 4. hét
+  items:
+  - name: 💡 Felhasználói felület tervezése
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 5. hét
+  items:
+  - name: 💡 CSS alapok
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 6. hét
+  items:
+  - name: 💡 CSS elrendezések
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 7. hét
+  items:
+  - name: 💡 JS változók, típusok, operátorok, elágazások, ciklusok
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 8. hét
+  items:
+  - name: 💡 JS függvények, objektumok, tömbök
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 9. hét
+  items:
+  - name: 💡 JS események, DOM manipuláció
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 10. hét
+  items:
+  - name: 💡 JS űrlapok validálása
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 11. hét
+  items:
+  - name: 💡 JS AJAX, Fetch API
+    href: todo.md
+  - name: 🛠 Gyakorló feladatok
+    href: todo.md
+- name: 12. hét
+  items:
+  - name: 💡 Google Analytics
+    href: todo.md
+  - name: 🛠 Projektfeladat
     href: todo.md
