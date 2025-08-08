@@ -227,7 +227,7 @@
 </code></pre>
 <h3 id="cellák-összevonása-colspan-és-rowspan">Cellák összevonása: <code>colspan</code> és <code>rowspan</code></h3>
 <p>Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. Erre szolgál a <code>colspan</code> (oszlopok átfogása) és a <code>rowspan</code> (sorok átfogása) attribútum. Mindkettő egy számértéket vár, amely megadja, hogy hány oszlopot vagy sort fogjon át a cella.</p>
-<pre><code class="lang-html5">&lt;table&gt;
+<pre><code class="lang-html">&lt;table&gt;
   &lt;tr&gt;
     &lt;th colspan=&quot;2&quot;&gt;Név&lt;/th&gt;
     &lt;th&gt;Kor&lt;/th&gt;
@@ -253,7 +253,7 @@
 <p>A komplexebb táblázatok esetében további elemeket és attribútumokat használhatunk a struktúra és az akadálymentesség javítására.</p>
 <h3 id="táblázatcím-caption">Táblázatcím (<code>&lt;caption&gt;</code>)</h3>
 <p>A <code>&lt;caption&gt;</code> elem segítségével címet adhatunk a táblázatunknak. Ezt közvetlenül a nyitó <code>&lt;table&gt;</code> tag után kell elhelyezni. A táblázatcím segít a felhasználóknak (különösen a képernyőolvasót használóknak) gyorsan megérteni a táblázat tartalmát anélkül, hogy végig kellene olvasniuk a cellákat.</p>
-<pre><code class="lang-html5">&lt;table&gt;
+<pre><code class="lang-html">&lt;table&gt;
   &lt;caption&gt;Havi kiadások&lt;/caption&gt;
   &lt;tr&gt;
     &lt;th&gt;Tétel&lt;/th&gt;
@@ -268,7 +268,7 @@
 <h3 id="struktúra-thead-tbody-tfoot">Struktúra: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></h3>
 <p>A hosszabb, összetettebb táblázatokat tovább tagolhatjuk a fejléc (<code>&lt;thead&gt;</code>), a törzs (<code>&lt;tbody&gt;</code>) és a lábléc (<code>&lt;tfoot&gt;</code>) részekre. Bár ezek az elemek önmagukban nem változtatják meg a táblázat vizuális megjelenését, jobb strukturális alapot adnak a CSS stílusozáshoz és a JavaScript manipulációhoz. Például CSS segítségével elérhetjük, hogy egy hosszú táblázat görgetésekor a fejléc (<code>&lt;thead&gt;</code>) mindig látható maradjon.</p>
 <p>A helyes sorrend: <code>&lt;thead&gt;</code>, majd <code>&lt;tbody&gt;</code>, majd <code>&lt;tfoot&gt;</code>.</p>
-<pre><code class="lang-html5">&lt;table&gt;
+<pre><code class="lang-html">&lt;table&gt;
   &lt;caption&gt;Havi kiadások&lt;/caption&gt;
   &lt;thead&gt;
     &lt;tr&gt;
