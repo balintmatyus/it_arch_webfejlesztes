@@ -166,7 +166,7 @@ A táblázatok olvashatóságát és értelmezhetőségét nagyban javítja, ha 
 
 Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. Erre szolgál a `colspan` (oszlopok átfogása) és a `rowspan` (sorok átfogása) attribútum. Mindkettő egy számértéket vár, amely megadja, hogy hány oszlopot vagy sort fogjon át a cella.
 
-```html5
+```html
 <table>
   <tr>
     <th colspan="2">Név</th>
@@ -199,7 +199,7 @@ A komplexebb táblázatok esetében további elemeket és attribútumokat haszn�
 
 A `<caption>` elem segítségével címet adhatunk a táblázatunknak. Ezt közvetlenül a nyitó `<table>` tag után kell elhelyezni. A táblázatcím segít a felhasználóknak (különösen a képernyőolvasót használóknak) gyorsan megérteni a táblázat tartalmát anélkül, hogy végig kellene olvasniuk a cellákat.
 
-```html5
+```html
 <table>
   <caption>Havi kiadások</caption>
   <tr>
@@ -219,7 +219,7 @@ A hosszabb, összetettebb táblázatokat tovább tagolhatjuk a fejléc (`<thead>
 
 A helyes sorrend: `<thead>`, majd `<tbody>`, majd `<tfoot>`.
 
-```html5
+```html
 <table>
   <caption>Havi kiadások</caption>
   <thead>
