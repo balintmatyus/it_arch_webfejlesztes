@@ -12,8 +12,8 @@
     href: week01/01-html5-gyak.md
 - name: 2. hét
   items:
-  - name: 💡 HTML5 táblázatok és struktúrák
-    href: todo.md
+  - name: 💡 A weboldal szerkezete és a táblázatok
+    href: week02/02-html5.md
   - name: 💡 Verziókezelés
     href: todo.md
   - name: 🛠 Gyakorló feladatok
