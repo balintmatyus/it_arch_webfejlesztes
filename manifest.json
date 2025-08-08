@@ -157,6 +157,66 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week02/02-html5-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week02/02-html5-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week02/02-html5.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week02/02-html5.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week02/02-verziokezeles.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week02/02-verziokezeles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/website-structure.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/website-structure.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/website-structure2.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/website-structure2.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/website-structure3.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/website-structure3.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
