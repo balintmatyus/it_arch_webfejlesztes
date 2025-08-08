@@ -1,4 +1,4 @@
-# A Full-Stack fejlesztő világa
+# Full-stack fejlesztő eszköztára
 
 ## Egy modern webalkalmazás anatómiája
 

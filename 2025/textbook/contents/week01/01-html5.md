@@ -1,4 +1,4 @@
-# A HTML alapjai
+# HTML5 alapjai
 
 ##  Elemek, attribútumok és a dokumentum szerkezete
 
