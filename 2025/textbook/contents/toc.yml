@@ -12,7 +12,7 @@
     href: week01/01-html5-gyak.md
 - name: 2. hét
   items:
-  - name: 💡 A weboldal szerkezete és a táblázatok
+  - name: 💡 Szemantikus oldalstruktúra és adatok táblázatos megjelenítése
     href: week02/02-html5.md
   - name: 💡 Verziókezelés
     href: todo.md

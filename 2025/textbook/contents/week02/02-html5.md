@@ -1,4 +1,4 @@
-# A weboldal szerkezete és a táblázatok
+# Szemantikus oldalstruktúra és adatok táblázatos megjelenítése
 
 Az előző héten megismertük a HTML alapvető építőköveit: az elemeket, attribútumokat, címsorokat, bekezdéseket, listákat és linkeket. Ezekkel már képesek vagyunk egyszerűbb dokumentumokat létrehozni. Ezen a héten egy lépéssel tovább megyünk, és megnézzük, hogyan adhatunk a weboldalainknak egy magasabb szintű, szemantikus struktúrát, valamint hogyan jeleníthetünk meg komplex, táblázatos adatokat.
 
