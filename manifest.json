@@ -3,6 +3,46 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Conceptual",
+      "source_relative_path": "contents/general/course-info.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/course-info.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/general/css-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/css-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/general/html-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/html-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/general/js-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/js-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "contents/toc.yml",
       "output": {
@@ -67,6 +107,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "contents/week01/63820335_955b1f62adbf4f43193b43239c445f3d_x.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/63820335_955b1f62adbf4f43193b43239c445f3d_x.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "contents/week01/arpanet.png",
       "output": {
         "resource": {
@@ -91,6 +141,16 @@
       "output": {
         "resource": {
           "relative_path": "contents/week01/egyetem/lista.txt"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week01/lista.gif",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week01/lista.gif"
         }
       },
       "version": ""
@@ -181,6 +241,36 @@
       "output": {
         ".html": {
           "relative_path": "contents/week02/02-verziokezeles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/digitalis-jovo.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/digitalis-jovo.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/git-init.gif",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/git-init.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week02/stilus.css",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/stilus.css"
         }
       },
       "version": ""

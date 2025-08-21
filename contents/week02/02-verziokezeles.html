@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>Verzi&#243;kezel&#233;s alapok &#233;s Git bevezető (GUI f&#243;kusszal) | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="Verzi&#243;kezel&#233;s alapok &#233;s Git bevezető (GUI f&#243;kusszal) | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,7 +81,134 @@
         </div>
 
         <article data-uid="">
+<h1 id="verziókezelés-alapok-és-git-bevezető-gui-fókusszal">Verziókezelés alapok és Git bevezető (GUI fókusszal)</h1>
 
+<p>Ez az útmutató segít megérteni a verziókezelés fontosságát és elsajátítani a Git alapjait a Visual Studio Code (VS Code) grafikus felületének és a GitHub segítségével.</p>
+<h2 id="a-verziókezelés-alapjai">A verziókezelés alapjai</h2>
+<h3 id="mi-az-a-verziókezelés-és-miért-hasznos">Mi az a verziókezelés és miért hasznos?</h3>
+<p>Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt <code>beadando_v1.docx</code> néven. Később módosítasz rajta, és elmented <code>beadando_v2.docx</code> néven, majd jön a <code>beadando_vegleges.docx</code>, és végül a <code>beadando_TENYLEG_vegleges_javitott.docx</code>. Ismerős, ugye?</p>
+<p>Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.</p>
+<p>A <strong>verziókezelő rendszer (Version Control System - VCS)</strong> egy szoftver, ami pontosan ezt a problémát oldja meg. Lehetővé teszi, hogy:</p>
+<ul>
+<li><p><strong>Mentsd a projekt állapotait:</strong> Ahelyett, hogy fájlokat másolgatnál, a rendszer &quot;pillanatképeket&quot; (<strong>commitokat</strong>) készít a projektedről minden egyes mentésnél.</p>
+</li>
+<li><p><strong>Visszatérj egy korábbi állapothoz:</strong> Ha elrontottál valamit, egyetlen kattintással visszaállhatsz egy korábbi, működő verzióra.</p>
+</li>
+<li><p><strong>Párhuzamosan dolgozz:</strong> Különböző funkciókon vagy részeken dolgozhatsz anélkül, hogy zavarnátok egymás munkáját (ezt nevezik &quot;<strong>branching</strong>&quot;-nek, azaz elágaztatásnak).</p>
+</li>
+<li><p><strong>Nyomon kövesd a változásokat:</strong> Pontosan láthatod, hogy ki, mikor és mit módosított a kódban. Ez rendkívül hasznos a hibakeresésnél és a közös munkánál.</p>
+</li>
+</ul>
+<h3 id="milyen-megközelítések-vannak">Milyen megközelítések vannak?</h3>
+<ol>
+<li><p><strong>Központosított (Centralized VCS):</strong> Itt egy központi szerver tárolja a projekt teljes történetét. A fejlesztők erről a szerverről töltik le a legfrissebb verziót, majd a módosításaikat ide töltik vissza. Hátránya, hogy ha a központi szerver elérhetetlen, a munka leáll. (Példa: Subversion - SVN).</p>
+</li>
+<li><p><strong>Elosztott (Distributed VCS - DVCS):</strong> Itt minden fejlesztő számítógépén a projekt teljes másolata (repository) megtalálható, a teljes előtörténettel együtt. Ez sokkal rugalmasabb, mert a mentéseket (commitokat) lokálisan is elvégezheted, és csak akkor kell a központi tárolóval (pl. GitHub) szinkronizálnod, amikor internetközelben vagy. <strong>A Git a legnépszerűbb elosztott verziókezelő rendszer.</strong></p>
+</li>
+</ol>
+<p>A félév során a Git verziókezelővel fogunk dolgozni.</p>
+<h2 id="git-és-visual-studio-code">Git és Visual Studio Code</h2>
+<h3 id="hogyan-kezdjünk-neki">Hogyan kezdjünk neki?</h3>
+<p>A Git és a VS Code párosa rendkívül hatékony. A VS Code beépített Git-támogatással rendelkezik, ami vizuálisan is megkönnyíti a verziókezelést.</p>
+<p><strong>1. lépés: Telepítés</strong></p>
+<ul>
+<li><strong>Git:</strong> Töltsd le és telepítsd a <a href="https://git-scm.com/downloads">hivatalos oldalról</a>. A telepítés során a legtöbb alapbeállítás megfelelő lesz.</li>
+</ul>
+<p><strong>2. lépés: Konfiguráció (Ez az egyetlen terminálos lépés)</strong>
+Mielőtt teljesen a grafikus felületre váltanánk, egyetlen alkalommal be kell mutatkoznunk a Gitnek. Ezt a legegyszerűbben a VS Code beépített termináljában tehetjük meg (<code>Terminal &gt; New Terminal</code>). Add meg a neved és az e--mail címed. Ezek az adatok fognak megjelenni a mentéseid (commitjaid) mellett.</p>
+<pre><code>git config --global user.name &quot;A Te Neved&quot;
+git config --global user.email &quot;a-te-email@címed.com&quot;
+</code></pre>
+<p>Erre a lépésre a jövőben nem lesz szükség, innentől minden kattintásokkal működik.</p>
+<p><strong>3. lépés: Az első lokális repository (projektmappa) létrehozása</strong></p>
+<ol>
+<li><p>Hozz létre egy új mappát a projektednek (pl. <code>elso-git-projekt</code>).</p>
+</li>
+<li><p>Nyisd meg ezt a mappát a VS Code-ban (<code>File &gt; Open Folder...</code>).</p>
+</li>
+<li><p>Kattints a bal oldali sávon a <strong>Source Control</strong> (Forráskezelés) ikonra (úgy néz ki, mint egy elágazás).</p>
+</li>
+<li><p>Mivel a mappa még nem verziókezelt, a VS Code felajánl egy nagy kék gombot: <strong>Initialize Repository</strong>. Kattints rá!</p>
+<p>Ezzel a kattintással a VS Code a háttérben futtatta a <code>git init</code> parancsot, és létrehozta a rejtett <code>.git</code> mappát, ami a verziókezeléshez szükséges összes információt tárolja.</p>
+</li>
+</ol>
+<p><strong>4. lépés: Az első fájl verziókezelése</strong></p>
+<ol>
+<li><p>Hozz létre egy új fájlt a VS Code-ban, pl. <code>teszt.html</code>.</p>
+</li>
+<li><p>Írj bele valamilyen tartalmat, például egy egyszerű HTML vázat.</p>
+</li>
+<li><p>Mentsd el a fájlt.</p>
+</li>
+</ol>
+<p>A <strong>Source Control</strong> panelen látni fogod, hogy az <code>teszt.html</code> a &quot;Changes&quot; (Változások) listában van. A Git észlelte, hogy van egy új, még nem követett fájlod.</p>
+<p><strong>A Git alapvető munkafolyamata (Staging és Commit):</strong></p>
+<p>A Gitben két lépésben mentjük el a változásokat:</p>
+<ol>
+<li><p><strong>Staging (előkészítés):</strong> Kiválasztod azokat a módosított fájlokat, amiket egy &quot;csomagban&quot; szeretnél elmenteni.</p>
+</li>
+<li><p><strong>Commit (véglegesítés):</strong> Az előkészített fájlokat egy üzenettel ellátva véglegesen elmented a projekt történetébe.</p>
+</li>
+</ol>
+<p><strong>Hogyan csináld ezt VS Code-ban?</strong></p>
+<ol>
+<li><p>A <strong>Source Control</strong> panelen, a <code>Changes</code> lista mellett vidd az egeret az <code>teszt.html</code> fájl fölé, és kattints a <code>+</code> <strong>(Stage Changes)</strong> ikonra. Ezzel a fájl átkerül a &quot;Staged Changes&quot; (Előkészített változások) szakaszba.</p>
+</li>
+<li><p>Az ablak tetején, a &quot;Message&quot; (Üzenet) mezőbe írj egy rövid, de informatív üzenetet, ami leírja a változtatást. Pl.: <code>Projekt inicializálása, teszt.html létrehozása</code>.</p>
+</li>
+<li><p>Kattints a <code>Commit</code> gombra (vagy a pipa ikonra).</p>
+</li>
+</ol>
+<p>Gratulálok, elkészítetted az első commitodat! A projekt jelenlegi állapota biztonságban el van mentve.</p>
+<p>A folyamat főbb lépéseit a lenti animáción követheted.</p>
+<p><img src="git-init.gif" alt="git-init"></p>
+<h3 id="github">GitHub</h3>
+<p>A <strong>GitHub</strong> egy webalapú szolgáltatás, ami Git repository-k tárolására szolgál. Olyan, mint egy &quot;felhő&quot; a Git projektjeidnek. Lehetővé teszi, hogy:</p>
+<ul>
+<li><p><strong>Biztonsági másolatot</strong> készíts a kódodról.</p>
+</li>
+<li><p><strong>Bárhonnan elérd</strong> a projektjeidet.</p>
+</li>
+<li><p><strong>Másokkal is megoszd</strong> a kódodat és <strong>együtt dolgozzatok</strong> rajta.</p>
+</li>
+</ul>
+<h4 id="kód-feltöltése-githubra-vs-code-segítségével">Kód feltöltése GitHubra VS Code segítségével</h4>
+<p><strong>1. Lépés: GitHub fiók létrehozása</strong></p>
+<ul>
+<li>Ha még nincs, regisztrálj egy fiókot a <a href="https://github.com">github.com</a> oldalon.</li>
+</ul>
+<p><strong>2. Lépés: A projekt publikálása GitHubra</strong>
+A VS Code ezt a folyamatot hihetetlenül leegyszerűsíti. Nem kell a GitHub weboldalán létrehoznod a tárolót, a VS Code mindent elintéz helyetted.</p>
+<ol>
+<li><p>A <strong>Source Control</strong> panelen látni fogsz egy <strong>Publish to GitHub</strong> gombot. Kattints rá!</p>
+</li>
+<li><p>A VS Code fel fogja ajánlani, hogy jelentkezz be a GitHub fiókodba. Engedélyezd a hozzáférést a böngészőben.</p>
+</li>
+<li><p>A bejelentkezés után a VS Code megkérdezi, hogy milyen néven szeretnéd létrehozni a tárolót a GitHubon (alapértelmezetten a mappa nevét ajánlja fel), és hogy az <strong>privát</strong> vagy <strong>nyilvános</strong> legyen.</p>
+<ul>
+<li><p><strong>Private:</strong> Csak te és az általad meghívott személyek láthatják.</p>
+</li>
+<li><p><strong>Public:</strong> Bárki láthatja az interneten.</p>
+</li>
+</ul>
+</li>
+<li><p>Válaszd ki a neked megfelelőt, és hagyd, hogy a VS Code feltöltse a fájlokat.</p>
+</li>
+</ol>
+<p>Ha minden sikeres, a VS Code a háttérben létrehozta a repository-t a GitHubon, összekapcsolta a lokális projekteddel, és fel is töltötte az első commitodat. Ha most megnyitod a GitHub profilodat a böngészőben, látni fogod az új repository-t a feltöltött <code>index.html</code> fájllal!</p>
+<p><strong>A jövőbeli munkafolyamat:</strong></p>
+<p>Innentől kezdve a munkafolyamat a következő:</p>
+<ol>
+<li><p>Dolgozol a fájlokon lokálisan, majd elmented őket.</p>
+</li>
+<li><p>A <strong>Source Control</strong> panelen a <code>+</code> ikonnal <code>Stage</code>-eled a változtatásokat.</p>
+</li>
+<li><p>Írsz egy commit üzenetet, és a <code>Commit</code> gombbal elmented a változást a lokális történetbe.</p>
+</li>
+<li><p>Amikor a változtatásokat a GitHubra is fel szeretnéd tölteni, kattints a bal alsó sarokban található <strong>Sync Changes</strong> gombra. Ez letölti a távoli változásokat (ha vannak) és feltölti a tieidet.</p>
+</li>
+</ol>
+<p>Ezzel a tudással már képes vagy önállóan vagy csapatban is hatékonyan kezelni a projektjeidet, szinte teljes egészében a VS Code kényelmes, grafikus felületén. Sok sikert!</p>
 
 </article>
 
