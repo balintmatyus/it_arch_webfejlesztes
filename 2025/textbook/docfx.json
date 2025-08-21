@@ -23,7 +23,9 @@
           "images/**",
           "**.png",
           "**.txt",
-          "**.jpg"
+          "**.jpg",
+          "**.gif",
+          "contents/**.css"
         ]
       }
     ],
