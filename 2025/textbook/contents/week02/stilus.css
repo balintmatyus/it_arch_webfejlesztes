@@ -1,0 +1,132 @@
+/* --- Alapbeállítások: Minimalista stílus, a hangsúly a tartalom olvashatóságán van. --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Halvány szürke háttér az oldalnak */
+    color: #212529; /* Sötét, de nem teljesen fekete szövegszín */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Az oldal fő szemantikus blokkjainak stílusai --- */
+
+/* A globális fejléc stílusa */
+header {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6; /* Vékony elválasztó vonal */
+}
+
+header h1, header h2 {
+    margin: 0;
+    line-height: 1.2;
+}
+
+header h2 {
+    font-size: 1.2rem;
+    font-weight: 400; /* Vékonyabb betűstílus */
+    color: #6c757d; /* Szürke alcím */
+}
+
+/* A navigációs menü stílusa */
+nav {
+    background-color: #ffffff;
+    padding: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #0d6efd; /* Professzionális kék a linkeknek */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Egérráhúzáskor aláhúzás a jobb UX érdekében */
+}
+
+/* A főtartalom és az elrendezés beállítása */
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px; /* Maximális szélesség a jobb olvashatóságért */
+    margin: 20px auto; /* Középre igazítás */
+}
+
+/* A fő riport (article) és oldalsáv (aside) közös stílusai */
+article, aside {
+    background-color: #ffffff;
+    padding: 25px;
+    border: 1px solid #dee2e6; /* Vékony keret, nincs árnyék */
+}
+
+article {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+}
+
+/* A lábléc stílusa */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 20px;
+    border-top: 1px solid #dee2e6;
+    font-size: 0.9em;
+    color: #6c757d; /* Halványabb szöveg */
+}
+
+/* --- A táblázat stílusai --- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+caption {
+    font-size: 1.2em;
+    font-weight: 600; /* Félkövér, de nem a legvastagabb */
+    padding-bottom: 15px;
+    text-align: left;
+}
+
+th {
+    text-align: left;
+    background-color: #f8f9fa; /* Nagyon halvány háttér a fejlécnek */
+    font-weight: 600;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6; /* Csak vízszintes elválasztó vonalak */
+}
+
+tfoot td {
+    font-weight: bold;
+    background-color: #f8f9fa;
+}
+
+/* --- Kiegészítő (bónusz) stílusok --- */
+
+/* A "Kockázatos" státusz kiemelése, letisztult módon */
+.status-risk {
+    color: #d9534f; /* Visszafogott piros szín */
+    font-weight: bold;
+}

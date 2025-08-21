@@ -6,7 +6,7 @@ A **HTML** (HyperText Markup Language) egy leíró nyelv, amely a weboldalak tar
 
 A HTML alapvető építőkövei az **elemek**. Egy elem segítségével jelöljük meg, zárjuk körbe vagy csomagoljuk be a tartalom különböző részeit, hogy azok egy bizonyos módon jelenjenek meg vagy viselkedjenek. Például egy szövegrészt bekezdésként (`<p>`) vagy félkövérként (`<strong>`) jelölhetünk meg.
 
-Minden HTML elem egy meghatározott anatómia szerint épül fel. Ez általában három részből áll: **a nyitó tagből** (pl. `<p>`), a **tartalomból** (a szöveg vagy más elem, amit formázni szeretnénk), és a **záró tagből** (pl. `</p>`). A záró tag megegyezik a nyitóval, de egy perjel (`/`) található benne. A tag-ek nevei nem számítanak kis- és nagybetűérzékenynek, de a bevett gyakorlat a kisbetűs írásmód.
+Minden HTML elem egy meghatározott anatómia szerint épül fel. Ez általában három részből áll: **a nyitó tagből** (pl. `<p>`), a **tartalomból** (a szöveg vagy más elem, amire a `<p>` vonatkozik) és a **záró tagből** (pl. `</p>`). A záró tag megegyezik a nyitóval, de egy perjel (`/`) található benne. A tag-ek nevei nem számítanak kis- és nagybetűérzékenynek, de a bevett gyakorlat a kisbetűs írásmód.
 
 ```html
 <p>Ez egy bekezdés.</p>
@@ -23,14 +23,18 @@ Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalomma
 
 Az elemek rendelkezhetnek **attribútumokkal** is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. `class="kiemelt"`). Az `<img>` elem `src` (forrás) és `alt` (alternatív szöveg) attribútumai például megadják a kép elérési útját és egy rövid leírást róla.
 
+```html
+<img src="https://www.uni-corvinus.hu/contents/themes/corvinus-theme/library/img/corvinus_logo_2024.svg" alt="A Corvinus hivatalos logója" width="673">
+```
+
 Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, karakterreferenciát kell használnunk.
 
-> [!NOTE]
+> [!QUESTION]
 > A böngésző az általa fel nem ismert elemeket jellemzően figyelmen kívül hagyja. Gondoljuk végig, ennek a megoldásnak milyen előnyei és hátrányai vannak? (Elgépelés a HTML-ben, kompatibilitás böngészőverziók között)
 
 Egy teljes HTML dokumentum nem csak egyedi elemekből áll, hanem egy meghatározott alapstruktúrával is rendelkezik. Minden dokumentum a `<!doctype html>` deklarációval kezdődik, amely a böngészőnek jelzi a dokumentum típusát. Ezt követi a `<html>` elem, amely az egész oldalt körbeveszi. A `<html>` elemen belül található a `<head>` és a `<body>` rész.
 
-A `<head>` szekció tartalmazza az oldal meta-információit, amelyeket a felhasználó közvetlenül nem lát. Ide tartozik például az oldal címe (`<title>`), amely a böngésző fülén jelenik meg, a karakterkódolás beállítása (`<meta charset="utf-8">`), valamint a stíluslapokra (CSS) és szkriptekre (JavaScript) mutató hivatkozások. Ezzel szemben a `<body>` elem tartalmazza az összes látható tartalmat: szövegeket, képeket, videókat és minden mást. A `<meta name="description" content="...">` egy rövid leírást ad az oldalról, amelyet a keresőmotorok (pl. Google) gyakran megjelenítenek a találati listában a cím alatt. A `<meta name="viewport" content="width=device-width, initial-scale=1.0">` elengedhetetlen a reszponzív, mobilbarát weboldalak készítéséhez. (Utóbbiról a későbbiekben lesz még szó.)
+A `<head>` szekció tartalmazza az oldal meta-információit, amelyeket a felhasználó közvetlenül nem lát. Ide tartozik például az oldal címe (`<title>`), amely a böngésző fülén jelenik meg, a karakterkódolás beállítása (`<meta charset="utf-8">`), valamint a stíluslapokra (CSS) és szkriptekre (JavaScript) mutató hivatkozások. Ezzel szemben a `<body>` elem tartalmazza az összes látható tartalmat: szövegeket, képeket, videókat és minden mást. A `<meta name="description" content="...">` egy rövid leírást ad az oldalról, amelyet a keresőmotorok (pl. Google) gyakran megjelenítenek a találati listában a cím alatt.
 
 ```html
 <!doctype html>
@@ -49,6 +53,14 @@ A `<head>` szekció tartalmazza az oldal meta-információit, amelyeket a felhas
 ```
 
 Végül fontos megemlíteni a **kommenteket** és a **speciális karaktereket**. A HTML-ben a `<!--` és `-->` jelek közé írt szöveg kommentnek minősül, amelyet a böngésző figyelmen kívül hagy. Ez hasznos jegyzetek elhelyezésére a kódban. Ha olyan speciális karaktereket szeretnénk megjeleníteni, mint a `<` vagy `&`, amelyek a HTML szintaxis részét képezik, **karakterreferenciákat** (pl. `&lt;` és `&amp;`) kell használnunk, hogy a böngésző ne kódként értelmezze őket. Teljes lista [itt](https://quickref.me/html-char.html) található.
+
+```html
+<p>Ha a '<' jelet szeretnénk megjeleníteni, akkor az &lt; kódot kell használnunk.</p>
+
+<p>Például, a p-tagek használata így néz ki: &lt;p&gt;Ez egy paragrafus.&lt;/p&gt;</p>
+
+<p>Az '&' jel megjelenítéséhez az &amp; kódot használjuk, például a Fekete &amp; Társa cégnévben.</p>
+```
 
 ## Címsorok és bekezdések: A tartalom strukturálása
 

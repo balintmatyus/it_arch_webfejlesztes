@@ -1,6 +1,4 @@
-# Full-stack fejlesztő eszköztára
-
-## Egy modern webalkalmazás anatómiája
+# Egy modern webalkalmazás anatómiája
 
 A **full-stack fejlesztő** szerepe messze túlmutat a puszta kódoláson. A full-stack megbízatás nem (csak) azt jelenti, hogy minden egyes létező technológia mesterének kell lenni, hanem sokkal inkább egy olyan építészmérnöki szemléletet követel meg, amely átlátja a teljes rendszert, a kliens böngészőjétől egészen a szerver adatbázisáig. Ez a szerepkör holisztikus rálátást igényel arra, hogyan kommunikálnak és lépnek kölcsönhatásba egy alkalmazás különböző részei.
 

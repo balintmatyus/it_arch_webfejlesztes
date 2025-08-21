@@ -41,7 +41,6 @@ Az alábbi példa a fenti weboldalhoz hasonló vázat mutat be említett elemekk
 <head>
     <meta charset="UTF-8">
     <title>HTML5 Oldalstruktúra - Egyszerű Példa</title>
-    <!-- Ebben a példában nincs CSS, a cél a tiszta HTML szerkezet bemutatása. -->
 </head>
 <body>
 
@@ -255,8 +254,6 @@ A helyes sorrend: `<thead>`, majd `<tbody>`, majd `<tfoot>`.
 ```
 
 Forrás:
-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Structuring_documents
-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/HTML_table_basics
-- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Table_accessibility
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content
 
 A szöveg AI felhasználásával készült.

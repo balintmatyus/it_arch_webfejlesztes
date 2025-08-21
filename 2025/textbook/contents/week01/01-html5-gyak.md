@@ -15,3 +15,5 @@ Valósítsd meg a képen látható weboldalt HTML segítségével. A szöveget a
 ## Egyetemi szervezetek
 
 Valósítsd meg a képen látható weboldalt beágyazott listák segítségével. A szöveget a [lista.txt](./egyetem/lista.txt) fájlban találhatod meg. (Megjegyzés: azt, hogy hogyan tudjuk megadni a listák jelölő típusait a későbbikeben tanuljuk meg, egyelőre automatikusan állítódik be.)
+
+![lista](./lista.gif)

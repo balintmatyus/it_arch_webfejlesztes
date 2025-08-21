@@ -1,5 +1,13 @@
-- name: Tantárgy célja és követelményei
-  href: todo.md
+- name: Általános információk
+  items:
+  - name: Tantárgy leírása és követelmények
+    href: general/course-info.md
+  - name: HTML cheatsheet
+    href: general/html-reference.md
+  - name: CSS cheatsheet
+    href: general/css-reference.md
+  - name: JavaScript cheatsheet
+    href: general/js-reference.md
 - name: 1. hét	
   items:
   - name: 💡 Hogyan működik a web?
@@ -15,9 +23,9 @@
   - name: 💡 Szemantikus oldalstruktúra és adatok táblázatos megjelenítése
     href: week02/02-html5.md
   - name: 💡 Verziókezelés
-    href: todo.md
+    href: week02/02-verziokezeles.md
   - name: 🛠 Gyakorló feladatok
-    href: todo.md
+    href: week02/02-html5-gyak.md
 - name: 3. hét
   items:
   - name: 💡 Felhasználói felület tervezése
