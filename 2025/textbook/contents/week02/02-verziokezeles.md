@@ -6,7 +6,10 @@ Ez az útmutató segít megérteni a verziókezelés fontosságát és elsaját�
 
 ### Mi az a verziókezelés és miért hasznos?
 
-Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt `beadando_v1.docx` néven. Később módosítasz rajta, és elmented `beadando_v2.docx` néven, majd jön a `beadando_vegleges.docx`, és végül a `beadando_TENYLEG_vegleges_javitott.docx`. Ismerős, ugye?
+Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt `beadando_v1.txt` néven. Később módosítasz rajta, és elmented `beadando_v2.txt` néven, majd jön a `beadando_vegleges.txt`, és végül a `beadando_TENYLEG_vegleges_javitott.txt`. Ismerős, ugye?
+
+>[!NOTE]
+>Szándékosan írtam `*.txt` fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlokban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A `*.docx` formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők "kihegyezve"?
 
 Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.
 
@@ -22,9 +25,14 @@ A **verziókezelő rendszer (Version Control System - VCS)** egy szoftver, ami p
 
 ### Milyen megközelítések vannak?
 
-1. **Központosított (Centralized VCS):** Itt egy központi szerver tárolja a projekt teljes történetét. A fejlesztők erről a szerverről töltik le a legfrissebb verziót, majd a módosításaikat ide töltik vissza. Hátránya, hogy ha a központi szerver elérhetetlen, a munka leáll. (Példa: Subversion - SVN).
+Alapvetően két fő architektúrát különböztetünk meg, melyek működését az alábbi összehasonlítás részletezi.
 
-2. **Elosztott (Distributed VCS - DVCS):** Itt minden fejlesztő számítógépén a projekt teljes másolata (repository) megtalálható, a teljes előtörténettel együtt. Ez sokkal rugalmasabb, mert a mentéseket (commitokat) lokálisan is elvégezheted, és csak akkor kell a központi tárolóval (pl. GitHub) szinkronizálnod, amikor internetközelben vagy. **A Git a legnépszerűbb elosztott verziókezelő rendszer.**
+| Jellemző | Központosított Verziókezelő (CVCS) | Elosztott Verziókezelő (DVCS) |
+| :--- | :--- | :--- |
+| **Alapkoncepció** | Egyetlen központi szerver tárolja a teljes kódbázist és annak előzményeit. | Minden fejlesztő gépén megtalálható a repository teljes másolata, a teljes előzményekkel. |
+| **Szerverfüggőség** | Magas. Ha a központi szerver nem elérhető, a legtöbb művelet (commit, branch, stb.) leáll. | Alacsony. A legtöbb művelet (commit, branch-ek kezelése, előzmények megtekintése) offline is elvégezhető. |
+| **Hibatűrés** | Alacsony. A központi szerver meghibásodása adatvesztéshez vezethet, ha nincsenek megfelelő mentések. | Magas. Ha a központi szerver kiesik, bármelyik fejlesztő másolatáról helyreállítható a teljes repository. |
+| **Példák** | Subversion (SVN), CVS, Perforce | Git, Mercurial, Bazaar |
 
 A félév során a Git verziókezelővel fogunk dolgozni.
 

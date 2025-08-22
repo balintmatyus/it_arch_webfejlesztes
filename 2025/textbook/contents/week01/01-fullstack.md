@@ -40,11 +40,7 @@ Néhány előny:
 - **Újrahasznosíthatóság és skálázhatóság**: A moduláris kód természeténél fogva újrahasznosíthatóbb. Egy jól definiált CSS stíluslapot egy teljesen más HTML struktúrára is alkalmazni lehet, vagy egy JavaScript funkciót több oldalon is újra lehet használni. Ez a modularitás kulcsfontosságú a nagy, skálázható rendszerek építésében, mivel csökkenti a karbantartási költségeket; egy hiba javítása vagy egy funkció bővítése sokkal kevésbé fájdalmas, ha az csak egy helyen jelenik meg.
 
 > [!NOTE]
-> Fenti felbontás elsősorban a klasszikus, statikus weboldalakra igaz. A gyakorlatban azonban legtöbbször a szeparációs határok nem egyértelműek. 
-> 
-> Hol húzódik a határ, ha a JavaScript módosítja dinamikusan a weboldal megjelenését az alkalmazás állapotának függvényében? 
->
-> Mi történik, ha nem struktúra-stílus-funkció dimenzióban gondolkodunk, hanem komponensek mentén húzzuk meg a határokat? Példa: dátumválasztó komponens.
+> Fenti felbontás elsősorban a klasszikus, statikus weboldalakra igaz. A gyakorlatban azonban legtöbbször a szeparációs határok nem egyértelműek. Ilyen példákat ebben a kurzusban nem vizsgálunk meg, de a képzés során találkozhattok majd ilyen helyzetekkel.
 
 ## 2. A láthatatlan gépezet: A szerveroldal alapvető felelősségei
 
@@ -56,11 +52,10 @@ Alapvető felelősségei a következők:
 - **Hitelesítés és biztonság**: A felhasználói identitások ellenőrzése, a munkamenetek kezelése, valamint az érzékeny adatok és erőforrások védelme az illetéktelen hozzáféréstől.   
 - **API szolgáltatás**: Egy tiszta, stabil interfész (API) biztosítása, amellyel a frontend kommunikálhat.
 
-**Miért kell ezeket a feladatokat a szerveroldalon kezelni?**
-
-A kliensoldali kód (HTML, CSS, JS) természeténél fogva a felhasználó gépére kerül letöltésre és ott fut le. Ezért ez a kód alapvetően nem megbízható. Egy rosszindulatú vagy akár csak kíváncsi felhasználó megvizsgálhatja és manipulálhatja a kliensoldali kódot.
-
-Ezért minden kritikus műveletet, amely biztonságot és adatintegritást igényel – mint például a jogosultságok ellenőrzése, a fizetések feldolgozása vagy az adatbázis-hozzáférés –, a backend szerveren kell végrehajtani, amely egy biztonságos, megbízható környezet, amit az alkalmazás tulajdonosa felügyel. A backend az igazság végső döntőbírája.
+>[!WARNING]
+> **Miért kell ezeket a feladatokat a szerveroldalon kezelni?**
+> A kliensoldali kód (HTML, CSS, JS) természeténél fogva a felhasználó gépére kerül letöltésre és ott fut le. Ezért ez a kód alapvetően nem megbízható. Egy rosszindulatú vagy akár csak kíváncsi felhasználó megvizsgálhatja és manipulálhatja a kliensoldali kódot.
+> Ezért minden kritikus műveletet, amely biztonságot és adatintegritást igényel – mint például a jogosultságok ellenőrzése, a fizetések feldolgozása vagy az adatbázis-hozzáférés –, a backend szerveren kell végrehajtani, amely egy biztonságos, megbízható környezet, amit az alkalmazás tulajdonosa felügyel. **A backend az igazság végső döntőbírája.**
 
 > [!NOTE]
 > A félév során kizárólag a kliens oldallal fogunk foglalkozni. A szerver oldalról későbbi kurzusokon (pl. Software Engineering) lesz szó részletesen.
