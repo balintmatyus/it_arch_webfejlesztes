@@ -111,9 +111,7 @@
 </ul>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Fenti felbontás elsősorban a klasszikus, statikus weboldalakra igaz. A gyakorlatban azonban legtöbbször a szeparációs határok nem egyértelműek.</p>
-<p>Hol húzódik a határ, ha a JavaScript módosítja dinamikusan a weboldal megjelenését az alkalmazás állapotának függvényében?</p>
-<p>Mi történik, ha nem struktúra-stílus-funkció dimenzióban gondolkodunk, hanem komponensek mentén húzzuk meg a határokat? Példa: dátumválasztó komponens.</p>
+<p>Fenti felbontás elsősorban a klasszikus, statikus weboldalakra igaz. A gyakorlatban azonban legtöbbször a szeparációs határok nem egyértelműek. Ilyen példákat ebben a kurzusban nem vizsgálunk meg, de a képzés során találkozhattok majd ilyen helyzetekkel.</p>
 </div>
 <h2 id="2-a-láthatatlan-gépezet-a-szerveroldal-alapvető-felelősségei">2. A láthatatlan gépezet: A szerveroldal alapvető felelősségei</h2>
 <p>A backend (vagy szerveroldal) a szerverek, alkalmazások és adatbázisok kombinációja, amely a webalkalmazás gerincét alkotja. Ez minden, ami a „színfalak mögött” történik.</p>
@@ -124,9 +122,12 @@
 <li><strong>Hitelesítés és biztonság</strong>: A felhasználói identitások ellenőrzése, a munkamenetek kezelése, valamint az érzékeny adatok és erőforrások védelme az illetéktelen hozzáféréstől.</li>
 <li><strong>API szolgáltatás</strong>: Egy tiszta, stabil interfész (API) biztosítása, amellyel a frontend kommunikálhat.</li>
 </ul>
-<p><strong>Miért kell ezeket a feladatokat a szerveroldalon kezelni?</strong></p>
-<p>A kliensoldali kód (HTML, CSS, JS) természeténél fogva a felhasználó gépére kerül letöltésre és ott fut le. Ezért ez a kód alapvetően nem megbízható. Egy rosszindulatú vagy akár csak kíváncsi felhasználó megvizsgálhatja és manipulálhatja a kliensoldali kódot.</p>
-<p>Ezért minden kritikus műveletet, amely biztonságot és adatintegritást igényel – mint például a jogosultságok ellenőrzése, a fizetések feldolgozása vagy az adatbázis-hozzáférés –, a backend szerveren kell végrehajtani, amely egy biztonságos, megbízható környezet, amit az alkalmazás tulajdonosa felügyel. A backend az igazság végső döntőbírája.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>Miért kell ezeket a feladatokat a szerveroldalon kezelni?</strong>
+A kliensoldali kód (HTML, CSS, JS) természeténél fogva a felhasználó gépére kerül letöltésre és ott fut le. Ezért ez a kód alapvetően nem megbízható. Egy rosszindulatú vagy akár csak kíváncsi felhasználó megvizsgálhatja és manipulálhatja a kliensoldali kódot.
+Ezért minden kritikus műveletet, amely biztonságot és adatintegritást igényel – mint például a jogosultságok ellenőrzése, a fizetések feldolgozása vagy az adatbázis-hozzáférés –, a backend szerveren kell végrehajtani, amely egy biztonságos, megbízható környezet, amit az alkalmazás tulajdonosa felügyel. <strong>A backend az igazság végső döntőbírája.</strong></p>
+</div>
 <div class="NOTE">
 <h5>Note</h5>
 <p>A félév során kizárólag a kliens oldallal fogunk foglalkozni. A szerver oldalról későbbi kurzusokon (pl. Software Engineering) lesz szó részletesen.</p>

@@ -86,7 +86,11 @@
 <p>Ez az útmutató segít megérteni a verziókezelés fontosságát és elsajátítani a Git alapjait a Visual Studio Code (VS Code) grafikus felületének és a GitHub segítségével.</p>
 <h2 id="a-verziókezelés-alapjai">A verziókezelés alapjai</h2>
 <h3 id="mi-az-a-verziókezelés-és-miért-hasznos">Mi az a verziókezelés és miért hasznos?</h3>
-<p>Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt <code>beadando_v1.docx</code> néven. Később módosítasz rajta, és elmented <code>beadando_v2.docx</code> néven, majd jön a <code>beadando_vegleges.docx</code>, és végül a <code>beadando_TENYLEG_vegleges_javitott.docx</code>. Ismerős, ugye?</p>
+<p>Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt <code>beadando_v1.txt</code> néven. Később módosítasz rajta, és elmented <code>beadando_v2.txt</code> néven, majd jön a <code>beadando_vegleges.txt</code>, és végül a <code>beadando_TENYLEG_vegleges_javitott.txt</code>. Ismerős, ugye?</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Szándékosan írtam <code>*.txt</code> fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlokban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A <code>*.docx</code> formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők &quot;kihegyezve&quot;?</p>
+</div>
 <p>Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.</p>
 <p>A <strong>verziókezelő rendszer (Version Control System - VCS)</strong> egy szoftver, ami pontosan ezt a problémát oldja meg. Lehetővé teszi, hogy:</p>
 <ul>
@@ -100,12 +104,38 @@
 </li>
 </ul>
 <h3 id="milyen-megközelítések-vannak">Milyen megközelítések vannak?</h3>
-<ol>
-<li><p><strong>Központosított (Centralized VCS):</strong> Itt egy központi szerver tárolja a projekt teljes történetét. A fejlesztők erről a szerverről töltik le a legfrissebb verziót, majd a módosításaikat ide töltik vissza. Hátránya, hogy ha a központi szerver elérhetetlen, a munka leáll. (Példa: Subversion - SVN).</p>
-</li>
-<li><p><strong>Elosztott (Distributed VCS - DVCS):</strong> Itt minden fejlesztő számítógépén a projekt teljes másolata (repository) megtalálható, a teljes előtörténettel együtt. Ez sokkal rugalmasabb, mert a mentéseket (commitokat) lokálisan is elvégezheted, és csak akkor kell a központi tárolóval (pl. GitHub) szinkronizálnod, amikor internetközelben vagy. <strong>A Git a legnépszerűbb elosztott verziókezelő rendszer.</strong></p>
-</li>
-</ol>
+<p>Alapvetően két fő architektúrát különböztetünk meg, melyek működését az alábbi összehasonlítás részletezi.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Jellemző</th>
+<th style="text-align: left;">Központosított Verziókezelő (CVCS)</th>
+<th style="text-align: left;">Elosztott Verziókezelő (DVCS)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Alapkoncepció</strong></td>
+<td style="text-align: left;">Egyetlen központi szerver tárolja a teljes kódbázist és annak előzményeit.</td>
+<td style="text-align: left;">Minden fejlesztő gépén megtalálható a repository teljes másolata, a teljes előzményekkel.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Szerverfüggőség</strong></td>
+<td style="text-align: left;">Magas. Ha a központi szerver nem elérhető, a legtöbb művelet (commit, branch, stb.) leáll.</td>
+<td style="text-align: left;">Alacsony. A legtöbb művelet (commit, branch-ek kezelése, előzmények megtekintése) offline is elvégezhető.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Hibatűrés</strong></td>
+<td style="text-align: left;">Alacsony. A központi szerver meghibásodása adatvesztéshez vezethet, ha nincsenek megfelelő mentések.</td>
+<td style="text-align: left;">Magas. Ha a központi szerver kiesik, bármelyik fejlesztő másolatáról helyreállítható a teljes repository.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Példák</strong></td>
+<td style="text-align: left;">Subversion (SVN), CVS, Perforce</td>
+<td style="text-align: left;">Git, Mercurial, Bazaar</td>
+</tr>
+</tbody>
+</table>
 <p>A félév során a Git verziókezelővel fogunk dolgozni.</p>
 <h2 id="git-és-visual-studio-code">Git és Visual Studio Code</h2>
 <h3 id="hogyan-kezdjünk-neki">Hogyan kezdjünk neki?</h3>
