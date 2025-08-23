@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Webfejleszt&#233;s Alapjai: Websztenderdek &#233;s HTML Valid&#225;ci&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Webfejleszt&#233;s Alapjai: Websztenderdek &#233;s HTML Valid&#225;ci&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/01-html5-validation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="webfejlesztés-alapjai-websztenderdek-és-html-validáció">Webfejlesztés Alapjai: Websztenderdek és HTML Validáció</h1>
+
+<h2 id="mit-értünk-websztenderdek-alatt-és-ki-dönt-a-szabályokról">Mit értünk websztenderdek alatt és ki dönt a szabályokról?</h2>
+<p>A <strong>websztenderdek</strong> együttesen azoknak a technológiáknak és irányelveknek a gyűjteménye, amelyek biztosítják, hogy a weboldalak és webes alkalmazások egységesen, megbízhatóan és mindenki számára hozzáférhetően működjenek, függetlenül attól, hogy milyen böngészőt vagy eszközt használ a látogató.</p>
+<p>Képzeld el, mi lenne, ha minden böngésző (Chrome, Firefox, Safari stb.) teljesen másképp értelmezné ugyanazt a HTML kódot. A fejlesztőknek minden egyes böngészőre külön weboldalt kellene készíteniük, ami egy rémálom lenne. Nem is beszélve a különböző eszközökről (PC, konzol, telefon, tablet stb.) A sztenderdek ezt a káoszt hivatottak megelőzni.</p>
+<p><strong>Ki határozza meg a sztenderdeket?</strong></p>
+<p>A websztenderdek fejlesztését és karbantartását nem egyetlen cég vagy kormány irányítja, hanem nemzetközi, független konzorciumok. A két legfontosabb szervezet:</p>
+<ol>
+<li><strong>World Wide Web Consortium (W3C):</strong> A Tim Berners-Lee által alapított szervezet. Hagyományosan a W3C publikálja a HTML, CSS és más webes technológiák &quot;ajánlásait&quot; (Recommendations), amelyek de facto szabványnak minősülnek.</li>
+<li><strong>Web Hypertext Application Technology Working Group (WHATWG):</strong> A nagyobb böngészőgyártók (Apple, Google, Mozilla, Microsoft) által alapított csoport. A WHATWG egy &quot;élő szabvány&quot; (Living Standard) modellt követ, ami azt jelenti, hogy a HTML specifikációját folyamatosan frissítik és fejlesztik a valós piaci igényeknek megfelelően. Ma már a WHATWG HTML Living Standardja számít az elsődleges referenciának.</li>
+</ol>
+<p>Röviden: Ezek a szervezetek, a böngészőfejlesztők és a webes közösség közösen alakítják ki azokat a szabályokat, amiket a böngészők követnek a kódok megjelenítésekor.</p>
+<h2 id="mi-az-a-html-validáció-és-miért-fontos">Mi az a HTML validáció és miért fontos?</h2>
+<p>A <strong>HTML validáció</strong> az a folyamat, amelynek során ellenőrizzük, hogy egy weboldal HTML kódja megfelel-e a hivatalos szabványoknak és a szintaktikai szabályoknak. Lényegében egy &quot;helyesírás-ellenőrzés&quot; a kódodra.</p>
+<p><strong>Miért van rá szükség?</strong></p>
+<ul>
+<li><strong>Böngészőkompatibilitás:</strong> Bár a modern böngészők nagyon &quot;megbocsátóak&quot; és megpróbálják a hibás kódot is értelmezni, a hibák eltérő megjelenítést eredményezhetnek a különböző böngészőkben. A valid kód biztosítja a konzisztens megjelenést.</li>
+<li><strong>Keresőoptimalizálás (SEO):</strong> A keresőmotorok (mint a Google) könnyebben értelmezik a strukturált, hibátlan kódot, ami hozzájárulhat a jobb helyezés eléréséhez a találati listákon.</li>
+<li><strong>Akadálymentesség (Accessibility):</strong> A valid kód alapvető fontosságú ahhoz, hogy a képernyőolvasó szoftverek és más segítő technológiák helyesen tudják értelmezni a weboldal tartalmát, így az mindenki számára elérhetővé válik.</li>
+</ul>
+<h2 id="hol-és-hogyan-használjunk-html-validátort">Hol és hogyan használjunk HTML validátort?</h2>
+<p>A legelfogadottabb és legszélesebb körben használt eszköz a <strong>W3C hivatalos validátora</strong>.</p>
+<p><strong>Elérhetőség:</strong> <a href="https://validator.w3.org/">https://validator.w3.org/</a></p>
+<p>A használata rendkívül egyszerű. Három fő módon ellenőrizheted a kódodat:</p>
+<ol>
+<li><strong>Validate by URI:</strong> Megadsz egy publikus weboldal URL-címét, és a validátor letölti és elemzi annak forráskódját.</li>
+<li><strong>Validate by File Upload:</strong> Feltöltesz egy <code>.html</code> kiterjesztésű fájlt a saját számítógépedről.</li>
+<li><strong>Validate by Direct Input:</strong> Közvetlenül bemásolod a HTML kódodat a szövegdobozba.</li>
+</ol>
+<p>A validátor lefuttatása után egy riportot kapsz, amely pirossal jelöli a hibákat (Errors) és sárgával a figyelmeztetéseket (Warnings). A riport pontosan megmutatja, hogy melyik sorban mi a probléma, és gyakran javaslatot is tesz a javításra.</p>
+<h2 id="gyakorlati-példa">Gyakorlati példa</h2>
+<p>Vegyünk egy egyszerű, de szándékosan hibás HTML kódot.</p>
+<p><strong>Hibás kód:</strong></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Gyakorló Oldal
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Üdv a weboldalon!
+    &lt;p&gt;Ez egy bekezdés, amiben egy &lt;b&gt;kiemelt&lt;i&gt; rész van.&lt;/b&gt;&lt;/i&gt;
+    &lt;img src=&quot;kep.jpg&quot;&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<div class="alert alert-task">
+<h5>TASK</h5>
+<p>Keresd meg a hibákat manuálisan a kódban, majd ellenőrizd a kódot a <a href="https://validator.w3.org/">validátor</a> segítségével. Lehet, hogy egyes hibák kijavítása után a validátor újabbakat talál.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/01-html5-validation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

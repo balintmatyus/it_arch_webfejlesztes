@@ -97,6 +97,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week01/01-html5-validation.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/01-html5-validation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week01/01-html5.md",
       "output": {
         ".html": {

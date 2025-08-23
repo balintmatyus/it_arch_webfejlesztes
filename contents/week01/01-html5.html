@@ -93,11 +93,13 @@
 <p>Az elemek egymásba is ágyazhatók, ezt nevezzük <strong>beágyazásnak</strong> (nesting). Ha például egy bekezdésen belül egy szót különösen hangsúlyozni szeretnénk, a <code>&lt;strong&gt;</code> elemet a <code>&lt;p&gt;</code> elemen belül helyezhetjük el. A helyes beágyazás kulcsfontosságú: a belső elem záró tagjének meg kell előznie a külső elem záró tagjét. A helytelen sorrend hibás megjelenítéshez vezethet.</p>
 <pre><code class="lang-html">&lt;p&gt;Ez egy &lt;strong&gt;kiemelt&lt;/strong&gt; üzenet.&lt;/p&gt;
 </code></pre>
-<p>Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket <strong>üres elemeknek</strong> (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az <code>&lt;img&gt;</code> elem, amely egy képfájlt jelenít meg az oldalon.</p>
-<p>Az elemek rendelkezhetnek <strong>attribútumokkal</strong> is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. <code>class=&quot;kiemelt&quot;</code>). Az <code>&lt;img&gt;</code> elem <code>src</code> (forrás) és <code>alt</code> (alternatív szöveg) attribútumai például megadják a kép elérési útját és egy rövid leírást róla.</p>
-<pre><code class="lang-html">&lt;img src=&quot;https://www.uni-corvinus.hu/contents/themes/corvinus-theme/library/img/corvinus_logo_2024.svg&quot; alt=&quot;A Corvinus hivatalos logója&quot; width=&quot;673&quot;&gt;
+<p>Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket <strong>üres elemeknek</strong> (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az <code>&lt;img&gt;</code> elem, amely egy képfájlt jelenít meg az oldalon (később lesz róla szó), de ilyen a <code>&lt;br&gt;</code> (break - sortörés) vagy <code>&lt;hr&gt;</code> (horizontal - vízszintes vonal) is.</p>
+<p>Az elemek rendelkezhetnek <strong>attribútumokkal</strong> is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. <code>class=&quot;kiemelt&quot;</code>). Egy bekezdés (<code>&lt;p&gt;</code>) elem <code>class</code> attribútuma például megadhat egy stílusosztályt a későbbi formázáshoz, a <code>title</code> attribútum pedig egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.</p>
+<pre><code class="lang-html">&lt;p class=&quot;fontos-uzenet&quot; title=&quot;Ez egy egérrel megjelenő segédszöveg&quot;&gt;
+  Ez a bekezdés rendelkezik egy 'class' és egy 'title' attribútummal.
+&lt;/p&gt;
 </code></pre>
-<p>Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, karakterreferenciát kell használnunk.</p>
+<p>Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, <em>karakterreferenciát</em> kell használnunk.</p>
 <div class="alert alert-question">
 <h5>QUESTION</h5>
 <p>A böngésző az általa fel nem ismert elemeket jellemzően figyelmen kívül hagyja. Gondoljuk végig, ennek a megoldásnak milyen előnyei és hátrányai vannak? (Elgépelés a HTML-ben, kompatibilitás böngészőverziók között)</p>
@@ -174,39 +176,10 @@
 <h2 id="hangsúly-és-fontosság-szemantikus-kiemelés">Hangsúly és fontosság: Szemantikus kiemelés</h2>
 <p>A HTML nemcsak a tartalom strukturálására, hanem a szövegrészek <strong>jelentésének finomítására</strong> is lehetőséget ad. Erre szolgál a hangsúlyozás és a fontosság jelölése. A két legfontosabb szemantikus elem erre a célra az <code>&lt;em&gt;</code> (emphasis - hangsúly) és a <code>&lt;strong&gt;</code> (strong importance - erős fontosság). Az <code>&lt;em&gt;</code> elem a mondat jelentését megváltoztató hangsúlyt jelöl (ahogy a beszédben is hangsúlyozunk egy szót), és a böngészők alapértelmezetten dőlt betűvel jelenítik meg. A <code>&lt;strong&gt;</code> elem ezzel szemben a tartalom nagy fontosságát, sürgősségét vagy komolyságát jelöli (pl. egy figyelmeztetés), és általában félkövér stílust kap. Kulcsfontosságú, hogy ezeket az elemeket a szemantikai jelentésük miatt használjuk, nem pedig pusztán a vizuális stílus (dőlt vagy félkövér) eléréséért.</p>
 <p>A helyzet bonyolultabb az <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code> és <code>&lt;u&gt;</code> elemekkel. Ezeket eredetileg tisztán <strong>prezentációs célokra</strong> hozták létre (italic, bold, underline), egy olyan korban, amikor a CSS még nem volt elterjedt. Mivel a modern weben a szemantika kulcsfontosságú (a SEO és az akadálymentesítés miatt), az ilyen, jelentés nélküli prezentációs elemek használata elavulttá vált. A HTML5 azonban nem távolította el őket teljesen, hanem új, specifikus szemantikai jelentéssel ruházta fel őket.</p>
-<p>A modern szabály szerint az <code>&lt;i&gt;</code>, <code>&lt;b&gt;</code> vagy <code>&lt;u&gt;</code> elemeket csak akkor helyénvaló használni, ha nincs náluk megfelelőbb szemantikus elem (mint az <code>&lt;em&gt;</code> vagy <code>&lt;strong&gt;</code>), és a jelentés hagyományosan dőlt, félkövér vagy aláhúzott stílust kíván. Az <code>&lt;i&gt;</code> elemet ma már olyan esetekben használjuk, mint <strong>idegen szavak</strong>, taxonómiai megnevezések vagy gondolatok jelölése. A <code>&lt;b&gt;</code> elem <strong>kulcsszavak</strong>, terméknevek vagy egy bekezdés bevezető mondatának kiemelésére szolgál, anélkül, hogy különösebb fontosságot adna neki. Az <code>&lt;u&gt;</code> használata a legritkább, mivel az aláhúzást erősen a hiperhivatkozásokhoz kötik; elsősorban <strong>helyesírási hibák</strong> vagy tulajdonnevek jelölésére javasolt, de a stílusát CSS-sel érdemes lehet módosítani.</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;hu&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Hangsúly és Fontosság Példa&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Használati útmutató&lt;/h1&gt;
-    &lt;p&gt;
-        Ez a kávéfőző &lt;em&gt;nem&lt;/em&gt; játék. A használata előtt figyelmesen olvassa el az útmutatót!
-    &lt;/p&gt;
-    &lt;p&gt;
-        &lt;strong&gt;FIGYELEM:&lt;/strong&gt; A forró részekhez ne érjen hozzá, mert súlyos égési sérülést okozhat!
-    &lt;/p&gt;
-    &lt;p&gt;
-        A gép egy speciális, &lt;i&gt;dekalcináló&lt;/i&gt; folyadékot igényel a vízkőmentesítéshez.
-        A &lt;b&gt;vízkőmentesítés&lt;/b&gt; kulcsfontosságú a hosszú élettartamhoz.
-    &lt;/p&gt;
-    &lt;p&gt;
-        Ellenőrizze, hogy a &lt;u class=&quot;helyesirasi-hiba&quot;&gt;kapocsoló&lt;/u&gt; ki van-e kapcsolva, mielőtt csatlakoztatja a hálózathoz.
-    &lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<div class="NOTE">
-<h5>Note</h5>
-<p>A CSS-ről (<code>&lt;style&gt;</code> tag) a későbbiekben lesz még szó.</p>
-</div>
 <p>A szövegek kiemelésén túl a HTML lehetőséget ad speciális tipográfiai jelölésekre is, amelyek elengedhetetlenek tudományos vagy matematikai tartalmak esetén.</p>
 <ul>
 <li><strong>Felső index</strong> (<code>&lt;sup&gt;</code>): A <code>&lt;sup&gt;</code> (superscript) elem a tartalmát az alapszöveg fölé, kisebb méretben jeleníti meg. Tipikusan hatványkitevők (10<sup>3</sup>), mértékegységek (100 ⁰C), vagy sorszámok (pl. 1<sup>st</sup>) jelölésére használjuk.</li>
-<li><strong>Alsó index</strong> (<sub>): A <sub> (subscript) elem a tartalmát az alapszöveg alá, kisebb méretben pozícionálja. Leggyakoribb felhasználási területe a kémiai képletek (pl. H₂O) vagy lábjegyzetek jelölése.</sub></sub></li>
+<li><strong>Alsó index</strong> (<code>&lt;sub&gt;</code>): A <code>&lt;sub&gt;</code> (subscript) elem a tartalmát az alapszöveg alá, kisebb méretben pozícionálja. Leggyakoribb felhasználási területe a kémiai képletek (pl. H₂O) vagy lábjegyzetek jelölése.</li>
 </ul>
 <pre><code class="lang-html">&lt;p&gt;
     A víz (kémiai képlete: H&lt;sub&gt;2&lt;/sub&gt;O) egy rendkívüli anyag.
@@ -375,17 +348,12 @@
     &lt;/a&gt;
 &lt;/p&gt;
 </code></pre>
-<p>Végül, a linkek nemcsak weboldalakra mutathatnak. A <code>mailto:</code> séma segítségével olyan linkeket is létrehozhatunk, amelyekre kattintva a felhasználó alapértelmezett levelezőprogramja nyílik meg egy új üzenettel. A <code>mailto:</code> után megadhatjuk a címzett e-mail címét, és további paraméterekkel (pl. <code>?subject=...&amp;body=...</code>) előre kitölthetjük a tárgyat vagy a levél törzsét is, ezzel megkönnyítve a felhasználó dolgát.</p>
+<p>Végül, a linkek nemcsak weboldalakra mutathatnak. A <code>mailto:</code> séma segítségével olyan linkeket is létrehozhatunk, amelyekre kattintva a felhasználó alapértelmezett levelezőprogramja nyílik meg egy új üzenettel.</p>
 <pre><code class="lang-html">&lt;p&gt;
-    További paramétereket (pl. `body`) az '&amp;' jellel fűzhetünk hozzá.
-    Fontos, hogy a szóközöket és speciális karaktereket kódolni kell (pl. a szóköz helyett '%20'-t használunk).
-&lt;/p&gt;
-&lt;p&gt;
-    &lt;a href=&quot;mailto:ajanlat@peldaoldal.hu?subject=Ajánlatkérés%20egy%20termékre&amp;body=Tisztelt%20Cím!%0A%0AÉrdeklődni%20szeretnék%20a%20következő%20termékük%20iránt:%0A%0A&quot;&gt;
+    &lt;a href=&quot;mailto:ajanlat@peldaoldal.hu&quot;&gt;
         Ajánlatkérés küldése
     &lt;/a&gt;
 &lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(Megjegyzés: a `%0A` sortörést hoz létre a levél szövegében.)&lt;/em&gt;&lt;/p&gt;
 </code></pre>
 <p>Forrás: <a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content">https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content</a></p>
 <p>A szöveg AI felhasználásával készült.</p>
