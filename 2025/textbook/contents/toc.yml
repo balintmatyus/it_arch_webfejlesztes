@@ -1,13 +1,5 @@
-- name: Általános információk
-  items:
-  - name: Tantárgy leírása és követelmények
-    href: general/course-info.md
-  - name: HTML cheatsheet
-    href: general/html-reference.md
-  - name: CSS cheatsheet
-    href: general/css-reference.md
-  - name: JavaScript cheatsheet
-    href: general/js-reference.md
+- name: Tantárgy leírása és követelmények
+  href: general/course-info.md
 - name: 1. hét	
   items:
   - name: 💡 Hogyan működik a web?
@@ -16,6 +8,8 @@
     href: week01/01-fullstack.md
   - name: 💡 HTML5 alapjai
     href: week01/01-html5.md
+  - name: 💡 Web sztenderdek és HTML validáció
+    href: week01/01-html5-validation.md
   - name: 🛠 Gyakorló feladatok
     href: week01/01-html5-gyak.md
 - name: 2. hét

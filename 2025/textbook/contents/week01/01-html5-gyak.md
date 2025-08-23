@@ -1,5 +1,7 @@
 # Gyakorló feladatok (HTML)
 
+Valamennyi feladat megoldását ellenőrizzük 1) vizuálisan böngésző segítségével, valamint 2) [HTML validátor](https://https://validator.w3.org/) segítségével.
+
 ## Viccek
 
 **Feladat**: Készítsd el az ábrán látható weboldalt, ami 5 viccet tartalmaz. A szöveget a [vicc.txt](./viccek/vicc.txt) fájlban találhatod meg. Ügyelj arra, hogy az elején lévő felsorolás elemeire kattintva az oldal a kiválasztott vicchez ugorjon. Minden vicc címe külön bekezdésben legyen (alul)!

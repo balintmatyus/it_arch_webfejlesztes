@@ -19,15 +19,17 @@ Az elemek egymásba is ágyazhatók, ezt nevezzük **beágyazásnak** (nesting).
 <p>Ez egy <strong>kiemelt</strong> üzenet.</p>
 ```
 
-Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket **üres elemeknek** (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az `<img>` elem, amely egy képfájlt jelenít meg az oldalon.
+Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket **üres elemeknek** (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az `<img>` elem, amely egy képfájlt jelenít meg az oldalon (később lesz róla szó), de ilyen a `<br>` (break - sortörés) vagy `<hr>` (horizontal - vízszintes vonal) is. 
 
-Az elemek rendelkezhetnek **attribútumokkal** is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. `class="kiemelt"`). Az `<img>` elem `src` (forrás) és `alt` (alternatív szöveg) attribútumai például megadják a kép elérési útját és egy rövid leírást róla.
+Az elemek rendelkezhetnek **attribútumokkal** is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. `class="kiemelt"`). Egy bekezdés (`<p>`) elem `class` attribútuma például megadhat egy stílusosztályt a későbbi formázáshoz, a `title` attribútum pedig egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.
 
 ```html
-<img src="https://www.uni-corvinus.hu/contents/themes/corvinus-theme/library/img/corvinus_logo_2024.svg" alt="A Corvinus hivatalos logója" width="673">
+<p class="fontos-uzenet" title="Ez egy egérrel megjelenő segédszöveg">
+  Ez a bekezdés rendelkezik egy 'class' és egy 'title' attribútummal.
+</p>
 ```
 
-Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, karakterreferenciát kell használnunk.
+Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, *karakterreferenciát* kell használnunk.
 
 > [!QUESTION]
 > A böngésző az általa fel nem ismert elemeket jellemzően figyelmen kívül hagyja. Gondoljuk végig, ennek a megoldásnak milyen előnyei és hátrányai vannak? (Elgépelés a HTML-ben, kompatibilitás böngészőverziók között)
@@ -121,41 +123,10 @@ A HTML nemcsak a tartalom strukturálására, hanem a szövegrészek **jelentés
 
 A helyzet bonyolultabb az `<i>`, `<b>` és `<u>` elemekkel. Ezeket eredetileg tisztán **prezentációs célokra** hozták létre (italic, bold, underline), egy olyan korban, amikor a CSS még nem volt elterjedt. Mivel a modern weben a szemantika kulcsfontosságú (a SEO és az akadálymentesítés miatt), az ilyen, jelentés nélküli prezentációs elemek használata elavulttá vált. A HTML5 azonban nem távolította el őket teljesen, hanem új, specifikus szemantikai jelentéssel ruházta fel őket.
 
-A modern szabály szerint az `<i>`, `<b>` vagy `<u>` elemeket csak akkor helyénvaló használni, ha nincs náluk megfelelőbb szemantikus elem (mint az `<em>` vagy `<strong>`), és a jelentés hagyományosan dőlt, félkövér vagy aláhúzott stílust kíván. Az `<i>` elemet ma már olyan esetekben használjuk, mint **idegen szavak**, taxonómiai megnevezések vagy gondolatok jelölése. A `<b>` elem **kulcsszavak**, terméknevek vagy egy bekezdés bevezető mondatának kiemelésére szolgál, anélkül, hogy különösebb fontosságot adna neki. Az `<u>` használata a legritkább, mivel az aláhúzást erősen a hiperhivatkozásokhoz kötik; elsősorban **helyesírási hibák** vagy tulajdonnevek jelölésére javasolt, de a stílusát CSS-sel érdemes lehet módosítani.
-
-```html
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <title>Hangsúly és Fontosság Példa</title>
-</head>
-<body>
-    <h1>Használati útmutató</h1>
-    <p>
-        Ez a kávéfőző <em>nem</em> játék. A használata előtt figyelmesen olvassa el az útmutatót!
-    </p>
-    <p>
-        <strong>FIGYELEM:</strong> A forró részekhez ne érjen hozzá, mert súlyos égési sérülést okozhat!
-    </p>
-    <p>
-        A gép egy speciális, <i>dekalcináló</i> folyadékot igényel a vízkőmentesítéshez.
-        A <b>vízkőmentesítés</b> kulcsfontosságú a hosszú élettartamhoz.
-    </p>
-    <p>
-        Ellenőrizze, hogy a <u class="helyesirasi-hiba">kapocsoló</u> ki van-e kapcsolva, mielőtt csatlakoztatja a hálózathoz.
-    </p>
-</body>
-</html>
-```
-
->[!NOTE]
->A CSS-ről (`<style>` tag) a későbbiekben lesz még szó.
-
 A szövegek kiemelésén túl a HTML lehetőséget ad speciális tipográfiai jelölésekre is, amelyek elengedhetetlenek tudományos vagy matematikai tartalmak esetén.
 
 - **Felső index** (`<sup>`): A `<sup>` (superscript) elem a tartalmát az alapszöveg fölé, kisebb méretben jeleníti meg. Tipikusan hatványkitevők (10<sup>3</sup>), mértékegységek (100 ⁰C), vagy sorszámok (pl. 1<sup>st</sup>) jelölésére használjuk.
-- **Alsó index** (<sub>): A <sub> (subscript) elem a tartalmát az alapszöveg alá, kisebb méretben pozícionálja. Leggyakoribb felhasználási területe a kémiai képletek (pl. H₂O) vagy lábjegyzetek jelölése.
+- **Alsó index** (`<sub>`): A `<sub>` (subscript) elem a tartalmát az alapszöveg alá, kisebb méretben pozícionálja. Leggyakoribb felhasználási területe a kémiai képletek (pl. H₂O) vagy lábjegyzetek jelölése.
 
 ```html
 <p>
@@ -364,19 +335,14 @@ Amikor nem egy másik HTML oldalra, hanem egy letöltendő erőforrásra (pl. PD
 </p>
 ```
 
-Végül, a linkek nemcsak weboldalakra mutathatnak. A `mailto:` séma segítségével olyan linkeket is létrehozhatunk, amelyekre kattintva a felhasználó alapértelmezett levelezőprogramja nyílik meg egy új üzenettel. A `mailto:` után megadhatjuk a címzett e-mail címét, és további paraméterekkel (pl. `?subject=...&body=...`) előre kitölthetjük a tárgyat vagy a levél törzsét is, ezzel megkönnyítve a felhasználó dolgát.
+Végül, a linkek nemcsak weboldalakra mutathatnak. A `mailto:` séma segítségével olyan linkeket is létrehozhatunk, amelyekre kattintva a felhasználó alapértelmezett levelezőprogramja nyílik meg egy új üzenettel.
 
 ```html
 <p>
-    További paramétereket (pl. `body`) az '&' jellel fűzhetünk hozzá.
-    Fontos, hogy a szóközöket és speciális karaktereket kódolni kell (pl. a szóköz helyett '%20'-t használunk).
-</p>
-<p>
-    <a href="mailto:ajanlat@peldaoldal.hu?subject=Ajánlatkérés%20egy%20termékre&body=Tisztelt%20Cím!%0A%0AÉrdeklődni%20szeretnék%20a%20következő%20termékük%20iránt:%0A%0A">
+    <a href="mailto:ajanlat@peldaoldal.hu">
         Ajánlatkérés küldése
     </a>
 </p>
-<p><em>(Megjegyzés: a `%0A` sortörést hoz létre a levél szövegében.)</em></p>
 ```
 
 Forrás: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content
