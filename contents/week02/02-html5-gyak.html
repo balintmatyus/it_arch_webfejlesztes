@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>&#218;tmutat&#243; a projekt riport fel&#233;p&#237;t&#233;s&#233;hez | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>HTML Projekt Riport k&#233;sz&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="&#218;tmutat&#243; a projekt riport fel&#233;p&#237;t&#233;s&#233;hez | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="HTML Projekt Riport k&#233;sz&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,77 +81,119 @@
         </div>
 
         <article data-uid="">
-<h1 id="útmutató-a-projekt-riport-felépítéséhez">Útmutató a projekt riport felépítéséhez</h1>
+<h1 id="html-projekt-riport-készítése">HTML Projekt Riport készítése</h1>
 
-<p>Ez az útmutató végigvezet a <code>projekt_riport.html</code> oldal elkészítésének folyamatán. A célunk nemcsak egy működő oldalt létrehozni, hanem megérteni a mögötte lévő szemantikus struktúrát. Minden nagyobb lépés egy-egy célt képvisel.</p>
-<p>A feladat a HTML struktúra kialakítása. A stílusbeállításokkal még nem foglalkozunk, az a későbbi hetek tananyaga, azonban annan érdekében, hogy használható és látványos eredményt kapjunk, egy <a href="stilus.css">előre elkészített css-t</a> fogunk használni.</p>
-<p>Íme a várható végeredményről egy képernyőkép.</p>
-<p><img src="digitalis-jovo.png" alt="week02-feladat"></p>
-<h2 id="1-cél-a-stabil-alapok-lerakása">1. cél: A stabil alapok lerakása</h2>
-<p>Mielőtt a tartalmat elhelyeznénk, szükségünk van egy stabil vázra, amelyre építkezhetünk. Ez a váz minden HTML oldal alapja.</p>
-<ol>
-<li><strong>Hozd létre a dokumentumot:</strong> Készítsd el a <code>projekt_riport.html</code> fájlt.</li>
-<li><strong>Add hozzá a kötelező elemeket:</strong> Illeszd be a <code>&lt;!DOCTYPE html&gt;</code> deklarációt, a <code>&lt;html&gt;</code> gyökérelemet, valamint a <code>&lt;head&gt;</code> és <code>&lt;body&gt;</code> szekciókat.</li>
-<li><strong>Konfiguráld a <code>&lt;head&gt;</code> szekciót:</strong>
+<h2 id="célkitűzés">Célkitűzés</h2>
+<p>Egy szemantikus HTML oldal létrehozása (<code>projekt_riport.html</code>), amely egy projekt riportot jelenít meg táblázattal és kiegészítő információkkal.</p>
+<h2 id="css-fájl-beillesztése">CSS fájl beillesztése</h2>
+<p>Mivel még nem tanultunk CSS-t, de szeretnénk formázott oldalt látni, használjunk egy előre elkészített stílusfájlt. Töltsd le a <a href="stilus.css">stilus.css</a> fájlt ugyanabba a mappába, ahol a HTML fájlod lesz!</p>
+<p>A CSS fájlt így kapcsold a HTML-hez a <code>&lt;head&gt;</code> részben:</p>
+<pre><code class="lang-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;stilus.css&quot;&gt;
+</code></pre>
+<p>Ez a sor azt mondja a böngészőnek, hogy töltse be a <code>stilus.css</code> fájlt és alkalmazza a benne lévő formázásokat.</p>
+<p><img src="digitalis-jovo.png" alt="Várt végeredmény"></p>
+<hr>
+<h2 id="1-alapstruktúra-felépítése">1. Alapstruktúra felépítése</h2>
+<p>Hozd létre a <code>projekt_riport.html</code> fájlt! Építsd fel az alábbi hierarchiát:</p>
+<pre><code>html (lang=&quot;hu&quot;)
+├── head
+│   ├── meta (charset=&quot;UTF-8&quot;)
+│   ├── title (megfelelő cím)
+│   └── link (rel=&quot;stylesheet&quot; href=&quot;stilus.css&quot;)
+└── body
+    ├── header
+    ├── nav
+    ├── main
+    │   ├── article
+    │   └── aside
+    └── footer
+</code></pre>
+<p><strong>Fontos:</strong></p>
 <ul>
-<li>Állítsd be a karakterkódolást (<code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>).</li>
-<li>Adj egy beszédes címet az oldalnak (<code>&lt;title&gt;</code>).</li>
-<li><strong>Kulcsfontosságú lépés:</strong> Hivatkozd be a <code>stilus.css</code> fájlt a <code>&lt;link&gt;</code> elem segítségével. Enélkül az oldalad formázatlan marad. (<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;stilus.css&quot;&gt;</code>) A <a href="stilus.css">stilus.css</a> fájl elérhető innen.</li>
+<li>Ne felejtsd el a <code>&lt;!DOCTYPE html&gt;</code> deklarációt a fájl elején!</li>
+<li>A CSS kapcsolódás nélkül az oldal formázatlan marad</li>
 </ul>
+<hr>
+<h2 id="2-tartalom-hozzáadása">2. Tartalom hozzáadása</h2>
+<h3 id="header">Header</h3>
+<ul>
+<li>Cég neve: &quot;Digitális Jövő Zrt.&quot; (<code>&lt;h1&gt;</code>)</li>
+<li>Alcím: &quot;Negyedéves Projekt Riport&quot; (<code>&lt;h2&gt;</code>)</li>
+</ul>
+<h3 id="navigáció">Navigáció</h3>
+<p>Készíts egy listát 4 linkkel:</p>
+<ul>
+<li>Főoldal</li>
+<li>Riportok</li>
+<li>Projektek</li>
+<li>Beállítások</li>
+</ul>
+<h3 id="main---article-szekció">Main - Article szekció</h3>
+<p>Az <code>&lt;article&gt;</code> elembe kerül:</p>
+<ol>
+<li><strong>Címsor</strong>: &quot;Vezetői összefoglaló&quot; (<code>&lt;h2&gt;</code>)</li>
+<li><strong>Bevezető bekezdés</strong>: Rövid leírás a riport tartalmáról (Q3 eredmények, projektek állapota)</li>
+<li><strong>Másodlagos cím</strong>: &quot;Q3 2025 - Projekt Státuszok&quot; (<code>&lt;h3&gt;</code>)</li>
+<li><strong>Táblázat</strong> (lásd következő lépés)</li>
+</ol>
+<h3 id="main---aside-szekció">Main - Aside szekció</h3>
+<p>Készíts egy &quot;Kulcsfogalmak&quot; című (<code>&lt;h3&gt;</code>) definíciós listát:</p>
+<pre><code class="lang-html">&lt;dl&gt;
+    &lt;dt&gt;KPI&lt;/dt&gt;
+    &lt;dd&gt;Key Performance Indicator - Teljesítménymutató...&lt;/dd&gt;
+    &lt;dt&gt;ROI&lt;/dt&gt;
+    &lt;dd&gt;Return on Investment - Befektetésarányos megtérülés.&lt;/dd&gt;
+    &lt;dt&gt;CRM&lt;/dt&gt;
+    &lt;dd&gt;Customer Relationship Management - Ügyfélkapcsolat-kezelő rendszer.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+<h3 id="footer">Footer</h3>
+<ul>
+<li>Copyright szöveg: &quot;© 2025 Digitális Jövő Zrt.&quot;</li>
+<li>Generálási dátum: &quot;Riport generálva: 2025-08-18&quot;</li>
+</ul>
+<hr>
+<h2 id="3-táblázat-megépítése">3. Táblázat megépítése</h2>
+<p>Az <code>&lt;article&gt;</code> elemen belül készíts táblázatot &quot;Projektek részletes állapotjelentése&quot; címmel.</p>
+<h3 id="követelmények">Követelmények:</h3>
+<ul>
+<li>Használd a megfelelő szemantikus elemeket a cím megadásához</li>
+<li>A táblázat legyen szerkezetileg tagolt (fejléc, törzs, lábléc)</li>
+<li><strong>Fejléc oszlopok</strong>: Projekt Név, Projektvezető, Státusz, Költségvetés (HUF)</li>
+<li><strong>Adatok</strong> (ebben a sorrendben):
+<ol>
+<li>&quot;Orion&quot; Kliens Portál | Kiss Anna | Befejezett | 15,000,000</li>
+<li>&quot;Phoenix&quot; Adatbázis Migráció | Nagy Béla | Folyamatban | 25,000,000</li>
+<li>&quot;Gemini&quot; Mobilalkalmazás | Nagy Béla | Kockázatos | 18,000,000</li>
+<li>&quot;Vega&quot; Belső CRM Rendszer | Szabó Dóra | Tervezés alatt | 32,000,000</li>
+</ol>
 </li>
-</ol>
-<h2 id="2-cél-az-oldal-fő-szerkezeti-egységeinek-kialakítása">2. cél: Az oldal fő szerkezeti egységeinek kialakítása</h2>
-<p>Most, hogy megvan az alapváz, definiáljuk az oldal fő logikai területeit a <code>&lt;body&gt;</code>-n belül.</p>
-<ol>
-<li><strong>Fejléc (<code>&lt;header&gt;</code>):</strong> Helyezz el egy <code>&lt;header&gt;</code> elemet. Ez lesz az oldal fejléce, ide kerül a cég neve és a riport címe.</li>
-<li><strong>Navigáció (<code>&lt;nav&gt;</code>):</strong> A fejléc alá illessz be egy <code>&lt;nav&gt;</code> elemet.</li>
-<li><strong>Főtartalom (<code>&lt;main&gt;</code>):</strong> A navigáció után következzen a <code>&lt;main&gt;</code> elem. Ez az oldal központi, legfontosabb része, ahol a riport érdemi tartalma lesz.</li>
-<li><strong>Lábléc (<code>&lt;footer&gt;</code>):</strong> Zárd a <code>&lt;body&gt;</code> tartalmát egy <code>&lt;footer&gt;</code> elemmel. Ez az oldal &quot;alapzata&quot;, ide kerülnek a kiegészítő információk.</li>
-</ol>
-<div class="NOTE">
-<h5>Note</h5>
-<p>Ha most megnézed az oldalt a böngészőben, a CSS-nek köszönhetően már láthatod a fő blokkok elrendezését.</p>
-</div>
-<h2 id="3-cél-a-tartalom-központi-részének-megtervezése">3. cél: A tartalom központi részének megtervezése</h2>
-<p>A <code>&lt;main&gt;</code> elemen belül két különálló, de kapcsolódó részt fogunk létrehozni: magát a riportot és egy kiegészítő oldalsávot.</p>
-<ol>
-<li><strong>A riport helye (<code>&lt;article&gt;</code>):</strong> A <code>&lt;main&gt;</code> elemen belül hozz létre egy <code>&lt;article&gt;</code> elemet. Az <code>&lt;article&gt;</code> tökéletes választás egy önálló, kerek egész tartalmi egység, mint például egy riport, befogadására.</li>
-<li><strong>Az oldalsáv helye (<code>&lt;aside&gt;</code>):</strong> Az <code>&lt;article&gt;</code> után, de még mindig a <code>&lt;main&gt;</code>-en belül, hozz létre egy <code>&lt;aside&gt;</code> elemet. Az <code>&lt;aside&gt;</code> szemantikailag jelöli, hogy a benne lévő tartalom (pl. kulcsfogalmak magyarázata) lazábban kapcsolódik a fő tartalomhoz.</li>
-</ol>
-<h2 id="4-cél-a-riport-táblázatának-professzionális-megalkotása">4. cél: A riport táblázatának professzionális megalkotása</h2>
-<p>A riport legfontosabb része a táblázat. Építsük fel szakszerűen, a megfelelő szemantikus elemekkel, hogy ne csak jól nézzen ki, de a szerkezete is logikus legyen. Ezt a táblázatot az <code>&lt;article&gt;</code> elemen belül kell elhelyezni.</p>
-<ol>
-<li><strong>Adj címet a táblázatnak:</strong> Kezdd a <code>&lt;table&gt;</code> elemmel, és rögtön utána add meg a <code>&lt;caption&gt;</code> segítségével a táblázat tartalmát leíró címet.</li>
-<li><strong>Definiáld a fejlécet (<code>&lt;thead&gt;</code>):</strong> Hozd létre a táblázat fejlécét egy sorral (<code>&lt;tr&gt;</code>) és a megfelelő számú oszlopfejléccel (<code>&lt;th&gt;</code>). Ez egyértelművé teszi, hogy melyik oszlop milyen adatot tartalmaz.</li>
-<li><strong>Töltsd fel az adatokat (<code>&lt;tbody&gt;</code>):</strong> A táblázat törzsében helyezd el az adatokat sorokba (<code>&lt;tr&gt;</code>) és cellákba (<code>&lt;td&gt;</code>) rendezve.
-<ul>
-<li><strong>A kihívás:</strong> Oldd meg a projektvezető celláinak összevonását a <code>rowspan</code> attribútummal! Gondold végig, melyik <code>&lt;td&gt;</code> elemnek kell megadni és milyen értékkel.</li>
+<li><strong>Lábléc</strong>: Összesített költségvetés sor 90,000,000 összeggel</li>
 </ul>
-</li>
-<li><strong>Készíts egy összegző sort (<code>&lt;tfoot&gt;</code>):</strong> A táblázat láblécében hozz létre egy utolsó sort.
+<h3 id="speciális-feladatok">Speciális feladatok:</h3>
 <ul>
-<li><strong>A kihívás:</strong> Vond össze a cellákat a <code>colspan</code> attribútummal, hogy az &quot;Összesített költségvetés&quot; szöveg a megfelelő helyre kerüljön.</li>
+<li><strong>Függőleges cellaösszevonás</strong>: Nagy Béla két projektet is vezet - a neve csak egyszer jelenjen meg!</li>
+<li><strong>Vízszintes cellaösszevonás</strong>: A láblécben az &quot;Összesített költségvetés&quot; felirat és az összeg megfelelően oszoljon el</li>
+<li><strong>Vizuális kiemelés</strong>: A &quot;Kockázatos&quot; státuszt emeld ki <code>&lt;span class=&quot;status-risk&quot;&gt;</code> elemmel</li>
 </ul>
-</li>
-</ol>
-<h2 id="5-cél-a-hiányzó-részletek-kitöltése-és-finomhangolás">5. cél: A hiányzó részletek kitöltése és finomhangolás</h2>
-<p>Most, hogy a szerkezet és a táblázat a helyén van, töltsük fel a maradék tartalmat, és végezzük el az utolsó simításokat.</p>
-<ol>
-<li><strong>Töltsd fel a <code>header</code>, <code>nav</code> és <code>footer</code> elemeket:</strong> Add hozzá a címsorokat, a navigációs listát a linkekkel, és a láblécben lévő bekezdéseket a copyright szöveggel (<code>&amp;copy;</code>).</li>
-<li><strong>Adj kontextust a riportnak:</strong> Az <code>&lt;article&gt;</code> elemen belül, a táblázat elé, helyezz el egy címsort és egy bevezető bekezdést.</li>
-<li><strong>Magyarázd a kulcsfogalmakat:</strong> Az <code>&lt;aside&gt;</code> elemen belül használj egy leíró listát (<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code>) a szakkifejezések és magyarázataik elegáns megjelenítésére.</li>
-<li><strong>(Bónusz) Emeld ki a fontos információt:</strong> A táblázatban a &quot;Kockázatos&quot; státuszt foglald egy <code>&lt;span&gt;</code> elembe, és add neki a <code>status-risk</code> osztályt. A CSS gondoskodik a vizuális kiemelésről. ()<code>&lt;span class=&quot;status-risk&quot;&gt;</code>)</li>
-</ol>
-<h2 id="ellenőrzés">Ellenőrzés</h2>
-<p>Hasonlítsd össze a végeredményt a böngészőben a várt kinézettel. Ha valami eltér, az szinte mindig a HTML struktúrájában lévő hibára utal. Ellenőrizd a következőket:</p>
+<hr>
+<h2 id="4-ellenőrzési-lista">4. Ellenőrzési lista</h2>
 <ul>
-<li>Minden elemet helyesen zártál be?</li>
-<li>Az elemek a megfelelő sorrendben és egymásba ágyazva helyezkednek el?</li>
-<li>Jól használtad a <code>rowspan</code> és <code>colspan</code> attribútumokat?</li>
+<li>[ ] DOCTYPE deklaráció megvan?</li>
+<li>[ ] CSS fájl megfelelően hivatkozva?</li>
+<li>[ ] Minden szemantikus elem a helyén? (header, nav, main, article, aside, footer)</li>
+<li>[ ] Navigációs lista linkekkel elkészült?</li>
+<li>[ ] Táblázat címe megfelelő elemmel megadva?</li>
+<li>[ ] Táblázat szerkezeti tagolása kész? (fejléc, törzs, lábléc)</li>
+<li>[ ] Nagy Béla neve csak egyszer jelenik meg (cellaösszevonás)?</li>
+<li>[ ] Lábléc cellaösszevonása működik?</li>
+<li>[ ] &quot;Kockázatos&quot; státusz kiemelve span elemmel?</li>
+<li>[ ] Copyright szimbólum (<code>&amp;copy;</code>) használva?</li>
 </ul>
+<hr>
 <h2 id="megoldás-feltöltése">Megoldás feltöltése</h2>
-<p>A megoldásodat töltsd fel Github profilodra.</p>
-<p>Jó munkát!</p>
+<p>Töltsd fel a kész <code>projekt_riport.html</code> fájlt GitHub profilodra.</p>
+<p><strong>Tipp:</strong> Ha valami nem jelenik meg megfelelően, először a HTML struktúrát ellenőrizd - minden elem megfelelően be van zárva?</p>
 
 </article>
 

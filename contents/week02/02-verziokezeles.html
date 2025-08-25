@@ -87,11 +87,11 @@
 <h2 id="a-verziókezelés-alapjai">A verziókezelés alapjai</h2>
 <h3 id="mi-az-a-verziókezelés-és-miért-hasznos">Mi az a verziókezelés és miért hasznos?</h3>
 <p>Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt <code>beadando_v1.txt</code> néven. Később módosítasz rajta, és elmented <code>beadando_v2.txt</code> néven, majd jön a <code>beadando_vegleges.txt</code>, és végül a <code>beadando_TENYLEG_vegleges_javitott.txt</code>. Ismerős, ugye?</p>
+<p>Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.</p>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Szándékosan írtam <code>*.txt</code> fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlokban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A <code>*.docx</code> formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők &quot;kihegyezve&quot;?</p>
+<p>Szándékosan írtam <code>*.txt</code> fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A <code>*.docx</code> formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők &quot;kihegyezve&quot;?</p>
 </div>
-<p>Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.</p>
 <p>A <strong>verziókezelő rendszer (Version Control System - VCS)</strong> egy szoftver, ami pontosan ezt a problémát oldja meg. Lehetővé teszi, hogy:</p>
 <ul>
 <li><p><strong>Mentsd a projekt állapotait:</strong> Ahelyett, hogy fájlokat másolgatnál, a rendszer &quot;pillanatképeket&quot; (<strong>commitokat</strong>) készít a projektedről minden egyes mentésnél.</p>
@@ -225,7 +225,7 @@ A VS Code ezt a folyamatot hihetetlenül leegyszerűsíti. Nem kell a GitHub web
 <li><p>Válaszd ki a neked megfelelőt, és hagyd, hogy a VS Code feltöltse a fájlokat.</p>
 </li>
 </ol>
-<p>Ha minden sikeres, a VS Code a háttérben létrehozta a repository-t a GitHubon, összekapcsolta a lokális projekteddel, és fel is töltötte az első commitodat. Ha most megnyitod a GitHub profilodat a böngészőben, látni fogod az új repository-t a feltöltött <code>index.html</code> fájllal!</p>
+<p>Ha minden sikeres, a VS Code a háttérben létrehozta a repository-t a GitHubon, összekapcsolta a lokális projekteddel, és fel is töltötte az első commitodat. Ha most megnyitod a GitHub profilodat a böngészőben, látni fogod az új repository-t a feltöltött <code>teszt.html</code> fájllal!</p>
 <p><strong>A jövőbeli munkafolyamat:</strong></p>
 <p>Innentől kezdve a munkafolyamat a következő:</p>
 <ol>

@@ -84,7 +84,6 @@
 <h1 id="szemantikus-oldalstruktúra-és-adatok-táblázatos-megjelenítése">Szemantikus oldalstruktúra és adatok táblázatos megjelenítése</h1>
 
 <p>Az előző héten megismertük a HTML alapvető építőköveit: az elemeket, attribútumokat, címsorokat, bekezdéseket, listákat és linkeket. Ezekkel már képesek vagyunk egyszerűbb dokumentumokat létrehozni. Ezen a héten egy lépéssel tovább megyünk, és megnézzük, hogyan adhatunk a weboldalainknak egy magasabb szintű, szemantikus struktúrát, valamint hogyan jeleníthetünk meg komplex, táblázatos adatokat.</p>
-<hr>
 <h2 id="a-weboldal-elrendezése-szemantikus-struktúra">A weboldal elrendezése: Szemantikus struktúra</h2>
 <p>A legtöbb weboldal, bár vizuálisan eltérő lehet, általában hasonló fő részekből áll. Gondoljunk csak egy tipikus hírportálra vagy egy céges bemutatkozó oldalra. A HTML5 bevezetett egy sor új, <strong>szemantikus elemet</strong>, amelyekkel pontosan leírhatjuk ezeket a logikai egységeket. Ezek használata nemcsak a kódunkat teszi olvashatóbbá, de kritikus fontosságú az <strong>akadálymentesítés</strong> (pl. képernyőolvasó szoftverek számára) és a <strong>keresőoptimalizálás (SEO)</strong> szempontjából is.</p>
 <p>Egy tipikus weboldal főbb részei a következők:</p>
@@ -101,7 +100,7 @@
 <p>Azonosítsd be a weboldal főbb részeit a fenti képen!</p>
 </div>
 <h3 id="html5-strukturális-elemek">HTML5 strukturális elemek</h3>
-<p>Ahelyett, hogy mindenre általános <code>&lt;div&gt;</code> elemeket használnánk, a HTML5 dedikált tageket biztosít ezeknek a részeknek a jelölésére.</p>
+<p>A HTML5 dedikált tageket biztosít az oldal különböző részeinek a jelölésére.</p>
 <ul>
 <li><code>&lt;header&gt;</code>: Egy bevezető tartalmi csoportot jelöl. Ha a <code>&lt;body&gt;</code> közvetlen gyermeke, akkor az oldal globális fejlécét definiálja. Ha egy <code>&lt;article&gt;</code> vagy <code>&lt;section&gt;</code> elemen belül van, akkor az adott szekció fejlécét jelöli.</li>
 <li><code>&lt;nav&gt;</code>: Az oldal elsődleges navigációs linkjeit tartalmazza. Másodlagos linkcsoportok (pl. egy láblécben) nem feltétlenül tartoznak ide.</li>
@@ -186,9 +185,12 @@
 </ul>
 <div class="WARNING">
 <h5>Warning</h5>
-<p>A <code>&lt;div&gt;</code> elemek rendkívül kényelmesek, ezért könnyű túlzásba esni a használatukkal. Mivel nincs szemantikai jelentésük, felesleges használatuk csak &quot;zajossá&quot; teszi a HTML kódot. Csak akkor használjuk őket, ha nincs jobb szemantikai megoldás!</p>
+<p>A <code>&lt;div&gt;</code> elemek rendkívül kényelmesek, ezért könnyű túlzásba esni a használatukkal. Mivel nincs szemantikai jelentésük, felesleges használatuk csak &quot;zajossá&quot;, nehezebben értelmezhetővé teszi a HTML kódot. Csak akkor használjuk őket, ha nincs jobb szemantikai megoldás!</p>
 </div>
-<hr>
+<div class="alert alert-task">
+<h5>TASK</h5>
+<p>Nyiss meg néhány számodra érdekes weboldalt és vizsgáld meg, hogy használják-e a szemantikus tag-eket. Sok ismert weboldal csak részben alkalmazza őket. Gondold át, mi lehet ennek az oka.</p>
+</div>
 <h2 id="táblázatok-adatok-strukturálása">Táblázatok: Adatok strukturálása</h2>
 <p>A HTML táblázatok célja <strong>táblázatos adatok</strong> megjelenítése – vagyis olyan információké, amelyeket sorokba és oszlopokba lehet rendezni. Lehetővé teszik, hogy gyorsan és könnyen leolvassunk értékeket, amelyek különböző adattípusok között teremtenek kapcsolatot.</p>
 <div class="NOTE">
@@ -254,8 +256,6 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
-<hr>
-<h2 id="haladó-táblázatok-és-akadálymentesség">Haladó táblázatok és akadálymentesség</h2>
 <p>A komplexebb táblázatok esetében további elemeket és attribútumokat használhatunk a struktúra és az akadálymentesség javítására.</p>
 <h3 id="táblázatcím-caption">Táblázatcím (<code>&lt;caption&gt;</code>)</h3>
 <p>A <code>&lt;caption&gt;</code> elem segítségével címet adhatunk a táblázatunknak. Ezt közvetlenül a nyitó <code>&lt;table&gt;</code> tag után kell elhelyezni. A táblázatcím segít a felhasználóknak (különösen a képernyőolvasót használóknak) gyorsan megérteni a táblázat tartalmát anélkül, hogy végig kellene olvasniuk a cellákat.</p>
