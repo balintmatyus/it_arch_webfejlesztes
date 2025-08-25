@@ -2,8 +2,6 @@
 
 Az előző héten megismertük a HTML alapvető építőköveit: az elemeket, attribútumokat, címsorokat, bekezdéseket, listákat és linkeket. Ezekkel már képesek vagyunk egyszerűbb dokumentumokat létrehozni. Ezen a héten egy lépéssel tovább megyünk, és megnézzük, hogyan adhatunk a weboldalainknak egy magasabb szintű, szemantikus struktúrát, valamint hogyan jeleníthetünk meg komplex, táblázatos adatokat.
 
----
-
 ## A weboldal elrendezése: Szemantikus struktúra
 
 A legtöbb weboldal, bár vizuálisan eltérő lehet, általában hasonló fő részekből áll. Gondoljunk csak egy tipikus hírportálra vagy egy céges bemutatkozó oldalra. A HTML5 bevezetett egy sor új, **szemantikus elemet**, amelyekkel pontosan leírhatjuk ezeket a logikai egységeket. Ezek használata nemcsak a kódunkat teszi olvashatóbbá, de kritikus fontosságú az **akadálymentesítés** (pl. képernyőolvasó szoftverek számára) és a **keresőoptimalizálás (SEO)** szempontjából is.
@@ -23,7 +21,7 @@ Egy tipikus weboldal főbb részei a következők:
 
 ### HTML5 strukturális elemek
 
-Ahelyett, hogy mindenre általános `<div>` elemeket használnánk, a HTML5 dedikált tageket biztosít ezeknek a részeknek a jelölésére.
+A HTML5 dedikált tageket biztosít az oldal különböző részeinek a jelölésére.
 
 * `<header>`: Egy bevezető tartalmi csoportot jelöl. Ha a `<body>` közvetlen gyermeke, akkor az oldal globális fejlécét definiálja. Ha egy `<article>` vagy `<section>` elemen belül van, akkor az adott szekció fejlécét jelöli.
 * `<nav>`: Az oldal elsődleges navigációs linkjeit tartalmazza. Másodlagos linkcsoportok (pl. egy láblécben) nem feltétlenül tartoznak ide.
@@ -110,9 +108,10 @@ Előfordul, hogy olyan elemeket szeretnénk csoportosítani, amelyekre nincs meg
 * `<span>`: Egy **soron belüli (inline)**, általános konténer. Akkor használjuk, ha egy szövegrészletet szeretnénk megjelölni egy bekezdésen vagy más elemen belül, anélkül, hogy új sort kezdenénk.
 
 >[!WARNING]
-> A `<div>` elemek rendkívül kényelmesek, ezért könnyű túlzásba esni a használatukkal. Mivel nincs szemantikai jelentésük, felesleges használatuk csak "zajossá" teszi a HTML kódot. Csak akkor használjuk őket, ha nincs jobb szemantikai megoldás!
+>A `<div>` elemek rendkívül kényelmesek, ezért könnyű túlzásba esni a használatukkal. Mivel nincs szemantikai jelentésük, felesleges használatuk csak "zajossá", nehezebben értelmezhetővé teszi a HTML kódot. Csak akkor használjuk őket, ha nincs jobb szemantikai megoldás!
 
----
+>[!TASK]
+>Nyiss meg néhány számodra érdekes weboldalt és vizsgáld meg, hogy használják-e a szemantikus tag-eket. Sok ismert weboldal csak részben alkalmazza őket. Gondold át, mi lehet ennek az oka.
 
 ## Táblázatok: Adatok strukturálása
 
@@ -191,10 +190,6 @@ Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. 
   </tr>
 </table>
 ```
-
----
-
-## Haladó táblázatok és akadálymentesség
 
 A komplexebb táblázatok esetében további elemeket és attribútumokat használhatunk a struktúra és az akadálymentesség javítására.
 

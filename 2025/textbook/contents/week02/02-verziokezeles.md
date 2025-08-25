@@ -8,10 +8,10 @@ Ez az útmutató segít megérteni a verziókezelés fontosságát és elsaját�
 
 Képzeld el, hogy egy fontos egyetemi beadandón dolgozol. Elmented a fájlt `beadando_v1.txt` néven. Később módosítasz rajta, és elmented `beadando_v2.txt` néven, majd jön a `beadando_vegleges.txt`, és végül a `beadando_TENYLEG_vegleges_javitott.txt`. Ismerős, ugye?
 
->[!NOTE]
->Szándékosan írtam `*.txt` fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlokban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A `*.docx` formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők "kihegyezve"?
-
 Ez a módszer kaotikus, nehezen követhető, és ha többen dolgoztok egy projekten, kész rémálommá válhat.
+
+>[!NOTE]
+>Szándékosan írtam `*.txt` fájlformátumot, pedig a beadandókat jellemzően nem szöveges fájlban készítjük el. A verziókezelők jellemzően szöveges fájlok kezelését támogatják. A `*.docx` formátum a valóságban egy zip-alapú konténer, ezért általában a verziókezelők bináris fájlként tekintik. A verziókezelők a bináris állományokat korlátozottan támogatják. Gondoljunk bele, miért éppen szöveges állományokra vannak a verziókezelők "kihegyezve"?
 
 A **verziókezelő rendszer (Version Control System - VCS)** egy szoftver, ami pontosan ezt a problémát oldja meg. Lehetővé teszi, hogy:
 
@@ -131,7 +131,7 @@ A VS Code ezt a folyamatot hihetetlenül leegyszerűsíti. Nem kell a GitHub web
 
 4. Válaszd ki a neked megfelelőt, és hagyd, hogy a VS Code feltöltse a fájlokat.
 
-Ha minden sikeres, a VS Code a háttérben létrehozta a repository-t a GitHubon, összekapcsolta a lokális projekteddel, és fel is töltötte az első commitodat. Ha most megnyitod a GitHub profilodat a böngészőben, látni fogod az új repository-t a feltöltött `index.html` fájllal!
+Ha minden sikeres, a VS Code a háttérben létrehozta a repository-t a GitHubon, összekapcsolta a lokális projekteddel, és fel is töltötte az első commitodat. Ha most megnyitod a GitHub profilodat a böngészőben, látni fogod az új repository-t a feltöltött `teszt.html` fájllal!
 
 **A jövőbeli munkafolyamat:**
 
