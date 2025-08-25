@@ -35,7 +35,7 @@
 - name: 5. hét
   items:
   - name: 💡 CSS alapok
-    href: todo.md
+    href: week05/05-css-basics.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 6. hét
