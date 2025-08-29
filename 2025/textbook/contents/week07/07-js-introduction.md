@@ -305,7 +305,7 @@ let visszaszamlalo = 10;
 visszaszamlalo--; // visszaszamlalo értéke most 9
 ```
 
->[!WARNING]
+>[!NOTE]
 > Az `++` és `--` operátoroknak van egy "pre" és "post" formája, attól függően, hogy az operátor a változó előtt vagy után áll. Ha a változó *után* van (pl. `szamlalo++`), akkor az értékadás vagy kifejezés során először a változó **eredeti értékét** használja fel, majd *utána* növeli az értékét. Ha a változó *előtt* van (pl. `++szamlalo`), akkor először **növeli** az értékét, majd az *új* értéket használja fel. Kezdetben ez furcsának tűnhet, de a későbbiekben ciklusoknál vagy bonyolultabb kifejezéseknél látni fogod a jelentőségét!
 
 ### Logikai és összehasonlító operátorok
@@ -381,3 +381,253 @@ let uzenet = `Szia, ${nev}! ${kor} éves vagy.`; // "Szia, Péter! 25 éves vagy
 
 Ez sokkal szebb, mint a sok `+` jel! Ha teheted, inkább a template literaöket használd szöveg összefűzésére.
 
+## Programvezérlési szerkezetek
+
+Két fő típust különböztetünk meg: az **elágazásokat** (feltételes végrehajtás) és a **ciklusokat** (ismétlődő végrehajtás). Nézzük is meg őket részletesebben!
+
+### Elágazások (Feltételes végrehajtás)
+
+Az elágazásokkal tudunk a kódban döntéseket hozni, azaz különböző kódrészleteket végrehajtani attól függően, hogy egy adott feltétel igaz (`true`) vagy hamis (`false`).
+
+#### `if...else` utasítások
+
+Ez az egyik leggyakoribb elágazási forma, amit használni fogsz. Lényegében azt mondja: "HA ez a feltétel igaz, akkor tedd ezt, KÜLÖNBEN tedd azt".
+
+Az **alapvető szintaxis** így néz ki:
+```javascript
+if (logikai feltétel) {
+    // Ez a kód fut le, ha a feltétel igaz
+} else {
+    // Ez a kód fut le, ha a feltétel hamis
+}
+```
+A feltételt a zárójelek között adjuk meg, ami egy logikai (boolean) értéket ad vissza (igaz vagy hamis).
+
+>Nem kötelező az `else` ágat megadni. Ha nincs `else`, és a feltétel hamis, akkor az `if` blokkot egyszerűen átugorja a program.
+
+Ha nem csak két, hanem **több lehetséges eset** van, akkor az `else if` ágakkal tudsz további feltételeket vizsgálni.
+```javascript
+if (feltétel1) {
+    // kód, ha feltétel1 igaz
+} else if (feltétel2) {
+    // kód, ha feltétel1 hamis ÉS feltétel2 igaz
+} else {
+    // kód, ha egyik feltétel sem igaz
+}
+```
+
+>[!TASK]
+>Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor "Jó reggelt!", ha 18-nál kisebb, akkor "Jó napot!", egyébként pedig "Jó estét!" üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a `console.log(aktualisOra)` utasítást a megfelelő köszöntés megjelenítésére.
+
+>[!TASK]
+>Hogyan módosítanád a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben?
+
+#### `switch` utasítás
+
+Ha egyetlen kifejezés értékétől függően sok különböző kódrészletet szeretnél futtatni, a `switch` utasítás elegánsabb és olvashatóbb megoldás lehet, mint egy hosszú `if...else if...else` lánc.
+
+```javascript
+switch (kifejezés) {
+    case érték1:
+    // kód, ha a kifejezés == érték1
+    break;
+    case érték2:
+    // kód, ha a kifejezés == érték2
+    break;
+    // ... további case-ek
+    default:
+    // kód, ha egyik case sem egyezik
+}
+```
+
+A `switch` megvizsgálja a `kifejezés` értékét, majd megkeresi azt a `case` ágat, amelynek értéke megegyezik vele. Ha talál egyezést, az adott `case` alatti kódot futtatja.
+
+>[!WARNING]
+>Nagyon fontos, hogy minden `case` végére tegyél egy `break;` utasítást. Ez jelzi a programnak, hogy az adott `case` végén ki kell lépnie a `switch` blokkból. Ha elhagyod, a program tovább futtatja a következő `case` alatti kódot is, egészen addig, amíg `break`-et nem talál.
+
+A `default` ág opcionális, de érdemes használni. Akkor fut le, ha egyik `case` ág sem egyezik meg a `kifejezés` értékével, mint egy "végső mentsvár".
+
+#### Ternáris operátor
+
+Ez egy "villámgyors" `if...else` rövidítése, ha csak két lehetséges eredmény van, és egyetlen sorban szeretnéd kezelni.
+
+```javascript
+feltétel ? kifejezés_ha_igaz : kifejezés_ha_hamis;
+```
+
+Ez a kód kiértékeli a `feltételt`. Ha az igaz, akkor a `kifejezés_ha_igaz` értékével tér vissza, különben a `kifejezés_ha_hamis` értékével.
+
+**Példa**:
+```javascript
+let ora = 14;
+let napszak = (ora > 12) ? "délután" : "délelőtt"; // napszak értéke: "délután"
+```
+
+Ahogy látod, sokkal tömörebb, mint egy teljes `if...else` blokk.
+
+### Ciklusok (Ismétlődő végrehajtás)
+
+A ciklusok arra valók, hogy ugyanazt a kódrészletet többször is végrehajtsuk, anélkül, hogy ismétlődően le kellene írnunk. Ez különösen hasznos, ha listákon, tömbökön akarunk végigmenni, vagy csak egy adott számú alkalommal kell valamit megtenni.
+
+#### `for` ciklus
+
+Ez a leggyakoribb számlálós ciklus, amit használni fogsz. Kényelmes, mert minden szükséges információt egy helyen, a zárójelek között találunk.
+
+
+```javascript
+for (inicializáló_kifejezés; logikai_feltétel; módosító_kifejezés) {
+    // Ez a kód fut le minden iterációban
+}
+```
+*   **`inicializáló_kifejezés`**: Itt adunk kezdeti értéket a ciklusváltozónak (pl. `let i = 0;`). Ez csak egyszer fut le, a ciklus elején.
+*   **`logikai_feltétel`**: Ez határozza meg, meddig fusson a ciklus (pl. `i < 10;`). Minden iteráció előtt ellenőrzi. Ha hamis, a ciklus leáll.
+*   **`módosító_kifejezés`**: Ez fut le minden iteráció után, általában a ciklusváltozót növeli vagy csökkenti (pl. `i++` vagy `i--`).
+
+**Példa**:
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log(`A ciklusváltozó értéke: ${i}`);
+}
+// Eredmény: 0, 1, 2, 3, 4
+```
+
+Fontos, hogy `let`-tel deklaráld a ciklusváltozót, így az csak a cikluson belül lesz elérhető (blokkszintű hatókör).
+
+### `while` ciklus
+
+Ez egy feltételes ciklus, ami addig fut, amíg a megadott feltétel igaz. Ezt "elöltesztelős" ciklusnak is hívjuk, mert a feltételt még a kódblokk futtatása előtt ellenőrzi.
+
+```javascript
+inicializáló_kifejezés;
+while (logikai_feltétel) {
+    // Ez a kód fut le, amíg a feltétel igaz
+    módosító_kifejezés;
+}
+```
+>[!WARNING]
+>Nagyon fontos, hogy a `while` cikluson belül gondoskodj arról, hogy a `logikai_feltétel` egy idő után hamissá váljon, különben a programod végtelen ciklusba kerül, és lefagy.
+
+#### `do...while` ciklus
+
+Ez is egy feltételes ciklus, de a fő különbség a `while` ciklushoz képest, hogy a `do...while` ciklusban lévő kódblokk **legalább egyszer mindig lefut**, mielőtt a feltételt ellenőrizné. Ezt "hátultesztelős" ciklusnak nevezzük.
+
+```javascript
+let valasz;
+
+do {
+  valasz = prompt("Elfogadja a felhasználási feltételeket? (igen/nem)");
+} while (valasz !== "igen");
+
+alert("Köszönjük a jóváhagyást!");
+```
+
+>[!NOTE]
+>A `prompt()` függvény segítségével bekérhetünk adatot a felhasználótól egy felugró ablak segítségével. A gyakorlatban ezt más módon oldjuk meg, de egyszerűsége miatt tanulási céllal alkalmazzuk. Az `alert` függvény felugró ablakban megjelenít valamilyen szöveget.
+
+### `break` és `continue` utasítások
+
+Ezek az utasítások extra irányítást adnak a ciklusok (és a `switch` utasítás) futása felett.
+
+*   **`break`**:
+    *   **Feladata**: Azonnal **leállítja** a legbelső ciklust vagy `switch` utasítást, amiben éppen van.
+    *   **Hatása**: A program futása a ciklus vagy `switch` blokk utáni első utasítással folytatódik.
+    *   **Mikor használd?**: Például ha megtaláltad, amit kerestél egy listában, és felesleges tovább keresni.
+
+*   **`continue`**:
+    *   **Feladata**: **Átugorja** a ciklus aktuális iterációjának hátralévő részét, de nem lép ki a ciklusból.
+    *   **Hatása**: A program a ciklus elejéről folytatja a következő iterációval.
+    *   **Mikor használd?**: Ha egy adott feltétel esetén nem akarod végrehajtani az aktuális iterációban lévő összes utasítást, de a ciklust folytatni akarod.
+
+```javascript
+console.log("A 'break' bemutatása: Keressük az 5-ös számot!");
+
+for (let i = 1; i <= 10; i++) {
+    console.log(`Jelenlegi szám: ${i}`);
+
+    // Ha megtaláltuk a keresett számot...
+    if (i === 5) {
+        console.log("Megvan az 5-ös! A ciklus leáll.");
+        break; // ...azonnal kilépünk a for ciklusból.
+    }
+}
+
+console.log("A ciklus véget ért."); // Ez a sor a 'break' után következik.
+```
+
+```javascript
+console.log("A 'continue' bemutatása: Csak a páros számokat írjuk ki!");
+
+for (let i = 1; i <= 10; i++) {
+    // A '%' a maradékos osztás. Ha a maradék nem nulla, a szám páratlan.
+    if (i % 2 !== 0) {
+        // Ha a szám páratlan, átugorjuk az iteráció hátralévő részét...
+        continue; // ...és a ciklus a következő számmal (i++) folytatódik.
+    }
+
+    // Ez a sor csak akkor fut le, ha a fenti 'if' feltétel hamis volt (tehát a szám páros).
+    console.log(`Páros szám: ${i}`);
+}
+
+console.log("A ciklus véget ért.");
+```
+
+## Kidolgozott példa: Számkitaláló Játék
+
+>[!TASK]
+>Írj programot, amely "gondol" egy számra, a felhasználónak pedig korlátozott számú lehetősége van kitalálni azt. A program minden tipp után segíti a játékost azzal, hogy megmondja, a gondolt szám kisebb vagy nagyobb-e.
+
+```javascript
+/*
+  =================================
+  ==   SZÁMKITALÁLÓ JÁTÉK - v2.0   ==
+  =================================
+  Egy egyszerűsített példa, amely bemutatja a feltételek és ciklusok
+  használatát egy könnyen érthető játékban.
+*/
+
+// --- 1. Játék előkészítése: Konstansok és változók ---
+// Beállítjuk a játék kereteit: a kitalálandó számot és a próbálkozások számát.
+const titkosSzam = 7;
+const maxProbalkozas = 4;
+
+alert(`Gondoltam egy számra 1 és 10 között. Van ${maxProbalkozas} próbálkozásod kitalálni!`);
+
+// Létrehozunk egy változót, ami nyomon követi, hogy a játékos nyert-e.
+// Kezdetben 'false', mert a játék elején még nem nyert.
+let eltalalta = false;
+
+// --- 2. A játék logikája: A 'for' ciklus ---
+// A 'for' ciklus pontosan annyiszor fog lefutni, amennyi a 'maxProbalkozas' értéke.
+// A ciklusváltozót (i) használjuk a próbálkozások számlálására.
+for (let i = 1; i <= maxProbalkozas; i++) {
+
+    // Bekérjük a játékos tippjét. A 'prompt' mindig szöveget (string) ad vissza!
+    let tipp = prompt(`Ez a(z) ${i}. próbálkozásod. Mi a tipped?`);
+
+    // Átalakítás: A bekért szöveget számmá (number) kell alakítanunk,
+    // hogy matematikai összehasonlítást végezhessünk vele.
+    let tippSzamkent = Number(tipp);
+
+    // --- 3. Döntés: Az 'if...else if...else' elágazás ---
+    // Ellenőrizzük a játékos tippjét a szigorú egyenlőség ('===') operátorral.
+
+    if (tippSzamkent === titkosSzam) {
+        alert(`🎉 Gratulálok, eltaláltad! A helyes szám a(z) ${titkosSzam} volt.`);
+        eltalalta = true; // A játékos nyert, átállítjuk a változót 'true'-ra.
+        break; // Sikerült a tipp, nincs értelme tovább futtatni a ciklust, ezért kilépünk belőle.
+    } else if (tippSzamkent < titkosSzam) {
+        alert('Többre gondoltam! 🤔');
+    } else {
+        alert('Kevesebbre gondoltam! 👇');
+    }
+}
+
+// --- 4. Játék vége: Eredmény kiértékelése ---
+// A ciklus lefutása után ellenőrizzük az 'eltalalta' változó értékét.
+// Ez alapján tudjuk, hogy a játékos azért fejezte-e be a játékot, mert nyert,
+// vagy azért, mert elfogytak a próbálkozásai.
+
+if (eltalalta === false) { // Vagy rövidebben: if (!eltalalta)
+    alert(`Sajnos nem sikerült kitalálni ${maxProbalkozas} próbálkozásból. A helyes szám a ${titkosSzam} lett volna.`);
+}
+```

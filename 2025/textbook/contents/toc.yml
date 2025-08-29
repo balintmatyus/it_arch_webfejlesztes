@@ -48,6 +48,8 @@
   items:
   - name: 💡 JS változók, típusok, operátorok, elágazások, ciklusok
     href: week07/07-js-introduction.md
+  - name: 🛠 Számkitalálós feladat
+    href: week07/07-js-szamkitalalo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 8. hét
