@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Bevezet&#233;s a JavaScriptbe | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Bevezet&#233;s a JavaScriptbe | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week07/07-js-introduction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="bevezetés-a-javascriptbe">Bevezetés a JavaScriptbe</h1>
+
+<h2 id="mi-a-javascript-és-mire-használható">Mi a JavaScript és mire használható?</h2>
+<p>A JavaScript egy programozási nyelv, amelynek alapvető célja a weboldalak funkcionalitásának biztosítása és a felhasználói élmény gazdagítása. Míg a HTML a tartalom szerkezetét, a CSS pedig a vizuális megjelenését határozza meg, a JavaScript adja hozzá az interaktivitást és a dinamizmust. 1997-ben vált szabvánnyá, hivatalos neve <strong>EcmaScript</strong>. A JavaScript ennek a szabványnak az egyik implementációja.</p>
+<p>Tim O'Reilly szavaival élve:</p>
+<blockquote>
+<p>„Learning javascript used to mean you weren't a &quot;serious software developer&quot;. Today, not learning javascript means the same thing.”</p>
+</blockquote>
+<p>Vizsgáljuk meg a legfontosabb területeit.</p>
+<h3 id="a-böngészőben-dinamikus-és-reszponzív-weboldalak">A böngészőben: Dinamikus és reszponzív weboldalak</h3>
+<p>A JavaScript teszi lehetővé, hogy egy weboldal ne csak egy statikus dokumentum, hanem egy intelligens, a felhasználói műveletekre azonnal reagáló alkalmazás legyen.</p>
+<ul>
+<li><strong>Valós idejű interakciók:</strong> Kezeli a gombokra, menükre és más elemekre adott felhasználói kattintásokat. Lehetővé teszi az elegáns animációkat, felugró ablakokat és képnézegetőket anélkül, hogy az oldal minden alkalommal újratöltődne.</li>
+<li><strong>Azonnali űrlap-ellenőrzés:</strong> Még az adatok elküldése előtt képes jelezni a felhasználónak, ha egy mezőt hibásan töltött ki (pl. érvénytelen e-mail formátum), ezzel időt spórolva és csökkentve a hibalehetőségeket.</li>
+<li><strong>Dinamikus tartalomkezelés:</strong> Képes a weboldal bármely részét frissíteni anélkül, hogy a teljes oldal újratöltődne. Ez a technológia áll a modern hírfolyamok, a végtelen görgetés, az interaktív térképek és a keresési javaslatok mögött.</li>
+</ul>
+<h3 id="a-böngészőn-túl-univerzális-fejlesztői-platform">A böngészőn túl: Univerzális fejlesztői platform</h3>
+<p>A <strong>Node.js</strong> futtatókörnyezet révén a JavaScript kilépett a böngészők keretei közül, és egy rendkívül sokoldalú, platformfüggetlen eszközzé vált.</p>
+<ul>
+<li><strong>Szerveroldali fejlesztés (Back-end):</strong> Komplett, nagy teljesítményű webszerverek és API-k (alkalmazásprogramozási felületek) építhetők rá, amelyek az alkalmazások háttérlogikáját és adatbázis-műveleteit kezelik.</li>
+<li><strong>Mobilalkalmazások:</strong> Olyan keretrendszerekkel, mint a <strong>React Native</strong>, a JavaScript-tudás felhasználható natív iOS és Android alkalmazások fejlesztésére, gyakran egyetlen közös kódbázisból.</li>
+<li><strong>Asztali szoftverek:</strong> Számos ismert asztali alkalmazás (pl. <strong>Visual Studio Code, Slack, Figma</strong>) alapját az <strong>Electron</strong> keretrendszer adja, amely JavaScript, HTML és CSS technológiákra épül.</li>
+</ul>
+<h2 id="a-javascript-elhelyezése-és-a-helyes-betöltési-stratégia">A JavaScript elhelyezése és a helyes betöltési stratégia</h2>
+<p>Ahhoz, hogy a JavaScript kódunk életre kelthesse a weboldalt, a böngészőnek be kell töltenie és végre kell hajtania. A böngésző a HTML dokumentumot fentről lefelé haladva dolgozza fel, mint egy könyvet. <strong>Ha egy <code>&lt;script&gt;</code> taggel találkozik, megáll, letölti és futtatja a kódot</strong>, és csak utána olvassa tovább a HTML-t.</p>
+<div class="alert alert-question">
+<h5>QUESTION</h5>
+<p>Gondolj bele: mi történne, ha a színdarab rendezője (a JavaScript) már a díszlet felépítése (a HTML betöltődése) előtt elkezdené mozgatni a nem létező színészeket és tárgyakat a színpadon?</p>
+</div>
+<h3 id="a-klasszikus-módszer-szkript-a-body-végén">A klasszikus módszer: Szkript a <code>&lt;body&gt;</code> végén</h3>
+<p>Ez a legegyszerűbb hagyományos megoldás. A <code>&lt;script&gt;</code> taget közvetlenül a záró <code>&lt;/body&gt;</code> elem elé helyezzük. Mire a böngésző eléri a szkriptet, már a teljes HTML dokumentumot feldolgozta. Így a JavaScript garantáltan hozzáfér minden elemhez, például egy gombhoz vagy egy képhez.</p>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Oldal címe&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1 id=&quot;main-title&quot;&gt;Helló Világ!&lt;/h1&gt;
+    &lt;button id=&quot;color-changer&quot;&gt;Válts színt!&lt;/button&gt;
+
+    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt; 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="a-modern-és-javasolt-módszer-defer">A modern és javasolt módszer: <code>defer</code></h3>
+<p>Ez a mai webfejlesztés de facto szabványa. A szkripteket a <code>&lt;head&gt;</code> szekcióban helyezzük el, ami logikailag is a helyes helyszín a &quot;hozzávalók&quot; listázására.</p>
+<p><strong>A <code>defer</code> attribútum</strong> azt mondja a böngészőnek: <em>&quot;Kezdd el letölteni ezt a szkriptet a háttérben, de ne futtasd, amíg a teljes HTML oldalt fel nem dolgoztad.&quot;</em> A <code>defer</code>-rel ellátott szkriptek ráadásul megőrzik a sorrendjüket, ami fontos, ha az egyik a másikra épül (pl. előbb egy könyvtár, aztán a mi kódunk).</p>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Modern oldal&lt;/title&gt;
+    &lt;script src=&quot;photo-gallery-library.js&quot; defer&gt;&lt;/script&gt;
+    &lt;script src=&quot;main-logic.js&quot; defer&gt;&lt;/script&gt; 
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="speciális-esetekre-az-async-attribútum">Speciális esetekre: Az <code>async</code> attribútum</h3>
+<p>Az <code>async</code> (aszinkron) betöltés akkor hasznos, ha a szkript teljesen független a weboldal tartalmától, és a futási sorrendje sem számít.</p>
+<ul>
+<li><strong>Hogyan működik?</strong> Az <code>async</code> azt jelenti: <em>&quot;Töltsd le ezt a szkriptet a háttérben, és amint végeztél, azonnal futtasd, ne törődj semmivel!&quot;</em> Ez megakaszthatja a HTML feldolgozását egy pillanatra, és a szkriptek semmilyen sorrendet nem tartanak.</li>
+<li><strong>Mikor használd?</strong> Tipikusan külső, harmadik féltől származó szkriptekhez ideális, amelyek nem módosítják közvetlenül az oldalad elemeit.
+<ul>
+<li><strong>Példák:</strong> Google Analytics mérőkódok, hirdetési szkriptek, külső chat-widgetek.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-html">&lt;head&gt;
+    &lt;title&gt;Oldal analitikával&lt;/title&gt;
+    &lt;script src=&quot;app.js&quot; defer&gt;&lt;/script&gt; 
+    &lt;script src=&quot;https://www.google-analytics.com/analytics.js&quot; async&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<h2 id="megjegyzések-a-kódban">Megjegyzések a kódban</h2>
+<p>A kódban elhelyezhetünk a program futását nem befolyásoló megjegyzéseket. Ezek célja az <strong>olvashatóság javítása</strong>, hogy segítséget nyújtson más (és a saját magunknak a jövőben) fejlesztőknek megérteni a kód működését, jelezheti egy kódrészlet eredetét <strong>forrás megjelölésekor</strong>, valamint <strong>teszteléskor</strong> ideiglenesen kikapcsolhatunk kódrészleteket tesztelés céljából.</p>
+<p>Kétféle megjegyzés létezik:</p>
+<ul>
+<li><strong>Egysoros megjegyzés</strong>: <strong><code>//</code></strong> (két perjel után).</li>
+<li><strong>Többsoros megjegyzés</strong>: <strong><code>/* ... */</code></strong> (perjel és csillag között).</li>
+</ul>
+<pre><code class="lang-javascript">/*
+  Ez egy többsoros megjegyzés.
+  A böngésző az ilyen blokkokat teljesen figyelmen kívül hagyja.
+  Célja, hogy hosszabb magyarázatot fűzzünk a kódhoz.
+*/
+
+// Ez egy egysoros megjegyzés. Csak az adott sor végéig tart.
+// A következő sor egy felugró ablakot fog mutatni a böngészőben.
+alert('Helló Világ!');
+
+// A megjegyzésekkel ideiglenesen ki is kapcsolhatunk kódot.
+// Az alábbi sor nem fog lefutni, mert megjegyzés lett belőle:
+// alert('Ez az üzenet nem fog megjelenni.');
+</code></pre>
+<h2 id="változók-és-adattípusok">Változók és adattípusok</h2>
+<h3 id="változók">Változók</h3>
+<p>A programozás során rengeteg információval dolgozunk: számokkal, szövegekkel, logikai értékekkel és bonyolultabb adatszerkezetekkel. Ahhoz, hogy ezeket az értékeket tárolni tudjuk, hivatkozni tudjunk rájuk, és szükség esetén módosítani is tudjuk, változókra van szükségünk. Egy <strong>változó</strong> lényegében egy elnevezett &quot;konténer&quot; vagy &quot;doboz&quot;, amiben értékeket tárolhatunk.</p>
+<h4 id="változók-deklarálása-let-const-var">Változók deklarálása: <code>let</code>, <code>const</code>, <code>var</code></h4>
+<p>A JavaScriptben többféle módon is deklarálhatunk, vagyis létrehozhatunk változókat. A modern JavaScriptben két fő kulcsszóval dolgozunk: a <code>let</code> és a <code>const</code>. Régebben a <code>var</code> kulcsszót használtuk erre a célra, de erről mindjárt kiderül, miért érdemes elkerülni.</p>
+<ul>
+<li><p><strong><code>let</code></strong>: Ezt a kulcsszót akkor használjuk, ha egy olyan változót akarunk létrehozni, aminek az értékét <strong>később megváltoztathatjuk</strong> a program futása során.</p>
+<pre><code class="lang-javascript">let nev = &quot;Anna&quot;; // Deklarálás és inicializálás
+nev = &quot;Béla&quot;;   // Érték újraadása lehetséges
+</code></pre>
+<p>Ha egy <code>let</code>-tel deklarált változónak nem adunk kezdeti értéket, akkor az <code>undefined</code> típusú lesz.</p>
+</li>
+<li><p><strong><code>const</code></strong>: Ez a &quot;konstans&quot; rövidítése, és olyan változókhoz használjuk, amelyeknek az értékét deklarálás után <strong>nem akarjuk módosítani</strong>. Gondolj rá úgy, mint egy egyszer beállítható dobozra.</p>
+<pre><code class="lang-javascript">const PI = 3.14159; // Deklarálás és inicializálás kötelező
+// PI = 3.14; // Hiba lenne: nem módosítható a const érték
+</code></pre>
+<p>Fontos, hogy <code>const</code> esetén a deklarációkor <strong>azonnal értéket kell adnunk</strong> a változónak, különben hibát kapunk.</p>
+</li>
+<li><p><strong><code>var</code></strong>: Ez a régi módszer változók deklarálására. <strong>Kerüld el,</strong> mivel számos hibalehetőséget rejt használata!</p>
+</li>
+</ul>
+<h4 id="névadási-szabályok">Névadási szabályok</h4>
+<p>A JavaScript változónevekben angol betűket, számokat és aláhúzásjelet (<code>_</code>) használhatsz, de a névnek mindenképpen <strong>betűvel vagy aláhúzással kell kezdődnie</strong>, számmal soha.</p>
+<p>Fontos megjegyezni, hogy a JavaScript <strong>megkülönbözteti a kis- és nagybetűket</strong> (case sensitive), így a <code>felhasznalo</code>, <code>Felhasznalo</code> és <code>FELHASZNALO</code> három különböző változót jelöl. A nevek nem tartalmazhatnak szóközt, és kerülni kell a nyelv számára <strong>foglalt kulcsszavak</strong> (pl. <code>let</code>, <code>for</code>) használatát.</p>
+<p>A tiszta és érthető kód írásához <strong>ajánlott beszédes neveket</strong> adni, amelyek utalnak a változó szerepére. Több szóból álló nevek esetén a <strong>&quot;lower camel case&quot;</strong> írásmód a bevett gyakorlat, ahol az első szó kisbetűvel kezdődik, a továbbiak pedig nagybetűvel (pl. <code>felhasznaloNev</code>, <code>termekAr</code>).</p>
+<h4 id="hatókör-scope">Hatókör (Scope)</h4>
+<p>A hatókör azt határozza meg, hogy egy változó <strong>honnan érhető el</strong> a programban. Ez egy nagyon fontos koncepció, ami segít elkerülni a névütközéseket és rendszerezettebben tartani a kódot.</p>
+<ul>
+<li><p><strong>Blokkszintű hatókör (<code>let</code>, <code>const</code>)</strong>: A <code>let</code> és <code>const</code> kulcsszavakkal deklarált változók csak abban a kódblokkban (<code>{}</code>) és az azon belüli beágyazott blokkokban érhetők el, ahol definiálták őket.</p>
+<pre><code class="lang-javascript">function peldaFuggveny() {
+    let lokalisValtozo = 10;
+    if (true) {
+        const blokkValtozo = 20;
+        console.log(lokalisValtozo); // Elérhető
+        console.log(blokkValtozo);  // Elérhető
+    }
+    // console.log(blokkValtozo); // Hiba: blokkon kívül nem elérhető
+}
+// console.log(lokalisValtozo); // Hiba: függvényen kívül nem elérhető
+</code></pre>
+</li>
+<li><p><strong>Globális hatókör</strong>: Azok a változók, amelyeket a program legfelső szintjén, minden függvényen és blokkon kívül deklarálunk. Ezek a változók a program bármely pontjáról elérhetők.</p>
+<pre><code class="lang-javascript">const globalisValtozo = &quot;Hello világ!&quot;;
+
+function mutasdGlobalist() {
+    console.log(globalisValtozo); // Elérhető
+}
+mutasdGlobalist();
+console.log(globalisValtozo); // Elérhető
+</code></pre>
+</li>
+</ul>
+<h3 id="adattípusok-milyen-értékeket-tárolhatunk">Adattípusok: Milyen értékeket tárolhatunk?</h3>
+<p>A JavaScript egy <strong>dinamikusan típusos nyelv</strong>. Ez azt jelenti, hogy nem kell előre megmondanunk egy változónak, milyen típusú adatot fog tárolni (mint például C#-ban vagy Javában). A változó típusa az <strong>értékadáskor</strong> dől el, és akár a program futása során is megváltozhat.</p>
+<p>Nézzük meg a leggyakoribb adattípusokat:</p>
+<ul>
+<li><p><strong><code>string</code> (szöveg)</strong>: Karakterláncok, azaz szöveges adatok tárolására szolgál. A szöveget mindig <strong>idézőjelek közé</strong> kell tenni. Használhatunk egyszeres ( <code>''</code> ), kétszeres ( <code>&quot;&quot;</code> ) idézőjeleket, vagy a modernebb <strong>backtick</strong> ( <code>`</code> ) karaktert, ami a <em>template literal</em> nevet is viseli.</p>
+<pre><code class="lang-javascript">let nev = &quot;Kovács Béla&quot;;
+let uzenet = 'Szia, hogy vagy?';
+let termek = `Laptop`; // Template literal
+</code></pre>
+<p>A template literal különlegessége, hogy könnyen beágyazhatunk bele változókat és JavaScript kifejezéseket a <code>${}</code> szintaxissal, és több soros szöveget is egyszerűen kezel.</p>
+<pre><code class="lang-javascript">const felhasznalo = &quot;Dani&quot;;
+console.log(`Üdv, ${felhasznalo}!`); // &quot;Üdv, Dani!&quot;
+</code></pre>
+</li>
+<li><p><strong><code>number</code> (szám)</strong>: Egész számok (pl. 42) és lebegőpontos számok (pl. 3.14) tárolására szolgál. A JavaScriptben nincs külön típus az egész és tört számokra, mindkettő <code>number</code> típusú. Számok esetén <strong>nem használunk idézőjeleket</strong>.</p>
+<pre><code class="lang-javascript">let kor = 30;
+let ar = 1299.99;
+</code></pre>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Ha egy számot idézőjelek közé teszünk, az <strong>string</strong> típusúvá válik! (<code>&quot;500&quot;</code> az egy szöveg, nem szám). Ha számolni akarunk vele, előbb konvertálni kell.</p>
+</div>
+<ul>
+<li><p><strong><code>boolean</code> (logikai)</strong>: Két lehetséges értékkel rendelkezik: <code>true</code> (igaz) vagy <code>false</code> (hamis). Leginkább feltételek kiértékelésére használjuk.</p>
+<pre><code class="lang-javascript">let vanInternet = true;
+let bejelentkezve = false;
+</code></pre>
+</li>
+<li><p><strong><code>undefined</code> (nem definiált)</strong>: Ez az adattípus azt jelzi, hogy egy változó létezik, de még <strong>nem kapott értéket</strong>.</p>
+<pre><code class="lang-javascript">let elsoValtozo;
+console.log(elsoValtozo); // undefined
+</code></pre>
+</li>
+</ul>
+<p>Ezen kívül léteznek még más primitív típusok is, mint például a <code>bigint</code>, <code>symbol</code> és <code>null</code>, de ezekkel most nem foglalkozunk részletesebben. Az <code>object</code> (objektum) és <code>array</code> (tömb) típusokkal később foglalkozunk.</p>
+<h3 id="a-typeof-operátor">A <code>typeof</code> operátor</h3>
+<p>Ha kíváncsi vagy egy változó aktuális adattípusára, a <strong><code>typeof</code> operátort</strong> használhatod. Ez különösen hasznos hibakereséskor vagy amikor típusellenőrzést szeretnél végezni.</p>
+<pre><code class="lang-javascript">let szam = 100;
+console.log(typeof szam); // &quot;number&quot;
+
+let szoveg = &quot;Száz&quot;;
+console.log(typeof szoveg); // &quot;string&quot;
+
+let igazhamis = true;
+console.log(typeof igazhamis); // &quot;boolean&quot;
+
+let nemDefinialt;
+console.log(typeof nemDefinialt); // &quot;undefined&quot;
+</code></pre>
+<p>Ezzel az operátorral könnyedén ellenőrizheted például, hogy egy felhasználótól kapott bemenet valóban szám-e, mielőtt matematikai műveleteket végeznél rajta.</p>
+<h2 id="operátorok">Operátorok</h2>
+<p>A JavaScriptben az <strong>operátorok</strong> olyan speciális szimbólumok, amelyek valamilyen műveletet végeznek el egy vagy több értéken (ezeket hívjuk operandusoknak). Gondolj rájuk úgy, mint a programozás &quot;igéire&quot; – ők teszik lehetővé, hogy a programunk csináljon is valamit az adatokkal.</p>
+<h3 id="értékadó-operátorok">Értékadó operátorok</h3>
+<p>Az értékadó operátorok a leggyakrabban használt operátorok közé tartoznak, hiszen ők felelnek azért, hogy értékeket adjunk a változóinknak.</p>
+<ul>
+<li><p><strong><code>=</code> (egyenlőségjel)</strong>: Ez a legegyszerűbb és leggyakoribb értékadó operátor. A jobb oldali kifejezés értékét adja a bal oldali változónak. Fontos: <strong>ne keverd össze az összehasonlító <code>==</code> vagy <code>===</code> operátorokkal!</strong>.</p>
+<pre><code class="lang-javascript">let szam = 10; // A 'szam' változó értéke 10 lesz
+let masikSzam = szam; // A 'masikSzam' értéke is 10 lesz
+</code></pre>
+</li>
+</ul>
+<h3 id="aritmetikai-operátorok">Aritmetikai operátorok</h3>
+<p>Az aritmetikai operátorokkal matematikai számításokat végezhetünk.</p>
+<ul>
+<li>A <strong>négy alapműveletről</strong> nem írunk részletesen.
+<pre><code class="lang-javascript">let osszeg = 5 + 3; // 8
+let kulonbseg = 10 - 4; // 6
+let szorzat = 2 * 7; // 14
+let hanyados = 15 / 3; // 5
+</code></pre>
+</li>
+<li><strong><code>%</code> (maradékos osztás, modulo)</strong>: Visszaadja az osztás maradékát. Ez nagyon hasznos lehet például annak ellenőrzésére, hogy egy szám páros-e (ha 2-vel való osztás maradéka 0).
+<pre><code class="lang-javascript">let maradek = 10 % 3; // 1 (mert 10 / 3 = 3, maradék 1)
+let parosE = 8 % 2; // 0 (páros)
+</code></pre>
+</li>
+<li><strong><code>**</code> (hatványozás)</strong>: Egy számot a megadott hatványra emel.
+<pre><code class="lang-javascript">let hatvany = 2 ** 3; // 8 (mert 2 * 2 * 2)
+let pitagorasz = (3**2 + 4**2)**0.5; // 5 (gyökvonáshoz is használható, a 0.5-ik hatvány a négyzetgyök)
+</code></pre>
+</li>
+</ul>
+<p>Sokszor fogsz találkozni speciális <strong>rövidített értékadó operátorokkal</strong> is, amelyekkel egyszerre végezhetünk aritmetikai műveletet és értékadást. Ez szép és hatékony kódot eredményez.</p>
+<ul>
+<li><strong><code>+=</code> (összeadás és értékadás)</strong>: Hozzáadja a jobb oldali értéket a bal oldali változóhoz, majd az eredményt visszaírja a változóba.
+<pre><code class="lang-javascript">let x = 5;
+x += 3; // Ugyanaz, mint x = x + 3; x értéke most 8
+</code></pre>
+</li>
+<li>Ugyanez ismétlődik <strong>a többi aritmetikai operátor</strong> esetén.
+<pre><code class="lang-javascript">let y = 10;
+y -= 4; // Ugyanaz, mint y = y - 4; y értéke most 6
+
+let z = 2;
+z *= 6; // Ugyanaz, mint z = z * 6; z értéke most 12
+
+let a = 20;
+a /= 4; // Ugyanaz, mint a = a / 4; a értéke most 5
+</code></pre>
+</li>
+</ul>
+<h3 id="inkrementáló-és-dekrementáló-operátorok">Inkrementáló és dekrementáló operátorok</h3>
+<p>Gyakran előfordul, hogy egy változó értékét pontosan eggyel szeretnénk növelni vagy csökkenteni. Erre valók az inkrementáló és dekrementáló operátorok.</p>
+<ul>
+<li><strong><code>++</code> (inkrementálás)</strong>: Eggyel növeli a változó értékét.</li>
+<li><strong><code>--</code> (dekrementálás)</strong>: Eggyel csökkenti a változó értékét.</li>
+</ul>
+<pre><code class="lang-javascript">let szamlalo = 0;
+szamlalo++; // szamlalo értéke most 1
+
+let visszaszamlalo = 10;
+visszaszamlalo--; // visszaszamlalo értéke most 9
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Az <code>++</code> és <code>--</code> operátoroknak van egy &quot;pre&quot; és &quot;post&quot; formája, attól függően, hogy az operátor a változó előtt vagy után áll. Ha a változó <em>után</em> van (pl. <code>szamlalo++</code>), akkor az értékadás vagy kifejezés során először a változó <strong>eredeti értékét</strong> használja fel, majd <em>utána</em> növeli az értékét. Ha a változó <em>előtt</em> van (pl. <code>++szamlalo</code>), akkor először <strong>növeli</strong> az értékét, majd az <em>új</em> értéket használja fel. Kezdetben ez furcsának tűnhet, de a későbbiekben ciklusoknál vagy bonyolultabb kifejezéseknél látni fogod a jelentőségét!</p>
+</div>
+<h3 id="logikai-és-összehasonlító-operátorok">Logikai és összehasonlító operátorok</h3>
+<p>Ezek az operátorok segítenek nekünk feltételeket vizsgálni, és eldönteni, hogy egy kifejezés <strong><code>true</code> (igaz)</strong> vagy <strong><code>false</code> (hamis)</strong>-e, azaz logikai (boolean) értéket adnak vissza. Ez kulcsfontosságú a programvezérlésben, hiszen ezen alapulnak az elágazások és ciklusok.</p>
+<h4 id="összehasonlító-operátorok">Összehasonlító operátorok:</h4>
+<ul>
+<li><strong><code>==</code> (egyenlő értékre)</strong>: Azt ellenőrzi, hogy két érték megegyezik-e. <strong>Nem veszi figyelembe a típust!</strong>. (Pl. <code>5 == &quot;5&quot;</code> -&gt; <code>true</code>).</li>
+<li><strong><code>! =</code> (nem egyenlő értékre, szóköz nélkül)</strong>: Azt ellenőrzi, hogy két érték nem egyenlő-e. Szintén <strong>nem veszi figyelembe a típust!</strong>.</li>
+<li><strong><code>===</code> (szigorúan egyenlő)</strong>: Azt ellenőrzi, hogy két érték <strong>és a típusuk is</strong> megegyezik-e. Ezt javasolt használni, mert kevesebb hibát okoz. (Pl. <code>5 === &quot;5&quot;</code> -&gt; <code>false</code>, mert a típus eltér).</li>
+<li><strong><code>! ==</code> (szigorúan nem egyenlő, szóköz nélkül)</strong>: Azt ellenőrzi, hogy két érték vagy a típusuk <strong>nem</strong> egyezik meg. Ezt is javasolt használni.</li>
+<li><strong><code>&lt;</code> (kisebb mint)</strong>: Azt ellenőrzi, hogy a bal oldali érték kisebb-e, mint a jobb oldali.</li>
+<li><strong><code>&gt;</code> (nagyobb mint)</strong>: Azt ellenőrzi, hogy a bal oldali érték nagyobb-e, mint a jobb oldali.</li>
+<li><strong><code>&lt; =</code> (kisebb vagy egyenlő, szóköz nélkül)</strong>: Azt ellenőrzi, hogy a bal oldali érték kisebb vagy egyenlő-e a jobb oldalival.</li>
+<li><strong><code>&gt; =</code> (nagyobb vagy egyenlő, szóköz nélkül)</strong>: Azt ellenőrzi, hogy a bal oldali érték nagyobb vagy egyenlő-e a jobb oldalival.</li>
+</ul>
+<h4 id="logikai-operátorok">Logikai operátorok:</h4>
+<ul>
+<li><p><strong><code>&amp;&amp;</code> (ÉS)</strong>: Akkor ad vissza <code>true</code>-t, ha <strong>mindkét</strong> operandus <code>true</code>.</p>
+</li>
+<li><p><strong><code>||</code> (VAGY)</strong>: Akkor ad vissza <code>true</code>-t, ha <strong>legalább az egyik</strong> operandus <code>true</code>.</p>
+</li>
+<li><p><strong><code>!</code> (NEM)</strong>: Megfordítja egy logikai érték igazságát. <code>true</code>-ból <code>false</code>-t, <code>false</code>-ból <code>true</code>-t csinál.</p>
+<pre><code class="lang-javascript">let kor = 20;
+let jogositvany = true;
+let nagykoruEsJogsi = (kor &gt;= 18 &amp;&amp; jogositvany === true); // true
+
+let eso = true;
+let szel = false;
+let rosszIdo = (eso || szel); // true
+
+let vanPenz = false;
+let nincsPenz = !vanPenz; // nincsPenz értéke true lesz
+</code></pre>
+</li>
+</ul>
+<h3 id="operátorok-precedenciája">Operátorok precedenciája</h3>
+<p>Mint a matematikában, a JavaScript operátoroknak is van egy <strong>precedencia sorrendjük</strong>, ami meghatározza, milyen sorrendben értékelődnek ki egy komplex kifejezésben. Például a szorzás és az osztás mindig előbb hajtódik végre, mint az összeadás és a kivonás.</p>
+<pre><code class="lang-javascript">let eredmeny = 5 + 10 * 3; // 10 * 3 = 30, majd 5 + 30 = 35.
+                            // Nem (5 + 10) * 3 = 45!
+</code></pre>
+<p>Ha felül akarod írni a precedencia sorrendet, akkor <strong>zárójeleket <code>()</code> kell használnod</strong>. A zárójelben lévő kifejezések mindig először értékelődnek ki.</p>
+<pre><code class="lang-javascript">let eredmeny2 = (5 + 10) * 3; // (5 + 10) = 15, majd 15 * 3 = 45
+</code></pre>
+<h3 id="szöveg-összefűzés">Szöveg összefűzés</h3>
+<p>A <code>+</code> operátor nemcsak számokat tud összeadni, hanem <strong>szövegeket is összefűz</strong> (más néven <em>konkatenál</em>). Ha egy számot és egy szöveget akarsz összefűzni, a JavaScript automatikusan szöveggé alakítja a számot, és utána fűzi össze a két stringet.</p>
+<pre><code class="lang-javascript">let nev = &quot;Anna&quot;;
+let koszones = &quot;Szia &quot; + nev + &quot;!&quot;; // &quot;Szia Anna!&quot;
+
+let elsoSzam = 10;
+let masodikSzam = &quot;5&quot;;
+let osszefuzott = elsoSzam + masodikSzam; // &quot;105&quot; (szöveg lesz!)
+</code></pre>
+<p>Ha a <code>+</code> operátort számokkal és szöveggel is használod egy sorban, és az eredményt egy figyelmeztető ablakban (<code>alert()</code>) akarod kiírni, akkor <strong>csak a <code>+</code> operátor</strong> fog működni az összefűzésre.</p>
+<p>A modern JavaScriptben az <strong><code>összefűzés</code> (template literal)</strong> sokkal elegánsabb és olvashatóbb megoldásokat kínál a backtick (<code>`</code>) karakterekkel. Itt a <code>${változó}</code> szintaxissal könnyedén beágyazhatsz változókat és kifejezéseket a szövegbe.</p>
+<pre><code class="lang-javascript">let nev = &quot;Péter&quot;;
+let kor = 25;
+let uzenet = `Szia, ${nev}! ${kor} éves vagy.`; // &quot;Szia, Péter! 25 éves vagy.&quot;
+</code></pre>
+<p>Ez sokkal szebb, mint a sok <code>+</code> jel! Ha teheted, inkább a template literaöket használd szöveg összefűzésére.</p>
+<h2 id="programvezérlési-szerkezetek">Programvezérlési szerkezetek</h2>
+<p>Két fő típust különböztetünk meg: az <strong>elágazásokat</strong> (feltételes végrehajtás) és a <strong>ciklusokat</strong> (ismétlődő végrehajtás). Nézzük is meg őket részletesebben!</p>
+<h3 id="elágazások-feltételes-végrehajtás">Elágazások (Feltételes végrehajtás)</h3>
+<p>Az elágazásokkal tudunk a kódban döntéseket hozni, azaz különböző kódrészleteket végrehajtani attól függően, hogy egy adott feltétel igaz (<code>true</code>) vagy hamis (<code>false</code>).</p>
+<h4 id="ifelse-utasítások"><code>if...else</code> utasítások</h4>
+<p>Ez az egyik leggyakoribb elágazási forma, amit használni fogsz. Lényegében azt mondja: &quot;HA ez a feltétel igaz, akkor tedd ezt, KÜLÖNBEN tedd azt&quot;.</p>
+<p>Az <strong>alapvető szintaxis</strong> így néz ki:</p>
+<pre><code class="lang-javascript">if (logikai feltétel) {
+    // Ez a kód fut le, ha a feltétel igaz
+} else {
+    // Ez a kód fut le, ha a feltétel hamis
+}
+</code></pre>
+<p>A feltételt a zárójelek között adjuk meg, ami egy logikai (boolean) értéket ad vissza (igaz vagy hamis).</p>
+<blockquote>
+<p>Nem kötelező az <code>else</code> ágat megadni. Ha nincs <code>else</code>, és a feltétel hamis, akkor az <code>if</code> blokkot egyszerűen átugorja a program.</p>
+</blockquote>
+<p>Ha nem csak két, hanem <strong>több lehetséges eset</strong> van, akkor az <code>else if</code> ágakkal tudsz további feltételeket vizsgálni.</p>
+<pre><code class="lang-javascript">if (feltétel1) {
+    // kód, ha feltétel1 igaz
+} else if (feltétel2) {
+    // kód, ha feltétel1 hamis ÉS feltétel2 igaz
+} else {
+    // kód, ha egyik feltétel sem igaz
+}
+</code></pre>
+<div class="alert alert-task">
+<h5>TASK</h5>
+<p>Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor &quot;Jó reggelt!&quot;, ha 18-nál kisebb, akkor &quot;Jó napot!&quot;, egyébként pedig &quot;Jó estét!&quot; üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a <code>console.log(aktualisOra)</code> utasítást a megfelelő köszöntés megjelenítésére.</p>
+</div>
+<div class="alert alert-task">
+<h5>TASK</h5>
+<p>Hogyan módosítanád a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben?</p>
+</div>
+<h4 id="switch-utasítás"><code>switch</code> utasítás</h4>
+<p>Ha egyetlen kifejezés értékétől függően sok különböző kódrészletet szeretnél futtatni, a <code>switch</code> utasítás elegánsabb és olvashatóbb megoldás lehet, mint egy hosszú <code>if...else if...else</code> lánc.</p>
+<pre><code class="lang-javascript">switch (kifejezés) {
+    case érték1:
+    // kód, ha a kifejezés == érték1
+    break;
+    case érték2:
+    // kód, ha a kifejezés == érték2
+    break;
+    // ... további case-ek
+    default:
+    // kód, ha egyik case sem egyezik
+}
+</code></pre>
+<p>A <code>switch</code> megvizsgálja a <code>kifejezés</code> értékét, majd megkeresi azt a <code>case</code> ágat, amelynek értéke megegyezik vele. Ha talál egyezést, az adott <code>case</code> alatti kódot futtatja.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Nagyon fontos, hogy minden <code>case</code> végére tegyél egy <code>break;</code> utasítást. Ez jelzi a programnak, hogy az adott <code>case</code> végén ki kell lépnie a <code>switch</code> blokkból. Ha elhagyod, a program tovább futtatja a következő <code>case</code> alatti kódot is, egészen addig, amíg <code>break</code>-et nem talál.</p>
+</div>
+<p>A <code>default</code> ág opcionális, de érdemes használni. Akkor fut le, ha egyik <code>case</code> ág sem egyezik meg a <code>kifejezés</code> értékével, mint egy &quot;végső mentsvár&quot;.</p>
+<h4 id="ternáris-operátor">Ternáris operátor</h4>
+<p>Ez egy &quot;villámgyors&quot; <code>if...else</code> rövidítése, ha csak két lehetséges eredmény van, és egyetlen sorban szeretnéd kezelni.</p>
+<pre><code class="lang-javascript">feltétel ? kifejezés_ha_igaz : kifejezés_ha_hamis;
+</code></pre>
+<p>Ez a kód kiértékeli a <code>feltételt</code>. Ha az igaz, akkor a <code>kifejezés_ha_igaz</code> értékével tér vissza, különben a <code>kifejezés_ha_hamis</code> értékével.</p>
+<p><strong>Példa</strong>:</p>
+<pre><code class="lang-javascript">let ora = 14;
+let napszak = (ora &gt; 12) ? &quot;délután&quot; : &quot;délelőtt&quot;; // napszak értéke: &quot;délután&quot;
+</code></pre>
+<p>Ahogy látod, sokkal tömörebb, mint egy teljes <code>if...else</code> blokk.</p>
+<h3 id="ciklusok-ismétlődő-végrehajtás">Ciklusok (Ismétlődő végrehajtás)</h3>
+<p>A ciklusok arra valók, hogy ugyanazt a kódrészletet többször is végrehajtsuk, anélkül, hogy ismétlődően le kellene írnunk. Ez különösen hasznos, ha listákon, tömbökön akarunk végigmenni, vagy csak egy adott számú alkalommal kell valamit megtenni.</p>
+<h4 id="for-ciklus"><code>for</code> ciklus</h4>
+<p>Ez a leggyakoribb számlálós ciklus, amit használni fogsz. Kényelmes, mert minden szükséges információt egy helyen, a zárójelek között találunk.</p>
+<pre><code class="lang-javascript">for (inicializáló_kifejezés; logikai_feltétel; módosító_kifejezés) {
+    // Ez a kód fut le minden iterációban
+}
+</code></pre>
+<ul>
+<li><strong><code>inicializáló_kifejezés</code></strong>: Itt adunk kezdeti értéket a ciklusváltozónak (pl. <code>let i = 0;</code>). Ez csak egyszer fut le, a ciklus elején.</li>
+<li><strong><code>logikai_feltétel</code></strong>: Ez határozza meg, meddig fusson a ciklus (pl. <code>i &lt; 10;</code>). Minden iteráció előtt ellenőrzi. Ha hamis, a ciklus leáll.</li>
+<li><strong><code>módosító_kifejezés</code></strong>: Ez fut le minden iteráció után, általában a ciklusváltozót növeli vagy csökkenti (pl. <code>i++</code> vagy <code>i--</code>).</li>
+</ul>
+<p><strong>Példa</strong>:</p>
+<pre><code class="lang-javascript">for (let i = 0; i &lt; 5; i++) {
+    console.log(`A ciklusváltozó értéke: ${i}`);
+}
+// Eredmény: 0, 1, 2, 3, 4
+</code></pre>
+<p>Fontos, hogy <code>let</code>-tel deklaráld a ciklusváltozót, így az csak a cikluson belül lesz elérhető (blokkszintű hatókör).</p>
+<h3 id="while-ciklus"><code>while</code> ciklus</h3>
+<p>Ez egy feltételes ciklus, ami addig fut, amíg a megadott feltétel igaz. Ezt &quot;elöltesztelős&quot; ciklusnak is hívjuk, mert a feltételt még a kódblokk futtatása előtt ellenőrzi.</p>
+<pre><code class="lang-javascript">inicializáló_kifejezés;
+while (logikai_feltétel) {
+    // Ez a kód fut le, amíg a feltétel igaz
+    módosító_kifejezés;
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Nagyon fontos, hogy a <code>while</code> cikluson belül gondoskodj arról, hogy a <code>logikai_feltétel</code> egy idő után hamissá váljon, különben a programod végtelen ciklusba kerül, és lefagy.</p>
+</div>
+<h4 id="dowhile-ciklus"><code>do...while</code> ciklus</h4>
+<p>Ez is egy feltételes ciklus, de a fő különbség a <code>while</code> ciklushoz képest, hogy a <code>do...while</code> ciklusban lévő kódblokk <strong>legalább egyszer mindig lefut</strong>, mielőtt a feltételt ellenőrizné. Ezt &quot;hátultesztelős&quot; ciklusnak nevezzük.</p>
+<pre><code class="lang-javascript">let valasz;
+
+do {
+  valasz = prompt(&quot;Elfogadja a felhasználási feltételeket? (igen/nem)&quot;);
+} while (valasz !== &quot;igen&quot;);
+
+alert(&quot;Köszönjük a jóváhagyást!&quot;);
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A <code>prompt()</code> függvény segítségével bekérhetünk adatot a felhasználótól egy felugró ablak segítségével. A gyakorlatban ezt más módon oldjuk meg, de egyszerűsége miatt tanulási céllal alkalmazzuk. Az <code>alert</code> függvény felugró ablakban megjelenít valamilyen szöveget.</p>
+</div>
+<h3 id="break-és-continue-utasítások"><code>break</code> és <code>continue</code> utasítások</h3>
+<p>Ezek az utasítások extra irányítást adnak a ciklusok (és a <code>switch</code> utasítás) futása felett.</p>
+<ul>
+<li><p><strong><code>break</code></strong>:</p>
+<ul>
+<li><strong>Feladata</strong>: Azonnal <strong>leállítja</strong> a legbelső ciklust vagy <code>switch</code> utasítást, amiben éppen van.</li>
+<li><strong>Hatása</strong>: A program futása a ciklus vagy <code>switch</code> blokk utáni első utasítással folytatódik.</li>
+<li><strong>Mikor használd?</strong>: Például ha megtaláltad, amit kerestél egy listában, és felesleges tovább keresni.</li>
+</ul>
+</li>
+<li><p><strong><code>continue</code></strong>:</p>
+<ul>
+<li><strong>Feladata</strong>: <strong>Átugorja</strong> a ciklus aktuális iterációjának hátralévő részét, de nem lép ki a ciklusból.</li>
+<li><strong>Hatása</strong>: A program a ciklus elejéről folytatja a következő iterációval.</li>
+<li><strong>Mikor használd?</strong>: Ha egy adott feltétel esetén nem akarod végrehajtani az aktuális iterációban lévő összes utasítást, de a ciklust folytatni akarod.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-javascript">console.log(&quot;A 'break' bemutatása: Keressük az 5-ös számot!&quot;);
+
+for (let i = 1; i &lt;= 10; i++) {
+    console.log(`Jelenlegi szám: ${i}`);
+
+    // Ha megtaláltuk a keresett számot...
+    if (i === 5) {
+        console.log(&quot;Megvan az 5-ös! A ciklus leáll.&quot;);
+        break; // ...azonnal kilépünk a for ciklusból.
+    }
+}
+
+console.log(&quot;A ciklus véget ért.&quot;); // Ez a sor a 'break' után következik.
+</code></pre>
+<pre><code class="lang-javascript">console.log(&quot;A 'continue' bemutatása: Csak a páros számokat írjuk ki!&quot;);
+
+for (let i = 1; i &lt;= 10; i++) {
+    // A '%' a maradékos osztás. Ha a maradék nem nulla, a szám páratlan.
+    if (i % 2 !== 0) {
+        // Ha a szám páratlan, átugorjuk az iteráció hátralévő részét...
+        continue; // ...és a ciklus a következő számmal (i++) folytatódik.
+    }
+
+    // Ez a sor csak akkor fut le, ha a fenti 'if' feltétel hamis volt (tehát a szám páros).
+    console.log(`Páros szám: ${i}`);
+}
+
+console.log(&quot;A ciklus véget ért.&quot;);
+</code></pre>
+<h2 id="kidolgozott-példa-számkitaláló-játék">Kidolgozott példa: Számkitaláló Játék</h2>
+<div class="alert alert-task">
+<h5>TASK</h5>
+<p>Írj programot, amely &quot;gondol&quot; egy számra, a felhasználónak pedig korlátozott számú lehetősége van kitalálni azt. A program minden tipp után segíti a játékost azzal, hogy megmondja, a gondolt szám kisebb vagy nagyobb-e.</p>
+</div>
+<pre><code class="lang-javascript">/*
+  =================================
+  ==   SZÁMKITALÁLÓ JÁTÉK - v2.0   ==
+  =================================
+  Egy egyszerűsített példa, amely bemutatja a feltételek és ciklusok
+  használatát egy könnyen érthető játékban.
+*/
+
+// --- 1. Játék előkészítése: Konstansok és változók ---
+// Beállítjuk a játék kereteit: a kitalálandó számot és a próbálkozások számát.
+const titkosSzam = 7;
+const maxProbalkozas = 4;
+
+alert(`Gondoltam egy számra 1 és 10 között. Van ${maxProbalkozas} próbálkozásod kitalálni!`);
+
+// Létrehozunk egy változót, ami nyomon követi, hogy a játékos nyert-e.
+// Kezdetben 'false', mert a játék elején még nem nyert.
+let eltalalta = false;
+
+// --- 2. A játék logikája: A 'for' ciklus ---
+// A 'for' ciklus pontosan annyiszor fog lefutni, amennyi a 'maxProbalkozas' értéke.
+// A ciklusváltozót (i) használjuk a próbálkozások számlálására.
+for (let i = 1; i &lt;= maxProbalkozas; i++) {
+
+    // Bekérjük a játékos tippjét. A 'prompt' mindig szöveget (string) ad vissza!
+    let tipp = prompt(`Ez a(z) ${i}. próbálkozásod. Mi a tipped?`);
+
+    // Átalakítás: A bekért szöveget számmá (number) kell alakítanunk,
+    // hogy matematikai összehasonlítást végezhessünk vele.
+    let tippSzamkent = Number(tipp);
+
+    // --- 3. Döntés: Az 'if...else if...else' elágazás ---
+    // Ellenőrizzük a játékos tippjét a szigorú egyenlőség ('===') operátorral.
+
+    if (tippSzamkent === titkosSzam) {
+        alert(`🎉 Gratulálok, eltaláltad! A helyes szám a(z) ${titkosSzam} volt.`);
+        eltalalta = true; // A játékos nyert, átállítjuk a változót 'true'-ra.
+        break; // Sikerült a tipp, nincs értelme tovább futtatni a ciklust, ezért kilépünk belőle.
+    } else if (tippSzamkent &lt; titkosSzam) {
+        alert('Többre gondoltam! 🤔');
+    } else {
+        alert('Kevesebbre gondoltam! 👇');
+    }
+}
+
+// --- 4. Játék vége: Eredmény kiértékelése ---
+// A ciklus lefutása után ellenőrizzük az 'eltalalta' változó értékét.
+// Ez alapján tudjuk, hogy a játékos azért fejezte-e be a játékot, mert nyert,
+// vagy azért, mert elfogytak a próbálkozásai.
+
+if (eltalalta === false) { // Vagy rövidebben: if (!eltalalta)
+    alert(`Sajnos nem sikerült kitalálni ${maxProbalkozas} próbálkozásból. A helyes szám a ${titkosSzam} lett volna.`);
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week07/07-js-introduction.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

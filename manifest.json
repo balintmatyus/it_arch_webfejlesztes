@@ -46,11 +46,11 @@
       "type": "Toc",
       "source_relative_path": "contents/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "contents/toc.html"
-        },
         ".json": {
           "relative_path": "contents/toc.json"
+        },
+        ".html": {
+          "relative_path": "contents/toc.html"
         }
       },
       "version": ""
@@ -327,6 +327,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week07/07-js-introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week07/07-js-introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week07/07-js-szamkitalalo.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week07/07-js-szamkitalalo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
@@ -349,11 +369,11 @@
       "type": "Toc",
       "source_relative_path": "docs/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "docs/toc.html"
-        },
         ".json": {
           "relative_path": "docs/toc.json"
+        },
+        ".html": {
+          "relative_path": "docs/toc.html"
         }
       },
       "version": ""
@@ -372,11 +392,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
