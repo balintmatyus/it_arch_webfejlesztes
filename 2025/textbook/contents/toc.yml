@@ -47,7 +47,7 @@
 - name: 7. hét
   items:
   - name: 💡 JS változók, típusok, operátorok, elágazások, ciklusok
-    href: todo.md
+    href: week07/07-js-introduction.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 8. hét
