@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Gyakorl&#243; feladatok | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Gyakorl&#243; feladatok | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week07/07-js-gyakorlo.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gyakorló-feladatok">Gyakorló feladatok</h1>
+
+<h2 id="téglalap-kerülete-és-területe">Téglalap kerülete és területe</h2>
+<p>Definiálj két változót, oldalA és oldalB néven, és adj nekik számértéket. Számítsd ki a téglalap kerületét és területét a tanult aritmetikai operátorokkal. Az eredményeket írasd ki a console.log() segítségével, magyarázó szöveggel.</p>
+<h2 id="köszönés">Köszönés</h2>
+<p>Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor &quot;Jó reggelt!&quot;, ha 18-nál kisebb, akkor &quot;Jó napot!&quot;, egyébként pedig &quot;Jó estét!&quot; üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a <code>console.log(aktualisOra)</code> utasítást a megfelelő köszöntés megjelenítésére. Ha ezzel megvagy, módosítsd a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben. (Amennyiben nem adott meg a felhasználó nevet, legyen a neve Vendég.)</p>
+<h2 id="számlálás">Számlálás</h2>
+<p>Írj ciklust, ami kiírja a konzolra a számokat szóközzel elválasztva egymás mellé 1-től egy, a felhasználó által meghatározott számig.</p>
+<p>Miután ez sikerült, módosítsd a kódot úgy, hogy visszafele számoljon és ha elérte a 0-t, írd ki a konzolra, hogy &quot;BUÉK!&quot;.</p>
+<h2 id="számkitaláló">Számkitaláló</h2>
+<p>Írj programot, amely &quot;gondol&quot; egy számra, a felhasználónak pedig korlátozott számú lehetősége van kitalálni azt. A program minden tipp után segíti a játékost azzal, hogy megmondja, a gondolt szám kisebb vagy nagyobb-e.</p>
+<h2 id="összeadó">Összeadó</h2>
+<p>Írj egy programot, ami addig kér be számokat a felhasználótól egy while ciklusban, amíg a felhasználó a &quot;stop&quot; szót nem írja be. A program számolja össze a beírt számok összegét. Amikor a ciklus véget ér, írja ki az alert() segítségével a végeredményt. A break utasítással lépj ki a ciklusból, ha a felhasználó a &quot;stop&quot; szót adja meg.</p>
+<h2 id="fizzbuzz">FizzBuzz</h2>
+<p>Írj egy programot, ami egy for ciklussal végigmegy a számokon 1-től 100-ig.</p>
+<ul>
+<li>Ha a szám osztható 3-mal, írja ki, hogy &quot;Fizz&quot;.</li>
+<li>Ha a szám osztható 5-tel, írja ki, hogy &quot;Buzz&quot;.</li>
+<li>Ha a szám osztható 3-mal és 5-tel is, írja ki, hogy &quot;FizzBuzz&quot;.</li>
+<li>Minden más esetben írja ki magát a számot.</li>
+</ul>
+<h2 id="faktoriális">Faktoriális</h2>
+<p>Írj programot, ami 1) rekurzió segítségével, valamint 2) ciklussal kiszámítja egy szám faktoriálisát. A két számítási módot külön függvényként implementáld.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week07/07-js-gyakorlo.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

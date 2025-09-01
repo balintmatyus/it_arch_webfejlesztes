@@ -434,14 +434,6 @@ let uzenet = `Szia, ${nev}! ${kor} éves vagy.`; // &quot;Szia, Péter! 25 éves
     // kód, ha egyik feltétel sem igaz
 }
 </code></pre>
-<div class="alert alert-task">
-<h5>TASK</h5>
-<p>Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor &quot;Jó reggelt!&quot;, ha 18-nál kisebb, akkor &quot;Jó napot!&quot;, egyébként pedig &quot;Jó estét!&quot; üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a <code>console.log(aktualisOra)</code> utasítást a megfelelő köszöntés megjelenítésére.</p>
-</div>
-<div class="alert alert-task">
-<h5>TASK</h5>
-<p>Hogyan módosítanád a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben?</p>
-</div>
 <h4 id="switch-utasítás"><code>switch</code> utasítás</h4>
 <p>Ha egyetlen kifejezés értékétől függően sok különböző kódrészletet szeretnél futtatni, a <code>switch</code> utasítás elegánsabb és olvashatóbb megoldás lehet, mint egy hosszú <code>if...else if...else</code> lánc.</p>
 <pre><code class="lang-javascript">switch (kifejezés) {
@@ -565,6 +557,149 @@ for (let i = 1; i &lt;= 10; i++) {
 
 console.log(&quot;A ciklus véget ért.&quot;);
 </code></pre>
+<h2 id="függvények">Függvények</h2>
+<p>Egy függvénybe bezárhatunk egy adott feladat elvégzéséhez szükséges kódrészletet, és utána annyiszor hívhatjuk meg, ahányszor csak szükségünk van rá, anélkül, hogy újra le kellene írnunk. Ez teszi a kódunkat sokkal <strong>olvashatóbbá, karbantarthatóbbá és hatékonyabbá</strong>.</p>
+<h3 id="függvény-deklaráció-és-hívás">Függvény deklaráció és hívás</h3>
+<p>Ahhoz, hogy használni tudjunk egy függvényt, először létre kell hoznunk, vagyis <strong>deklarálnunk</strong> kell. Utána pedig meg kell <strong>hívnunk</strong>, hogy lefussanak benne az utasítások.</p>
+<p>A függvény deklarálásának leggyakoribb módja a következő, ezt <strong>függvénydeklarációnak</strong> (function declaration) nevezzük:</p>
+<pre><code class="lang-javascript">// function myFunction() { // ... } 
+function myFunction() { // 'function' kulcsszóval kezdünk, majd a függvény neve
+  // Ide jön a végrehajtandó kód
+  alert(&quot;Helló, én egy függvény vagyok!&quot;);
+}
+</code></pre>
+<p>Itt a <code>function</code> kulcsszóval jelezzük, hogy egy függvényt hozunk létre, ezt követi a függvény neve (amit te választasz ki), majd egy <strong>zárójelpár <code>()</code></strong> és végül a <strong>kapcsos zárójelek <code>{}</code></strong> között maga a kódblokk, ami akkor fut le, amikor meghívjuk a függvényt.</p>
+<p>A függvényt a nevével és egy zárójelpárral hívhatod meg – ezt <strong>függvényhívásnak</strong> (function invocation) nevezzük:</p>
+<pre><code class="lang-javascript">myFunction(); // Ezzel hívjuk meg a fenti függvényt
+</code></pre>
+<p>Ezt akárhányszor megteheted, és minden alkalommal lefut a benne lévő kód.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A függvény deklarációk a JavaScriptben &quot;hoistelt&quot; (felemelt) elemek, ami azt jelenti, hogy még mielőtt a böngésző futtatná a kódot, &quot;feljebb emeli&quot; a deklarációjukat. Ezért hívhatsz meg egy ilyen függvényt akár a definíciója előtt is a kódban, és működni fog.</p>
+</div>
+<h3 id="paraméterek-és-alapértelmezett-értékek">Paraméterek és alapértelmezett értékek</h3>
+<p>Gyakran előfordul, hogy egy függvénynek szüksége van valamilyen <strong>bemeneti adatra</strong> ahhoz, hogy el tudja végezni a feladatát. Ezeket az adatokat nevezzük <strong>paramétereknek</strong>. A paramétereket a függvény nevéhez tartozó zárójelben <code>()</code> soroljuk fel, vesszővel elválasztva. Amikor meghívjuk a függvényt, akkor adjuk át a paramétereknek az <strong>argumentumokat</strong>, vagyis a tényleges értékeket.</p>
+<pre><code class="lang-javascript">function koszont(nev) { // 'nev' a paraméter
+  console.log(`Szia, ${nev}! Üdvözöllek!`);
+}
+
+koszont(&quot;Anna&quot;); // &quot;Anna&quot; az argumentum
+koszont(&quot;Péter&quot;); // &quot;Péter&quot; az argumentum
+</code></pre>
+<p><strong>Több paraméter</strong> is lehet egy függvénynek, ezeket vesszővel kell elválasztani:</p>
+<pre><code class="lang-javascript">function osszegKiir(szam1, szam2) { // 'szam1' és 'szam2' a paraméterek
+  console.log(`A két szám összege: ${szam1 + szam2}`);
+}
+
+osszegKiir(5, 10); // Argumentumok: 5 és 10
+</code></pre>
+<p>Az ES6-os JavaScript óta <strong>alapértelmezett értékeket</strong> is megadhatunk a paramétereknek. Ez azt jelenti, hogy ha a függvény hívásakor nem adunk meg értéket egy paraméternek, akkor az alapértelmezett értéke lesz érvényben.</p>
+<pre><code class="lang-javascript">function PitagoraszTetel(a, b = 4) { // 'b' alapértelmezett értéke 4
+  return (a**2 + b**2)**0.5;
+}
+
+document.write(PitagoraszTetel(3)); // kimenet: 5 (3*3 + 4*4 = 25, gyöke 5)
+document.write(PitagoraszTetel(5, 12)); // kimenet: 13 (5*5 + 12*12 = 169, gyöke 13, itt felülírta a 'b' alapértelmezett értékét)
+
+function udvozol(nev = &quot;Vendég&quot;) { // 'nev' alapértelmezett értéke &quot;Vendég&quot;
+  console.log(`Hello, ${nev}!`);
+}
+udvozol(&quot;Diák&quot;); // Hello, Diák!
+udvozol();      // Hello, Vendég!
+</code></pre>
+<h3 id="visszatérési-értékek-return">Visszatérési értékek (return)</h3>
+<p>Nem minden függvény &quot;csinál&quot; valamit közvetlenül a képernyőn, mint például a <code>console.log()</code> vagy az <code>alert()</code>. Sok függvény arra szolgál, hogy elvégezzen egy számítást, vagy feldolgozzon adatokat, és az <strong>eredményt visszaadja</strong> a kód azon részének, ahonnan meghívták. Ezt nevezzük <strong>visszatérési értéknek</strong>, és a <code>return</code> kulcsszóval adjuk meg.</p>
+<pre><code class="lang-javascript">function szamolNegyzetet(szam) {
+  return szam * szam; // Visszaadjuk a szám négyzetét
+}
+
+let eredmeny = szamolNegyzetet(7); // Meghívjuk, és a visszatérési értéket eltároljuk
+console.log(eredmeny); // kimenet: 49
+</code></pre>
+<p>A <code>return</code> utasítás után a függvény azonnal befejezi a futását, és visszaadja a megadott értéket. Ha egy függvény nem tartalmaz <code>return</code> utasítást, vagy <code>return</code> nélkül szerepel, akkor <code>undefined</code> értékkel tér vissza.</p>
+<h3 id="beépített-függvények">Beépített függvények</h3>
+<p>A JavaScript rengeteg hasznos <strong>beépített függvénnyel</strong> rendelkezik, amikkel előre definiált feladatokat tudsz elvégezni, anélkül, hogy te írnád meg azokat. Ezek egy része a böngésző része, mások a JavaScript magnyelvhez tartoznak.</p>
+<p>Néhány, amivel már találkoztál, vagy gyakran fogsz találkozni:</p>
+<ul>
+<li><strong><code>alert(&quot;üzenet&quot;)</code></strong>: Egy figyelmeztető felugró ablakot jelenít meg a böngészőben a megadott üzenettel. Főleg hibakeresésre és fejlesztés során használjuk.
+<pre><code class="lang-javascript">alert(&quot;Figyelem! Ez egy üzenet.&quot;);
+const username = &quot;Hallgató&quot;;
+alert(`Üdv, ${username}!`); // backtickkel is lehet
+</code></pre>
+</li>
+<li><strong><code>prompt(&quot;kérdés&quot;, &quot;alapértelmezett_érték&quot;)</code></strong>: Egy felugró ablakban kér be szöveges adatot a felhasználótól. A beírt értékkel tér vissza.
+<pre><code class="lang-javascript">let vezetekNev = prompt(&quot;Add meg a vezetékneved:&quot;, &quot;Ismeretlen&quot;);
+console.log(vezetekNev);
+</code></pre>
+</li>
+<li><strong><code>confirm(&quot;eldöntendő_kérdés&quot;)</code></strong>: Egy &quot;OK&quot; / &quot;Mégse&quot; gombokat tartalmazó felugró ablakot jelenít meg. <code>true</code> vagy <code>false</code> értékkel tér vissza a felhasználó választásától függően.
+<pre><code class="lang-javascript">let torolE = confirm(&quot;Biztosan törölni szeretnéd a fájlt?&quot;);
+if (torolE) {
+  console.log(&quot;Fájl törölve.&quot;);
+} else {
+  console.log(&quot;Törlés megszakítva.&quot;);
+}
+</code></pre>
+</li>
+<li><strong><code>Number(érték)</code></strong>: Megpróbálja a paraméterként kapott értéket számmá konvertálni. Ha stringként adsz meg egy számot (pl. <code>&quot;74&quot;</code>), és számolni akarsz vele, akkor először konvertálnod kell.
+<pre><code class="lang-javascript">let stringSzam = &quot;42&quot;;
+let szam = Number(stringSzam); // szam: 42 (number típus)
+console.log(typeof szam);
+</code></pre>
+</li>
+<li><strong><code>String(érték)</code></strong>: A paraméterként kapott értéket stringgé konvertálja.
+<pre><code class="lang-javascript">let num = 123;
+let str = String(num); // str: &quot;123&quot; (string típus)
+console.log(typeof str);
+</code></pre>
+</li>
+<li><strong><code>parseInt(string)</code> / <code>parseFloat(string)</code></strong>: Ezek is stringből konvertálnak számmá, egész, illetve lebegőpontos számokat eredményezve. Különösen hasznosak, ha a string elején számok vannak, de utána már más karakterek (pl. <code>&quot;100px&quot;</code>).
+<pre><code class="lang-javascript">parseInt(&quot;100px&quot;);   // 100
+parseFloat(&quot;12.5em&quot;); // 12.5
+parseInt(&quot;Hello&quot;);   // NaN (Not-a-Number)
+</code></pre>
+</li>
+<li><strong><code>isNaN(érték)</code></strong>: Ellenőrzi, hogy egy adott érték &quot;Not-a-Number&quot; (nem szám) típusú-e. <code>true</code> értéket ad vissza, ha az érték nem szám.
+<pre><code class="lang-javascript">isNaN(&quot;abc&quot;); // true
+isNaN(123);  // false
+</code></pre>
+</li>
+<li><strong><code>Math.random()</code></strong>: Egy véletlenszerű lebegőpontos számot generál 0 és 1 között (az 1-et nem beleértve).</li>
+<li><strong><code>Math.floor(szam)</code></strong>: Lekerekíti a számot a legközelebbi kisebb egész számra.</li>
+<li><strong><code>Math.ceil(szam)</code></strong>: Felfelé kerekíti a számot a legközelebbi nagyobb egész számra.</li>
+</ul>
+<h3 id="46-függvény-hatókör-scope">4.6. Függvény hatókör (Scope)</h3>
+<p>A <strong>hatókör (scope)</strong> azt határozza meg, hogy egy változó vagy függvény honnan érhető el a programban. Ez egy kulcsfontosságú koncepció, ami segít elkerülni a névütközéseket és rendszerezni a kódot.</p>
+<ol>
+<li><p><strong>Globális hatókör</strong>: Azok a változók és függvények, amiket minden más kódblokkon (függvényen, <code>if</code> blokkon stb.) <strong>kívül</strong> deklarálunk, a globális hatókörbe tartoznak. Ezek a program <strong>bármely pontjáról elérhetők</strong>.</p>
+<pre><code class="lang-javascript">const globalisValtozo = &quot;Én globális vagyok!&quot;; // Globális változó
+
+function mutasdGlobalist() {
+  console.log(globalisValtozo); // Elérhető a függvényen belülről is
+}
+
+mutasdGlobalist();
+console.log(globalisValtozo);
+</code></pre>
+</li>
+<li><p><strong>Függvény / Blokkszintű hatókör</strong>: A függvényen <strong>belül</strong> deklarált változók csak abban a függvényben érhetők el. Ahogyan korábban tárgyaltuk, a <code>let</code> és <code>const</code> kulcsszavakkal deklarált változók <strong>blokkszintű hatókörrel</strong> rendelkeznek, ami azt jelenti, hogy csak abban a <code>{}</code> blokkban (pl. egy <code>if</code> utasításban vagy <code>for</code> ciklusban) érhetők el, ahol definiálták őket.</p>
+<pre><code class="lang-javascript">function peldaFuggveny() {
+  let lokalisValtozo = 10; // Lokális a peldaFuggveny-en belül
+
+  if (true) {
+    const blokkValtozo = 20; // Lokális az if blokkon belül (blokkszintű hatókör)
+    console.log(lokalisValtozo); // Elérhető
+    console.log(blokkValtozo); // Elérhető
+  }
+
+  // console.log(blokkValtozo); // Hiba: Itt már nem elérhető a blokkon kívül
+}
+
+// console.log(lokalisValtozo); // Hiba: Itt már nem elérhető a függvényen kívül
+</code></pre>
+</li>
+</ol>
+<p>A hatókörök segítenek abban, hogy a kód különböző részei ne &quot;piszkáljanak bele&quot; egymás változóiba, ezzel megelőzve a váratlan hibákat és növelve a kód modularitását. Ha &quot;ReferenceError: X is not defined&quot; hibát látsz, az gyakran hatókörrel kapcsolatos problémára utal.</p>
 
 </article>
 

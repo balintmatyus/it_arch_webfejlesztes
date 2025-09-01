@@ -84,9 +84,9 @@
 <h1 id="hogyan-működik-a-web">Hogyan működik a web?</h1>
 
 <p>A 21. századi gazdaság és társadalom működése elképzelhetetlen az Internet és a rajta futó szolgáltatások, különösen a World Wide Web nélkül. Egy gazdaságinformatikus számára, aki a technológia és az üzleti folyamatok metszéspontjában tevékenykedik, ezen ökoszisztéma mélyreható ismerete nem csupán előny, hanem alapvető követelmény. Ez a fejezet arra vállalkozik, hogy egy tömör összefoglaló képet fessen az Internetről és a World Wide Web-ről, bemutatva azok technológiai alapjait.</p>
-<h2 id="11-az-internet-és-a-world-wide-web"><strong>1.1. Az Internet és a World Wide Web</strong></h2>
+<h2 id="az-internet-és-a-world-wide-web"><strong>Az Internet és a World Wide Web</strong></h2>
 <p>Az <strong>Internet</strong> egy globális, összekapcsolt számítógép-hálózatokból álló rendszer, a fizikai és logikai infrastruktúra, amely lehetővé teszi az adatok cseréjét a világ különböző pontjai között. Ez a &quot;hálózatok hálózata&quot;, amely kábelek, rádióhullámok és műholdak segítségével köti össze az eszközöket. Ezzel szemben a <strong>World Wide Web</strong> (WWW vagy Web) egy információs rendszer, amely az Interneten működik. Ez egy globális gyűjteménye a hiperhivatkozásokkal összekötött dokumentumoknak és egyéb erőforrásoknak, amelyeket webböngészők segítségével érhetünk el. Míg az Internet maga az infrastruktúra, a Web csupán egy – bár kétségtelenül a legnépszerűbb – szolgáltatás, amely ezen az infrastruktúrán fut, az e-mail, az online játékok vagy a fájlátvitel (FTP) mellett. Ez a megkülönböztetés alapvető, hiszen más üzleti modellek és technológiai megoldások épülnek a puszta hálózati kapcsolatra (Internet), és mások a webes tartalommegosztásra (WWW).</p>
-<h2 id="12-az-internet-fejlődésének-mérföldkövei"><strong>1.2. Az Internet fejlődésének mérföldkövei</strong></h2>
+<h2 id="az-internet-fejlődésének-mérföldkövei"><strong>Az Internet fejlődésének mérföldkövei</strong></h2>
 <p>Az Internet története a hidegháborús fegyverkezési verseny idejére nyúlik vissza. Az 1960-as években az Egyesült Államok Védelmi Minisztériuma egy olyan kommunikációs rendszert akart létrehozni, amely egy esetleges atomcsapás után is működőképes marad. A kulcs a <strong>decentralizáció</strong> volt: egy olyan hálózat, amelynek nincs egyetlen központi, sebezhető pontja.</p>
 <p><img src="arpanet.png" alt="ARPANET 1970"></p>
 <p><strong>Kulcsfontosságú mérföldkövek:</strong></p>
@@ -103,7 +103,7 @@
 </li>
 </ul>
 <p>Berners-Lee víziója egy nyílt, bárki által használható és bővíthető információs teret hozott létre. A felhasználóbarát, grafikus böngészők megjelenésével a Web kilépett az akadémiai körökből, és a '90-es évek közepétől megkezdte világhódító útját, amely alapjaiban formálta át a kommunikációt, a kereskedelmet és a társadalmat.</p>
-<h2 id="13-a-kommunikáció-nyelve-protokollok"><strong>1.3. A kommunikáció nyelve: protokollok</strong></h2>
+<h2 id="a-kommunikáció-nyelve-protokollok"><strong>A kommunikáció nyelve: protokollok</strong></h2>
 <p>A <strong>protokoll</strong> egy szabály- és szabványgyűjtemény, amely leírja a hálózati kommunikáció résztvevőinek viselkedését. Olyan, mint egy diplomáciai protokoll vagy egy nyelvtani szabályrendszer: biztosítja, hogy a felek megértsék egymást és az interakció rendezett keretek között folyjon.</p>
 <ul>
 <li><strong>A TCP/IP Protokollcsalád:</strong> Ez az internetes kommunikáció alapja. Képzeljük el, hogy egy vastag könyvet akarunk elküldeni postán. Nem tesszük be egy óriási borítékba, hanem szétszedjük lapokra.
@@ -114,7 +114,7 @@
 </li>
 </ul>
 <p>A két protokoll együttműködése (TCP/IP) biztosítja, hogy az adatok megbízhatóan és a helyes sorrendben érkezzenek meg a célba.</p>
-<h2 id="14-a-kliens-szerver-modell"><strong>1.4. A kliens-szerver modell</strong></h2>
+<h2 id="a-kliens-szerver-modell"><strong>A kliens-szerver modell</strong></h2>
 <p>Ahhoz, hogy megértsük, hogyan működik a Web (és számos más internetes szolgáltatás), ismernünk kell a <strong>kliens-szerver modellt</strong>. Ez a modell két fő szereplőre épül, amelyek meghatározott feladatokat látnak el.</p>
 <p>A <strong>kliens</strong> (client): Az &quot;ügyfél&quot; vagy kérelmező. Ez egy szoftver vagy eszköz (például a számítógépünkön futó webböngésző, egy mobilalkalmazás vagy egy e-mail program), amely egy szolgáltatást vagy adatot szeretne elérni. A kliens feladata, hogy elindítsa a kommunikációt egy kérés (request) elküldésével.</p>
 <p>A <strong>szerver</strong> (server): A &quot;kiszolgáló&quot;. Ez egy nagy teljesítményű, folyamatosan elérhető számítógép, amely arra vár, hogy a kliensektől kérések érkezzenek. Amikor egy kérés beérkezik, a szerver feldolgozza azt (pl. megkeres egy fájlt, lekérdez egy adatbázist), majd egy válasszal (response) felel a kliensnek. Egyetlen szerver egyszerre több ezer klienst is kiszolgálhat.</p>
@@ -124,7 +124,7 @@
 <li><strong>Skálázhatóság</strong>: A szerver erőforrásai (hardver, sávszélesség) bővíthetők a növekvő kliensigények kiszolgálására anélkül, hogy a kliens oldalon változtatásra lenne szükség.</li>
 <li><strong>Erőforrás-megosztás</strong>: Egy szerver egyszerre több ezer vagy millió klienst is kiszolgálhat.</li>
 </ul>
-<h2 id="15-a-kapu-a-webre-a-böngésző"><strong>1.5. A kapu a webre: a böngésző</strong></h2>
+<h2 id="a-kapu-a-webre-a-böngésző"><strong>A kapu a webre: a böngésző</strong></h2>
 <p>A böngésző egy olyan kliensalkalmazás, amelynek célja a World Wide Weben található információk elérése és megjelenítése a felhasználó számára. Fő feladatai a következők:</p>
 <ul>
 <li><strong>Kérések indítása</strong>: Amikor a felhasználó beír egy webcímet (URL-t) vagy rákattint egy linkre, a böngésző egy HTTP kérést állít össze és küld el a megfelelő szervernek.</li>
@@ -134,7 +134,7 @@
 </ul>
 <p>A legismertebb böngészők a Google Chrome, a Mozilla Firefox, a Microsoft Edge és az Apple Safari. Bár a működési elvük azonos, renderelő motorjaikban és funkcióikban eltérhetnek.</p>
 <p>Érdekes statisztikák: <a href="https://www.w3schools.com/browsers/">w3schools.com</a>, <a href="https://ranking.gemius.com/hu/">gemiusRanking</a></p>
-<h3 id="16-egy-weboldal-betöltődésének-folyamata"><strong>1.6. Egy weboldal betöltődésének folyamata</strong></h3>
+<h3 id="egy-weboldal-betöltődésének-folyamata"><strong>Egy weboldal betöltődésének folyamata</strong></h3>
 <p>Egyetlen Enter leütése a böngészőben egy mindennapos mozdulat, amely mögött azonban egy villámgyors és megfelelően koreografált digitális eseménysorozat rejlik. Nézzük meg lépésről lépésre, mi történik a kulisszák mögött!</p>
 <pre><code class="lang-mermaid">sequenceDiagram
     participant B as Böngésző/Felhasználó
@@ -190,7 +190,7 @@
 <li><strong>Hitelesítés:</strong> A böngésző a szerver tanúsítványa alapján meggyőződhet róla, hogy valóban azzal a szerverrel kommunikál, akinek az kiadja magát.</li>
 </ol>
 </div>
-<h2 id="17-ellenőrző-kérdések"><strong>1.7 Ellenőrző kérdések</strong></h2>
+<h2 id="ellenőrző-kérdések"><strong>Ellenőrző kérdések</strong></h2>
 <ol>
 <li>Fogalmazza meg saját szavaival a legfontosabb különbséget az Internet és a World Wide Web között! Mondjon példát két olyan internetes szolgáltatásra, amely nem része a Webnek!</li>
 <li>Mi volt a csomagkapcsolt adatátvitel legfőbb előnye a vonalkapcsolttal szemben a kezdeti ARPANET kontextusában?</li>
