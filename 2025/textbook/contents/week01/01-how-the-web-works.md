@@ -2,11 +2,11 @@
 
 A 21. századi gazdaság és társadalom működése elképzelhetetlen az Internet és a rajta futó szolgáltatások, különösen a World Wide Web nélkül. Egy gazdaságinformatikus számára, aki a technológia és az üzleti folyamatok metszéspontjában tevékenykedik, ezen ökoszisztéma mélyreható ismerete nem csupán előny, hanem alapvető követelmény. Ez a fejezet arra vállalkozik, hogy egy tömör összefoglaló képet fessen az Internetről és a World Wide Web-ről, bemutatva azok technológiai alapjait.
 
-## **1.1. Az Internet és a World Wide Web**
+## **Az Internet és a World Wide Web**
 
 Az **Internet** egy globális, összekapcsolt számítógép-hálózatokból álló rendszer, a fizikai és logikai infrastruktúra, amely lehetővé teszi az adatok cseréjét a világ különböző pontjai között. Ez a "hálózatok hálózata", amely kábelek, rádióhullámok és műholdak segítségével köti össze az eszközöket. Ezzel szemben a **World Wide Web** (WWW vagy Web) egy információs rendszer, amely az Interneten működik. Ez egy globális gyűjteménye a hiperhivatkozásokkal összekötött dokumentumoknak és egyéb erőforrásoknak, amelyeket webböngészők segítségével érhetünk el. Míg az Internet maga az infrastruktúra, a Web csupán egy – bár kétségtelenül a legnépszerűbb – szolgáltatás, amely ezen az infrastruktúrán fut, az e-mail, az online játékok vagy a fájlátvitel (FTP) mellett. Ez a megkülönböztetés alapvető, hiszen más üzleti modellek és technológiai megoldások épülnek a puszta hálózati kapcsolatra (Internet), és mások a webes tartalommegosztásra (WWW).
 
-## **1.2. Az Internet fejlődésének mérföldkövei**
+## **Az Internet fejlődésének mérföldkövei**
 
 Az Internet története a hidegháborús fegyverkezési verseny idejére nyúlik vissza. Az 1960-as években az Egyesült Államok Védelmi Minisztériuma egy olyan kommunikációs rendszert akart létrehozni, amely egy esetleges atomcsapás után is működőképes marad. A kulcs a **decentralizáció** volt: egy olyan hálózat, amelynek nincs egyetlen központi, sebezhető pontja.
 
@@ -24,7 +24,7 @@ Az Internet története a hidegháborús fegyverkezési verseny idejére nyúlik
 
 Berners-Lee víziója egy nyílt, bárki által használható és bővíthető információs teret hozott létre. A felhasználóbarát, grafikus böngészők megjelenésével a Web kilépett az akadémiai körökből, és a '90-es évek közepétől megkezdte világhódító útját, amely alapjaiban formálta át a kommunikációt, a kereskedelmet és a társadalmat.
 
-## **1.3. A kommunikáció nyelve: protokollok**
+## **A kommunikáció nyelve: protokollok**
 
 A **protokoll** egy szabály- és szabványgyűjtemény, amely leírja a hálózati kommunikáció résztvevőinek viselkedését. Olyan, mint egy diplomáciai protokoll vagy egy nyelvtani szabályrendszer: biztosítja, hogy a felek megértsék egymást és az interakció rendezett keretek között folyjon.
 
@@ -34,7 +34,7 @@ A **protokoll** egy szabály- és szabványgyűjtemény, amely leírja a hálóz
 
 A két protokoll együttműködése (TCP/IP) biztosítja, hogy az adatok megbízhatóan és a helyes sorrendben érkezzenek meg a célba.
 
-## **1.4. A kliens-szerver modell**
+## **A kliens-szerver modell**
 
 Ahhoz, hogy megértsük, hogyan működik a Web (és számos más internetes szolgáltatás), ismernünk kell a **kliens-szerver modellt**. Ez a modell két fő szereplőre épül, amelyek meghatározott feladatokat látnak el.
 
@@ -47,7 +47,7 @@ Ez a modell számos előnnyel jár:
 - **Skálázhatóság**: A szerver erőforrásai (hardver, sávszélesség) bővíthetők a növekvő kliensigények kiszolgálására anélkül, hogy a kliens oldalon változtatásra lenne szükség.
 - **Erőforrás-megosztás**: Egy szerver egyszerre több ezer vagy millió klienst is kiszolgálhat.
 
-## **1.5. A kapu a webre: a böngésző**
+## **A kapu a webre: a böngésző**
 
 A böngésző egy olyan kliensalkalmazás, amelynek célja a World Wide Weben található információk elérése és megjelenítése a felhasználó számára. Fő feladatai a következők:
 
@@ -60,7 +60,7 @@ A legismertebb böngészők a Google Chrome, a Mozilla Firefox, a Microsoft Edge
 
 Érdekes statisztikák: [w3schools.com](https://www.w3schools.com/browsers/), [gemiusRanking](https://ranking.gemius.com/hu/)
 
-### **1.6. Egy weboldal betöltődésének folyamata**
+### **Egy weboldal betöltődésének folyamata**
 
 Egyetlen Enter leütése a böngészőben egy mindennapos mozdulat, amely mögött azonban egy villámgyors és megfelelően koreografált digitális eseménysorozat rejlik. Nézzük meg lépésről lépésre, mi történik a kulisszák mögött\!
 
@@ -111,7 +111,7 @@ sequenceDiagram
 > 2. **Integritás:** Az adatokat útközben nem lehet észrevétlenül módosítani.  
 > 3. **Hitelesítés:** A böngésző a szerver tanúsítványa alapján meggyőződhet róla, hogy valóban azzal a szerverrel kommunikál, akinek az kiadja magát.
 
-## **1.7 Ellenőrző kérdések**
+## **Ellenőrző kérdések**
 
 1. Fogalmazza meg saját szavaival a legfontosabb különbséget az Internet és a World Wide Web között\! Mondjon példát két olyan internetes szolgáltatásra, amely nem része a Webnek\!  
 2. Mi volt a csomagkapcsolt adatátvitel legfőbb előnye a vonalkapcsolttal szemben a kezdeti ARPANET kontextusában?  

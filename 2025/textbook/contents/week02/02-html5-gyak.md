@@ -16,7 +16,7 @@ Ez a sor azt mondja a böngészőnek, hogy töltse be a `stilus.css` fájlt és 
 
 ---
 
-## 1. Alapstruktúra felépítése
+## Alapstruktúra felépítése
 
 Hozd létre a `projekt_riport.html` fájlt! Építsd fel az alábbi hierarchiát:
 
@@ -41,7 +41,7 @@ html (lang="hu")
 
 ---
 
-## 2. Tartalom hozzáadása
+## Tartalom hozzáadása
 
 ### Header
 - Cég neve: "Digitális Jövő Zrt." (`<h1>`)
@@ -80,7 +80,7 @@ Készíts egy "Kulcsfogalmak" című (`<h3>`) definíciós listát:
 
 ---
 
-## 3. Táblázat megépítése
+## Táblázat megépítése
 
 Az `<article>` elemen belül készíts táblázatot "Projektek részletes állapotjelentése" címmel.
 
@@ -102,7 +102,7 @@ Az `<article>` elemen belül készíts táblázatot "Projektek részletes állap
 
 ---
 
-## 4. Ellenőrzési lista
+## Ellenőrzési lista
 
 - [ ] DOCTYPE deklaráció megvan?
 - [ ] CSS fájl megfelelően hivatkozva?

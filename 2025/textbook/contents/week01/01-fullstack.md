@@ -6,23 +6,23 @@ Egy modern webalkalmazás két alapvető területe különíthető el:
 - A **kliensoldal** (frontend): Minden, amit a felhasználó a böngészőjében lát és amivel interakcióba lép. Ez a felhasználói élményért, a megjelenítésért és az azonnali interaktivitásért felel.
 - A **szerveroldal** (backend): Az alkalmazást működtető láthatatlan motor. Ez kezeli az alapvető üzleti logikát, az adatkezelést, a biztonságot és a hitelesítést.
 
-## 1. A Frontend Hármassága – Struktúra, Stílus és Viselkedés
+## A Frontend Hármassága – Struktúra, Stílus és Viselkedés
 
 A webfejlesztés alapjait három, egymást kiegészítő technológia alkotja. A köztük lévő kapcsolat megértéséhez gyakran használják a „házépítés” analógiáját, amely egy erős mentális modellt biztosít a szerepük megértéséhez.
 
-### 1.1 Az alaprajz: HTML
+### Az alaprajz: HTML
 
 A HTML (**HyperText Markup Language**) biztosítja egy weboldal alapvető szerkezetét. Ez a weboldal csontváza vagy váza, amely meghatározza az oldalon található elemeket, mint például a címsorokat, bekezdéseket, listákat, képeket és hivatkozásokat.
 
 A házépítési analógiát követve a HTML dönti el, hogy egy háznak van-e alapja, falai és teteje. Meghatározza, hogy vannak-e benne olyan helyiségek, mint a konyha vagy a hálószoba, és hogy az étkezőben asztalok és székek állnak. A HTML nélkül egyszerűen nincs struktúra, ami a tartalmat befogadná. Ha egy weboldal egy ház, akkor a HTML határozza meg például, hogy hány hálószoba van a házban, és hány asztal és szék kerül az étkezőbe.
 
-### 1.2 Az esztétika: CSS
+### Az esztétika: CSS
 
 A CSS (**Cascading Style Sheets**) a stílus és a megjelenítés nyelve. Ez szabályozza, hogy a HTML által meghatározott szerkezet hogyan jelenik meg vizuálisan a felhasználó számára. A ház analógiájánál maradva, ha a HTML a váz, akkor a CSS a belső és külső dizájn. Ez határozza meg a falak színét, a díszléceket, a nappali méretét, a „welcome” lábtörlő betűtípusát, és hogy a padló szőnyeggel vagy parkettával van-e borítva. A CSS nélkül egy weboldal funkcionális, de sivár és barátságtalan, mint egy csupasz házkeret.
 
 A CSS felelős az elrendezésért (az elemek elhelyezése az oldalon), a térközökért, a színekért, a betűtípusokért és a reszponzív tervezésért, biztosítva, hogy a „ház” minden eszközön jól nézzen ki, a nagy asztali monitortól a kis telefon képernyőjéig.
 
-### 1.3 A funkcionalitás: JavaScript
+### A funkcionalitás: JavaScript
 
 A **JavaScript** (JS) az a nyelv, amely életre kelti a weboldalt, irányítva annak dinamikus viselkedését és interaktivitását.
 
@@ -30,7 +30,7 @@ Az analógiánkat teljessé téve a JavaScript a ház funkcionális közműveit 
 
 A JavaScript teszi lehetővé, hogy a felhasználó egy gombra kattintva egy felugró ablakot lásson, egy űrlapot az oldal újratöltése nélkül küldjön el, vagy valós időben frissülő tartalmat figyeljen meg. Lényegében a JavaScript alakítja át a statikus dokumentumot (HTML és CSS) egy teljes értékű, interaktív alkalmazássá.
 
-### 1.4 A szétválasztás filozófiája: A rend melletti érvek
+### A szétválasztás filozófiája: A rend melletti érvek
 
 A **Separation of Concerns** (SoC), vagyis az „aggodalmak szétválasztása” egy tervezési alapelv, amely egy programot különálló részekre bont, ahol minden rész egy-egy külön „aggodalmat” kezel. A klasszikus webfejlesztésben ez azt jelenti, hogy a HTML-t (struktúra), a CSS-t (stílus) és a JS-t (viselkedés) különálló fájlokban tartjuk.
 
@@ -42,7 +42,7 @@ Néhány előny:
 > [!NOTE]
 > Fenti felbontás elsősorban a klasszikus, statikus weboldalakra igaz. A gyakorlatban azonban legtöbbször a szeparációs határok nem egyértelműek. Ilyen példákat ebben a kurzusban nem vizsgálunk meg, de a képzés során találkozhattok majd ilyen helyzetekkel.
 
-## 2. A láthatatlan gépezet: A szerveroldal alapvető felelősségei
+## A láthatatlan gépezet: A szerveroldal alapvető felelősségei
 
 A backend (vagy szerveroldal) a szerverek, alkalmazások és adatbázisok kombinációja, amely a webalkalmazás gerincét alkotja. Ez minden, ami a „színfalak mögött” történik.
 
