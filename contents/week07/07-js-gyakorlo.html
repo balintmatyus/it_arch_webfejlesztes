@@ -87,13 +87,16 @@
 <p>Definiálj két változót, oldalA és oldalB néven, és adj nekik számértéket. Számítsd ki a téglalap kerületét és területét a tanult aritmetikai operátorokkal. Az eredményeket írasd ki a console.log() segítségével, magyarázó szöveggel.</p>
 <h2 id="köszönés">Köszönés</h2>
 <p>Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor &quot;Jó reggelt!&quot;, ha 18-nál kisebb, akkor &quot;Jó napot!&quot;, egyébként pedig &quot;Jó estét!&quot; üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a <code>console.log(aktualisOra)</code> utasítást a megfelelő köszöntés megjelenítésére. Ha ezzel megvagy, módosítsd a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben. (Amennyiben nem adott meg a felhasználó nevet, legyen a neve Vendég.)</p>
-<h2 id="számlálás">Számlálás</h2>
-<p>Írj ciklust, ami kiírja a konzolra a számokat szóközzel elválasztva egymás mellé 1-től egy, a felhasználó által meghatározott számig.</p>
-<p>Miután ez sikerült, módosítsd a kódot úgy, hogy visszafele számoljon és ha elérte a 0-t, írd ki a konzolra, hogy &quot;BUÉK!&quot;.</p>
-<h2 id="számkitaláló">Számkitaláló</h2>
-<p>Írj programot, amely &quot;gondol&quot; egy számra, a felhasználónak pedig korlátozott számú lehetősége van kitalálni azt. A program minden tipp után segíti a játékost azzal, hogy megmondja, a gondolt szám kisebb vagy nagyobb-e.</p>
-<h2 id="összeadó">Összeadó</h2>
-<p>Írj egy programot, ami addig kér be számokat a felhasználótól egy while ciklusban, amíg a felhasználó a &quot;stop&quot; szót nem írja be. A program számolja össze a beírt számok összegét. Amikor a ciklus véget ér, írja ki az alert() segítségével a végeredményt. A break utasítással lépj ki a ciklusból, ha a felhasználó a &quot;stop&quot; szót adja meg.</p>
+<h2 id="mini-kalkulátor">Mini-kalkulátor</h2>
+<p>Írj egy programot, ami a <code>prompt()</code> segítségével bekér a felhasználótól két számot, majd egy matematikai operátort (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>). Használj <strong><code>switch</code> utasítást</strong> az operátor kiértékelésére!</p>
+<ul>
+<li>Ha az operátor <code>+</code>, add össze a két számot.</li>
+<li>Ha az operátor <code>-</code>, vond ki a másodikat az elsőből.</li>
+<li>Ha az operátor <code>*</code>, szorozd össze őket.</li>
+<li>Ha az operátor <code>/</code>, oszd el az elsőt a másodikkal.</li>
+<li>Az eredményt írasd ki az <code>alert()</code> segítségével.</li>
+<li>A <code>switch</code> szerkezetben használj <code>default</code> ágat is, ami akkor fut le, ha a felhasználó érvénytelen operátort ad meg (pl. &quot;x&quot;). Ekkor írasd ki: <code>&quot;Hibás operátor!&quot;</code>.</li>
+</ul>
 <h2 id="fizzbuzz">FizzBuzz</h2>
 <p>Írj egy programot, ami egy for ciklussal végigmegy a számokon 1-től 100-ig.</p>
 <ul>
@@ -101,6 +104,18 @@
 <li>Ha a szám osztható 5-tel, írja ki, hogy &quot;Buzz&quot;.</li>
 <li>Ha a szám osztható 3-mal és 5-tel is, írja ki, hogy &quot;FizzBuzz&quot;.</li>
 <li>Minden más esetben írja ki magát a számot.</li>
+</ul>
+<h2 id="számlálás">Számlálás</h2>
+<p>Írj ciklust, ami kiírja a konzolra a számokat szóközzel elválasztva egymás mellé 1-től egy, a felhasználó által meghatározott számig.</p>
+<p>Miután ez sikerült, módosítsd a kódot úgy, hogy visszafele számoljon és ha elérte a 0-t, írd ki a konzolra, hogy &quot;BUÉK!&quot;.</p>
+<h2 id="összeadó">Összeadó</h2>
+<p>Írj egy programot, ami addig kér be számokat a felhasználótól egy while ciklusban, amíg a felhasználó a &quot;stop&quot; szót nem írja be. A program számolja össze a beírt számok összegét. Amikor a ciklus véget ér, írja ki az alert() segítségével a végeredményt. A break utasítással lépj ki a ciklusból, ha a felhasználó a &quot;stop&quot; szót adja meg.</p>
+<h2 id="számkitaláló">Számkitaláló</h2>
+<p>Írj programot, amely &quot;gondol&quot; egy számra, a felhasználónak pedig korlátozott számú lehetősége van kitalálni azt. A program minden tipp után segíti a játékost azzal, hogy megmondja, a gondolt szám kisebb vagy nagyobb-e.</p>
+<p>Ha ezzel megvagy módosítsd a &quot;Számkitaláló játék&quot; kódját! A cikluson belül, miután bekérted a felhasználó tippjét és átalakítottad <code>Number()</code>-rel, <strong>végezz ellenőrzést!</strong></p>
+<ul>
+<li>Használd az <strong><code>isNaN()</code></strong> függvényt annak vizsgálatára, hogy a bemenet valóban számmá alakult-e.</li>
+<li>Ha a <code>isNaN(tipp)</code> értéke <code>true</code> (tehát a felhasználó nem számot írt be, pl. &quot;abc&quot;), akkor egy <code>alert()</code> üzenetben jelezd a hibát (&quot;Kérlek, számot adj meg!&quot;), és <strong>ne pazarolj el egy próbálkozást</strong>. (Tipp: a <code>continue</code> itt nem feltétlen jó megoldás, gondold át, hogyan tudnád a ciklusváltozót kezelni, hogy a próbálkozás ne vesszen el.)</li>
 </ul>
 <h2 id="faktoriális">Faktoriális</h2>
 <p>Írj programot, ami 1) rekurzió segítségével, valamint 2) ciklussal kiszámítja egy szám faktoriálisát. A két számítási módot külön függvényként implementáld.</p>

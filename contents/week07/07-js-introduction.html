@@ -205,35 +205,15 @@ nev = &quot;Béla&quot;;   // Érték újraadása lehetséges
 <p>A JavaScript változónevekben angol betűket, számokat és aláhúzásjelet (<code>_</code>) használhatsz, de a névnek mindenképpen <strong>betűvel vagy aláhúzással kell kezdődnie</strong>, számmal soha.</p>
 <p>Fontos megjegyezni, hogy a JavaScript <strong>megkülönbözteti a kis- és nagybetűket</strong> (case sensitive), így a <code>felhasznalo</code>, <code>Felhasznalo</code> és <code>FELHASZNALO</code> három különböző változót jelöl. A nevek nem tartalmazhatnak szóközt, és kerülni kell a nyelv számára <strong>foglalt kulcsszavak</strong> (pl. <code>let</code>, <code>for</code>) használatát.</p>
 <p>A tiszta és érthető kód írásához <strong>ajánlott beszédes neveket</strong> adni, amelyek utalnak a változó szerepére. Több szóból álló nevek esetén a <strong>&quot;lower camel case&quot;</strong> írásmód a bevett gyakorlat, ahol az első szó kisbetűvel kezdődik, a továbbiak pedig nagybetűvel (pl. <code>felhasznaloNev</code>, <code>termekAr</code>).</p>
-<h4 id="hatókör-scope">Hatókör (Scope)</h4>
-<p>A hatókör azt határozza meg, hogy egy változó <strong>honnan érhető el</strong> a programban. Ez egy nagyon fontos koncepció, ami segít elkerülni a névütközéseket és rendszerezettebben tartani a kódot.</p>
-<ul>
-<li><p><strong>Blokkszintű hatókör (<code>let</code>, <code>const</code>)</strong>: A <code>let</code> és <code>const</code> kulcsszavakkal deklarált változók csak abban a kódblokkban (<code>{}</code>) és az azon belüli beágyazott blokkokban érhetők el, ahol definiálták őket.</p>
-<pre><code class="lang-javascript">function peldaFuggveny() {
-    let lokalisValtozo = 10;
-    if (true) {
-        const blokkValtozo = 20;
-        console.log(lokalisValtozo); // Elérhető
-        console.log(blokkValtozo);  // Elérhető
-    }
-    // console.log(blokkValtozo); // Hiba: blokkon kívül nem elérhető
-}
-// console.log(lokalisValtozo); // Hiba: függvényen kívül nem elérhető
-</code></pre>
-</li>
-<li><p><strong>Globális hatókör</strong>: Azok a változók, amelyeket a program legfelső szintjén, minden függvényen és blokkon kívül deklarálunk. Ezek a változók a program bármely pontjáról elérhetők.</p>
-<pre><code class="lang-javascript">const globalisValtozo = &quot;Hello világ!&quot;;
-
-function mutasdGlobalist() {
-    console.log(globalisValtozo); // Elérhető
-}
-mutasdGlobalist();
-console.log(globalisValtozo); // Elérhető
-</code></pre>
-</li>
-</ul>
 <h3 id="adattípusok-milyen-értékeket-tárolhatunk">Adattípusok: Milyen értékeket tárolhatunk?</h3>
 <p>A JavaScript egy <strong>dinamikusan típusos nyelv</strong>. Ez azt jelenti, hogy nem kell előre megmondanunk egy változónak, milyen típusú adatot fog tárolni (mint például C#-ban vagy Javában). A változó típusa az <strong>értékadáskor</strong> dől el, és akár a program futása során is megváltozhat.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Miért hallasz majd a TypeScriptről?</strong>
+A JavaScript dinamikus típuskezelése rugalmas, de egyben a nyelv egyik legnagyobb kihívása is. A programozás során elkövetett hibák (pl. egy számot próbálsz szövegként kezelni) gyakran csak a kód futtatásakor (runtime), a böngészőben derülnek ki.
+A hatékony fejlesztői munkafolyamat kulcsa, hogy a hibákról minél hamarabb, lehetőleg már a kód írása közben értesüljünk. Ebben segít a <strong>TypeScript</strong>.
+A TypeScript a JavaScript egy &quot;bővített&quot; változata, amely lehetővé teszi a típusok előzetes meghatározását. Ezzel a fejlesztői környezet (az IDE, pl. Visual Studio Code) már gépelés közben képes jelezni a típushibákat, megelőzve a futásidejű problémák nagy részét. További előnye, hogy a típusinformációk miatt sokkal pontosabb és hasznosabb kódsúgót (IntelliSense) kapunk, ami jelentősen felgyorsítja a munkát. Erről a félév során nem fogunk tanulni, de későbbiekben fogtok még vele találkozni.</p>
+</div>
 <p>Nézzük meg a leggyakoribb adattípusokat:</p>
 <ul>
 <li><p><strong><code>string</code> (szöveg)</strong>: Karakterláncok, azaz szöveges adatok tárolására szolgál. A szöveget mindig <strong>idézőjelek közé</strong> kell tenni. Használhatunk egyszeres ( <code>''</code> ), kétszeres ( <code>&quot;&quot;</code> ) idézőjeleket, vagy a modernebb <strong>backtick</strong> ( <code>`</code> ) karaktert, ami a <em>template literal</em> nevet is viseli.</p>
@@ -254,7 +234,7 @@ let ar = 1299.99;
 </ul>
 <div class="NOTE">
 <h5>Note</h5>
-<p>Ha egy számot idézőjelek közé teszünk, az <strong>string</strong> típusúvá válik! (<code>&quot;500&quot;</code> az egy szöveg, nem szám). Ha számolni akarunk vele, előbb konvertálni kell.</p>
+<p>Ha egy számot idézőjelek közé teszünk, az <strong>string</strong> típusúvá válik! (<code>&quot;500&quot;</code> az egy szöveg, nem szám). Ha számolni akarunk vele, előbb konvertálni kell. Lásd lentebb.</p>
 </div>
 <ul>
 <li><p><strong><code>boolean</code> (logikai)</strong>: Két lehetséges értékkel rendelkezik: <code>true</code> (igaz) vagy <code>false</code> (hamis). Leginkább feltételek kiértékelésére használjuk.</p>
@@ -285,7 +265,7 @@ console.log(typeof nemDefinialt); // &quot;undefined&quot;
 </code></pre>
 <p>Ezzel az operátorral könnyedén ellenőrizheted például, hogy egy felhasználótól kapott bemenet valóban szám-e, mielőtt matematikai műveleteket végeznél rajta.</p>
 <h2 id="operátorok">Operátorok</h2>
-<p>A JavaScriptben az <strong>operátorok</strong> olyan speciális szimbólumok, amelyek valamilyen műveletet végeznek el egy vagy több értéken (ezeket hívjuk operandusoknak). Gondolj rájuk úgy, mint a programozás &quot;igéire&quot; – ők teszik lehetővé, hogy a programunk csináljon is valamit az adatokkal.</p>
+<p>A JavaScriptben az <strong>operátorok</strong> olyan speciális szimbólumok, amelyek valamilyen műveletet végeznek el egy vagy több értéken (ezeket hívjuk operandusoknak).</p>
 <h3 id="értékadó-operátorok">Értékadó operátorok</h3>
 <p>Az értékadó operátorok a leggyakrabban használt operátorok közé tartoznak, hiszen ők felelnek azért, hogy értékeket adjunk a változóinknak.</p>
 <ul>
@@ -351,6 +331,18 @@ visszaszamlalo--; // visszaszamlalo értéke most 9
 <h5>Note</h5>
 <p>Az <code>++</code> és <code>--</code> operátoroknak van egy &quot;pre&quot; és &quot;post&quot; formája, attól függően, hogy az operátor a változó előtt vagy után áll. Ha a változó <em>után</em> van (pl. <code>szamlalo++</code>), akkor az értékadás vagy kifejezés során először a változó <strong>eredeti értékét</strong> használja fel, majd <em>utána</em> növeli az értékét. Ha a változó <em>előtt</em> van (pl. <code>++szamlalo</code>), akkor először <strong>növeli</strong> az értékét, majd az <em>új</em> értéket használja fel. Kezdetben ez furcsának tűnhet, de a későbbiekben ciklusoknál vagy bonyolultabb kifejezéseknél látni fogod a jelentőségét!</p>
 </div>
+<pre><code class="lang-javascript">let szam = 5;
+console.log(`szam++: ${szam++}`);
+console.log(`szam: ${szam}`);
+console.log(&quot;---&quot;);
+
+szam = 5;
+console.log(`++szam: ${++szam}`);
+console.log(`szam: ${szam}`);
+console.log(&quot;---&quot;);
+
+// Próbáld ki a szam-- és --szam eseteket is.
+</code></pre>
 <h3 id="logikai-és-összehasonlító-operátorok">Logikai és összehasonlító operátorok</h3>
 <p>Ezek az operátorok segítenek nekünk feltételeket vizsgálni, és eldönteni, hogy egy kifejezés <strong><code>true</code> (igaz)</strong> vagy <strong><code>false</code> (hamis)</strong>-e, azaz logikai (boolean) értéket adnak vissza. Ez kulcsfontosságú a programvezérlésben, hiszen ezen alapulnak az elágazások és ciklusok.</p>
 <h4 id="összehasonlító-operátorok">Összehasonlító operátorok:</h4>
@@ -668,38 +660,36 @@ isNaN(123);  // false
 <li><strong><code>Math.floor(szam)</code></strong>: Lekerekíti a számot a legközelebbi kisebb egész számra.</li>
 <li><strong><code>Math.ceil(szam)</code></strong>: Felfelé kerekíti a számot a legközelebbi nagyobb egész számra.</li>
 </ul>
-<h3 id="46-függvény-hatókör-scope">4.6. Függvény hatókör (Scope)</h3>
-<p>A <strong>hatókör (scope)</strong> azt határozza meg, hogy egy változó vagy függvény honnan érhető el a programban. Ez egy kulcsfontosságú koncepció, ami segít elkerülni a névütközéseket és rendszerezni a kódot.</p>
-<ol>
-<li><p><strong>Globális hatókör</strong>: Azok a változók és függvények, amiket minden más kódblokkon (függvényen, <code>if</code> blokkon stb.) <strong>kívül</strong> deklarálunk, a globális hatókörbe tartoznak. Ezek a program <strong>bármely pontjáról elérhetők</strong>.</p>
-<pre><code class="lang-javascript">const globalisValtozo = &quot;Én globális vagyok!&quot;; // Globális változó
+<h3 id="hatókör-scope">Hatókör (Scope)</h3>
+<p>A hatókör azt határozza meg, hogy egy változó vagy függvény <strong>honnan érhető el</strong> a programban. Ez egy nagyon fontos koncepció, ami segít elkerülni a névütközéseket és rendszerezettebben tartani a kódot.</p>
+<ul>
+<li><p><strong>Blokkszintű hatókör (<code>let</code>, <code>const</code>)</strong>: A <code>let</code> és <code>const</code> kulcsszavakkal deklarált változók csak abban a kódblokkban (<code>{}</code>) és az azon belüli beágyazott blokkokban érhetők el, ahol definiálták őket.</p>
+<pre><code class="lang-javascript">let peldaFuggveny = function() {
+    let lokalisValtozo = 10;
+    if (true) {
+        const blokkValtozo = 20;
+        console.log(lokalisValtozo); // Elérhető
+        console.log(blokkValtozo);   // Elérhető
+    }
+    // console.log(blokkValtozo); // Hiba: blokkon kívül nem elérhető
+};
+// console.log(lokalisValtozo); // Hiba: függvényen kívül nem elérhető
 
-function mutasdGlobalist() {
-  console.log(globalisValtozo); // Elérhető a függvényen belülről is
-}
+peldaFuggveny(); // Meghívjuk a függvényt a működés bemutatásához
+</code></pre>
+</li>
+<li><p><strong>Globális hatókör</strong>: Azok a változók, amelyeket a program legfelső szintjén, minden függvényen és blokkon kívül deklarálunk. Ezek a változók a program bármely pontjáról elérhetők.</p>
+<pre><code class="lang-javascript">const globalisValtozo = &quot;Hello világ!&quot;;
+
+let mutasdGlobalist = function() {
+    console.log(globalisValtozo); // Elérhető
+};
 
 mutasdGlobalist();
-console.log(globalisValtozo);
+console.log(globalisValtozo); // Elérhető
 </code></pre>
 </li>
-<li><p><strong>Függvény / Blokkszintű hatókör</strong>: A függvényen <strong>belül</strong> deklarált változók csak abban a függvényben érhetők el. Ahogyan korábban tárgyaltuk, a <code>let</code> és <code>const</code> kulcsszavakkal deklarált változók <strong>blokkszintű hatókörrel</strong> rendelkeznek, ami azt jelenti, hogy csak abban a <code>{}</code> blokkban (pl. egy <code>if</code> utasításban vagy <code>for</code> ciklusban) érhetők el, ahol definiálták őket.</p>
-<pre><code class="lang-javascript">function peldaFuggveny() {
-  let lokalisValtozo = 10; // Lokális a peldaFuggveny-en belül
-
-  if (true) {
-    const blokkValtozo = 20; // Lokális az if blokkon belül (blokkszintű hatókör)
-    console.log(lokalisValtozo); // Elérhető
-    console.log(blokkValtozo); // Elérhető
-  }
-
-  // console.log(blokkValtozo); // Hiba: Itt már nem elérhető a blokkon kívül
-}
-
-// console.log(lokalisValtozo); // Hiba: Itt már nem elérhető a függvényen kívül
-</code></pre>
-</li>
-</ol>
-<p>A hatókörök segítenek abban, hogy a kód különböző részei ne &quot;piszkáljanak bele&quot; egymás változóiba, ezzel megelőzve a váratlan hibákat és növelve a kód modularitását. Ha &quot;ReferenceError: X is not defined&quot; hibát látsz, az gyakran hatókörrel kapcsolatos problémára utal.</p>
+</ul>
 
 </article>
 
