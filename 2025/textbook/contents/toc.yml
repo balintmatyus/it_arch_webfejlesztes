@@ -46,33 +46,33 @@
     href: todo.md
 - name: 7. hét
   items:
-  - name: 💡 JS változók, típusok, operátorok, elágazások, ciklusok
+  - name: 💡 Bevezetés a JavaScriptbe
     href: week07/07-js-introduction.md
   - name: 🛠 Számkitalálós feladat
     href: week07/07-js-szamkitalalo.md
   - name: 🛠 Gyakorló feladatok
-    href: todo.md
+    href: week07/07-js-gyakorlo.md
 - name: 8. hét
   items:
-  - name: 💡 JS függvények, objektumok, tömbök
+  - name: 💡 JavaScript objektumok és tömbök
     href: todo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 9. hét
   items:
-  - name: 💡 JS események, DOM manipuláció
+  - name: 💡 JavaScript események, DOM manipuláció
     href: todo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 10. hét
   items:
-  - name: 💡 JS űrlapok validálása
+  - name: 💡 Űrlapok validálása Javascripttel
     href: todo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 11. hét
   items:
-  - name: 💡 JS AJAX, Fetch API
+  - name: 💡 AJAX és fetch API
     href: todo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md

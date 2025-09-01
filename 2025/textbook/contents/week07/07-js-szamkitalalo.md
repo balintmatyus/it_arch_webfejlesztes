@@ -40,3 +40,6 @@ Miután a ciklus befejeződött (akár azért, mert a játékos nyert, akár az�
 
 * **Végeredmény ellenőrzése:** A ciklus után vizsgáld meg az "eltalálta-e" jelzőváltozó értékét.
 * **Vesztes állapot közlése:** Ha a változó értéke továbbra is hamis, az azt jelenti, hogy a játékosnak nem sikerült kitalálnia a számot a megadott próbálkozások alatt. Ebben az esetben egy utolsó üzenetben tudasd vele, hogy vesztett, és áruld el, mi volt a titkos szám. Ha a változó igaz, akkor nincs teendő, hiszen a győzelmet már a cikluson belül kezelted.
+
+>[!TASK]
+>Ha minden működik, oldd meg, hogy véletlenszerű számmal is működjön a játék.
