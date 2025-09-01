@@ -6,7 +6,9 @@ Definiálj két változót, oldalA és oldalB néven, és adj nekik számérték
 
 ## Köszönés
 
-Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor "Jó reggelt!", ha 18-nál kisebb, akkor "Jó napot!", egyébként pedig "Jó estét!" üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a `console.log(aktualisOra)` utasítást a megfelelő köszöntés megjelenítésére. Ha ezzel megvagy, módosítsd a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben. (Amennyiben nem adott meg a felhasználó nevet, legyen a neve Vendég.)
+Írj egy JavaScript programot, amely egy aktualisOra nevű, egész számot tároló változó alapján a napszaknak megfelelő üdvözlést írja ki a konzolra. Használj if...else if...else szerkezetet, ami eldönti, hogy ha az óra 10-nél kisebb, akkor "Jó reggelt!", ha 18-nál kisebb, akkor "Jó napot!", egyébként pedig "Jó estét!" üzenetet jelenítsen meg. Az üdvözlés előtt a program írja ki a változó aktuális értékét is egy informatív szöveggel. Használd a `console.log(aktualisOra)` utasítást a megfelelő köszöntés megjelenítésére. 
+
+Ha ezzel megvagy, módosítsd a kódodat, hogy a felhasználó neve is megjelenjen a köszöntésben. (Amennyiben nem adott meg a felhasználó nevet, legyen a neve Vendég.) Internetes kereső vagy LLM segítségével nézz utána, hogyan kellene a kódodat módosítani, hogy a tényleges idő alapján köszönjön a program. (De magát a megoldást ne készíttesd el vele, próbáld meg Te beépíteni az új információt.)
 
 ## Mini-kalkulátor
 
