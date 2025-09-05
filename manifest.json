@@ -357,6 +357,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week08/08-js-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week08/08-js-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week08/08-js-objects-arrays.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week08/08-js-objects-arrays.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
