@@ -46,14 +46,11 @@ A kurzus két, egymástól független fő blokkból áll:
 
 * **Webfejlesztés (65 pont):**
   * **Moodle tesztek:** A félév során 9 véletlenszerű időpontban, a gyakorlatokon írt 5-10 perces gépes tesztek. Segédanyag nem használható. A 9-ből a 6 legjobb eredmény számít (6 * 5 pont) = **30 pont**. Hiányzás esetén a teszt nem pótolható, a 3 kihagyható alkalom erre is vonatkozik.
-  * **Beadandó weboldal:** Kritériumok alapján elkészített, GitHub Pages-re feltöltött és a Moodle-ba is becsomagolva beadott projekt, melyet a vizsgaidőszakban 15 percben meg kell védeni. = **35 pont**.
+  * **Beadandó weboldal:** Kritériumok alapján elkészített, GitHub Pages-re feltöltött és a Moodle-ba is becsomagolva beadott projekt, melyet az utolsó szorgalmi időszaki héten, valamint a vizsgaidőszak első hetében 15 percben meg kell védeni. = **35 pont**.
 * **Excel (35 pont):**
   * **Gépes vizsga (6. órán):** **15 pont**
   * **Gépes vizsga (12. órán):** **15 pont** (A zárthelyi csak orvosi igazolással pótolható a félév végén, javítási lehetőség nincs.)
   * **Csoportos beadandó (Adatelemzés):** A 7. héten kiírt, 9. héten beadandó feladat. = **5 pont**.
-
->[!NOTE]
->Ugyan nem követelmény 50-50%-ot elérni az egyes blokkokon belül, az elmúlt évek tapasztalata azt mutatja, hogy mindkét blokk tartalma jellemzően visszaköszön a későbbiekben a hallgatóknak, pl. gyakornoki munkájuk során. Egyébként is, mindenki jelesre szeretne vizsgázni. :)
 
 ### Érdemjegyek ponthatárok alapján:
 
@@ -95,8 +92,7 @@ A kurzus két, egymástól független fő blokkból áll:
  9. Célértékkeresés, Solver
 10. Makró I.
 11. Makró II.
-12. Összefoglalás
-13. **Második zárthelyi (15 pont)**
+12. **Második zárthelyi (15 pont)**
 
 ## Segédanyagok és kötelező irodalom
 
