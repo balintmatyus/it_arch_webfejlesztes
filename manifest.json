@@ -146,6 +146,16 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week01/prezi/01-intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week01/prezi/01-intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "contents/week01/viccek/vicc.txt",
       "output": {
