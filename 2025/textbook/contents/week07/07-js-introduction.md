@@ -121,7 +121,7 @@ A programozás során rengeteg információval dolgozunk: számokkal, szövegekk
 
 #### Változók deklarálása: `let`, `const`, `var`
 
-A JavaScriptben többféle módon is deklarálhatunk, vagyis létrehozhatunk változókat. A modern JavaScriptben két fő kulcsszóval dolgozunk: a `let` és a `const`. Régebben a `var` kulcsszót használtuk erre a célra, de erről mindjárt kiderül, miért érdemes elkerülni.
+A JavaScriptben többféle módon is deklarálhatunk, vagyis létrehozhatunk változókat. A modern JavaScriptben két fő kulcsszóval dolgozunk: a `let` és a `const`. Régebben a `var` kulcsszót használtuk erre a célra, de érdemes kerülni.
 
 *   **`let`**: Ezt a kulcsszót akkor használjuk, ha egy olyan változót akarunk létrehozni, aminek az értékét **később megváltoztathatjuk** a program futása során.
     ```javascript
