@@ -13,36 +13,6 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "contents/general/css-reference.md",
-      "output": {
-        ".html": {
-          "relative_path": "contents/general/css-reference.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "contents/general/html-reference.md",
-      "output": {
-        ".html": {
-          "relative_path": "contents/general/html-reference.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "contents/general/js-reference.md",
-      "output": {
-        ".html": {
-          "relative_path": "contents/general/js-reference.html"
-        }
-      },
-      "version": ""
-    },
-    {
       "type": "Toc",
       "source_relative_path": "contents/toc.yml",
       "output": {
