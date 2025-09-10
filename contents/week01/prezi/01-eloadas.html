@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Informatika &#233;s IT architekt&#250;ra alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Informatika &#233;s IT architekt&#250;ra alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/prezi/01-eloadas.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="informatika-és-it-architektúra-alapjai"><strong>Informatika és IT architektúra alapjai</strong></h1>
+
+<h2 id="1-előadás">1. előadás</h2>
+<p>Gazdaságinformatikus BSc
+2025/2026/1. félév</p>
+<hr>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>🌐 <strong>Internet és WWW</strong></li>
+<li>🔄 <strong>Kliens-szerver architektúra</strong></li>
+<li>🏗️ <strong>Full-stack fejlesztés</strong></li>
+<li>📝 <strong>HTML5 alapok</strong></li>
+<li>✅ <strong>Websztenderdek és validáció</strong></li>
+</ul>
+<hr>
+<h1 id="1-rész"><strong>1. rész</strong></h1>
+<h2 id="hogyan-működik-a-web">Hogyan működik a web?</h2>
+<hr>
+<h2 id="-nyitókérdés">🤔 Nyitókérdés</h2>
+<blockquote>
+<p><strong>Mi a különbség az Internet és a World Wide Web között?</strong></p>
+</blockquote>
+<hr>
+<h2 id="internet-vs-www">Internet vs. WWW</h2>
+<div class="columns">
+<div>
+<h3 id="internet"><strong>Internet</strong></h3>
+<ul>
+<li>Fizikai infrastruktúra</li>
+<li>&quot;Hálózatok hálózata&quot;</li>
+<li>Kábelek, routerek, szerverek</li>
+<li>TCP/IP protokoll</li>
+</ul>
+</div>
+<div>
+<h3 id="www"><strong>WWW</strong></h3>
+<ul>
+<li>Információs rendszer</li>
+<li>Az Interneten fut</li>
+<li>HTML, URL, HTTP</li>
+<li>Tim Berners-Lee (1989)</li>
+</ul>
+</div>
+</div>
+<hr>
+<h2 id="fejlődési-mérföldkövek">Fejlődési mérföldkövek</h2>
+<p><strong>1969</strong> → ARPANET (4 egyetem)
+<strong>1983</strong> → TCP/IP protokoll
+<strong>1989</strong> → WWW megszületése
+<strong>1993</strong> → Mosaic böngésző
+<strong>2000+</strong> → Web 2.0 korszak</p>
+<hr>
+<h2 id="tcpip-protokoll">TCP/IP protokoll</h2>
+<h3 id="postai-analógia"><strong>Postai analógia</strong></h3>
+<ul>
+<li><p><strong>TCP</strong> = Gondos postai ügyintéző</p>
+<ul>
+<li>Szétszedi a könyvet lapokra</li>
+<li>Megszámozza őket</li>
+<li>Ellenőrzi a kézbesítést</li>
+</ul>
+</li>
+<li><p><strong>IP</strong> = Postás</p>
+<ul>
+<li>Címzés (IP-címek)</li>
+<li>Útvonalválasztás</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="kliens-szerver-modell">Kliens-szerver modell</h2>
+<p><strong>Kliens</strong>: Kérelmező (böngésző, app)
+<strong>Szerver</strong>: Kiszolgáló (adatok, logika)</p>
+<h3 id="előnyök">Előnyök</h3>
+<ul>
+<li>Központosított menedzsment</li>
+<li>Skálázhatóság</li>
+<li>Erőforrás-megosztás</li>
+</ul>
+<hr>
+<h2 id="-közös-feladat">🎯 Közös feladat</h2>
+<p><strong>Rajzoljuk fel együtt egy weboldal betöltődésének folyamatát!</strong></p>
+<p>Főbb lépések:</p>
+<ol>
+<li>URL beírása</li>
+<li>DNS lekérdezés</li>
+<li>TCP kapcsolat</li>
+<li>HTTP kérés/válasz</li>
+<li>Renderelés</li>
+</ol>
+<hr>
+<h2 id="egy-oldal-betöltődése">Egy oldal betöltődése</h2>
+<ol>
+<li><strong>DNS feloldás</strong> → <code>https://www.uni-corvinus.hu</code> → <code>146.110.3.100</code></li>
+<li><strong>TCP handshake</strong> → Kapcsolat létrehozása</li>
+<li><strong>HTTP kérés</strong> → <code>GET / HTTP/1.1</code></li>
+<li><strong>Szerver feldolgozás</strong> → HTML generálás</li>
+<li><strong>HTTP válasz</strong> → <code>200 OK</code> + HTML</li>
+<li><strong>Renderelés</strong> → Vizuális megjelenítés</li>
+</ol>
+<hr>
+<h2 id="https-és-biztonság">HTTPS és biztonság</h2>
+<h3 id="-titkosítás">🔒 <strong>Titkosítás</strong></h3>
+<p>SSL/TLS protokoll</p>
+<h3 id="-integritás">✅ <strong>Integritás</strong></h3>
+<p>Adatok sértetlensége</p>
+<h3 id="-hitelesítés">🏢 <strong>Hitelesítés</strong></h3>
+<p>Tanúsítványok</p>
+<hr>
+<h1 id="2-rész"><strong>2. rész</strong></h1>
+<h2 id="full-stack-fejlesztés">Full-stack fejlesztés</h2>
+<hr>
+<h2 id="a-modern-webalkalmazás-anatómiája">A modern webalkalmazás anatómiája</h2>
+<p><strong>Frontend</strong> (kliens oldal)
+↕️
+<strong>Backend</strong> (szerver oldal)
+↕️
+<strong>Adatbázis</strong></p>
+<hr>
+<h2 id="frontend-hármasság">Frontend hármasság</h2>
+<h3 id="-html--struktúra">🏗️ <strong>HTML</strong> = Struktúra</h3>
+<p>A ház váza és falai</p>
+<h3 id="-css--stílus">🎨 <strong>CSS</strong> = Stílus</h3>
+<p>Festék, tapéta, díszítés</p>
+<h3 id="-javascript--viselkedés">⚡ <strong>JavaScript</strong> = Viselkedés</h3>
+<p>Elektromos hálózat, kapcsolók</p>
+<hr>
+<h2 id="szemléltető-példa">Szemléltető példa</h2>
+<pre><code class="lang-html">&lt;button&gt;Kattints!&lt;/button&gt;  &lt;!-- HTML --&gt;
+</code></pre>
+<pre><code class="lang-css">button { color: blue; }      /* CSS */
+</code></pre>
+<pre><code class="lang-javascript">button.onclick = () =&gt; {...} // JS
+</code></pre>
+<hr>
+<h2 id="separation-of-concerns">Separation of Concerns</h2>
+<h3 id="miért-válasszuk-szét"><strong>Miért válasszuk szét?</strong></h3>
+<ul>
+<li>✅ Karbantarthatóság</li>
+<li>✅ Csapatmunka</li>
+<li>✅ Újrahasznosíthatóság</li>
+<li>✅ Skálázhatóság</li>
+</ul>
+<hr>
+<h2 id="backend-felelősségek">Backend felelősségek</h2>
+<ul>
+<li><strong>Üzleti logika</strong> végrehajtása</li>
+<li><strong>Adatbázis</strong> interakciók</li>
+<li><strong>Hitelesítés</strong> és biztonság</li>
+<li><strong>API</strong> szolgáltatás</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Kritikus műveletek mindig a szerveren!</strong></p>
+</blockquote>
+<hr>
+<h1 id="3-rész"><strong>3. rész</strong></h1>
+<h2 id="html5-alapok">HTML5 alapok</h2>
+<hr>
+<h2 id="mi-az-a-html">Mi az a HTML?</h2>
+<p><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</p>
+<ul>
+<li>Nem programozási nyelv!</li>
+<li>Jelölőnyelv (markup)</li>
+<li>Struktúra leírása</li>
+<li><code>.html</code> fájlok</li>
+</ul>
+<hr>
+<h2 id="html-elemek-anatómiája">HTML elemek anatómiája</h2>
+<pre><code class="lang-html">&lt;p class=&quot;kiemelt&quot;&gt;Tartalom&lt;/p&gt;
+</code></pre>
+<ul>
+<li><strong>Nyitó tag</strong>: <code>&lt;p&gt;</code></li>
+<li><strong>Attribútum</strong>: <code>class=&quot;kiemelt&quot;</code></li>
+<li><strong>Tartalom</strong>: <code>Tartalom</code></li>
+<li><strong>Záró tag</strong>: <code>&lt;/p&gt;</code></li>
+</ul>
+<hr>
+<h2 id="-gyakorlat">💻 Gyakorlat</h2>
+<p><strong>Írjuk meg együtt az első HTML oldalunkat!</strong></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Első oldalam&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<h2 id="dokumentum-struktúra">Dokumentum struktúra</h2>
+<ul>
+<li><code>&lt;!DOCTYPE html&gt;</code> → HTML5 deklaráció</li>
+<li><code>&lt;html&gt;</code> → Gyökérelem</li>
+<li><code>&lt;head&gt;</code> → Meta információk</li>
+<li><code>&lt;body&gt;</code> → Látható tartalom</li>
+</ul>
+<hr>
+<h2 id="szemantikus-címsorok">Szemantikus címsorok</h2>
+<p><code>&lt;h1&gt;</code> <strong>Főcím</strong> (csak 1 oldalanként!)
+<code>&lt;h2&gt;</code> Alcím
+<code>&lt;h3&gt;</code> Al-alcím
+...
+<code>&lt;h6&gt;</code> Legalsó szint</p>
+<h3 id="-hierarchia-fontossága">⚠️ Hierarchia fontossága!</h3>
+<p>SEO + Akadálymentesség</p>
+<hr>
+<h2 id="szövegformázás">Szövegformázás</h2>
+<h3 id="szemantikus-kiemelés"><strong>Szemantikus kiemelés</strong></h3>
+<ul>
+<li><code>&lt;strong&gt;</code> → Fontos</li>
+<li><code>&lt;em&gt;</code> → Hangsúlyos</li>
+</ul>
+<h3 id="vizuális-formázás-kerülendő"><strong>Vizuális formázás</strong> (kerülendő)</h3>
+<ul>
+<li><code>&lt;b&gt;</code> → Félkövér</li>
+<li><code>&lt;i&gt;</code> → Dőlt</li>
+</ul>
+<hr>
+<h2 id="listák-típusai">Listák típusai</h2>
+<div class="columns">
+<div>
+<h3 id="rendezett"><strong>Rendezett</strong></h3>
+<pre><code class="lang-html">&lt;ol&gt;
+  &lt;li&gt;Első&lt;/li&gt;
+  &lt;li&gt;Második&lt;/li&gt;
+&lt;/ol&gt;
+</code></pre>
+</div>
+<div>
+<h3 id="rendezetlen"><strong>Rendezetlen</strong></h3>
+<pre><code class="lang-html">&lt;ul&gt;
+  &lt;li&gt;Alma&lt;/li&gt;
+  &lt;li&gt;Körte&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</div>
+</div>
+<hr>
+<h2 id="képek-beágyazása">Képek beágyazása</h2>
+<pre><code class="lang-html">&lt;img src=&quot;kep.jpg&quot; 
+     alt=&quot;Leíró szöveg&quot;
+     width=&quot;400&quot; 
+     height=&quot;300&quot;&gt;
+</code></pre>
+<h3 id="-alt-attribútum-kötelező">📌 <strong>Alt attribútum kötelező!</strong></h3>
+<p>Akadálymentesség + SEO</p>
+<hr>
+<h2 id="linkek-létrehozása">Linkek létrehozása</h2>
+<pre><code class="lang-html">&lt;a href=&quot;https://example.com&quot;&gt;Külső link&lt;/a&gt;
+&lt;a href=&quot;about.html&quot;&gt;Belső link&lt;/a&gt;
+&lt;a href=&quot;#section1&quot;&gt;Ugrás részhez&lt;/a&gt;
+</code></pre>
+<h3 id="-tipp-kerüld-a-kattints-ide-szöveget">💡 <strong>Tipp</strong>: Kerüld a &quot;Kattints ide!&quot; szöveget</h3>
+<hr>
+<h1 id="5-rész"><strong>5. rész</strong></h1>
+<h2 id="websztenderdek-és-validáció">Websztenderdek és validáció</h2>
+<hr>
+<h2 id="ki-dönt-a-szabályokról">Ki dönt a szabályokról?</h2>
+<h3 id="w3c"><strong>W3C</strong></h3>
+<p>World Wide Web Consortium
+Tim Berners-Lee alapította</p>
+<h3 id="whatwg"><strong>WHATWG</strong></h3>
+<p>Böngészőgyártók csoportja
+&quot;Living Standard&quot; modell</p>
+<hr>
+<h2 id="miért-fontos-a-validáció">Miért fontos a validáció?</h2>
+<ul>
+<li>✅ <strong>Böngésző-kompatibilitás</strong></li>
+<li>✅ <strong>SEO optimalizálás</strong></li>
+<li>✅ <strong>Akadálymentesség</strong></li>
+<li>✅ <strong>Hibák korai észlelése</strong></li>
+</ul>
+<hr>
+<h2 id="html-validátor">HTML Validátor</h2>
+<h3 id="-w3c-validator">🔧 <strong>W3C Validator</strong></h3>
+<p><a href="https://validator.w3.org">validator.w3.org</a></p>
+<p><strong>Használati módok:</strong></p>
+<ol>
+<li>URL megadása</li>
+<li>Fájl feltöltése</li>
+<li>Kód bemásolása</li>
+</ol>
+<hr>
+<h2 id="-gyakorlati-feladat">🏆 Gyakorlati feladat</h2>
+<p><strong>Találjuk meg a hibákat!</strong></p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Teszt oldal
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Címsor
+    &lt;p&gt;Bekezdés &lt;b&gt;félkövér&lt;i&gt; dőlt&lt;/b&gt;&lt;/i&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<hr>
+<h2 id="tipikus-validációs-hibák">Tipikus validációs hibák</h2>
+<ol>
+<li>❌ Hiányzó záró tagek</li>
+<li>❌ Rossz beágyazási sorrend</li>
+<li>❌ Hiányzó kötelező attribútumok</li>
+<li>❌ Érvénytelen attribútum értékek</li>
+<li>❌ Duplikált ID-k</li>
+</ol>
+<hr>
+<h2 id="összefoglalás">Összefoglalás</h2>
+<h3 id="ma-megtanultuk"><strong>Ma megtanultuk:</strong></h3>
+<ul>
+<li>🌐 Internet vs. WWW különbség</li>
+<li>🔄 Kliens-szerver kommunikáció</li>
+<li>🏗️ Frontend/Backend szerepek</li>
+<li>📝 HTML5 alapok</li>
+<li>✅ Validáció fontossága</li>
+</ul>
+<hr>
+<h2 id="gyakorlat">Gyakorlat</h2>
+<p>Telepítsd fel a VS Code-ot a saját számítógépedre, ha azon szeretnél dolgozni.</p>
+<h2 id="következő-előadás">Következő előadás</h2>
+<p>GitHub fiók regisztrálása (<a href="https://www.github.com">https://www.github.com</a>) és Git telepítése (<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a>)</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week01/prezi/01-eloadas.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
