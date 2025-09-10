@@ -287,6 +287,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-design.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-design.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week05/05-css-basics.md",
       "output": {
         ".html": {

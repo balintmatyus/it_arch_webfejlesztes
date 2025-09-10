@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-design.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="felhasználói-felület-tervezése">Felhasználói felület tervezése</h1>
+
+<h2 id="mi-a-design">Mi a design?</h2>
+<p>A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyűjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.</p>
+<p>A design egy olyan fogalom, amely magába foglalja a következő fogalmakat: esztétikai érzék, egyensúly, egységesség, harmónia, finomság, meglepetés... Szótár szerint jelent tervet, koncepciót, szándékot és mintát is. De ki lehet vele fejezni a készítést, kreálást és a szerkesztést is. Valahogy mégis több jelentést gondolunk a szó mögött. A szótár fordításai mellett valamilyen összhatást is jelent az emberek számára. A nyers jelentésben tehát egyféle előrelátó teremtés ez, ahol folyamatosan szem előtt kell tartani a végcélt. Erre nem úgy kell tekinteni, mind egy szükségtelen dolog, hanem mint a mindennapi munkánk szükséges része.</p>
+<p>Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.</p>
+<h2 id="honlap-készítés-előkészületei-menete">Honlap készítés előkészületei, menete</h2>
+<p>Szedjük össze amink van (szöveg, kép, állományok, e-mail címek, linkek), majd tegyük meg a technikai előkészületeket (digitalizálás, szövegek gépelése, fényképezés, filmfelvételek elkészítése). A legfontosabb, hogy a kezdőlapunk minden - direkt- és indirekt kommunikációs szerepet betöltsön, miután a kezdőlapnak van a legfontosabb szerepe. (bemutat, eligazít, vezérel, definiál...)</p>
+<p>A következő lépés a tervezés, ami a logikai felépítés megtervezésével kell hogy foglalkozzon. A tervezés után az operatív részben a stílusok kialakítása az első feladat, ez magába foglalja a szövegek stílusainak kialakítását, a grafikák elhelyezésének, aktív elemek képének kialakítását és a színvilág meghatározását. Végül jön maga a programozási feladat, amiben fontos hangsúlyt kell fektetnünk a szerveroldali szolgáltatások kialakítására, reklámokra...</p>
+<h2 id="css-alapjai">CSS alapjai</h2>
+<p>CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Ehhez a csoporthoz csatlakozott később a W3C, és a Microsoft is, akik belátták ennek a jelentőségét. A Stílus szerkesztésének természetesen voltak verziói is, ahogy mindennek az informatikában. Azonban a klasszikus verziók helyett manapság már csak különálló modulok (flexbox, grid...) léteznek.</p>
+<h3 id="stílusok-definiálása">Stílusok definiálása</h3>
+<p>2 fő részből állnak:</p>
+<ul>
+<li>szelektor (h1)</li>
+<li>deklaráció (color: red)</li>
+</ul>
+<p>A deklaráció is 2 részből áll:</p>
+<ul>
+<li>tulajdonság (color)</li>
+<li>érték (red)</li>
+</ul>
+<p>Pl.:</p>
+<pre><code class="lang-css">h1 {
+ color: red;
+}
+
+/* vagy */
+
+h1 {
+ color: red; 
+ font-size: 4;
+}
+</code></pre>
+<p>A CSS definiálása többféle módon lehetséges. HTML forráskódon belül</p>
+<ul>
+<li><code>&lt;style&gt;</code> utasítás segítségével: a HTML sorok között adunk meg minden paramétert.</li>
+<li>Külső stíluslapok használata: külön fájlban, kiterjesztése: css, nincsenek benne, HTML tagek, csak stílusok</li>
+<li>in-line, amikor HTML fájlon belül, az egyes HTML elemek tag-jeiben definiáljuk</li>
+</ul>
+<p>A CSS előnyei közé tartozik, hogy a megjelenés a dokumentum tartalmának és struktúrájának módosítása nélkül is megváltoztatható, valamint egy stíluslap megosztható több HTML dokumentum között is.</p>
+<h4 id="stíluslap-készítése-style-utasítás-segítségével"><strong>Stíluslap készítése <code>&lt;style&gt;</code> utasítás segítségével</strong></h4>
+<pre><code class="lang-html">&lt;head&gt;
+  &lt;style&gt;
+    h1 {font-size:7; color:darkgreen; font:arial}
+    h2 {font-size:5; color:red; font:verdana}
+    h3 {font-size:4; color: blue; font:courier}
+  &lt;/style&gt;
+&lt;/head&gt;
+</code></pre>
+<p>Így néz ki a törzs rész</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;h1&gt;Repülőgépek&lt;/h1&gt;
+  &lt;h2&gt;Vitorlázó gépek&lt;/h2&gt;
+  &lt;h3&gt;R26 Góbé&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+<p>A <code>&lt;style&gt;</code> utasítás előnyei:</p>
+<ul>
+<li>A fejrészben (<code>&lt;head&gt;</code> blokkban) adjuk meg a használni kívánt stílusokat.</li>
+<li>Gyorsabb a hibakeresés, mivel egy fájlban található meg a stílus és a dokumentum tartalma.</li>
+</ul>
+<h4 id="stíluslap-használata-külső-stíluslapokkal"><strong>Stíluslap használata külső stíluslapokkal</strong></h4>
+<p>A stíluslap külön, .css kiterjesztésű fájlban is létrehozható. Ilyenkor is a <code>&lt;head&gt;</code> részben hivatkozunk rá.</p>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-html">&lt;head&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;formazas1.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<p>A törzsrész ugyanúgy néz ki, mint az első esetben:</p>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;h1&gt;Repülőgépek&lt;/h1&gt;
+  &lt;h2&gt;Vitorlázó gépek&lt;/h2&gt;
+  &lt;h3&gt;R26 Góbé&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+<p><code>link</code> utasítás paraméterei:</p>
+<ul>
+<li>rel - kapcsolat típusa (&quot;stylesheet&quot;)</li>
+<li>href - stíluslap (vmi.css) helyének megadása</li>
+</ul>
+<p>A <code>&lt;link&gt;</code> utasítást a HTML kód fejrészén belül (<code>&lt;head&gt;</code> utasítások között) kell megadni.
+A külső stíluslap (formazas1.css) a következőképpen nézhet ki:</p>
+<pre><code class="lang-css">h1 {font-size:7; color:darkgreen; font:arial}
+h2 {font-size:5; color:red; font:verdana}
+h3 {font-size:4; color: blue; font:courier}
+</code></pre>
+<p>A külső stíiluslap előnyei</p>
+<ul>
+<li>HTML dokumentum forrásának módosítása nélkül változtathatjuk stílusainkat.</li>
+<li>A <code>&lt;link&gt;</code> utasítás segítségével kapcsoljuk a HTML dokumentumunkhoz a megírt stíluslapot (formazas1.css).</li>
+<li>Ha módosítani kell vmit, akkor csak a css állományon változtatunk.</li>
+<li>A HTML kód törzsrésze a lehető legegyszerűbb.</li>
+</ul>
+<h4 id="stíluslap-készítése-style-paraméter-segítségével-in-line-css"><strong>Stíluslap készítése style paraméter segítségével, in-line CSS</strong></h4>
+<pre><code class="lang-html">&lt;body&gt;
+  &lt;h1 style=&quot;font-size:7; color:darkgreen; font:arial&quot;&gt;Repülőgépek&lt;/h1&gt;
+  &lt;h2 style=&quot;font-size:5; color:red; font:verdana&quot;&gt;Vitorlázó gépek&lt;/h2&gt;
+  &lt;h3 style=&quot;font-size:4; color:blue; font:courier&quot;&gt;R26 Góbé&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+<p>A style paraméter előnyei:</p>
+<ul>
+<li>A HTML kód törzsrészébe kerülnek egyszerűen paraméterként a használni kívánt stílusok. Oda, abba az utasításba, ahol éppen szeretnénk alkalmazni azt.</li>
+<li>A fejrészben (<code>&lt;head&gt;</code> utasítások között!) nem kell változtatni semmit.</li>
+</ul>
+<p>Nem igazán szoktuk használni, mert nehéz a hibakeresés.</p>
+<p><strong>Felmerül a kérdés!! Külső vagy belső stíluslap készítése?</strong></p>
+<p>Természetesen mindegy, hogy melyiket alkalmazzuk. Ami megvalósítható külső stíluslappal az megvalósítható belső stíluslappal is! Ha külső stíluslapot készítünk, a HTML kód átláthatóbb marad és könnyebb lesz a hibakeresés.</p>
+<h2 id="szöveg-formázása">Szöveg formázása</h2>
+<p>Fontos a szöveg formázásáról is külön szót ejteni, hisz a legtöbb információtartalmat a szöveg hordozza. Ez a tudományterület - tipográfia - már Gutenberg kora óta fejlődik. Azonban a honlapok estében elég speciális tulajdonságokra szoktunk hivatkozni:</p>
+<ul>
+<li>A tartalom állandó- friss vagy időtálló információ.</li>
+<li>Felépítése többdimenziós mátrix.</li>
+<li>Fejezetek sajátos logikai kapcsolat alapján állnak össze.</li>
+<li>Csak a technika határozza meg a megjelenését.</li>
+</ul>
+<p>Szöveg befogadása teljesen másként történik a honlapok esetében, mint egy papír alapú tartalom esetében. A szemünk eleve más módon dolgozza fel a bejövő információ tartalmat. Nem egymás utáni betűfeldolgozás van, hanem fixációs tartományokon belül elhelyezkedő információtartalmak feldolgozása. Ez azért van, mert a képernyőn közvetített tartalmakattartományokként értelmezi az agyunk.</p>
+<p>Kiindulás: mekkora szöveget képes a szemünk egyszerre átlátni?</p>
+<p><span class="math">\(v=\frac{(s-\delta)}{t_{f_{x}}}\)</span> [betű/sec];</p>
+<p>ahol <span class="math">\(s=az\)</span> egy pillantással átfogott betűk száma, fixációs szélesség; <span class="math">\(\delta=\)</span> túlfedés, a kétszeresen fixált szövegrész; <span class="math">\(t=a\)</span> fixációs idő;</p>
+<p>Ez egy átlag magyar ember esetében 25 betű másodpercekénti feldolgozását jelenti. Mivel nem az egymás utáni betűket rakjuk össze szavakká, hanem a számítógépen a jeleket érzékeljük egy fixációval, és az agyunk ezt a képet kódolja és látja el tartalommal. Ez azt jelenti, hogy átlagosan 12-20 betűből álló szavakat vagyunk képesek egy fixációval az agyunkba juttatni.</p>
+<h2 id="szövegek-használata-a-képernyőn">Szövegek használata a képernyőn</h2>
+<p>Az olvasási metódus mássága miatt fontos, hogy alapvető szövegelhelyezési szabályokat betartsunk. Minden szabály alapját a fixációs adatfeldolgozás indokolja.</p>
+<p>Kétféle betűforma létezi. A betűformák különböző jelzéseket továbbítanak a felhasználóknak. Az emberek a seriff betűformákat klasszikusnak és elegánsnak tartják, ezzel szemben a sans serif betűformát modernnek és világosnak ítélik meg. Azonban a honlapok esetében célszerű a sans seriff formákat előnyben részesíteni, mert a szem könnyebben a fixációs tartományban lehatárolni a betűformákat.</p>
+<p>Ha egy képernyő oldalon túl sok betűtípus található, akkor az oldal megjelenése zavaros. A sok betűtípus már csak azért is zavaró, mert a néző az oldal szerkezetének a „megfejtésével&quot; törődik és nem összpontosít az üzenetre. Ha egy oldalon szövegelemeket meg kell különböztetni egymástól, célszerű különböző betűméretekkel és stílusokkal dolgozni vagy különböző háttereket használni.</p>
+<p>A mondanivalót egyszerű, világos mondatokba kell sűríteni. A mondatok legyenek a lehető legrövidebbek. Ezt is fentebb említettük, miután a fixációs tartományok nem végtelenek, így megfelelő bit információ egyszeri felvétele és hatékonysága ezáltal biztosítható.</p>
+<p>A használandó betűtípusok általában a megjelenítő képernyő méretétől függnek. Nagyobb felbontású képernyőn általában a betűméretek kisebbek. Egy számítógép képernyőjén bemutatott interaktív termék esetében természetes, hogy a néző a képernyő előtt ül. Mivel a képernyők felbontása jó, kisebb méretű betűk is jól olvashatók, azonban gondolnunk kell a mobil eszközökre is.</p>
+<h3 id="gyakori-hiba">Gyakori hiba</h3>
+<p>A csupa nagybetűből álló szöveg kevésbé olvasható, mint a nagy- és kisbetűt keverve használó. Csupa nagybetűből álló szövegbe beleolvadnak a nagybetűvel kezdődő szavak. Ilyen szövegben nem tűnik ki a mondatok kezdete., vagyis nem behatárolható a fixációs tartomány. A nagybetűs szöveg használatát rövid címekre és a szövegből kiemelni kívánt dolgokra kell korlátozni.</p>
+<p>Ha félkövér betűket korlátozottan használunk, a szöveg áttekinthető, olvasható lesz, ugyanakkor a félkövér szövegrész felhívja magára a figyelmet. Túl sok félkövér szövegrész a szöveget súlyossá teszi és elmarad a figyelemfelkeltő jellege.</p>
+<h2 id="szövegek-a-css-el">Szövegek a CSS-el</h2>
+<p>A betűtipusok megadás a következő módokon lehetséges:</p>
+<ul>
+<li>Hagyományos megoldás</li>
+<li>Google webfonts</li>
+<li>Saját fontkészlet</li>
+</ul>
+<p><strong>Google webfonts:</strong></p>
+<p>Google szerver küldi a fontot, amit egy linken keresztül kérünk le. Ez a link változhat idővel!</p>
+<p><strong>Péda:</strong></p>
+<pre><code class="lang-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+    &lt;link
+      href=&quot;https://fonts.googleapis.com/css?family=Roboto&amp;display=swap&quot;
+      rel=&quot;stylesheet&quot;&gt;
+    &lt;style&gt;h3{font-family: 'Roboto', Helvetica';}&lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h3&gt;Repülógépek&lt;/h3&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p><strong>Hagyományos megoldás:</strong></p>
+<p>Ilyenkor a HTML kódban mi határozzuk meg a paramétereket.</p>
+<ul>
+<li><strong>font-style</strong> - betű stílus
+<ul>
+<li>értéke lehet: italic (dőlt), normal</li>
+</ul>
+</li>
+<li><strong>font-weight</strong>- betű vastagság
+<ul>
+<li>értéke lehet: bold (félkövér), normal, 100, 200, 300, 400 (=normal), 500, 600, 700 (bold), 800, 900</li>
+</ul>
+</li>
+<li><strong>font-variant</strong> - betű variáns
+<ul>
+<li>értéke lehet: normal, small-caps (kiskapitális)</li>
+</ul>
+</li>
+<li><strong>font-size</strong>- betűméret beállítás
+<ul>
+<li>értéke lehet:</li>
+<li>abszolút (pt, px)</li>
+<li>% (hierachikusan felette lévőhöz képest)</li>
+<li>xx-small, x-small, small, medium, large, x-large, xx-large</li>
+<li>larger, smaller (viszonyított)</li>
+</ul>
+</li>
+<li><strong>text-decoration</strong> - szöveg &quot;díszítés&quot;
+<ul>
+<li>none (nincs - link aláhúzását meg lehet szüntetni)</li>
+<li>underline (aláhúzás - csak indokolt esetben)</li>
+<li>overline (föléhúzás)</li>
+<li>line-through (áthúzás)</li>
+</ul>
+</li>
+<li><strong>text-align</strong> - szöveg igazítás vízszintesen
+<ul>
+<li>értéke lehet: left (alapértelmezett), right, center, justify</li>
+</ul>
+</li>
+<li><strong>line-height</strong> - sorköz
+<ul>
+<li>px, pt, em</li>
+<li>pl.: line-height: 1.5em; (másfeles)</li>
+</ul>
+</li>
+<li><strong>word-spacing</strong> - szóköz
+<ul>
+<li>px, pt, em</li>
+</ul>
+</li>
+<li><strong>letter-spacing</strong> - betűköz
+<ul>
+<li>px, pt, em</li>
+</ul>
+</li>
+<li><strong>text-indent</strong> - első sor behúzása
+<ul>
+<li>px, em</li>
+</ul>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-design.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
