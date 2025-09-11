@@ -1,234 +1,330 @@
 # Felhasználói felület tervezése
- 
- ## Mi a design?
- 
- A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyűjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.
- 
- A design egy olyan fogalom, amely magába foglalja a következő fogalmakat: esztétikai érzék, egyensúly, egységesség, harmónia, finomság, meglepetés... Szótár szerint jelent tervet, koncepciót, szándékot és mintát is. De ki lehet vele fejezni a készítést, kreálást és a szerkesztést is. Valahogy mégis több jelentést gondolunk a szó mögött. A szótár fordításai mellett valamilyen összhatást is jelent az emberek számára. A nyers jelentésben tehát egyféle előrelátó teremtés ez, ahol folyamatosan szem előtt kell tartani a végcélt. Erre nem úgy kell tekinteni, mind egy szükségtelen dolog, hanem mint a mindennapi munkánk szükséges része.
- 
- Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.
- 
- ## Honlap készítés előkészületei, menete
- 
- Szedjük össze amink van (szöveg, kép, állományok, e-mail címek, linkek), majd tegyük meg a technikai előkészületeket (digitalizálás, szövegek gépelése, fényképezés, filmfelvételek elkészítése). A legfontosabb, hogy a kezdőlapunk minden - direkt- és indirekt kommunikációs szerepet betöltsön, miután a kezdőlapnak van a legfontosabb szerepe. (bemutat, eligazít, vezérel, definiál...)
- 
- A következő lépés a tervezés, ami a logikai felépítés megtervezésével kell hogy foglalkozzon. A tervezés után az operatív részben a stílusok kialakítása az első feladat, ez magába foglalja a szövegek stílusainak kialakítását, a grafikák elhelyezésének, aktív elemek képének kialakítását és a színvilág meghatározását. Végül jön maga a programozási feladat, amiben fontos hangsúlyt kell fektetnünk a szerveroldali szolgáltatások kialakítására, reklámokra...
- 
- ## CSS alapjai
- 
- CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Ehhez a csoporthoz csatlakozott később a W3C, és a Microsoft is, akik belátták ennek a jelentőségét. A Stílus szerkesztésének természetesen voltak verziói is, ahogy mindennek az informatikában. Azonban a klasszikus verziók helyett manapság már csak különálló modulok (flexbox, grid...) léteznek.
- 
- ### Stílusok definiálása
- 
- 2 fő részből állnak:
- * szelektor (h1)
- * deklaráció (color: red)
- 
- A deklaráció is 2 részből áll:
- * tulajdonság (color)
- * érték (red)
- 
- Pl.:
- ```css 
+
+## Mi a design?
+
+A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.
+
+A design egy olyan fogalom, amely magába foglalja a következő fogalmakat: esztétikai érzék, egyensúly, egységesség, harmónia, finomság, meglepetés... Szótár szerint jelent tervet, koncepciót, szándékot és mintát is. De ki lehet vele fejezni a készítést, kreálást és a szerkesztést is. Valahogy mégis több jelentést gondolunk a szó mögött. A szótár fordításai mellett valamilyen összhatást is jelent az emberek számára. A nyers jelentésben tehát egyféle előrelátó teremtés ez, ahol folyamatosan szem előtt kell tartani a végcélt. Erre nem úgy kell tekinteni, mind egy szükségtelen dolog, hanem mint a mindennapi munkánk szükséges része.
+
+Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.
+
+## Honlap készítés előkészületei, menete
+
+Szedjük össze amink van (szöveg, kép, állományok, e-mail címek, linkek), majd tegyük meg a technikai előkészületeket (digitalizálás, szövegek gépelése, fényképezés, filmfelvételek elkészítése). A legfontosabb, hogy a kezdőlapunk minden - direkt- és indirekt kommunikációs szerepet betöltsön, miután a kezdőlapnak van a legfontosabb szerepe. (bemutat, eligazít, vezérel, definiál...)
+
+A következő lépés a tervezés, ami a logikai felépítés megtervezésével kell hogy foglalkozzon. A tervezés után az operatív részben a stílusok kialakítása az első feladat, ez magába foglalja a szövegek stílusainak kialakítását, a grafikák elhelyezésének, aktív elemek képének kialakítását és a színvilág meghatározását. Végül jön maga a programozási feladat, amiben fontos hangsúlyt kell fektetnünk a szerveroldali szolgáltatások kialakítására, reklámokra...
+
+## CSS alapjai
+
+CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Ehhez a csoporthoz csatlakozott később a W3C, és a Microsoft is, akik belátták ennek a jelentőségét. A Stílus szerkesztésének természetesen voltak verziói is, ahogy mindennek az informatikában. Azonban a klasszikus verziók helyett manapság már csak különálló modulok (flexbox, grid...) léteznek.
+
+### Stílusok definiálása
+
+2 fő részből állnak:
+* szelektor (`h1`)
+* deklaráció (`color: red;`)
+
+A deklaráció is 2 részből áll:
+* tulajdonság (`color`)
+* érték (`red`)
+
+Pl.:
+```css
 h1 {
   color: red;
 }
- 
- /* vagy */
- 
+
+/* vagy */
+
 h1 {
-  color: red; 
-  font-size: 4;
+  color: red;
+  font-size: 24px;
 }
- ```
- 
- A CSS definiálása többféle módon lehetséges. HTML forráskódon belül
- * `<style>` utasítás segítségével: a HTML sorok között adunk meg minden paramétert.
- * Külső stíluslapok használata: külön fájlban, kiterjesztése: css, nincsenek benne, HTML tagek, csak stílusok
- * in-line, amikor HTML fájlon belül, az egyes HTML elemek tag-jeiben definiáljuk
- 
-A CSS előnyei közé tartozik, hogy a megjelenés a dokumentum tartalmának és struktúrájának módosítása nélkül is megváltoztatható, valamint egy stíluslap megosztható több HTML dokumentum között is.
- 
+```
+
+A CSS definiálása többféle módon lehetséges. HTML forráskódon belül
+* `<style>` utasítás segítségével: a HTML `<head>` blokkjában definiáljuk a stílusokat
+* Külső stíluslapok használata: külön fájlban, kiterjesztése: css, nincsenek benne HTML tagek, csak stílusok
+* in-line, amikor HTML fájlon belül, az egyes HTML elemek tag-jeiben definiáljuk
+
 #### **Stíluslap készítése `<style>` utasítás segítségével**
- 
- ```html
- <head>
+
+```html
+<head>
    <style>
-     h1 {font-size:7; color:darkgreen; font:arial}
-     h2 {font-size:5; color:red; font:verdana}
-     h3 {font-size:4; color: blue; font:courier}
+     h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
+     h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
+     h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
    </style>
- </head>
- ```
- 
- Így néz ki a törzs rész
- 
- ```html
- <body>
+</head>
+```
+
+Így néz ki a törzs rész
+
+```html
+<body>
    <h1>Repülőgépek</h1>
    <h2>Vitorlázó gépek</h2>
    <h3>R26 Góbé</h3>
- </body>
- ```
- 
- A `<style>` utasítás előnyei:
- * A fejrészben (`<head>` blokkban) adjuk meg a használni kívánt stílusokat.
- * Gyorsabb a hibakeresés, mivel egy fájlban található meg a stílus és a dokumentum tartalma.
- 
+</body>
+```
+
+Ez a megközelítés általában akkor lehet "kézenfekvő", ha egy adott HTML oldalhoz nagyon specifikus, vagy csak arra az egy oldalra vonatkozó stílusokat szeretnél alkalmazni. Így a stílusdefiníciók azonnal elérhetők az oldal betöltésekor, és azonnal hatással vannak a HTML elemek megjelenésére.
+
 #### **Stíluslap használata külső stíluslapokkal**
- 
- A stíluslap külön, .css kiterjesztésű fájlban is létrehozható. Ilyenkor is a `<head>` részben hivatkozunk rá.
- 
- **Példa:**
- 
- ```html
- <head>
+
+A stíluslap külön, .css kiterjesztésű fájlban is létrehozható. Ilyenkor is a `<head>` részben hivatkozunk rá.
+
+**Példa:**
+
+```html
+<head>
    <link rel="stylesheet" href="formazas1.css">
- </head>
- ```
- 
- A törzsrész ugyanúgy néz ki, mint az első esetben:
- 
- ```html
- <body>
+</head>
+```
+
+A törzsrész ugyanúgy néz ki, mint az első esetben:
+
+```html
+<body>
    <h1>Repülőgépek</h1>
    <h2>Vitorlázó gépek</h2>
    <h3>R26 Góbé</h3>
- </body>
- ```
- 
- `link` utasítás paraméterei:
- * rel - kapcsolat típusa ("stylesheet")
- * href - stíluslap (vmi.css) helyének megadása
- 
- A `<link>` utasítást a HTML kód fejrészén belül (`<head>` utasítások között) kell megadni.
- A külső stíluslap (formazas1.css) a következőképpen nézhet ki:
- 
- ```css
- h1 {font-size:7; color:darkgreen; font:arial}
- h2 {font-size:5; color:red; font:verdana}
- h3 {font-size:4; color: blue; font:courier}
- ```
- 
- A külső stíiluslap előnyei
- * HTML dokumentum forrásának módosítása nélkül változtathatjuk stílusainkat.
- * A `<link>` utasítás segítségével kapcsoljuk a HTML dokumentumunkhoz a megírt stíluslapot (formazas1.css).
- * Ha módosítani kell vmit, akkor csak a css állományon változtatunk.
- * A HTML kód törzsrésze a lehető legegyszerűbb.
- 
+</body>
+```
+
+`link` utasítás paraméterei:
+* rel - kapcsolat típusa ("stylesheet")
+* href - stíluslap (vmi.css) helyének megadása
+
+A `<link>` utasítást a HTML kód fejrészén belül (`<head>` utasítások között) kell megadni.
+A külső stíluslap (formazas1.css) a következőképpen nézhet ki:
+
+```css
+h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
+h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
+h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
+```
+
+A külső stíiluslap előnyei
+* **Könnyebben kezelhető**, hiszen HTML dokumentum módosítása nélkül változtathatjuk stílusbeállításokat.
+* **Átlátható**, hiszen a stílus elkülönül a tartalomtól és struktúrától.
+* **Gyorsabb betöltés** gyakori látogatás esetén. (cache)
+* **Újrahasznosítható** stílus lapok, hiszen egy CSS fájl megadható több HTML oldalhoz is.
+
 #### **Stíluslap készítése style paraméter segítségével, in-line CSS**
- 
- ```html
- <body>
-   <h1 style="font-size:7; color:darkgreen; font:arial">Repülőgépek</h1>
-   <h2 style="font-size:5; color:red; font:verdana">Vitorlázó gépek</h2>
-   <h3 style="font-size:4; color:blue; font:courier">R26 Góbé</h3>
- </body>
- ```
- 
- A style paraméter előnyei:
- * A HTML kód törzsrészébe kerülnek egyszerűen paraméterként a használni kívánt stílusok. Oda, abba az utasításba, ahol éppen szeretnénk alkalmazni azt.
- * A fejrészben (`<head>` utasítások között!) nem kell változtatni semmit.
- 
- Nem igazán szoktuk használni, mert nehéz a hibakeresés.
- 
- **Felmerül a kérdés!! Külső vagy belső stíluslap készítése?**
- 
- Természetesen mindegy, hogy melyiket alkalmazzuk. Ami megvalósítható külső stíluslappal az megvalósítható belső stíluslappal is! Ha külső stíluslapot készítünk, a HTML kód átláthatóbb marad és könnyebb lesz a hibakeresés.
- 
- ## Szöveg formázása
- 
- Fontos a szöveg formázásáról is külön szót ejteni, hisz a legtöbb információtartalmat a szöveg hordozza. Ez a tudományterület - tipográfia - már Gutenberg kora óta fejlődik. Azonban a honlapok estében elég speciális tulajdonságokra szoktunk hivatkozni:
- 
- * A tartalom állandó- friss vagy időtálló információ.
- * Felépítése többdimenziós mátrix.
- * Fejezetek sajátos logikai kapcsolat alapján állnak össze.
- * Csak a technika határozza meg a megjelenését.
- 
- Szöveg befogadása teljesen másként történik a honlapok esetében, mint egy papír alapú tartalom esetében. A szemünk eleve más módon dolgozza fel a bejövő információ tartalmat. Nem egymás utáni betűfeldolgozás van, hanem fixációs tartományokon belül elhelyezkedő információtartalmak feldolgozása. Ez azért van, mert a képernyőn közvetített tartalmakattartományokként értelmezi az agyunk.
- 
- Kiindulás: mekkora szöveget képes a szemünk egyszerre átlátni?
- 
- $v=\frac{(s-\delta)}{t_{f_{x}}}$ [betű/sec];
- 
- ahol $s=az$ egy pillantással átfogott betűk száma, fixációs szélesség; $\delta=$ túlfedés, a kétszeresen fixált szövegrész; $t=a$ fixációs idő;
- 
- Ez egy átlag magyar ember esetében 25 betű másodpercekénti feldolgozását jelenti. Mivel nem az egymás utáni betűket rakjuk össze szavakká, hanem a számítógépen a jeleket érzékeljük egy fixációval, és az agyunk ezt a képet kódolja és látja el tartalommal. Ez azt jelenti, hogy átlagosan 12-20 betűből álló szavakat vagyunk képesek egy fixációval az agyunkba juttatni.
- 
- ## Szövegek használata a képernyőn
- 
- Az olvasási metódus mássága miatt fontos, hogy alapvető szövegelhelyezési szabályokat betartsunk. Minden szabály alapját a fixációs adatfeldolgozás indokolja.
- 
- Kétféle betűforma létezi. A betűformák különböző jelzéseket továbbítanak a felhasználóknak. Az emberek a seriff betűformákat klasszikusnak és elegánsnak tartják, ezzel szemben a sans serif betűformát modernnek és világosnak ítélik meg. Azonban a honlapok esetében célszerű a sans seriff formákat előnyben részesíteni, mert a szem könnyebben a fixációs tartományban lehatárolni a betűformákat.
- 
- Ha egy képernyő oldalon túl sok betűtípus található, akkor az oldal megjelenése zavaros. A sok betűtípus már csak azért is zavaró, mert a néző az oldal szerkezetének a „megfejtésével" törődik és nem összpontosít az üzenetre. Ha egy oldalon szövegelemeket meg kell különböztetni egymástól, célszerű különböző betűméretekkel és stílusokkal dolgozni vagy különböző háttereket használni.
- 
- A mondanivalót egyszerű, világos mondatokba kell sűríteni. A mondatok legyenek a lehető legrövidebbek. Ezt is fentebb említettük, miután a fixációs tartományok nem végtelenek, így megfelelő bit információ egyszeri felvétele és hatékonysága ezáltal biztosítható.
- 
- A használandó betűtípusok általában a megjelenítő képernyő méretétől függnek. Nagyobb felbontású képernyőn általában a betűméretek kisebbek. Egy számítógép képernyőjén bemutatott interaktív termék esetében természetes, hogy a néző a képernyő előtt ül. Mivel a képernyők felbontása jó, kisebb méretű betűk is jól olvashatók, azonban gondolnunk kell a mobil eszközökre is.
- 
- ### Gyakori hiba
- 
- A csupa nagybetűből álló szöveg kevésbé olvasható, mint a nagy- és kisbetűt keverve használó. Csupa nagybetűből álló szövegbe beleolvadnak a nagybetűvel kezdődő szavak. Ilyen szövegben nem tűnik ki a mondatok kezdete., vagyis nem behatárolható a fixációs tartomány. A nagybetűs szöveg használatát rövid címekre és a szövegből kiemelni kívánt dolgokra kell korlátozni.
- 
- Ha félkövér betűket korlátozottan használunk, a szöveg áttekinthető, olvasható lesz, ugyanakkor a félkövér szövegrész felhívja magára a figyelmet. Túl sok félkövér szövegrész a szöveget súlyossá teszi és elmarad a figyelemfelkeltő jellege.
- 
- ## Szövegek a CSS-el
- 
- A betűtipusok megadás a következő módokon lehetséges:
- * Hagyományos megoldás
- * Google webfonts
- * Saját fontkészlet
- 
- **Google webfonts:**
- 
- Google szerver küldi a fontot, amit egy linken keresztül kérünk le. Ez a link változhat idővel!
- 
- **Péda:**
- 
- ```html
- <html>
-   <head>
-     <title>Title</title>
-     <link
-       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
-       rel="stylesheet">
-     <style>h3{font-family: 'Roboto', Helvetica';}</style>
-   </head>
-   <body>
-     <h3>Repülógépek</h3>
-   </body>
- </html>
- ```
- 
- **Hagyományos megoldás:**
- 
- Ilyenkor a HTML kódban mi határozzuk meg a paramétereket.
- * **font-style** - betű stílus
-   * értéke lehet: italic (dőlt), normal
- * **font-weight**- betű vastagság
-   * értéke lehet: bold (félkövér), normal, 100, 200, 300, 400 (=normal), 500, 600, 700 (bold), 800, 900
- * **font-variant** - betű variáns
-   * értéke lehet: normal, small-caps (kiskapitális)
- * **font-size**- betűméret beállítás
-   * értéke lehet:
-   * abszolút (pt, px)
-   * % (hierachikusan felette lévőhöz képest)
-   * xx-small, x-small, small, medium, large, x-large, xx-large
-   * larger, smaller (viszonyított)
- * **text-decoration** - szöveg "díszítés"
-   * none (nincs - link aláhúzását meg lehet szüntetni)
-   * underline (aláhúzás - csak indokolt esetben)
-   * overline (föléhúzás)
-   * line-through (áthúzás)
- * **text-align** - szöveg igazítás vízszintesen
-   * értéke lehet: left (alapértelmezett), right, center, justify
- * **line-height** - sorköz
-   * px, pt, em
-   * pl.: line-height: 1.5em; (másfeles)
- * **word-spacing** - szóköz
-   * px, pt, em
- * **letter-spacing** - betűköz
-   * px, pt, em
- * **text-indent** - első sor behúzása
-   * px, em
+
+```html
+<body>
+   <h1 style="font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;">Repülőgépek</h1>
+   <h2 style="font-size: 24px; color: red; font-family: Verdana, sans-serif;">Vitorlázó gépek</h2>
+   <h3 style="font-size: 18px; color: blue; font-family: 'Courier New', monospace;">R26 Góbé</h3>
+</body>
+```
+
+A style paraméter előnyei:
+* **Közvetlen és azonnali hatás**: A stílusokat közvetlenül az adott HTML elemre alkalmazzuk. Ez azt jelenti, hogy azonnal látod az eredményt, és nem kell aggódnod a CSS szelektorok vagy a kaszkád (stílusok öröklődése és felülírása) bonyolultsága miatt. A böngésző ezt a stílust azonnal alkalmazza az elemre, amint eléri azt. Ez a legmagasabb szintű közvetlen befolyás, amit egyedi elemre gyakorolhatsz.
+* **Magas prioritás (specifitás)**: Az inline stílusoknak van a legmagasabb prioritásuk a CSS hierarchiában. Ez azt jelenti, hogy ha egy elemet inline módon stílusozol, az felülír minden más stílust, ami belső (`<style>` tagben lévő) vagy külső `.css` fájlból érkezik, kivéve, ha azokban `!important` deklarációt használnak (amit általában kerülni szoktunk). Szóval, ha biztosra akarsz menni, hogy egy adott elem stílusa felülíródjon, akkor az inline módszer "gyors megoldásnak" tűnhet.
+* **Egyszerűség nagyon specifikus, egyedi esetekben**: Ha tényleg csak egyetlen, nagyon specifikus elemet kell stílusozni egy oldalon, és tudod, hogy soha többé nem lesz szükséged ugyanarra a stílusra máshol, akkor elsőre egyszerűbbnek tűnhet közvetlenül a `style` attribútumba írni. Ilyenkor nincs szükség külön CSS fájlra vagy `<style>` blokkra.
+
+>[!WARNING]
+> **De most jön a "de"**: Fontos kiemelni, hogy bár ezek "előnyöknek" tűnhetnek, valójában az **inline CSS használata a legtöbb esetben rossz gyakorlatnak minősül a webfejlesztésben**. Miért?
+>1.  **Rossz karbantarthatóság**: Képzeld el, hogy több száz HTML oldalból áll a webhelyed, és minden `<p>` tagnek egyedi stílusa van inline CSS-sel. Ha meg akarsz változtatni valamit (pl. az összes paragrafus betűszínét), akkor minden egyes HTML fájlt, minden egyes `<p>` tagjét át kellene írnod! Egy külső stíluslap esetén ez egyetlen CSS fájl egyetlen sorának módosítását jelentené.
+>2.  **Nehéz újrahasznosíthatóság**: Az inline stílusok nem használhatók fel újra más elemeken vagy más oldalakon, hiszen be vannak ágyazva egy konkrét HTML elembe. Ez rontja a kódhatékonyságot.
+>3.  **Szennyezi a HTML-t**: A HTML feladata a tartalom struktúrájának megadása, a CSS feladata pedig a vizuális megjelenésé. Az inline CSS összemossa ezt a két feladatkört, ami rontja a kód olvashatóságát és logikai elkülönítését. A JavaScript esetében sem javasolt a HTML kód "szennyezése", és ez a CSS-re is igaz.
+
+Összességében tehát, bár az inline CSS gyorsan alkalmazható és magas prioritású, hosszú távon a karbantartás, az újrahasznosíthatóság és a kód tisztasága miatt **erősen javasolt külső stíluslapokat használni**.
+
+## Szöveg formázása
+
+Fontos a szöveg formázásáról is külön szót ejteni, hisz a legtöbb információtartalmat a szöveg hordozza. Ez a tudományterület - **tipográfia** - már [Gutenberg](https://en.wikipedia.org/wiki/Johannes_Gutenberg) kora óta fejlődik. Azonban a honlapok estében elég speciális tulajdonságokra szoktunk hivatkozni:
+
+* A tartalom állandó vagy dinamikusan frissülő információ.
+* Felépítése többdimenziós mátrix.
+* Fejezetek sajátos logikai kapcsolat alapján állnak össze.
+* Csak a technika határozza meg a megjelenését.
+
+Szöveg befogadása teljesen másként történik a honlapok esetében, mint egy papír alapú tartalom esetében. A szemünk eleve más módon dolgozza fel a bejövő információ tartalmat. Nem egymás utáni betűfeldolgozás van, hanem fixációs tartományokon belül elhelyezkedő információtartalmak feldolgozása. Ez azért van, mert a képernyőn közvetített tartalmakattartományokként értelmezi az agyunk.
+
+Kiindulás: mekkora szöveget képes a szemünk egyszerre átlátni?
+
+$v=\frac{(s-\delta)}{t_{f_{x}}}$ [betű/sec]; ahol
+* $s=$ az egy pillantással átfogott betűk száma, **fixációs szélesség**;
+* $\delta=$ túlfedés, a **kétszeresen fixált szövegrész**;
+* $t=a$ **fixációs idő**;
+
+Ez egy átlag magyar ember esetében 25 betű másodpercekénti feldolgozását jelenti. Mivel nem az egymás utáni betűket rakjuk össze szavakká, hanem a számítógépen a jeleket érzékeljük egy fixációval, és az agyunk ezt a képet kódolja és látja el tartalommal. Ez azt jelenti, hogy átlagosan 12-20 betűből álló szavakat vagyunk képesek egy fixációval az agyunkba juttatni.
+
+## Szövegek használata a képernyőn
+
+Az olvasási metódus jellegzetessége miatt fontos, hogy alapvető szövegelhelyezési szabályokat betartsunk. Minden szabály alapját a fixációs adatfeldolgozás indokolja.
+
+Kétféle betűforma létezik. A betűformák különböző jelzéseket továbbítanak a felhasználóknak. Az emberek a **seriff** betűformákat klasszikusnak és elegánsnak tartják, ezzel szemben a **sans serif** betűformát modernnek és világosnak ítélik meg. Azonban a honlapok esetében célszerű a sans seriff formákat előnyben részesíteni, mert a szem könnyebben a fixációs tartományban lehatárolni a betűformákat.
+
+Ha egy képernyő oldalon túl sok betűtípus található, akkor az oldal megjelenése zavaros. A sok betűtípus már csak azért is zavaró, mert a néző az oldal szerkezetének a „megfejtésével" törődik és nem összpontosít az üzenetre. Ha egy oldalon szövegelemeket meg kell különböztetni egymástól, célszerű különböző betűméretekkel és stílusokkal dolgozni vagy különböző háttereket használni.
+
+A mondanivalót egyszerű, világos mondatokba kell sűríteni. A mondatok legyenek a lehető legrövidebbek. Ezt is fentebb említettük, miután a fixációs tartományok nem végtelenek, így megfelelő bit információ egyszeri felvétele és hatékonysága ezáltal biztosítható.
+
+A használandó betűtípusok általában a megjelenítő képernyő méretétől függnek. Nagyobb felbontású képernyőn általában a betűméretek kisebbek. Egy számítógép képernyőjén bemutatott interaktív termék esetében természetes, hogy a néző a képernyő előtt ül. Mivel a képernyők felbontása jó, kisebb méretű betűk is jól olvashatók, azonban gondolnunk kell a mobil eszközökre is.
+
+>[!WARNING]
+>A csupa nagybetűből álló szöveg kevésbé olvasható, mint a nagy- és kisbetűt keverve használó. Csupa nagybetűből álló szövegbe beleolvadnak a nagybetűvel kezdődő szavak. Ilyen szövegben nem tűnik ki a mondatok kezdete, vagyis nem behatárolható a fixációs tartomány. A nagybetűs szöveg használatát rövid címekre és a szövegből kiemelni kívánt dolgokra kell korlátozni.
+>Ha félkövér betűket korlátozottan használunk, a szöveg áttekinthető, olvasható lesz, ugyanakkor a félkövér szövegrész felhívja magára a figyelmet. Túl sok félkövér szövegrész a szöveget súlyossá teszi és elmarad a figyelemfelkeltő jellege.
+
+## Szövegek formázása CSS-sel
+
+A weboldalak szöveges tartalmának megjelenését a CSS segítségével szabályozhatjuk. Ez magában foglalja a betűtípusok beállítását, a szöveg stílusának, méretének, színének és igazításának módosítását.
+
+### Betűtípusok használata (`font-family`)
+
+A megfelelő betűtípus kiválasztása kulcsfontosságú a weboldal olvashatósága és hangulata szempontjából. Három alapvető módszer létezik a betűtípusok beállítására.
+
+#### 1. Rendszer (biztonságos) betűtípusok
+Ezek a leggyakoribb, a legtöbb operációs rendszeren előre telepített betűtípusok (pl. Arial, Helvetica, Times New Roman, Courier New). Mivel szinte minden eszközön elérhetők, megbízhatóan jelennek meg.
+
+Érdemes mindig egy "fallback" listát (betűtípus-családot) megadni. A böngésző az első elérhető típust fogja használni a felsorolásból. A lista végén általában egy általános kategóriát adunk meg (pl. `sans-serif` vagy `serif`).
+
+```css
+p {
+  font-family: Helvetica, Arial, sans-serif;
+}
+```
+
+#### 2. Google Fonts és más webszolgáltatások
+A **Google Fonts** egy ingyenes, hatalmas betűtípus-gyűjtemény. Használata egyszerű:
+1.  Válaszd ki a kívánt betűtípust a [fonts.google.com](https://fonts.google.com) oldalon.
+2.  Generálj egy `<link>` taget, amit a HTML fájlod `<head>` részébe kell illeszteni.
+3.  A CSS-ben a megadott `font-family` névvel hivatkozhatsz rá.
+
+**Példa:**
+A HTML `<head>` szekciójában:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+```
+A CSS fájlban:
+
+```css
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+```
+Bár a szolgáltatás stabil, elméletben fennáll a kockázata, hogy a link megváltozik vagy a szolgáltatás leáll.
+
+#### 3. Saját, egyedi betűtípusok (`@font-face`)
+Ha teljesen egyedi betűtípust szeretnél használni, azt a `@font-face` szabállyal teheted meg. Ehhez szükséged lesz a betűtípus fájljaira (pl. `.woff2`, `.woff`, `.ttf`).
+
+**Lépései:**
+1.  Helyezd a font fájlokat a projekted egy mappájába (pl. `/fonts`).
+2.  Definiáld a betűtípust a CSS fájlod elején a `@font-face` szabállyal:
+
+```css
+@font-face {
+  font-family: 'SajatBetutipusom'; /* Tetszőlegesen választott név */
+  src: url('/fonts/sajatbetutipus.woff2') format('woff2'),
+       url('/fonts/sajatbetutipus.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+```
+3.  Ezután a megadott `font-family` névvel már bárhol használhatod a weboldalon:
+
+```css
+body {
+  font-family: 'SajatBetutipusom', Arial, sans-serif;
+}
+```
+
+A `.woff2` formátum a legjobb választás a modern böngészőkhöz a hatékony tömörítése miatt, míg a `.woff` a régebbi böngészők számára biztosít kompatibilitást.
+
+---
+
+### Szövegstílus és méret
+
+A szöveg kinézetét számos tulajdonsággal finomhangolhatjuk. A legfontosabbak egyetlen `font` rövidítéssel is megadhatók, de külön-külön is használhatók.
+
+| Tulajdonság | Leírás | Gyakori értékek |
+| :--- | :--- | :--- |
+| **`font-size`** | Betűméret | `16px`, `1.2em`, `1.2rem`, `12pt`, `large`, `80%` |
+| **`font-weight`**| Betűvastagság | `normal` (400), `bold` (700), `100`-`900` |
+| **`font-style`** | Betűstílus | `normal`, `italic` (dőlt) |
+| **`color`** | Betűszín | `#333`, `rgb(51, 51, 51)`, `black` |
+| **`text-decoration`** | Szövegdíszítés | `none`, `underline` (aláhúzás), `line-through` (áthúzás) |
+| **`font-variant`**| Betűvariáns | `normal`, `small-caps` (kiskapitális) |
+
+**`font` rövidítés (shorthand) használata:**
+
+Ahelyett, hogy minden tulajdonságot külön sorban adnánk meg, használhatjuk a `font` rövidítést. A sorrend fontos: `font-style`, `font-weight`, `font-size`/`line-height`, `font-family`.
+
+```css
+p {
+  /* Hosszú változat */
+  font-style: italic;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Georgia, serif;
+
+  /* Ugyanaz röviden */
+  font: italic bold 16px/1.5 Georgia, serif;
+}
+```
+
+---
+
+### Mértékegységek a CSS-ben: px, rem, em, % és a többiek
+
+A CSS-ben a méretek megadásakor (legyen az betűméret, elem szélessége vagy térköz) elengedhetetlen a mértékegység használata. Ezeket két fő csoportba sorolhatjuk: **abszolút** és **relatív** mértékegységekre.
+
+#### 1. Abszolút mértékegységek
+
+Ezek a mértékegységek fix, állandó méretet jelölnek, nem függnek sem a képernyő méretétől, sem más elemek tulajdonságaitól. Főként olyan esetekben hasznosak, ahol a kimenet fizikai mérete ismert, például nyomtatásnál.
+
+* `px` (pixel): A leggyakrabban használt abszolút egység webdesignban. Egy képpontot jelöl a képernyőn. Bár technikailag a képernyő felbontásától függ, a gyakorlatban egy kis, fix egységként tekintünk rá. **Jó választás lehet `border` (szegély) vastagságának vagy más, pixelpontosan megadandó értéknek.**
+* `pt` (point, pont): Nyomdai mértékegység. 1 pt = 1/72 inch. Webes felületen ritkán használjuk.
+
+#### 2. Relatív mértékegységek
+
+Ezek a mértékegységek valami máshoz viszonyítanak, ami rendkívül hasznossá teszi őket a **reszponzív (responsive) webdesign** során. Méretük a környezetük változásával (pl. böngészőablak átméretezése) együtt változik.
+
+* **`em`**: Az elem **szülőjének `font-size` (betűméret)** értékéhez viszonyít.
+    * Ha egy `div` elem betűmérete `16px`, akkor egy benne lévő `p` elem `font-size: 1.5em` értéke `16px * 1.5 = 24px` lesz.
+    * **Hátránya**: Ha több egymásba ágyazott elemnél használjuk, a méretek "összeszorzódnak", ami nehezen követhetővé teheti a végső méretet.
+
+* **`rem`** (root em): A dokumentum **gyökér (`<html>`) elemének `font-size`** értékéhez viszonyít.
+    * Ez a modern webdesign egyik legfontosabb mértékegysége. Mivel mindig ugyanahhoz az alapértékhez (a gyökérhez) viszonyít, a méretek kiszámíthatóak és könnyen skálázhatóak. A böngészők alapértelmezett `font-size`-a általában `16px`, így `1rem = 16px`, `2rem = 32px`, stb.
+    * **Előnye**: A felhasználó a böngésző beállításaiban megváltoztathatja az alap betűméretet, és a `rem`-mel megadott méretek arányosan igazodnak ehhez, javítva az **akadálymentességet (accessibility)**.
+
+* **`%`** (százalék): A **szülő elem egy adott tulajdonságához** viszonyít.
+    * Ha egy `div` szélessége `800px`, és egy benne lévő elem `width: 50%`, akkor az elem szélessége `400px` lesz.
+    * Nagyon hasznos rugalmas elrendezések (layoutok) készítéséhez.
+
+* **`vw` és `vh`** (viewport width / height): A **nézetablak (viewport) szélességéhez vagy magasságához** viszonyítanak.
+    * `1vw` = a nézetablak szélességének 1%-a.
+    * `1vh` = a nézetablak magasságának 1%-a.
+    * Például egy `height: 100vh` tulajdonsággal rendelkező elem mindig pontosan kitölti a képernyő magasságát, mérettől függetlenül.
+
+#### Mikor melyiket használjuk? – Ökölszabályok
+
+| Mértékegység | Javasolt felhasználás | Miért? |
+| :--- | :--- | :--- |
+| **`rem`** | `font-size`, `margin`, `padding` (térközök), `width`, `height` | Könnyen skálázható, kiszámítható és akadálymentes. A teljes felület arányosan növelhető/csökkenthető egyetlen alapérték (`html` `font-size`) módosításával. |
+| **`px`** | `border-width` (szegélyvastagság), `box-shadow` értékek | Amikor egy vékony, fix, nem skálázódó méretre van szükség. |
+| **`%`** | Elemek szélessége egy tárolón belül (pl. grid oszlopok) | Rugalmas, a szülő elemhez igazodó elrendezések készítésére. |
+| **`em`** | Olyan elemeknél, amiknek a méretét a közvetlen szülőjükhöz akarjuk igazítani (pl. egy ikon mérete egy gomb szövegéhez képest). | Kontextusfüggő méretezést tesz lehetővé, de óvatosan kell vele bánni. |
+| **`vw`, `vh`** | Teljes képernyős "hero" szekciók, a nézetablakhoz igazodó betűméretek. | A böngésző ablakának méretéhez kötött, dinamikus méretezéshez. |
+
+---
+
+### Térközök és igazítás
+
+A szöveg olvashatóságát nagyban befolyásolja a sorok, szavak és betűk közötti távolság, valamint a szöveg elrendezése.
+
+| Tulajdonság | Leírás | Példa értékek |
+| :--- | :--- | :--- |
+| **`text-align`** | Vízszintes igazítás | `left`, `right`, `center`, `justify` (sorkizárt) |
+| **`line-height`**| Sorköz (sortávolság)| `1.5`, `1.6em`, `24px` |
+| **`letter-spacing`**| Betűköz | `1px`, `0.1em`, `-0.5px` (negatív is lehet) |
+| **`word-spacing`** | Szóköz | `5px`, `0.4em` |
+| **`text-indent`** | Első sor behúzása | `20px`, `2em` |
