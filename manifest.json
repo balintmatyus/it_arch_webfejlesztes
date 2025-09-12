@@ -297,6 +297,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week04/04-szines.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week04/04-szines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week05/05-css-basics.md",
       "output": {
         ".html": {

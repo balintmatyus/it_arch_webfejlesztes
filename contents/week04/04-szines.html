@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se II. | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se II. | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-szines.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="felhasználói-felület-tervezése-ii">Felhasználói felület tervezése II.</h1>
+
+<h2 id="a-színek-szerepe">A színek szerepe</h2>
+<p>A design nem csak az esztétikai megjelenítés eszköze, hanem fontos gazdasági szerepe is van a cégek esetében. Egyik ilyen az identitás, vagyis a cégek arculatának segítése. Az image az arculat része, ami segíti a vállalatokat a saját vevőkörében a tudatosításban.</p>
+<p>A tudatosítás az arculat formai elemeinek megvalósítása révén következik be. Ennek fontos része például a színek, a logók és egyéb elemek (kép, táblázat..) a honlapon történő megjelenítése. Ezek szintén szabályokhoz köthetőek, melyeknek magyarázata sokféle kutatás eredményeként jött létre.</p>
+<p>A színek esetében is meghatározó maga a tradíció, a színek pszichológiai hatása. Mindezek összefüggésben állnak a színek, mint elektromágneses hullámok fizikai tulajdonságaival. Valójában azonban a színeknek komoly fiziológiai és lélektani hatásuk van bennünk, sokszor tudatalatti reakciót váltanak ki, melyek befolyásolják döntéseinket és érzelmeinket. Honlapok esetében jellemzően a hangulati felosztás szerint alkalmazzuk a színeket.</p>
+<ul>
+<li><strong>Meleg színek</strong>: kiemelnek, felhívják magukra a figyelmet, fellendítik a hangulatot és a védettség érzését keltik. Ide tartozik a <strong>vörös</strong>, ami a legrikítóbb szín, a vér, a láng színe. A <strong>sárgával</strong> együtt, aminek jellemzője a könnyedség és a jókedv, a legélénkebb színeket adják. Ezek mellett ide sorolható a <strong>narancs</strong> is. Fizikai oldalról nézve ezek a nagy hullámhosszúságú színek.</li>
+<li><strong>Hideg színek</strong>: háttérbe tolnak, eltaszítanak, vagy elrejtenek, mindemellett nyugtatnak, pihentetnek. Ide tartoznak a fejlődést, harmóniát jelentő <strong>zöld</strong> színek egy része, az eget szimbolizáló <strong>kék</strong>, valamint a <strong>lila</strong>. Fizikai oldalról nézve ezek a kis hullámhosszúságú színek.</li>
+</ul>
+<p>Összegezve a színek fényhullámokból (elektromágneses energia egy fajtája) jönnek létre. A fényhullámok maguk színtelenek, a színek az agyunkban állnak össze. A fénysugarak elérik a szemlencsét, s a fény a szemlencsén, mint fénytörő közegen keresztül a retinára vetülve alakulnak képpé, színekké. A szemünk a 400-700 nanométer (hullámhossz) közti fényhullámokat képes érzékelni.</p>
+<p>A honlapok esetében alapszínekről beszélünk. Ez az <strong>RGB</strong>, amely három alapszín rövidítése. Az alapszínek megadhatók angol nevükkel is, egyébként RGB kóddal.</p>
+<p>Példa:
+RGB kód - pl.: <code>#89AF81</code> (hexadecimális)</p>
+<ul>
+<li>első két jegy piros, majd zöld, és kék</li>
+<li><code>00</code> (nulla) a leggyengébb, <code>FF</code> a legerősebb</li>
+<li><code>#88AA00</code> -&gt; <code>#8A0</code> (ha mindhárom színkomponens ugyanabból a két karakterből áll)</li>
+</ul>
+<p>Az alapszíneket azonban nem használjuk csak önmagukban. Az un. additív (összeadó) színkeverési módot alkalmazzuk, ami révén egyre inkább a fehér szín fele haladhatunk. Egy-egy alapszínnek 256-féle árnyalatot adhatunk. Ábrázolása hexadecimálisan történik ezeknek is, bár itt is használhatunk angol megfelelőket. Pl: purple (<code>#800080</code>). Miután a digitális környezetben közel 16,7 millió színárnyalat állítható elő, ezért kell néha a hexadecimális pontosítással dolgozni.</p>
+<h2 id="a-háttér-szerepe">A háttér szerepe</h2>
+<p>A háttér a képernyő egyik fontos eleme, amely előkészíti az információt, meghatározza a hangulatot. Fontos, hogy minden honlapkészítés előtt tisztázva legyen, hogy a képernyőnek milyen benyomást, érzést kell közvetíteni.</p>
+<ul>
+<li>Egyszerű ismertető jellegű szövegnél célszerű egyszerű hátterek használata. Ilyenkor érdemes tompa színeket használni.</li>
+<li>Ha lényeges, hogy a termék meghatározott légkört teremtsen, vagy szeretné a látogató figyelmét felhívni, akkor érdemes a háttérnek élénkebb színeket használni.</li>
+<li>Ha lehet a szövegek mögött, egyszínű háttér legyen, hogy az információtartalom minél kisebb veszteség nélkül legyen feldolgozható a látogató számára.</li>
+</ul>
+<p>A színeket és ezen belül is a hátteret érdemes a stílusbeállításokkal együtt kezelni.</p>
+<pre><code class="lang-css">p {
+  color: rgba(255, 0, 0, 0.9);
+  background-color: rgba(100, 100, 100, 0.2);
+}
+</code></pre>
+<p>Az <code>rgba()</code> színmegadás lehetővé teszi, hogy a hagyományos RGB színekhez átlátszóságot (alpha csatornát) is rendeljünk. Ez különösen hasznos modern, rétegzett designok készítésénél.</p>
+<p>A fenti példában egy majdnem teljesen átlátszatlan (0.9), élénk piros színt adtunk meg.</p>
+<p><strong>A paraméterek jelentése:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Paraméter</th>
+<th style="text-align: left;">Szerepe</th>
+<th style="text-align: left;">Értéktartomány</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1-3. (R, G, B)</strong></td>
+<td style="text-align: left;">A vörös, zöld és kék színösszetevők aránya.</td>
+<td style="text-align: left;"><code>0</code>-tól <code>255</code>-ig terjedő egész szám.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. (Alpha)</strong></td>
+<td style="text-align: left;">Az átlátszóság (opacitás) mértéke.</td>
+<td style="text-align: left;"><code>0.0</code> (teljesen átlátszó) és <code>1.0</code> (átlátszatlan) közötti tizedes tört.</td>
+</tr>
+</tbody>
+</table>
+<p>Érdemes tájékozódni a trendekről mindig. Trendi színpaletták:
+<a href="https://coolors.co/palettes/trending">https://coolors.co/palettes/trending</a></p>
+<p>Mielőtt rátérnénk a leghatékonyabb, összefoglaló <code>background</code> parancsra, nézzük át röviden, milyen egyedi tulajdonságokból épül fel a háttér stílusozása. Ezeket ritkán használjuk külön-külön, de fontos ismerni a szerepüket.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tulajdonság</th>
+<th style="text-align: left;">Szerepe</th>
+<th style="text-align: left;">Leggyakoribb értékek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong><code>background-color</code></strong></td>
+<td style="text-align: left;">Háttérszín beállítása (pl. ha a kép nem tölt be).</td>
+<td style="text-align: left;"><code>#333</code>, <code>rgba(0,0,0,0.5)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>background-image</code></strong></td>
+<td style="text-align: left;">Háttérkép megadása az <code>url()</code> függvénnyel.</td>
+<td style="text-align: left;"><code>url(&quot;hero.jpg&quot;)</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>background-repeat</code></strong></td>
+<td style="text-align: left;">A kép ismétlődésének szabályozása.</td>
+<td style="text-align: left;"><code>no-repeat</code>, <code>repeat</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>background-position</code></strong></td>
+<td style="text-align: left;">A kép igazítása az elemen belül.</td>
+<td style="text-align: left;"><code>center</code>, <code>top right</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>background-size</code></strong></td>
+<td style="text-align: left;">A kép méretezése (pl. a terület kitöltésére).</td>
+<td style="text-align: left;"><code>cover</code>, <code>contain</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><code>background-attachment</code></strong></td>
+<td style="text-align: left;">A kép görgetésének viselkedése.</td>
+<td style="text-align: left;"><code>fixed</code>, <code>scroll</code></td>
+</tr>
+</tbody>
+</table>
+<p>Ezeket az egyedi tulajdonságokat kombinálja a sokkal gyakrabban használt, összefoglaló <code>background</code> parancs. (Lásd lentebb.)</p>
+<p><strong>Gyakorlati példa:</strong>
+Tegyük fel, hogy egy weboldal fejlécének szeretnénk egy háttérképet beállítani, ami nem ismétlődik, középre van igazítva, teljesen kitölti a rendelkezésre álló helyet, és görgetéskor a helyén marad.</p>
+<pre><code class="lang-css">.hero-header {
+  /* Hosszú, részletes módszer */
+  background-color: #333; /* Sötét háttér, ha a kép nem tölt be */
+  background-image: url(&quot;kep3.jpg&quot;);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* Ugyanaz a hatás az összefoglaló, profi módszerrel */
+  background: #333 url(&quot;kep3.jpg&quot;) no-repeat fixed center/cover;
+}
+</code></pre>
+<h2 id="képek-stílusbeállításai">Képek stílusbeállításai</h2>
+<p>A kép elhelyezése és vizuális stílusa (színvilág, kontraszt) tudatos tervezési döntés, amely a tartalom elrendezésének szerves része. A modern CSS eszközökkel a kép és a szöveg viszonya precízen szabályozható: a képet elhelyezhetjük a szövegblokkok között, mellettük, vagy akár szöveggel körbe is futtathatjuk a dinamikus és olvasóbarát elrendezés érdekében. A cél, hogy a vizuális elemek támogassák és tagolják a tartalmat, ne pedig elszigetelten álljanak mellette.</p>
+<ul>
+<li><p><strong>Ha a kép a fókuszpont, ami bemutatja a témát,</strong> akkor érdemes a bal oldalra helyezni, mert az olvasó tekintete itt kezdi a pásztázást. A kép felkelti az érdeklődést, a mellette lévő szöveg pedig kifejti a részleteket. Ideális például egy cikk bevezetőjéhez vagy egy portfólió elem bemutatásához.</p>
+</li>
+<li><p><strong>Ha a kép kiegészítő információt hordoz, illusztrál vagy lezár egy gondolatot,</strong> akkor hatékony lehet a jobb oldalon elhelyezni. Miután a felhasználó már elkezdte olvasni a szöveget, a kép vizuális megerősítést, példát vagy egy kapcsolódó mellékinformációt nyújt anélkül, hogy megszakítaná az olvasás kezdeti lendületét.</p>
+</li>
+</ul>
+<p>A kép a honlapon leginkább a törzsben használatos. Ez az <code>&lt;img&gt;</code> tag segítségével lehetséges, ahol a kép forrását az <code>src</code> attribútummal kell megadni.</p>
+<ul>
+<li><code>src=&quot;kep.gif&quot;</code>: ugyanazon könyvtárban van</li>
+<li><code>src=&quot;images/kep.gif&quot;</code>: &quot;eggyel lejjebb&quot; van, az images könyvtárban</li>
+<li><code>src=&quot;../../images/kep.gif&quot;</code>: A kép és a html lap párhuzamos ágakon van, a kép 1, míg a html lap 2 szinttel lejjebb</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Korábban említettük az <code>alt</code> attribútumot, amelynek az akadálymentesítésben van nagy szerepe. Pl. képernyőfelolvasó szoftver az <code>alt</code> értékét olvassa fel, de ez a szöveg jelenik meg, ha valamilyen okból kifolyólag nem sikerül a böngészőnek a képet betöltenie. Ha a kép csak díszítőelem, akkor üres érték adandó meg.</p>
+</div>
+<p>Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Sokszor fordul elő, ha a kép sokáig tölt be, akkor a látogató inkább elhagyja az oldalt. Ezért inkább tömörített képeket használjunk. A weben leginkább használható képfájl típusok: <strong>gif, jpg, png, webp</strong>.</p>
+<p><strong>A képek beállításához használt paraméterek:</strong></p>
+<ul>
+<li><strong>border</strong>: keret: vastagság típus szín
+<ul>
+<li><code>border: 1px solid black;</code></li>
+</ul>
+</li>
+<li><strong>width</strong>: px, pt</li>
+<li><strong>height</strong>: px, pt</li>
+</ul>
+<p>Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni. A honlapon a méret megváltoztatásával nem csak az arányok változnak.</p>
+<p>A weboldal elemeit, például a képeket vagy gombokat, <strong>interaktívvá</strong> és <strong>dinamikussá</strong> tehetjük CSS átmenetek (transitions) segítségével. Ezek a finom animációk, vagy mikrointerakciók, vizuális visszajelzést adnak a felhasználónak, amikor interakcióba lép egy elemmel (pl. ráviszi az egeret).</p>
+<p><strong>Példa</strong>: A kép 0.4 másodperc alatt nőjön meg 10%-kal és forduljon el 5 fokkal.</p>
+<pre><code class="lang-css">/* Az alapállapotban megadjuk, hogy a 'transform' tulajdonság 
+   változása 0.4 másodpercig tartson. */
+img {
+  transition: transform 0.4s ease-out;
+}
+
+/* A :hover állapotra megadjuk a cél animációt: 
+   10%-os nagyítást és 5 fokos elforgatást. */
+img:hover {
+  transform: scale(1.1) rotate(-5deg);
+}
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>A fenti példa érintőképernyőn nem működik. Mobilon az animáció vagy el sem indul, vagy egy érintés után „úgy marad”. Ezért ez a technika csak asztali gépekre ajánlott.</p>
+</div>
+<h2 id="táblázatok-stílusbeállításai">Táblázatok stílusbeállításai</h2>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-szines.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se I. | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se I. | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,17 +81,23 @@
         </div>
 
         <article data-uid="">
-<h1 id="felhasználói-felület-tervezése">Felhasználói felület tervezése</h1>
+<h1 id="felhasználói-felület-tervezése-i">Felhasználói felület tervezése I.</h1>
 
 <h2 id="mi-a-design">Mi a design?</h2>
-<p>A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.</p>
+<p>A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyűjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.</p>
 <p>A design egy olyan fogalom, amely magába foglalja a következő fogalmakat: esztétikai érzék, egyensúly, egységesség, harmónia, finomság, meglepetés... Szótár szerint jelent tervet, koncepciót, szándékot és mintát is. De ki lehet vele fejezni a készítést, kreálást és a szerkesztést is. Valahogy mégis több jelentést gondolunk a szó mögött. A szótár fordításai mellett valamilyen összhatást is jelent az emberek számára. A nyers jelentésben tehát egyféle előrelátó teremtés ez, ahol folyamatosan szem előtt kell tartani a végcélt. Erre nem úgy kell tekinteni, mind egy szükségtelen dolog, hanem mint a mindennapi munkánk szükséges része.</p>
 <p>Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.</p>
 <h2 id="honlap-készítés-előkészületei-menete">Honlap készítés előkészületei, menete</h2>
 <p>Szedjük össze amink van (szöveg, kép, állományok, e-mail címek, linkek), majd tegyük meg a technikai előkészületeket (digitalizálás, szövegek gépelése, fényképezés, filmfelvételek elkészítése). A legfontosabb, hogy a kezdőlapunk minden - direkt- és indirekt kommunikációs szerepet betöltsön, miután a kezdőlapnak van a legfontosabb szerepe. (bemutat, eligazít, vezérel, definiál...)</p>
 <p>A következő lépés a tervezés, ami a logikai felépítés megtervezésével kell hogy foglalkozzon. A tervezés után az operatív részben a stílusok kialakítása az első feladat, ez magába foglalja a szövegek stílusainak kialakítását, a grafikák elhelyezésének, aktív elemek képének kialakítását és a színvilág meghatározását. Végül jön maga a programozási feladat, amiben fontos hangsúlyt kell fektetnünk a szerveroldali szolgáltatások kialakítására, reklámokra...</p>
 <h2 id="css-alapjai">CSS alapjai</h2>
-<p>CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Ehhez a csoporthoz csatlakozott később a W3C, és a Microsoft is, akik belátták ennek a jelentőségét. A Stílus szerkesztésének természetesen voltak verziói is, ahogy mindennek az informatikában. Azonban a klasszikus verziók helyett manapság már csak különálló modulok (flexbox, grid...) léteznek.</p>
+<p>CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Ehhez a csoporthoz csatlakozott később a W3C, és a Microsoft is, akik belátták ennek a jelentőségét. Korábban a CSS-nek különböző verzióit különböztethettük meg (pl. CSS 2.1), ma azonban a CSS-t modulokra bontották (színek, elrendezés, animációk stb.) és azokat külön-külön fejlesztik és verziózzák. Ezt nevezzük CSS3-nak.</p>
+<p>A HTML önmagában struktúrát ad a dokumentumnak, de a böngészők alapértelmezett stílusai (pl. a címsorok nagyobb betűvel, a bekezdések új sorban és térközzel jelennek meg) csak nagyon alapvető olvashatóságot biztosítanak. A CSS-sel azonban sokkal többet tehetünk:</p>
+<ul>
+<li>Szöveg stílusozása (szín, méret, betűtípusok).</li>
+<li>Elrendezések létrehozása (pl. grid vagy többoszlopos elrendezések).</li>
+<li>Speciális effektek, például animációk hozzáadása.</li>
+</ul>
 <h3 id="stílusok-definiálása">Stílusok definiálása</h3>
 <p>2 fő részből állnak:</p>
 <ul>
@@ -105,12 +111,6 @@
 </ul>
 <p>Pl.:</p>
 <pre><code class="lang-css">h1 {
-  color: red;
-}
-
-/* vagy */
-
-h1 {
   color: red;
   font-size: 24px;
 }
@@ -193,6 +193,78 @@ h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
 </ol>
 </div>
 <p>Összességében tehát, bár az inline CSS gyorsan alkalmazható és magas prioritású, hosszú távon a karbantartás, az újrahasznosíthatóság és a kód tisztasága miatt <strong>erősen javasolt külső stíluslapokat használni</strong>.</p>
+<h3 id="css-szelektorok">CSS szelektorok</h3>
+<p>A CSS szelektorok a CSS szabályok első részét képezik. Ezek elemek és más kifejezések mintái, amelyek megmondják a böngészőnek, hogy mely HTML elemeket kell kiválasztani, hogy a szabályban szereplő CSS tulajdonságértékeket alkalmazza rájuk. Az elem vagy elemek, amelyeket a szelektor kiválaszt, a szelektor <em>alanyát</em> képezik.</p>
+<h4 id="típus-szelektorok-element--tag-name-selectors">Típus-szelektorok (Element / Tag Name Selectors)</h4>
+<p>A típus-szelektorokat néha <em>tag név szelektoroknak</em> vagy <em>elem szelektoroknak</em> is nevezik. Az HTML elem nevével választják ki az elemeket a dokumentumból. Amikor egy ilyen szelektorhoz stílusokat rendelünk, az adott típusú összes HTML elem megkapja ezeket a stílusokat. A lenti <code>span</code> szelektor kiválasztja az összes <code>&lt;span&gt;</code> elemet és azok háttérszínét sárgára állítja.</p>
+<pre><code class="lang-css">span { background-color: yellow; }
+</code></pre>
+<h4 id="osztály-szelektorok-class-selectors">Osztály-szelektorok (Class Selectors)</h4>
+<p>Az osztály-szelektorok egy pont (<code>.</code>) karakterrel kezdődnek. Kiválasztanak mindent a dokumentumban, amire az adott osztályt alkalmazták. Az osztálynevek kis- és nagybetű érzékenyek. Egy elemhez több osztály is rendelhető, és ezekkel a stílusok rétegezhetők.</p>
+<pre><code class="lang-html">&lt;p class=&quot;highlight&quot;&gt;Ez egy minta bekezdés a CSS osztály definíciójára.&lt;/p&gt;
+</code></pre>
+<ul>
+<li><p><strong>Alapvető használat</strong>: Egyetlen osztály stílusozása.</p>
+<ul>
+<li>Például egy <code>.highlight</code> nevű osztályt hozhatunk létre, és a <code>highlight</code> osztállyal ellátott összes elem kiemelt lesz. A lenti szabály sárga háttérszínt ad minden ilyen elemnek.</li>
+</ul>
+<pre><code class="lang-css">.highlight { background-color: yellow; }
+</code></pre>
+</li>
+<li><p><strong>Osztályok célzása adott elemeken</strong>: Létrehozhatunk egy szelektort, amely az adott osztállyal rendelkező konkrét elemeket célozza meg. Ezt úgy tesszük, hogy az elem típus-szelektorát használjuk, majd közvetlenül utána, szóköz nélkül hozzáfűzzük az osztályt egy ponttal. Ez a megközelítés csökkenti a szabály hatókörét, mivel csak az adott elem és osztály kombinációjára vonatkozik.</p>
+<ul>
+<li>Például a <code>span.highlight { background-color: yellow; }</code> csak a <code>&lt;span&gt;</code> elemekre érvényes, amelyeknek van &quot;highlight&quot; osztályuk.</li>
+<li>Az <code>h1.highlight { background-color: pink; }</code> pedig csak az <code>&lt;h1&gt;</code> elemekre, amelyeknek van &quot;highlight&quot; osztályuk.</li>
+</ul>
+<pre><code class="lang-css">span.highlight { background-color: yellow; }
+h1.highlight { background-color: pink; }
+</code></pre>
+</li>
+<li><p><strong>Több osztály együttes célzása</strong>: Ha egy elemnek több osztálya van, és csak akkor szeretnénk stílusozni, ha <em>összes</em> megadott osztálya jelen van, az osztályneveket szóköz nélkül láncolhatjuk össze.</p>
+<ul>
+<li>Például egy <code>.notebox.warning { border-color: orange; font-weight: bold; }</code> szabály csak azokra az elemekre vonatkozik, amelyeknek <em>mind</em> a &quot;notebox&quot;, <em>mind</em> a &quot;warning&quot; osztályuk van. Ha egy elemnek csak a &quot;danger&quot; osztálya van, a <code>notebox</code> osztály hiányában nem kapja meg a stílust.</li>
+</ul>
+<pre><code class="lang-css">.notebox.warning { border-color: orange; font-weight: bold; }
+</code></pre>
+</li>
+</ul>
+<h4 id="id-szelektorok-id-selectors">ID-szelektorok (ID Selectors)</h4>
+<p>Az ID-szelektorok egy hash jellel (<code>#</code>) kezdődnek. Használatuk hasonló az osztály-szelektorokhoz, de fontos különbség, hogy egy <code>id</code> értéknek egyedinek kell lennie az egész HTML dokumentumban. Egyetlen ID csak egyetlen elemhez tartozhat az oldalon.</p>
+<ul>
+<li><strong>Használat</strong>: Az ID-szelektor kiválasztja azt az elemet, amelyhez a megadott <code>id</code> tartozik. Egy típus-szelektorral is megelőzhető az ID, hogy csak akkor célozzunk, ha az elem típusa és az ID is megegyezik.
+<ul>
+<li>Például az <code>#one { background-color: yellow; }</code> a &quot;one&quot; ID-vel rendelkező elem háttérszínét sárgára állítja.</li>
+<li>A <code>h1#heading { color: rebeccapurple; }</code> csak az <code>&lt;h1&gt;</code> elemre vonatkozik, amelynek &quot;heading&quot; az ID-je.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-css">#one { background-color: yellow; }
+h1#heading { color: rebeccapurple; }
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Az azonos ID többszöri használata érvénytelen kódot eredményez, és sok helyen furcsa viselkedést okozhat.</p>
+</div>
+<h4 id="szelektorkészletek-selector-lists">Szelektorkészletek (Selector Lists)</h4>
+<p>Ha több szelektorhoz azonos CSS stílusokat szeretnénk alkalmazni, akkor az egyedi szelektorokat egy <em>szelektorkészletbe</em> kombinálhatjuk, vesszővel elválasztva őket.</p>
+<ul>
+<li><strong>Példa</strong>: A <code>h1, .special { color: blue; }</code> szabály a <code>&lt;h1&gt;</code> elemekre és a <code>.special</code> osztállyal rendelkező elemekre egyaránt alkalmazza a kék színt.</li>
+<li><strong>Olvashatóság</strong>: Szóköz érvényes a vessző előtt vagy után. A szelektorokat új sorba is írhatjuk az olvashatóság javítása érdekében.</li>
+<li><strong>Érvénytelen szelektorok a listában</strong>: Ha egy szelektorkészletben bármely szelektor szintaktikailag érvénytelen, az egész szabály figyelmen kívül marad. Ebben az esetben a böngésző egyik szelektorra sem alkalmazza a stílust.</li>
+</ul>
+<pre><code class="lang-css">h1, .special { color: blue; }
+</code></pre>
+<h4 id="univerzális-szelektor-universal-selector">Univerzális szelektor (Universal Selector)</h4>
+<p>Az univerzális szelektor egy csillaggal (<code>*</code>) jelölhető. Kiválasztja a dokumentum összes elemét. Ha leszármazott kombinátorral (pl. <code>article *</code>) láncolva használjuk, akkor az adott ős elemen belüli összes beágyazott elemet kiválasztja. Gyakran használják böngésző alapértelmezett stílusainak &quot;resetelésére&quot;, például az összes elem külső és belső margójának eltávolítására. Ez a viselkedés gyakran látható a &quot;reset stíluslapokban&quot;.</p>
+<pre><code class="lang-css">* {
+  margin: 0;
+  padding: 0;
+}
+
+article * {
+  border: 2px dotted red;
+}
+</code></pre>
 <h2 id="szöveg-formázása">Szöveg formázása</h2>
 <p>Fontos a szöveg formázásáról is külön szót ejteni, hisz a legtöbb információtartalmat a szöveg hordozza. Ez a tudományterület - <strong>tipográfia</strong> - már <a href="https://en.wikipedia.org/wiki/Johannes_Gutenberg">Gutenberg</a> kora óta fejlődik. Azonban a honlapok estében elég speciális tulajdonságokra szoktunk hivatkozni:</p>
 <ul>
@@ -210,7 +282,7 @@ h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
 <li><span class="math">\(t=a\)</span> <strong>fixációs idő</strong>;</li>
 </ul>
 <p>Ez egy átlag magyar ember esetében 25 betű másodpercekénti feldolgozását jelenti. Mivel nem az egymás utáni betűket rakjuk össze szavakká, hanem a számítógépen a jeleket érzékeljük egy fixációval, és az agyunk ezt a képet kódolja és látja el tartalommal. Ez azt jelenti, hogy átlagosan 12-20 betűből álló szavakat vagyunk képesek egy fixációval az agyunkba juttatni.</p>
-<h2 id="szövegek-használata-a-képernyőn">Szövegek használata a képernyőn</h2>
+<h3 id="szövegek-használata-a-képernyőn">Szövegek használata a képernyőn</h3>
 <p>Az olvasási metódus jellegzetessége miatt fontos, hogy alapvető szövegelhelyezési szabályokat betartsunk. Minden szabály alapját a fixációs adatfeldolgozás indokolja.</p>
 <p>Kétféle betűforma létezik. A betűformák különböző jelzéseket továbbítanak a felhasználóknak. Az emberek a <strong>seriff</strong> betűformákat klasszikusnak és elegánsnak tartják, ezzel szemben a <strong>sans serif</strong> betűformát modernnek és világosnak ítélik meg. Azonban a honlapok esetében célszerű a sans seriff formákat előnyben részesíteni, mert a szem könnyebben a fixációs tartományban lehatárolni a betűformákat.</p>
 <p>Ha egy képernyő oldalon túl sok betűtípus található, akkor az oldal megjelenése zavaros. A sok betűtípus már csak azért is zavaró, mert a néző az oldal szerkezetének a „megfejtésével&quot; törődik és nem összpontosít az üzenetre. Ha egy oldalon szövegelemeket meg kell különböztetni egymástól, célszerű különböző betűméretekkel és stílusokkal dolgozni vagy különböző háttereket használni.</p>
@@ -221,8 +293,6 @@ h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
 <p>A csupa nagybetűből álló szöveg kevésbé olvasható, mint a nagy- és kisbetűt keverve használó. Csupa nagybetűből álló szövegbe beleolvadnak a nagybetűvel kezdődő szavak. Ilyen szövegben nem tűnik ki a mondatok kezdete, vagyis nem behatárolható a fixációs tartomány. A nagybetűs szöveg használatát rövid címekre és a szövegből kiemelni kívánt dolgokra kell korlátozni.
 Ha félkövér betűket korlátozottan használunk, a szöveg áttekinthető, olvasható lesz, ugyanakkor a félkövér szövegrész felhívja magára a figyelmet. Túl sok félkövér szövegrész a szöveget súlyossá teszi és elmarad a figyelemfelkeltő jellege.</p>
 </div>
-<h2 id="szövegek-formázása-css-sel">Szövegek formázása CSS-sel</h2>
-<p>A weboldalak szöveges tartalmának megjelenését a CSS segítségével szabályozhatjuk. Ez magában foglalja a betűtípusok beállítását, a szöveg stílusának, méretének, színének és igazításának módosítását.</p>
 <h3 id="betűtípusok-használata-font-family">Betűtípusok használata (<code>font-family</code>)</h3>
 <p>A megfelelő betűtípus kiválasztása kulcsfontosságú a weboldal olvashatósága és hangulata szempontjából. Három alapvető módszer létezik a betűtípusok beállítására.</p>
 <h4 id="1-rendszer-biztonságos-betűtípusok">1. Rendszer (biztonságos) betűtípusok</h4>
@@ -332,7 +402,6 @@ A HTML <code>&lt;head&gt;</code> szekciójában:</p>
   font: italic bold 16px/1.5 Georgia, serif;
 }
 </code></pre>
-<hr>
 <h3 id="mértékegységek-a-css-ben-px-rem-em--és-a-többiek">Mértékegységek a CSS-ben: px, rem, em, % és a többiek</h3>
 <p>A CSS-ben a méretek megadásakor (legyen az betűméret, elem szélessége vagy térköz) elengedhetetlen a mértékegység használata. Ezeket két fő csoportba sorolhatjuk: <strong>abszolút</strong> és <strong>relatív</strong> mértékegységekre.</p>
 <h4 id="1-abszolút-mértékegységek">1. Abszolút mértékegységek</h4>
