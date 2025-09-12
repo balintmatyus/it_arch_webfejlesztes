@@ -138,9 +138,24 @@ RGB kód - pl.: <code>#89AF81</code> (hexadecimális)</p>
 </tr>
 </tbody>
 </table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Létezik egy <code>opacity</code> tulajdonság is a CSS-ben. Az <code>opacity</code> az egész elemet és tartalmát teszi átláthatóvá, míg az <code>rgba()</code> csak az adott színt.</p>
+</div>
+<pre><code class="lang-css">div {
+  background-color: steelblue;
+  opacity: 0.5;
+}
+
+/* vs */
+
+div {
+  background-color: rgba(70, 130, 180, 0.5);
+}
+</code></pre>
 <p>Érdemes tájékozódni a trendekről mindig. Trendi színpaletták:
 <a href="https://coolors.co/palettes/trending">https://coolors.co/palettes/trending</a></p>
-<p>Mielőtt rátérnénk a leghatékonyabb, összefoglaló <code>background</code> parancsra, nézzük át röviden, milyen egyedi tulajdonságokból épül fel a háttér stílusozása. Ezeket ritkán használjuk külön-külön, de fontos ismerni a szerepüket.</p>
+<p>Mielőtt rátérnénk részletesen a leghatékonyabb, összefoglaló <code>background</code> parancsra, nézzük át röviden, milyen egyedi tulajdonságokból épül fel a háttér stílusozása. Ezeket ritkán használjuk külön-külön, de fontos ismerni a szerepüket.</p>
 <table>
 <thead>
 <tr>
@@ -247,6 +262,299 @@ img:hover {
 <p>A fenti példa érintőképernyőn nem működik. Mobilon az animáció vagy el sem indul, vagy egy érintés után „úgy marad”. Ezért ez a technika csak asztali gépekre ajánlott.</p>
 </div>
 <h2 id="táblázatok-stílusbeállításai">Táblázatok stílusbeállításai</h2>
+<p>Az HTML táblázatok stílusozása kulcsfontosságú a weboldalak olvashatóságának és esztétikájának javításához. Alapértelmezésben a böngészők által megjelenített táblázatok gyakran zsúfoltak és nehezen olvashatóak. A CSS segítségével azonban jelentősen javíthatunk a táblázatok megjelenésén.</p>
+<p>Kezdjük a kiindulási HTML kóddal. A lenti táblázat &quot;Negyedéves kütyü eladásokat&quot; tartalmaz. Ennek a szerkezetnek a stílusát fogjuk a továbbiakban CSS-sel módosítani.</p>
+<pre><code class="lang-html">&lt;table&gt;
+  &lt;caption&gt;Negyedéves kütyü eladások&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Termék neve&lt;/th&gt;
+      &lt;th&gt;Eladott darabszám&lt;/th&gt;
+      &lt;th&gt;Egységár (HUF)&lt;/th&gt;
+      &lt;th&gt;Leírás&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Okos Vízforraló 3000&lt;/td&gt;
+      &lt;td&gt;150&lt;/td&gt;
+      &lt;td&gt;25000&lt;/td&gt;
+      &lt;td&gt;Wi-Fi képes vízforraló, alkalmazás-vezérléssel.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Kiber Kávéfőző&lt;/td&gt;
+      &lt;td&gt;95&lt;/td&gt;
+      &lt;td&gt;42000&lt;/td&gt;
+      &lt;td&gt;Programozható, beépített darálóval.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Holo Projektor Mini&lt;/td&gt;
+      &lt;td&gt;210&lt;/td&gt;
+      &lt;td&gt;78000&lt;/td&gt;
+      &lt;td&gt;Hordozható, 4K felbontású mini projektor.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Flexi Billentyűzet&lt;/td&gt;
+      &lt;td&gt;350&lt;/td&gt;
+      &lt;td&gt;12500&lt;/td&gt;
+      &lt;td&gt;Vízálló, feltekerhető szilikon billentyűzet.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan=&quot;4&quot;&gt;Az adatok 2025 harmadik negyedévére vonatkoznak.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;
+</code></pre>
+<h3 id="alapvető-táblázat-stílusok">Alapvető táblázat stílusok</h3>
+<p>A táblázatok stílusbeállításánál az alábbi alapvető tulajdonságokat érdemes figyelembe venni:</p>
+<ul>
+<li><p><strong>Betűtípus frissítése:</strong> Egy kevésbé formális megjelenés érdekében érdemes lehet az alapértelmezett betűtípust megváltoztatni az egész HTML dokumentumon.</p>
+<pre><code class="lang-css">html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+</code></pre>
+</li>
+<li><p><strong>Térköz és elrendezés:</strong></p>
+<ul>
+<li><code>table-layout: fixed</code>: Ez a tulajdonság biztosítja a táblázat kiszámítható viselkedését, és lehetővé teszi, hogy az oszlopszélességeket a fejléc elemein (<code>&lt;th&gt;</code>) keresztül állítsuk be.</li>
+<li><code>width</code>, <code>min-width</code>, <code>margin: 0 auto</code>: Ezekkel a beállításokkal a táblázat a szélesebb nézetablakokat (viewport) nagyrészt kitöltheti és vízszintesen középre igazítható. Szűkebb nézetablakok esetén a táblázat olvasható szélességű marad, és szükség esetén vízszintes görgetést tesz lehetővé, ami jobb felhasználói élményt nyújt mobil eszközökön.</li>
+<li><code>border-collapse: collapse</code>: Ezt az értéket javasolt beállítani a táblázat stílusozásakor, mivel megszünteti a táblázat elemei közötti alapértelmezett térközöket, és a határokat eggyé vonja össze, ami letisztultabb megjelenést eredményez.</li>
+<li><code>padding</code>: A <code>&lt;th&gt;</code> és <code>&lt;td&gt;</code> elemekre beállított belső térköz javítja az adatok olvashatóságát. (Erre később még visszatérünk a következő órán)</li>
+</ul>
+</li>
+<li><p><strong>Példa:</strong></p>
+</li>
+</ul>
+<pre><code class="lang-css">table {
+    table-layout: fixed;
+    width: 80%;
+    min-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 0.6em;
+}
+</code></pre>
+<h3 id="adatok-igazítása">Adatok igazítása</h3>
+<p>Az adatok cellán belüli igazítása elengedhetetlen az olvashatóság szempontjából. Általános gyakorlat, hogy a szöveget balra, a számokat pedig jobbra igazítjuk.</p>
+<ul>
+<li><p><strong>Szöveg- és számigazítás:</strong> Az <code>:nth-child</code> pszeudo-osztály segítségével kiválaszthatjuk a táblázat adott oszlopait, és beállíthatjuk azok igazítását, valamint szélességét. Fontos, hogy a több tartalmat tartalmazó oszlopok szélesebbek legyenek, mint a számokat tartalmazóak, hogy a szöveg elférjen egy sorban.</p>
+</li>
+<li><p><strong>Függőleges igazítás:</strong> A <code>vertical-align: top</code> tulajdonság biztosítja, hogy a cellák tartalma a cella tetejére igazodjon, ne pedig középre.</p>
+</li>
+<li><p><strong>Példa:</strong></p>
+</li>
+</ul>
+<pre><code class="lang-css">th, td {
+    vertical-align: top;
+    padding: 0.3em; /* A jobb függőleges igazítás érdekében csökkentjük a padding-ot */
+}
+
+/* A 2. és 3. oszlop (számok) jobbra igazítása */
+tr :nth-child(2),
+tr :nth-child(3) {
+    text-align: right;
+    width: 15%;
+}
+
+/* Az 1. oszlop (termék neve) balra igazítása */
+tr :nth-child(1) {
+    text-align: left;
+    width: 25%;
+}
+
+/* A 4. oszlop (leírás) balra igazítása és szélesítése */
+tr :nth-child(4) {
+    text-align: left;
+    width: 45%;
+}
+</code></pre>
+<h3 id="keretek-hozzáadása">Keretek hozzáadása</h3>
+<p>A keretek vizuálisan elválasztják a táblázat <code>&lt;caption&gt;</code> elemét, az adatokat és a lábjegyzetet (<code>&lt;tfoot&gt;</code>).</p>
+<ul>
+<li><strong>Példa:</strong></li>
+</ul>
+<pre><code class="lang-css">tfoot {
+    border-top: 1px solid #999999;
+}
+
+table {
+  /* ...egyéb táblázat stílusok */
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+</code></pre>
+<h3 id="zebra-csíkozás">Zebra csíkozás</h3>
+<p>A zebra csíkozás, vagyis a váltakozó színű sorok, megkönnyítik a táblázatok adatainak értelmezését és olvasását. A <code>:nth-child</code> szelektor egy formulát is kaphat paraméterként (pl. <code>2n+1</code> vagy <code>odd</code> a páratlan, <code>2n</code> vagy <code>even</code> a páros sorokhoz).</p>
+<ul>
+<li><strong>Példa:</strong></li>
+</ul>
+<pre><code class="lang-css">tbody tr:nth-child(odd) {
+    background-color: #eeeeee;
+}
+</code></pre>
+<h3 id="felirat-caption-stílusozása">Felirat (caption) stílusozása</h3>
+<p>A táblázat felirata (<code>&lt;caption&gt;</code>) is testreszabható, például a <code>caption-side</code> tulajdonsággal, amely meghatározza a felirat elhelyezkedését (pl. <code>bottom</code> az aljára).</p>
+<ul>
+<li><strong>Példa:</strong></li>
+</ul>
+<pre><code class="lang-css">caption {
+    padding: 1em;
+    font-style: italic;
+    caption-side: bottom;
+    letter-spacing: 1px;
+}
+</code></pre>
+<h3 id="gyors-tippek-táblázatok-stílusozásához">Gyors tippek táblázatok stílusozásához</h3>
+<ul>
+<li>Legyen a táblázat HTML jelölése a lehető legegyszerűbb és rugalmas.</li>
+<li>Használja a <code>table-layout: fixed</code> tulajdonságot a kiszámíthatóbb elrendezés érdekében.</li>
+<li>Alkalmazza a <code>border-collapse: collapse</code> beállítást a letisztultabb keretekhez.</li>
+<li>Ossza fel a táblázatot logikai részekre (pl. <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>), hogy könnyebben lehessen stílusokat alkalmazni.</li>
+<li>Használjon zebra csíkozást a sorok jobb olvashatóságáért.</li>
+<li>Igazítsa a <code>&lt;th&gt;</code> és <code>&lt;td&gt;</code> szövegét a <code>text-align</code> tulajdonsággal a rendezettebb és könnyebben követhető megjelenés érdekében.</li>
+</ul>
+<h3 id="teljes-kód-egyben">Teljes kód egyben</h3>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Stílusozott Táblázat Példa&lt;/title&gt;
+    &lt;style&gt;
+        /* Betűtípus frissítése */
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4; /* A jobb láthatóságért egy enyhe háttérszín */
+            padding: 20px;
+        }
+
+        /* Alapvető táblázat stílusok: elrendezés, méretezés, középre igazítás */
+        table {
+            table-layout: fixed;
+            width: 80%;
+            min-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            /* Keretek hozzáadása a táblázat tetejére és aljára */
+            border-top: 1px solid #999999;
+            border-bottom: 1px solid #999999;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Cella stílusok: térköz és függőleges igazítás */
+        th, td {
+            padding: 0.3em;
+            vertical-align: top;
+        }
+
+        /* Fejléc stílusai */
+        thead th {
+            background-color: #333;
+            color: #fff;
+            padding: 0.8em 0.3em;
+        }
+
+        /* Adatok igazítása: számok jobbra, szöveg balra */
+        /* Az 1. oszlop (termék neve) balra igazítása */
+        tr :nth-child(1) {
+            text-align: left;
+            width: 25%;
+        }
+
+        /* A 2. és 3. oszlop (számok) jobbra igazítása */
+        tr :nth-child(2),
+        tr :nth-child(3) {
+            text-align: right;
+            width: 15%;
+        }
+
+        /* A 4. oszlop (leírás) balra igazítása és szélesítése */
+        tr :nth-child(4) {
+            text-align: left;
+            width: 45%;
+        }
+
+        /* Zebra csíkozás a jobb olvashatóságért */
+        tbody tr:nth-child(odd) {
+            background-color: #eeeeee;
+        }
+
+        /* Lábjegyzet (tfoot) stílusai */
+        tfoot {
+            border-top: 1px solid #999999;
+        }
+
+        tfoot td {
+            font-size: 0.9em;
+            font-style: italic;
+            text-align: center; /* A colspan miatt a lábjegyzetet középre igazítjuk */
+            padding: 1em 0;
+        }
+
+        /* Felirat (caption) stílusozása */
+        caption {
+            padding: 1em;
+            font-style: italic;
+            caption-side: bottom;
+            letter-spacing: 1px;
+            color: #666;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;table&gt;
+      &lt;caption&gt;Negyedéves kütyü eladások&lt;/caption&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Termék neve&lt;/th&gt;
+          &lt;th&gt;Eladott darabszám&lt;/th&gt;
+          &lt;th&gt;Egységár (HUF)&lt;/th&gt;
+          &lt;th&gt;Leírás&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Okos Vízforraló 3000&lt;/td&gt;
+          &lt;td&gt;150&lt;/td&gt;
+          &lt;td&gt;25 000&lt;/td&gt;
+          &lt;td&gt;Wi-Fi képes vízforraló, alkalmazás-vezérléssel.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Kiber Kávéfőző&lt;/td&gt;
+          &lt;td&gt;95&lt;/td&gt;
+          &lt;td&gt;42 000&lt;/td&gt;
+          &lt;td&gt;Programozható, beépített darálóval.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Holo Projektor Mini&lt;/td&gt;
+          &lt;td&gt;210&lt;/td&gt;
+          &lt;td&gt;78 000&lt;/td&gt;
+          &lt;td&gt;Hordozható, 4K felbontású mini projektor.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Flexi Billentyűzet&lt;/td&gt;
+          &lt;td&gt;350&lt;/td&gt;
+          &lt;td&gt;12 500&lt;/td&gt;
+          &lt;td&gt;Vízálló, feltekerhető szilikon billentyűzet.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td colspan=&quot;4&quot;&gt;Az adatok 2025 harmadik negyedévére vonatkoznak.&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
 </article>
 
