@@ -1,4 +1,4 @@
-# Felhasználói felület tervezése II.
+# Színek, hátterek és képek
 
 ## A színek szerepe
 

@@ -32,8 +32,10 @@
     href: todo.md
 - name: 4. hét
   items:
-  - name: 💡 Felhasználói felület tervezése
+  - name: 💡 Színek, hátterek és képek
     href: week04/04-szines.md
+  - name: 💡 Táblázatok formázása
+    href: week04/04-tablazatok.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 5. hét
