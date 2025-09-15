@@ -1,11 +1,11 @@
-## Táblázatok: Adatok strukturálása
+# Táblázatok: Adatok strukturálása
 
 A HTML táblázatok célja **táblázatos adatok** megjelenítése – vagyis olyan információké, amelyeket sorokba és oszlopokba lehet rendezni. Lehetővé teszik, hogy gyorsan és könnyen leolvassunk értékeket, amelyek különböző adattípusok között teremtenek kapcsolatot.
 
 >[!NOTE]
 > Régebben a webfejlesztők táblázatokat használtak weboldalak elrendezésének (layout) kialakítására. Ez ma már **helytelen gyakorlatnak számít**. A modern CSS technológiák (mint a Flexbox vagy a Grid) sokkal hatékonyabb és rugalmasabb megoldást kínálnak. A táblázatos elrendezés akadálymentesítési problémákat okoz, nehezen karbantartható kódot eredményez, és nem reszponzív.
 
-### A táblázat alapjai
+## A táblázat alapjai
 
 Egy táblázat alapvető elemei a következők:
 
@@ -28,7 +28,7 @@ Lássunk egy egyszerű példát:
 </table>
 ```
 
-### Fejlécek (`<th>`)
+## Fejlécek (`<th>`)
 
 A táblázatok olvashatóságát és értelmezhetőségét nagyban javítja, ha fejléceket használunk. A `<th>` (table header) elem ugyanúgy működik, mint a `<td>`, de szemantikailag jelöli, hogy az adott cella egy sor vagy egy oszlop fejléce. A böngészők alapértelmezetten félkövérre és középre igazítva jelenítik meg a `<th>` elemek tartalmát.
 
@@ -49,7 +49,7 @@ A táblázatok olvashatóságát és értelmezhetőségét nagyban javítja, ha 
 </table>
 ```
 
-### Cellák összevonása: `colspan` és `rowspan`
+## Cellák összevonása: `colspan` és `rowspan`
 
 Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. Erre szolgál a `colspan` (oszlopok átfogása) és a `rowspan` (sorok átfogása) attribútum. Mindkettő egy számértéket vár, amely megadja, hogy hány oszlopot vagy sort fogjon át a cella.
 
@@ -78,7 +78,7 @@ Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. 
 
 A komplexebb táblázatok esetében további elemeket és attribútumokat használhatunk a struktúra és az akadálymentesség javítására.
 
-### Táblázatcím (`<caption>`)
+## Táblázatcím (`<caption>`)
 
 A `<caption>` elem segítségével címet adhatunk a táblázatunknak. Ezt közvetlenül a nyitó `<table>` tag után kell elhelyezni. A táblázatcím segít a felhasználóknak (különösen a képernyőolvasót használóknak) gyorsan megérteni a táblázat tartalmát anélkül, hogy végig kellene olvasniuk a cellákat.
 
@@ -96,7 +96,7 @@ A `<caption>` elem segítségével címet adhatunk a táblázatunknak. Ezt közv
 </table>
 ```
 
-### Struktúra: `<thead>`, `<tbody>`, `<tfoot>`
+## Struktúra: `<thead>`, `<tbody>`, `<tfoot>`
 
 A hosszabb, összetettebb táblázatokat tovább tagolhatjuk a fejléc (`<thead>`), a törzs (`<tbody>`) és a lábléc (`<tfoot>`) részekre. Bár ezek az elemek önmagukban nem változtatják meg a táblázat vizuális megjelenését, jobb strukturális alapot adnak a CSS stílusozáshoz és a JavaScript manipulációhoz. Például CSS segítségével elérhetjük, hogy egy hosszú táblázat görgetésekor a fejléc (`<thead>`) mindig látható maradjon.
 

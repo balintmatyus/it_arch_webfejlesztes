@@ -113,3 +113,7 @@ Előfordul, hogy olyan elemeket szeretnénk csoportosítani, amelyekre nincs meg
 >[!TASK]
 >Nyiss meg néhány számodra érdekes weboldalt és vizsgáld meg, hogy használják-e a szemantikus tag-eket. Sok ismert weboldal csak részben alkalmazza őket. Gondold át, mi lehet ennek az oka.
 
+Forrás:
+- https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content
+
+A szöveg AI felhasználásával készült.
