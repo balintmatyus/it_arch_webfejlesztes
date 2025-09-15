@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>T&#225;bl&#225;zatok: Adatok struktur&#225;l&#225;sa | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="T&#225;bl&#225;zatok: Adatok struktur&#225;l&#225;sa | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,14 +81,14 @@
         </div>
 
         <article data-uid="">
+<h1 id="táblázatok-adatok-strukturálása">Táblázatok: Adatok strukturálása</h1>
 
-<h2 id="táblázatok-adatok-strukturálása">Táblázatok: Adatok strukturálása</h2>
 <p>A HTML táblázatok célja <strong>táblázatos adatok</strong> megjelenítése – vagyis olyan információké, amelyeket sorokba és oszlopokba lehet rendezni. Lehetővé teszik, hogy gyorsan és könnyen leolvassunk értékeket, amelyek különböző adattípusok között teremtenek kapcsolatot.</p>
 <div class="NOTE">
 <h5>Note</h5>
 <p>Régebben a webfejlesztők táblázatokat használtak weboldalak elrendezésének (layout) kialakítására. Ez ma már <strong>helytelen gyakorlatnak számít</strong>. A modern CSS technológiák (mint a Flexbox vagy a Grid) sokkal hatékonyabb és rugalmasabb megoldást kínálnak. A táblázatos elrendezés akadálymentesítési problémákat okoz, nehezen karbantartható kódot eredményez, és nem reszponzív.</p>
 </div>
-<h3 id="a-táblázat-alapjai">A táblázat alapjai</h3>
+<h2 id="a-táblázat-alapjai">A táblázat alapjai</h2>
 <p>Egy táblázat alapvető elemei a következők:</p>
 <ul>
 <li><code>&lt;table&gt;</code>: Maga a táblázat konténere, amely minden más táblázattal kapcsolatos elemet körbevesz.</li>
@@ -107,7 +107,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
-<h3 id="fejlécek-th">Fejlécek (<code>&lt;th&gt;</code>)</h3>
+<h2 id="fejlécek-th">Fejlécek (<code>&lt;th&gt;</code>)</h2>
 <p>A táblázatok olvashatóságát és értelmezhetőségét nagyban javítja, ha fejléceket használunk. A <code>&lt;th&gt;</code> (table header) elem ugyanúgy működik, mint a <code>&lt;td&gt;</code>, de szemantikailag jelöli, hogy az adott cella egy sor vagy egy oszlop fejléce. A böngészők alapértelmezetten félkövérre és középre igazítva jelenítik meg a <code>&lt;th&gt;</code> elemek tartalmát.</p>
 <pre><code class="lang-html">&lt;table&gt;
   &lt;tr&gt;
@@ -124,7 +124,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
-<h3 id="cellák-összevonása-colspan-és-rowspan">Cellák összevonása: <code>colspan</code> és <code>rowspan</code></h3>
+<h2 id="cellák-összevonása-colspan-és-rowspan">Cellák összevonása: <code>colspan</code> és <code>rowspan</code></h2>
 <p>Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. Erre szolgál a <code>colspan</code> (oszlopok átfogása) és a <code>rowspan</code> (sorok átfogása) attribútum. Mindkettő egy számértéket vár, amely megadja, hogy hány oszlopot vagy sort fogjon át a cella.</p>
 <pre><code class="lang-html">&lt;table&gt;
   &lt;tr&gt;
@@ -148,7 +148,7 @@
 &lt;/table&gt;
 </code></pre>
 <p>A komplexebb táblázatok esetében további elemeket és attribútumokat használhatunk a struktúra és az akadálymentesség javítására.</p>
-<h3 id="táblázatcím-caption">Táblázatcím (<code>&lt;caption&gt;</code>)</h3>
+<h2 id="táblázatcím-caption">Táblázatcím (<code>&lt;caption&gt;</code>)</h2>
 <p>A <code>&lt;caption&gt;</code> elem segítségével címet adhatunk a táblázatunknak. Ezt közvetlenül a nyitó <code>&lt;table&gt;</code> tag után kell elhelyezni. A táblázatcím segít a felhasználóknak (különösen a képernyőolvasót használóknak) gyorsan megérteni a táblázat tartalmát anélkül, hogy végig kellene olvasniuk a cellákat.</p>
 <pre><code class="lang-html">&lt;table&gt;
   &lt;caption&gt;Havi kiadások&lt;/caption&gt;
@@ -162,7 +162,7 @@
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>
-<h3 id="struktúra-thead-tbody-tfoot">Struktúra: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></h3>
+<h2 id="struktúra-thead-tbody-tfoot">Struktúra: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></h2>
 <p>A hosszabb, összetettebb táblázatokat tovább tagolhatjuk a fejléc (<code>&lt;thead&gt;</code>), a törzs (<code>&lt;tbody&gt;</code>) és a lábléc (<code>&lt;tfoot&gt;</code>) részekre. Bár ezek az elemek önmagukban nem változtatják meg a táblázat vizuális megjelenését, jobb strukturális alapot adnak a CSS stílusozáshoz és a JavaScript manipulációhoz. Például CSS segítségével elérhetjük, hogy egy hosszú táblázat görgetésekor a fejléc (<code>&lt;thead&gt;</code>) mindig látható maradjon.</p>
 <p>A helyes sorrend: <code>&lt;thead&gt;</code>, majd <code>&lt;tbody&gt;</code>, majd <code>&lt;tfoot&gt;</code>.</p>
 <pre><code class="lang-html">&lt;table&gt;
