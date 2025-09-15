@@ -207,10 +207,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "contents/week02/02-html5.md",
+      "source_relative_path": "contents/week02/02-html5-semantic.md",
       "output": {
         ".html": {
-          "relative_path": "contents/week02/02-html5.html"
+          "relative_path": "contents/week02/02-html5-semantic.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week02/02-tablazatok.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week02/02-tablazatok.html"
         }
       },
       "version": ""

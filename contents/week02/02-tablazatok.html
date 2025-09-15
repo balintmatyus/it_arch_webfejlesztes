@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Szemantikus oldalstrukt&#250;ra &#233;s adatok t&#225;bl&#225;zatos megjelen&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Szemantikus oldalstrukt&#250;ra &#233;s adatok t&#225;bl&#225;zatos megjelen&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week02/02-html5.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week02/02-tablazatok.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -81,116 +81,7 @@
         </div>
 
         <article data-uid="">
-<h1 id="szemantikus-oldalstruktúra-és-adatok-táblázatos-megjelenítése">Szemantikus oldalstruktúra és adatok táblázatos megjelenítése</h1>
 
-<p>Az előző héten megismertük a HTML alapvető építőköveit: az elemeket, attribútumokat, címsorokat, bekezdéseket, listákat és linkeket. Ezekkel már képesek vagyunk egyszerűbb dokumentumokat létrehozni. Ezen a héten egy lépéssel tovább megyünk, és megnézzük, hogyan adhatunk a weboldalainknak egy magasabb szintű, szemantikus struktúrát, valamint hogyan jeleníthetünk meg komplex, táblázatos adatokat.</p>
-<h2 id="a-weboldal-elrendezése-szemantikus-struktúra">A weboldal elrendezése: Szemantikus struktúra</h2>
-<p>A legtöbb weboldal, bár vizuálisan eltérő lehet, általában hasonló fő részekből áll. Gondoljunk csak egy tipikus hírportálra vagy egy céges bemutatkozó oldalra. A HTML5 bevezetett egy sor új, <strong>szemantikus elemet</strong>, amelyekkel pontosan leírhatjuk ezeket a logikai egységeket. Ezek használata nemcsak a kódunkat teszi olvashatóbbá, de kritikus fontosságú az <strong>akadálymentesítés</strong> (pl. képernyőolvasó szoftverek számára) és a <strong>keresőoptimalizálás (SEO)</strong> szempontjából is.</p>
-<p>Egy tipikus weboldal főbb részei a következők:</p>
-<ul>
-<li><strong>Fejléc (header):</strong> Általában az oldal tetején található sáv, amely a logót, a főcímet és esetleg egy mottót tartalmazza. Ez a rész többnyire minden aloldalon azonos.</li>
-<li><strong>Navigációs sáv (navigation bar):</strong> A webhely főbb szekcióira mutató linkek gyűjteménye, legtöbbször menüként vagy fülekként megvalósítva. A konzisztens navigáció elengedhetetlen a jó felhasználói élményhez.</li>
-<li><strong>Főtartalom (main content):</strong> A központi, legnagyobb terület, amely az adott oldal egyedi tartalmát hordozza (pl. egy cikk, egy terméklista, egy videó). Ez az a rész, ami aloldalról aloldalra a leginkább változik.</li>
-<li><strong>Oldalsáv (sidebar):</strong> Kiegészítő információkat, linkeket, hirdetéseket tartalmazó sáv. Tartalma gyakran kapcsolódik a főtartalomhoz (pl. kapcsolódó cikkek).</li>
-<li><strong>Lábléc (footer):</strong> Az oldal alján elhelyezkedő sáv, amely általában a copyright információkat, elérhetőséget vagy impresszumot tartalmazza.</li>
-</ul>
-<p><img src="website-structure3.png" alt="website structure"></p>
-<div class="alert alert-task">
-<h5>TASK</h5>
-<p>Azonosítsd be a weboldal főbb részeit a fenti képen!</p>
-</div>
-<h3 id="html5-strukturális-elemek">HTML5 strukturális elemek</h3>
-<p>A HTML5 dedikált tageket biztosít az oldal különböző részeinek a jelölésére.</p>
-<ul>
-<li><code>&lt;header&gt;</code>: Egy bevezető tartalmi csoportot jelöl. Ha a <code>&lt;body&gt;</code> közvetlen gyermeke, akkor az oldal globális fejlécét definiálja. Ha egy <code>&lt;article&gt;</code> vagy <code>&lt;section&gt;</code> elemen belül van, akkor az adott szekció fejlécét jelöli.</li>
-<li><code>&lt;nav&gt;</code>: Az oldal elsődleges navigációs linkjeit tartalmazza. Másodlagos linkcsoportok (pl. egy láblécben) nem feltétlenül tartoznak ide.</li>
-<li><code>&lt;main&gt;</code>: Az oldal központi, egyedi tartalmát foglalja magába. <strong>Egy oldalon csak egy <code>&lt;main&gt;</code> elem lehet</strong>, és közvetlenül a <code>&lt;body&gt;</code>-ben kell elhelyezkednie.</li>
-<li><code>&lt;article&gt;</code>: Egy önálló, kerek egészet alkotó tartalmi blokkot jelöl, amely a weboldal többi részétől függetlenül is értelmes lenne. Tipikus példa egy blogbejegyzés, egy újságcikk vagy egy fórumhozzászólás.</li>
-<li><code>&lt;section&gt;</code>: Egy tematikus csoportosítást jelöl az oldalon belül, amely egy adott funkcionalitást (pl. térkép, hírek doboz) vagy témát fog össze. Jó gyakorlat minden szekciót egy címsorral (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) kezdeni.</li>
-<li><code>&lt;aside&gt;</code>: Olyan tartalmat jelöl, amely nem szorosan kapcsolódik a főtartalomhoz, de közvetve kiegészítő információt nyújthat (pl. egy szószedet, a szerző életrajza, kapcsolódó linkek).</li>
-<li><code>&lt;footer&gt;</code>: Az oldal vagy egy szekció lezáró tartalmát képviseli.</li>
-</ul>
-<p>Az alábbi példa a fenti weboldalhoz hasonló vázat mutat be említett elemekkel:</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;hu&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;HTML5 Oldalstruktúra - Egyszerű Példa&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;!-- HEADER: Az oldal teteje, a főcím helye. Minden oldalon megjelenhet. --&gt;
-    &lt;header&gt;
-      &lt;h1&gt;HírPortál&lt;/h1&gt;
-    &lt;/header&gt;
-
-    &lt;!-- NAV: A fő navigációs linkek gyűjtőhelye. A &quot;navigation&quot; szóból ered. --&gt;
-    &lt;nav&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Belföld&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Külföld&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Tech&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sport&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-
-    &lt;!-- MAIN: Az oldal fő, egyedi tartalma. Elvileg minden oldalon más. --&gt;
-    &lt;main&gt;
-
-      &lt;!-- ARTICLE: Egy önálló, teljes tartalmi egység, mint egy blogbejegyzés vagy egy hír. --&gt;
-      &lt;article&gt;
-        &lt;h2&gt;Forradalmi áttörés a mesterséges intelligencia kutatásában&lt;/h2&gt;
-        &lt;p&gt;Tudósok egy csoportja bejelentette, hogy sikerült egy új, hatékonyabb algoritmust fejleszteniük, amely drámaian felgyorsíthatja a gépi tanulási folyamatokat.&lt;/p&gt;
-
-        &lt;!-- SECTION: Az article-ön belüli tematikus alfejezet vagy csoport. --&gt;
-        &lt;section&gt;
-          &lt;h3&gt;A kutatás háttere&lt;/h3&gt;
-          &lt;p&gt;A most bemutatott algoritmus évek óta tartó kutatómunka eredménye, amely a neurális hálók hatékonyságának növelését célozta.&lt;/p&gt;
-        &lt;/section&gt;
-
-        &lt;section&gt;
-          &lt;h3&gt;Jövőbeli kilátások&lt;/h3&gt;
-          &lt;p&gt;A szakértők szerint az új technológia belátható időn belül a mindennapi életben is megjelenhet, például az önvezető autókban vagy az orvosi diagnosztikában.&lt;/p&gt;
-        &lt;/section&gt;
-      &lt;/article&gt;
-
-      &lt;!-- ASIDE: Kiegészítő tartalom, ami lazán kapcsolódik a fő tartalomhoz (pl. kapcsolódó linkek, hirdetés). --&gt;
-      &lt;aside&gt;
-        &lt;h2&gt;Kapcsolódó témák&lt;/h2&gt;
-        &lt;ul&gt;
-          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Mi az a gépi tanulás?&lt;/a&gt;&lt;/li&gt;
-          &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Híres magyar informatikusok&lt;/a&gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/aside&gt;
-
-    &lt;/main&gt;
-
-    &lt;!-- FOOTER: Az oldal lábléce, általában copyright információkkal, kapcsolatfelvételi adatokkal. --&gt;
-    &lt;footer&gt;
-      &lt;p&gt;&amp;copy; 2025 HírPortál. Minden jog fenntartva.&lt;/p&gt;
-    &lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<div class="alert alert-question">
-<h5>QUESTION</h5>
-<p>Miben tér el a megadott HTML kód a képen szereplő weboldaltól?</p>
-</div>
-<h3 id="nem-szemantikus-konténerek-div-és-span">Nem szemantikus konténerek: <code>&lt;div&gt;</code> és <code>&lt;span&gt;</code></h3>
-<p>Előfordul, hogy olyan elemeket szeretnénk csoportosítani, amelyekre nincs megfelelő szemantikus tag. Ilyenkor használhatjuk a <code>&lt;div&gt;</code> és <code>&lt;span&gt;</code> elemeket.</p>
-<ul>
-<li><code>&lt;div&gt;</code>: Egy <strong>blokk-szintű</strong>, általános konténer. Akkor használjuk, ha egy nagyobb tartalmi egységet szeretnénk közrefogni, például stílusozás (CSS) vagy funkcionalitás (JavaScript) hozzáadása céljából, de nincs jobb szemantikus elem a feladatra.</li>
-<li><code>&lt;span&gt;</code>: Egy <strong>soron belüli (inline)</strong>, általános konténer. Akkor használjuk, ha egy szövegrészletet szeretnénk megjelölni egy bekezdésen vagy más elemen belül, anélkül, hogy új sort kezdenénk.</li>
-</ul>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>A <code>&lt;div&gt;</code> elemek rendkívül kényelmesek, ezért könnyű túlzásba esni a használatukkal. Mivel nincs szemantikai jelentésük, felesleges használatuk csak &quot;zajossá&quot;, nehezebben értelmezhetővé teszi a HTML kódot. Csak akkor használjuk őket, ha nincs jobb szemantikai megoldás!</p>
-</div>
-<div class="alert alert-task">
-<h5>TASK</h5>
-<p>Nyiss meg néhány számodra érdekes weboldalt és vizsgáld meg, hogy használják-e a szemantikus tag-eket. Sok ismert weboldal csak részben alkalmazza őket. Gondold át, mi lehet ennek az oka.</p>
-</div>
 <h2 id="táblázatok-adatok-strukturálása">Táblázatok: Adatok strukturálása</h2>
 <p>A HTML táblázatok célja <strong>táblázatos adatok</strong> megjelenítése – vagyis olyan információké, amelyeket sorokba és oszlopokba lehet rendezni. Lehetővé teszik, hogy gyorsan és könnyen leolvassunk értékeket, amelyek különböző adattípusok között teremtenek kapcsolatot.</p>
 <div class="NOTE">
@@ -312,7 +203,7 @@
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week02/02-html5.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week02/02-tablazatok.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>
