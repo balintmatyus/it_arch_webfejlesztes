@@ -14,8 +14,10 @@
     href: week01/01-html5-gyak.md
 - name: 2. hét
   items:
-  - name: 💡 Szemantikus oldalstruktúra és adatok táblázatos megjelenítése
-    href: week02/02-html5.md
+  - name: 💡 Szemantikus oldalstruktúra
+    href: week02/02-html5-semantic.md
+  - name: 💡 Táblázatok
+    href: week02/02-tablazatok.md
   - name: 💡 Verziókezelés
     href: week02/02-verziokezeles.md
   - name: 🛠 Gyakorló feladatok
