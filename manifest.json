@@ -297,10 +297,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "contents/week03/03-design.md",
+      "source_relative_path": "contents/week03/03-mertekegysegek.md",
       "output": {
         ".html": {
-          "relative_path": "contents/week03/03-design.html"
+          "relative_path": "contents/week03/03-mertekegysegek.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-szoveg.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-szoveg.html"
         }
       },
       "version": ""
@@ -311,6 +321,16 @@
       "output": {
         ".html": {
           "relative_path": "contents/week04/04-szines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week04/04-tablazatok.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week04/04-tablazatok.html"
         }
       },
       "version": ""
