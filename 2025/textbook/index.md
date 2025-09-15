@@ -2,10 +2,22 @@
 _layout: landing
 ---
 
-# This is the **HOMEPAGE**.
+# Üdv az oldalamon!
 
-Refer to [Markdown](http://daringfireball.net/projects/markdown/) for how to write markdown files.
+Fent a Jegyzetre kattintva érheted el az *Informatika és IT architektúra alapjai* tárgy jegyzetét.
 
-## Quick Start Notes:
+## Elérhetőségek
 
-1. Add images to the *images* folder if the file is referencing an image.
+Dr. Mátyus Bálint
+
+[balint.matyus@uni-corvinus.hu](mailto://balint.matyus@uni-corvinus.hu)
+
+[Teams üzenet küldése](https://teams.microsoft.com/l/chat/0/0?users=balint.matyus@uni-corvinus.hu)
+
+## Fogadóóra
+
+Bejelentkezés alapján Teams-en, vagy személyesen S.1.27-ben.
+
+Kérdés esetén bátran keressetek Teams-en. :)
+
+**Sikeres félévet kívánok Mindenkinek!**
