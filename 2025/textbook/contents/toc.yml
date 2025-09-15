@@ -24,8 +24,10 @@
     href: week02/02-html5-gyak.md
 - name: 3. hét
   items:
-  - name: 💡 Felhasználói felület tervezése
-    href: week03/03-design.md
+  - name: 💡 Stílusok definiálása és szövegek formázása
+    href: week03/03-szoveg.md
+  - name: 💡 Mértékegységek CSS-ben
+    href: week03/03-mertekegysegek.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 4. hét
