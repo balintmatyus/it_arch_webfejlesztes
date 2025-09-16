@@ -18,8 +18,8 @@
     href: week02/02-html5-semantic.md
   - name: 💡 Táblázatok
     href: week02/02-tablazatok.md
-  - name: 💡 Verziókezelés
-    href: week02/02-verziokezeles.md
+  #- name: 💡 Verziókezelés
+  #  href: week02/02-verziokezeles.md
   - name: 🛠 Gyakorló feladatok
     href: week02/02-html5-gyak.md
 - name: 3. hét
