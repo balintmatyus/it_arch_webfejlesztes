@@ -96,7 +96,21 @@
 <li><code>&lt;td&gt;</code>: A táblázat egy celláját jelöli (table data). Egy cella egy <code>&lt;tr&gt;</code>-en belül kap helyet.</li>
 </ul>
 <p>Lássunk egy egyszerű példát:</p>
-<pre><code class="lang-html">&lt;table&gt;
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;HTML5 Oldalstruktúra - Egyszerű Példa&lt;/title&gt;
+    &lt;style&gt;
+        tr, td, table {
+            border:1px solid black; 
+            border-collapse: collapse;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;table&gt;
   &lt;tr&gt;
     &lt;td&gt;1. sor, 1. cella&lt;/td&gt;
     &lt;td&gt;1. sor, 2. cella&lt;/td&gt;
@@ -105,8 +119,14 @@
     &lt;td&gt;2. sor, 1. cella&lt;/td&gt;
     &lt;td&gt;2. sor, 2. cella&lt;/td&gt;
   &lt;/tr&gt;
-&lt;/table&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Egyelőre a stílusbeállításokat csak másoljuk át, nem kell megértenünk. Azért adtam hozzá <code>border</code>-t (szegély), hogy láthatóvá váljon a táblázat felépítése.</p>
+</div>
 <h2 id="fejlécek-th">Fejlécek (<code>&lt;th&gt;</code>)</h2>
 <p>A táblázatok olvashatóságát és értelmezhetőségét nagyban javítja, ha fejléceket használunk. A <code>&lt;th&gt;</code> (table header) elem ugyanúgy működik, mint a <code>&lt;td&gt;</code>, de szemantikailag jelöli, hogy az adott cella egy sor vagy egy oszlop fejléce. A böngészők alapértelmezetten félkövérre és középre igazítva jelenítik meg a <code>&lt;th&gt;</code> elemek tartalmát.</p>
 <pre><code class="lang-html">&lt;table&gt;
@@ -128,22 +148,22 @@
 <p>Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. Erre szolgál a <code>colspan</code> (oszlopok átfogása) és a <code>rowspan</code> (sorok átfogása) attribútum. Mindkettő egy számértéket vár, amely megadja, hogy hány oszlopot vagy sort fogjon át a cella.</p>
 <pre><code class="lang-html">&lt;table&gt;
   &lt;tr&gt;
-    &lt;th colspan=&quot;2&quot;&gt;Név&lt;/th&gt;
-    &lt;th&gt;Kor&lt;/th&gt;
+    &lt;th colspan=&quot;2&quot;&gt;Termék&lt;/th&gt;
+    &lt;th&gt;Eladott darab&lt;/th&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Péter&lt;/td&gt;
-    &lt;td&gt;Kovács&lt;/td&gt;
-    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;Telefon&lt;/td&gt;
+    &lt;td&gt;iPhone 15&lt;/td&gt;
+    &lt;td&gt;120&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td rowspan=&quot;2&quot;&gt;Közös Cella&lt;/td&gt;
-    &lt;td&gt;Valami&lt;/td&gt;
-    &lt;td&gt;33&lt;/td&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;Laptop&lt;/td&gt;
+    &lt;td&gt;MacBook Air&lt;/td&gt;
+    &lt;td&gt;45&lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-    &lt;td&gt;Másvalami&lt;/td&gt;
-    &lt;td&gt;41&lt;/td&gt;
+    &lt;td&gt;Dell XPS&lt;/td&gt;
+    &lt;td&gt;60&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
 </code></pre>

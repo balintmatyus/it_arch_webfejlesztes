@@ -257,6 +257,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "contents/week02/gyak_megoldas/stilus.css",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week02/gyak_megoldas/stilus.css"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "contents/week02/stilus.css",
       "output": {
         "resource": {
