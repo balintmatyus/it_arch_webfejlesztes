@@ -94,9 +94,9 @@
 <pre><code class="lang-html">&lt;p&gt;Ez egy &lt;strong&gt;kiemelt&lt;/strong&gt; üzenet.&lt;/p&gt;
 </code></pre>
 <p>Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket <strong>üres elemeknek</strong> (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az <code>&lt;img&gt;</code> elem, amely egy képfájlt jelenít meg az oldalon (később lesz róla szó), de ilyen a <code>&lt;br&gt;</code> (break - sortörés) vagy <code>&lt;hr&gt;</code> (horizontal - vízszintes vonal) is.</p>
-<p>Az elemek rendelkezhetnek <strong>attribútumokkal</strong> is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. <code>class=&quot;kiemelt&quot;</code>). Egy bekezdés (<code>&lt;p&gt;</code>) elem <code>class</code> attribútuma például megadhat egy stílusosztályt a későbbi formázáshoz, a <code>title</code> attribútum pedig egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.</p>
-<pre><code class="lang-html">&lt;p class=&quot;fontos-uzenet&quot; title=&quot;Ez egy egérrel megjelenő segédszöveg&quot;&gt;
-  Ez a bekezdés rendelkezik egy 'class' és egy 'title' attribútummal.
+<p>Az elemek rendelkezhetnek <strong>attribútumokkal</strong> is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. <code>title=&quot;Ez egy title attribútum&quot;</code>). Egy bekezdés (<code>&lt;p&gt;</code>) elem <code>title</code> attribútuma egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.</p>
+<pre><code class="lang-html">&lt;p title=&quot;Ez egy egérrel megjelenő segédszöveg&quot;&gt;
+  Ez a bekezdés rendelkezik egy 'title' attribútummal.
 &lt;/p&gt;
 </code></pre>
 <p>Az attribútumok értékeit mindig idézőjelek közé kell tenni. Bár a böngészők bizonyos esetekben elfogadják az idézőjelek nélküli értékeket, ez könnyen hibához vezethet, különösen ha az érték szóközöket tartalmaz. Használhatunk szimpla vagy dupla idézőjeleket is, de fontos a következetesség. Ha egy idézőjelet szeretnénk megjeleníteni az attribútum értékén belül, <em>karakterreferenciát</em> kell használnunk.</p>
@@ -235,35 +235,33 @@
 <p>Az <code>alt</code> attribútum (alternatív szöveg) kritikus fontosságú az akadálymentesség és a felhasználói élmény szempontjából. Ez a szöveg jelenik meg, ha a kép valamilyen okból nem töltődik be (pl. elgépelt URL vagy lassú internetkapcsolat miatt). A képernyőolvasót használó látássérült felhasználók számára ez a leírás teszi &quot;láthatóvá&quot; a képet. A jó <code>alt</code> szöveg tömören leírja a kép tartalmát és funkcióját. Ha a kép pusztán dekoráció, az <code>alt</code> attribútumot üresen kell hagyni (<code>alt=&quot;&quot;</code>), hogy a segítő technológiák átugorhassák.</p>
 <p>A kép méretének megadása a <code>width</code> (szélesség) és <code>height</code> (magasság) attribútumokkal szintén kulcsfontosságú. Bár ezeket nem a kép átméretezésére kell használni (arra a CSS való), a kép eredeti méreteinek megadásával a böngésző már a kép letöltése előtt &quot;lefoglalja&quot; a helyét az oldalon. Ezzel elkerülhető az a zavaró jelenség, amikor a tartalom a kép betöltődésekor hirtelen &quot;ugrik&quot; egyet, ami rontja az olvashatóságot és a felhasználói élményt.</p>
 <p>Amikor egy képhez képaláírást szeretnénk fűzni, a szemantikailag helyes megoldás a <code>&lt;figure&gt;</code> és <code>&lt;figcaption&gt;</code> elemek használata. A <code>&lt;figure&gt;</code> elem egy önálló tartalmi egységet (ami lehet kép, kódrészlet, diagram stb.) jelöl, a <code>&lt;figcaption&gt;</code> pedig a hozzá tartozó képaláírást tartalmazza. Ez a szerkezet egyértelműen összekapcsolja a képet a leírásával, ami a segítő technológiák és a keresőmotorok számára is hasznos információt nyújt.</p>
-<pre><code class="lang-html">&lt;h1&gt;Budapest nevezetességei&lt;/h1&gt;
+<pre><code class="lang-html">&lt;h1&gt;Mozilla Firefox&lt;/h1&gt;
 
-&lt;p&gt;Az Országház a magyar főváros egyik legismertebb jelképe.&lt;/p&gt;
+&lt;p&gt;Firefox is a free web browser backed by Mozilla, a non-profit dedicated to internet health and privacy.&lt;/p&gt;
 
 &lt;!-- Itt a példa a figure és figcaption használatára --&gt;
 &lt;figure&gt;
     &lt;img 
-        src=&quot;https://placehold.co/400x250/003366/FFFFFF?text=Orsz%C3%A1gh%C3%A1z&quot; 
-        alt=&quot;Az Országház épülete a Duna partján, esti kivilágításban.&quot;
-        width=&quot;400&quot; 
-        height=&quot;250&quot;&gt;
+        src=&quot;https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg&quot; 
+        alt=&quot;Mozilla Firefox logo&quot;
+        width=&quot;300&quot; 
+        height=&quot;300&quot;&gt;
     
     &lt;figcaption&gt;
-        Az Országház a Duna partján. Steindl Imre tervei alapján épült.
+        This is the Mozilla Firefox logo.
     &lt;/figcaption&gt;
 &lt;/figure&gt;
-
-&lt;p&gt;A fenti kép és a hozzá tartozó képaláírás szemantikailag összetartozik a `figure` és `figcaption` elemeknek köszönhetően.&lt;/p&gt;
 </code></pre>
 <h2 id="linkek-létrehozása">Linkek létrehozása</h2>
 <p>A <strong>hiperhivatkozások</strong>, vagy röviden linkek, a web alapvető építőkövei; ezek teszik a webet egy valódi, összekapcsolt hálózattá. A linkek lehetővé teszik, hogy dokumentumokat más dokumentumokhoz vagy erőforrásokhoz (képekhez, videókhoz) kapcsoljunk, sőt, akár egy dokumentum egy adott részére ugorjunk. A linkek létrehozásának alapja az <code>&lt;a&gt;</code> (anchor) elem, amelynek legfontosabb attribútuma a <code>href</code> (Hypertext Reference), ami a cél webcímét (URL) tartalmazza.</p>
 <pre><code class="lang-html">&lt;p&gt;
-    Ez egy egyszerű mondat, amely tartalmaz egy linket a &lt;a href=&quot;https://www.mozilla.org/hu/&quot;&gt;Mozilla Kezdőlapra&lt;/a&gt;.
+    Ez egy link a &lt;a href=&quot;https://www.mozilla.org/hu/&quot;&gt;Mozilla Kezdőlapra&lt;/a&gt;.
 &lt;/p&gt;
 </code></pre>
 <p>Szinte bármilyen webes tartalom átalakítható linkké. Nemcsak egyszerű szövegrészeket, hanem akár komplett <strong>blokk-szintű elemeket</strong> is, mint például egy címsort (<code>&lt;h1&gt;</code>) vagy egy képet (<code>&lt;img&gt;</code>). Ehhez egyszerűen az adott elemet kell az <code>&lt;a&gt;</code> elemen belül elhelyezni. A <code>title</code> attribútummal kiegészítő információt adhatunk a linkhez, amely az egérkurzor fölé mozgatásakor egy kis buborékban jelenik meg, de fontos tudni, hogy ez az információ a billentyűzettel vagy érintőképernyővel navigáló felhasználók számára nehezen hozzáférhető.</p>
 <pre><code class="lang-html">&lt;a href=&quot;https://www.mozilla.org/hu/firefox/&quot;&gt;
     &lt;img 
-        src=&quot;https://placehold.co/200x80/E66000/FFF?text=Firefox+Let%C3%B6lt%C3%A9se&quot; 
+        src=&quot;https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg&quot; 
         alt=&quot;Firefox böngésző letöltése&quot;&gt;
 &lt;/a&gt;
 </code></pre>
@@ -321,7 +319,7 @@
 <p>A jó linkek készítésének vannak bevált gyakorlatai. A legfontosabb a <strong>világos és leíró link-szöveg</strong> használata. Kerülni kell az olyan általános kifejezéseket, mint a &quot;Kattints ide!&quot;, mert ezek nem informatívak sem a felhasználók, sem a keresőmotorok, sem a képernyőolvasót használók számára. Ehelyett a link szövegének tükröznie kell, hogy hová vezet (pl. &quot;Firefox letöltése&quot;). A link szövege legyen rövid, és ne ismételje meg magát az URL-t.</p>
 </div>
 <p>Amikor nem egy másik HTML oldalra, hanem egy letöltendő erőforrásra (pl. PDF, ZIP) hivatkozunk, érdemes ezt a link szövegében jelezni, és a <code>download</code> attribútumot is használni. Ez utóbbi jelzi a böngészőnek, hogy a fájlt töltse le, és akár alapértelmezett fájlnevet is megadhatunk neki. A <code>target=&quot;_blank&quot;</code> attribútummal pedig elérhetjük, hogy a link egy új böngészőfülön nyíljon meg, ami külső hivatkozások esetén bevett gyakorlat, de használatát érdemes megfontolni a felhasználói élmény szempontjából.</p>
-<pre><code class="lang-html">&lt;h1&gt;Erőforrások&lt;/h1&gt;
+<pre><code class="lang-html">&lt;h1&gt;Firefox linkek&lt;/h1&gt;
 
 &lt;!-- 1. Példa: Link egy letölthető fájlhoz --&gt;
 &lt;p&gt;
@@ -330,8 +328,8 @@
     megnyitni a fájlt.
 &lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;/eleresi/ut/egy/dokumentumhoz.pdf&quot; download=&quot;eves_jelentes_2025.pdf&quot;&gt;
-        Éves jelentés letöltése (PDF, 2.5MB)
+    &lt;a href=&quot;https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg&quot; download=&quot;firefox_logo.svg&quot;&gt;
+        Firefox logo letöltése (PDF, 2.5MB)
     &lt;/a&gt;
 &lt;/p&gt;
 
