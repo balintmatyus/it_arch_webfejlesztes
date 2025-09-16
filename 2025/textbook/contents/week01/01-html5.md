@@ -21,11 +21,11 @@ Az elemek egymásba is ágyazhatók, ezt nevezzük **beágyazásnak** (nesting).
 
 Léteznek olyan elemek is, amelyek nem rendelkeznek záró taggel és tartalommal. Ezeket **üres elemeknek** (void elements) nevezzük. Tipikusan arra szolgálnak, hogy valamilyen tartalmat, például egy képet, beillesszenek a dokumentumba. A legismertebb példa az `<img>` elem, amely egy képfájlt jelenít meg az oldalon (később lesz róla szó), de ilyen a `<br>` (break - sortörés) vagy `<hr>` (horizontal - vízszintes vonal) is. 
 
-Az elemek rendelkezhetnek **attribútumokkal** is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. `class="kiemelt"`). Egy bekezdés (`<p>`) elem `class` attribútuma például megadhat egy stílusosztályt a későbbi formázáshoz, a `title` attribútum pedig egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.
+Az elemek rendelkezhetnek **attribútumokkal** is, amelyek további információkat hordoznak az elemről, de ezek az információk nem jelennek meg a tényleges tartalomban. Az attribútumok a nyitó tagben kapnak helyet, és egy névből, egy egyenlőségjelből, valamint idézőjelek közé zárt értékből állnak (pl. `title="Ez egy title attribútum"`). Egy bekezdés (`<p>`) elem `title` attribútuma egy felugró segédszöveget jelenít meg, ha az egérkurzort az elem fölé visszük.
 
 ```html
-<p class="fontos-uzenet" title="Ez egy egérrel megjelenő segédszöveg">
-  Ez a bekezdés rendelkezik egy 'class' és egy 'title' attribútummal.
+<p title="Ez egy egérrel megjelenő segédszöveg">
+  Ez a bekezdés rendelkezik egy 'title' attribútummal.
 </p>
 ```
 
@@ -206,24 +206,22 @@ A kép méretének megadása a `width` (szélesség) és `height` (magasság) at
 
 Amikor egy képhez képaláírást szeretnénk fűzni, a szemantikailag helyes megoldás a `<figure>` és `<figcaption>` elemek használata. A `<figure>` elem egy önálló tartalmi egységet (ami lehet kép, kódrészlet, diagram stb.) jelöl, a `<figcaption>` pedig a hozzá tartozó képaláírást tartalmazza. Ez a szerkezet egyértelműen összekapcsolja a képet a leírásával, ami a segítő technológiák és a keresőmotorok számára is hasznos információt nyújt.
 ```html
-<h1>Budapest nevezetességei</h1>
+<h1>Mozilla Firefox</h1>
 
-<p>Az Országház a magyar főváros egyik legismertebb jelképe.</p>
+<p>Firefox is a free web browser backed by Mozilla, a non-profit dedicated to internet health and privacy.</p>
 
 <!-- Itt a példa a figure és figcaption használatára -->
 <figure>
     <img 
-        src="https://placehold.co/400x250/003366/FFFFFF?text=Orsz%C3%A1gh%C3%A1z" 
-        alt="Az Országház épülete a Duna partján, esti kivilágításban."
-        width="400" 
-        height="250">
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg" 
+        alt="Mozilla Firefox logo"
+        width="300" 
+        height="300">
     
     <figcaption>
-        Az Országház a Duna partján. Steindl Imre tervei alapján épült.
+        This is the Mozilla Firefox logo.
     </figcaption>
 </figure>
-
-<p>A fenti kép és a hozzá tartozó képaláírás szemantikailag összetartozik a `figure` és `figcaption` elemeknek köszönhetően.</p>
 ```
 
 ## Linkek létrehozása
@@ -232,7 +230,7 @@ A **hiperhivatkozások**, vagy röviden linkek, a web alapvető építőkövei; 
 
 ```html
 <p>
-    Ez egy egyszerű mondat, amely tartalmaz egy linket a <a href="https://www.mozilla.org/hu/">Mozilla Kezdőlapra</a>.
+    Ez egy link a <a href="https://www.mozilla.org/hu/">Mozilla Kezdőlapra</a>.
 </p>
 ```
 
@@ -241,7 +239,7 @@ Szinte bármilyen webes tartalom átalakítható linkké. Nemcsak egyszerű szö
 ```html
 <a href="https://www.mozilla.org/hu/firefox/">
     <img 
-        src="https://placehold.co/200x80/E66000/FFF?text=Firefox+Let%C3%B6lt%C3%A9se" 
+        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg" 
         alt="Firefox böngésző letöltése">
 </a>
 ```
@@ -307,7 +305,7 @@ Lehetőség van arra is, hogy egy dokumentum konkrét részére, úgynevezett **
 Amikor nem egy másik HTML oldalra, hanem egy letöltendő erőforrásra (pl. PDF, ZIP) hivatkozunk, érdemes ezt a link szövegében jelezni, és a `download` attribútumot is használni. Ez utóbbi jelzi a böngészőnek, hogy a fájlt töltse le, és akár alapértelmezett fájlnevet is megadhatunk neki. A `target="_blank"` attribútummal pedig elérhetjük, hogy a link egy új böngészőfülön nyíljon meg, ami külső hivatkozások esetén bevett gyakorlat, de használatát érdemes megfontolni a felhasználói élmény szempontjából.
 
 ```html
-<h1>Erőforrások</h1>
+<h1>Firefox linkek</h1>
 
 <!-- 1. Példa: Link egy letölthető fájlhoz -->
 <p>
@@ -316,8 +314,8 @@ Amikor nem egy másik HTML oldalra, hanem egy letöltendő erőforrásra (pl. PD
     megnyitni a fájlt.
 </p>
 <p>
-    <a href="/eleresi/ut/egy/dokumentumhoz.pdf" download="eves_jelentes_2025.pdf">
-        Éves jelentés letöltése (PDF, 2.5MB)
+    <a href="https://upload.wikimedia.org/wikipedia/commons/7/76/Mozilla_Firefox_logo_2013.svg" download="firefox_logo.svg">
+        Firefox logo letöltése (PDF, 2.5MB)
     </a>
 </p>
 
