@@ -16,7 +16,21 @@ Egy táblázat alapvető elemei a következők:
 Lássunk egy egyszerű példát:
 
 ```html
-<table>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Oldalstruktúra - Egyszerű Példa</title>
+    <style>
+        tr, td, table {
+            border:1px solid black; 
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+
+  <table>
   <tr>
     <td>1. sor, 1. cella</td>
     <td>1. sor, 2. cella</td>
@@ -25,8 +39,13 @@ Lássunk egy egyszerű példát:
     <td>2. sor, 1. cella</td>
     <td>2. sor, 2. cella</td>
   </tr>
-</table>
+  </table>
+</body>
+</html>
 ```
+
+>[!NOTE]
+>Egyelőre a stílusbeállításokat csak másoljuk át, nem kell megértenünk. Azért adtam hozzá `border`-t (szegély), hogy láthatóvá váljon a táblázat felépítése.
 
 ## Fejlécek (`<th>`)
 
@@ -56,22 +75,22 @@ Néha szükség van arra, hogy egy cella több oszlopot vagy sort is átfogjon. 
 ```html
 <table>
   <tr>
-    <th colspan="2">Név</th>
-    <th>Kor</th>
+    <th colspan="2">Termék</th>
+    <th>Eladott darab</th>
   </tr>
   <tr>
-    <td>Péter</td>
-    <td>Kovács</td>
-    <td>28</td>
+    <td>Telefon</td>
+    <td>iPhone 15</td>
+    <td>120</td>
   </tr>
   <tr>
-    <td rowspan="2">Közös Cella</td>
-    <td>Valami</td>
-    <td>33</td>
+    <td rowspan="2">Laptop</td>
+    <td>MacBook Air</td>
+    <td>45</td>
   </tr>
   <tr>
-    <td>Másvalami</td>
-    <td>41</td>
+    <td>Dell XPS</td>
+    <td>60</td>
   </tr>
 </table>
 ```

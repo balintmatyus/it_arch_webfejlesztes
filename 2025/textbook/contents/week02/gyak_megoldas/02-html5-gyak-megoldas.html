@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 Oldalstruktúra - Egyszerű Példa</title>
+    <link rel="stylesheet" href="stilus.css">
+</head>
+<body>
+    <header>
+        <h1>Digitális Jövő Zrt.</h1>
+        <h2>Negyedéves Projekt Riport</h2>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Főoldal</a></li>
+            <li><a href="#">Riportok</a></li>
+            <li><a href="#">Projektek</a></li>
+            <li><a href="#">Beállítások</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>Vezetői összefoglaló</h2>
+            Ez itt egy rövid leírás.
+            <h3>Q3 2025 - Projekt Státuszok</h3>
+
+            <table>
+                <caption>Projektek részletes állapotjelentése</caption>
+                <thead>
+                    <tr>
+                        <th>Projekt név</th>
+                        <th>Projektvezető</th>
+                        <th>Státusz</th>
+                        <th>Költségvetés (HUF)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"Orion" Kliens Portál</td>
+                        <td>Kiss Anna</td>
+                        <td>Befejezett</td>
+                        <td>15,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>"Phoenix" Adatbázis Migráció</td>
+                        <td rowspan="2">Nagy Béla</td>
+                        <td>Folyamatban</td>
+                        <td>25,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>"Gemini" Mobilalkalmazás</td>
+                        <td>Kockázatos</td>
+                        <td>18,000,000</td>
+                    </tr>
+                    <tr>
+                        <td>"Vega" Belső CRM Rendszer</td>
+                        <td>Szabó Dóra</td>
+                        <td>Tervezés alatt</td>
+                        <td>32,000,000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Összesített költségvetés</td>
+                        <td>90,000,000</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+        </article>
+        <aside>
+            <dl>
+                <dt>KPI</dt>
+                <dd>Key Performance Indicator - Teljesítménymutató...</dd>
+                <dt>ROI</dt>
+                <dd>Return on Investment - Befektetésarányos megtérülés.</dd>
+                <dt>CRM</dt>
+                <dd>Customer Relationship Management - Ügyfélkapcsolat-kezelő rendszer.</dd>
+            </dl>
+        </aside>
+    </main>
+    <footer>
+        <p>© 2025 Digitális Jövő Zrt.</p>
+        <p>Riport generálva: 2025-08-18</p>
+    </footer>
+</body>
+</html>

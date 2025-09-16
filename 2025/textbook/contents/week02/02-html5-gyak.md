@@ -54,6 +54,8 @@ Készíts egy listát 4 linkkel:
 - Projektek
 - Beállítások
 
+Nem fogjuk ezeket a menüpontokat ténylegesen használni, ezért a linkek erre a dokumentumra mutatnak majd `href=#` attribútum beállításával.
+
 ### Main - Article szekció
 Az `<article>` elembe kerül:
 1. **Címsor**: "Vezetői összefoglaló" (`<h2>`)
@@ -98,7 +100,6 @@ Az `<article>` elemen belül készíts táblázatot "Projektek részletes állap
 ### Speciális feladatok:
 - **Függőleges cellaösszevonás**: Nagy Béla két projektet is vezet - a neve csak egyszer jelenjen meg!
 - **Vízszintes cellaösszevonás**: A láblécben az "Összesített költségvetés" felirat és az összeg megfelelően oszoljon el
-- **Vizuális kiemelés**: A "Kockázatos" státuszt emeld ki `<span class="status-risk">` elemmel
 
 ---
 
@@ -112,7 +113,6 @@ Az `<article>` elemen belül készíts táblázatot "Projektek részletes állap
 - [ ] Táblázat szerkezeti tagolása kész? (fejléc, törzs, lábléc)
 - [ ] Nagy Béla neve csak egyszer jelenik meg (cellaösszevonás)?
 - [ ] Lábléc cellaösszevonása működik?
-- [ ] "Kockázatos" státusz kiemelve span elemmel?
 - [ ] Copyright szimbólum (`&copy;`) használva?
 
 ---
