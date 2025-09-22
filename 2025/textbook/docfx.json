@@ -4,7 +4,7 @@
     "content": [
       {
         "files": [
-          "**/*.{md,yml}"
+          "**/*.{md,yml,html}"
         ],
         "exclude": [
           "_site/**",

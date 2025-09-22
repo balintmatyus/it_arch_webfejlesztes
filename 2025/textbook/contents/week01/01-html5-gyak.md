@@ -8,7 +8,7 @@ Valamennyi feladat megoldását ellenőrizzük 1) vizuálisan böngésző segít
 
 ![viccek](viccek/viccek.png)
 
-[Megoldás](./viccek/viccek-megoldas.html)
+[Megoldás](~/contents/week01/viccek/viccek-megoldas.html)
 
 ## A víz
 
@@ -16,7 +16,7 @@ Valósítsd meg a képen látható weboldalt HTML segítségével. A szöveget a
 
 ![viz](./viz/viz.png)
 
-[Megoldás](./viz/viz-megoldas.html)
+[Megoldás](~/contents/week01/viz/viz-megoldas.html)
 
 ## Egyetemi szervezetek
 
@@ -24,4 +24,4 @@ Valósítsd meg a képen látható weboldalt beágyazott listák segítségével
 
 ![lista](./lista.gif)
 
-[Megoldás](./egyetem/egyetem-megoldas.html)
+[Megoldás](~/contents/week01/egyetem/egyetem-megoldas.html)
