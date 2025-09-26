@@ -1,18 +1,34 @@
 # Felhasználói felület tervezése I.
 
-## Mi a design?
-
-A honlapszerkesztés és a webdesign némileg átfedésben van egymással, de nem ugyanazt jelentik. A honlapszerkesztés maga a folyamat, a webdesign pedig a végtermékre vonatkozó elvárások gyűjtőfogalma. A honlapszerkesztéshez tartoznak a különböző programozási nyelvek és a grafika ismerete. Ez az a váz, ami végül megteremti az interneten keresztül is elérhető és használható felületet, a honlapot.
-
-A design egy olyan fogalom, amely magába foglalja a következő fogalmakat: esztétikai érzék, egyensúly, egységesség, harmónia, finomság, meglepetés... Szótár szerint jelent tervet, koncepciót, szándékot és mintát is. De ki lehet vele fejezni a készítést, kreálást és a szerkesztést is. Valahogy mégis több jelentést gondolunk a szó mögött. A szótár fordításai mellett valamilyen összhatást is jelent az emberek számára. A nyers jelentésben tehát egyféle előrelátó teremtés ez, ahol folyamatosan szem előtt kell tartani a végcélt. Erre nem úgy kell tekinteni, mind egy szükségtelen dolog, hanem mint a mindennapi munkánk szükséges része.
-
 Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.
 
-## Honlap készítés előkészületei, menete
+A hatékony digitális design messze túlmutat az esztétikán: tudatos problémamegoldás, amelynek célja a felhasználói viselkedés pozitív befolyásolása. A **jó design** nem szubjektív ízlés kérdése, hanem jól definiált elveken alapul.
 
-Szedjük össze amink van (szöveg, kép, állományok, e-mail címek, linkek), majd tegyük meg a technikai előkészületeket (digitalizálás, szövegek gépelése, fényképezés, filmfelvételek elkészítése). A legfontosabb, hogy a kezdőlapunk minden - direkt- és indirekt kommunikációs szerepet betöltsön, miután a kezdőlapnak van a legfontosabb szerepe. (bemutat, eligazít, vezérel, definiál...)
+## A webfejlesztés folyamata dióhéjban
 
-A következő lépés a tervezés, ami a logikai felépítés megtervezésével kell hogy foglalkozzon. A tervezés után az operatív részben a stílusok kialakítása az első feladat, ez magába foglalja a szövegek stílusainak kialakítását, a grafikák elhelyezésének, aktív elemek képének kialakítását és a színvilág meghatározását. Végül jön maga a programozási feladat, amiben fontos hangsúlyt kell fektetnünk a szerveroldali szolgáltatások kialakítására, reklámokra...
+Bár a kurzus a HTML, CSS és JavaScript technikai részleteire koncentrál, a kódolás egy nagyobb, több lépésből álló folyamat része. A sikeres weboldal titka a gondos előkészítésben rejlik, és az alábbi vázlat segít elhelyezni a programozói munkát a teljes projekt térképén.
+
+**1. Stratégia és tervezés (A "Miért?")**
+Mielőtt kódot írnánk, meg kell határozni a weboldal **célját** és **célközönségét**. Ekkor készül el a weboldal vázlatos szerkezete (**drótváz** vagy [wireframe](https://www.geeksforgeeks.org/websites-apps/wireframing/)), ami a későbbi fejlesztés alapját képezi.
+
+**2. UI/UX Dizájn (A "Hogyan nézzen ki?")**
+A drótvázakra építve a tervezők a *felhasználói élmény* (UX) és a *felhasználói felület* (UI) megtervezésével folytatják. A modern webdesign e két kulcsfontosságú pillére biztosítja, hogy a végeredmény ne csak szép, de hatékony és könnyen használható is legyen.
+* **UX (User Experience) Design**: A felhasználói élmény stratégiai tervezése. A UX célja, hogy a weboldal használata logikus, intuitív és élvezetes legyen a felhasználó számára, miközben az üzleti célokat is maximálisan támogatja. Ez a folyamat a felhasználói kutatástól az információs architektúrán át a prototípus-tesztelésig terjed.
+* **UI (User Interface) Design**: A felhasználói felület vizuális megtervezése. Ide tartozik az elrendezés, a színek, a tipográfia és a grafikai elemek egységes, esztétikus és következetes rendszere.
+
+**3. Fejlesztés (A megvalósítás)**
+Itt kel életre a terv. A fejlesztők leprogramozzák a vizuális terveket, és felépítik a weboldal működő, interaktív felületét. A két fő területéről (Frontend, Backend) már korábban olvashattunk az [Egy modern webalkalmazás anatómiája](../week01/01-fullstack.md) fejezetben.
+
+**4. Tesztelés és optimalizálás (A finomhangolás)**
+Az elkészült oldalt alaposan tesztelni kell, hogy minden hibátlanul működjön. Az indítás után a munka nem áll meg: **analitikai adatok** alapján folyamatosan figyelik és fejlesztik a weboldalt a még jobb eredményekért.
+
+A webfejlesztés és a webdesign nem választható el élesen; a sikeres végtermék e szakterületek szoros együttműködésének eredménye.
+
+>[!NOTE]
+>Fenti felosztás egy lineáris ([vízesésszerű](https://www.geeksforgeeks.org/software-engineering/waterfall-model/)) felosztása a fejlesztési folyamatnak. Későbbi kurzusokon hallhattok még további, megközelítésekről is, mint az [Agilis módszertanról](https://www.geeksforgeeks.org/software-testing/what-is-agile-methodology/) vagy a [DevOpsról](https://www.geeksforgeeks.org/devops/introduction-to-devops/).
+
+>[!NOTE]
+>Több elmélet, modell is létezik, amely leírja, hogy "Mitől jó egy design?". Érdemes megemlíteni [Gestalt alapelveit](https://uxdesignblog.hu/articles/gestalt), valamint [Nielsen 10 heurisztikáját](https://innovationdesign.hu/ux/10-usability-heurisztika-nielsen/).
 
 ## CSS alapjai
 
