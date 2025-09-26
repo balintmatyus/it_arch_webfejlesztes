@@ -326,6 +326,16 @@
       "version": ""
     },
     {
+      "type": "Resource",
+      "source_relative_path": "contents/week03/Low-fidelity-web.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week03/Low-fidelity-web.png"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "contents/week04/04-szines.md",
       "output": {
