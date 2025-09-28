@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Gyakorl&#243; feladat | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Gyakorl&#243; feladat | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gyakorló-feladat">Gyakorló feladat</h1>
+
+<p>A feladat két részből áll. Az első részben a Moodle-be feltöltött értékelő adatlap segítségével kell dolgoznotok, majd a gyűjtött tapasztalatok alapján igényesen megformázni egy szöveget.</p>
+<h2 id="1-rész-weboldalak-kiértékelése">1. rész: Weboldalak kiértékelése</h2>
+<p>A Moodle gyakorlati színterébe feltöltött adatlap segítségével értékelj ki három weboldalt. A gyakorlat célja, hogy jó gyakorlatokat gyűjtsetek lehetséges hiányosságok, fejlesztendő területek azonosítása mellett. Használjátok bátran az <code>F12</code> billentyű lenyomásával megjelenő <em>DevTools</em> eszközt, amivel megvizsgálhatjátok, hogy adott HTML tag-re milyen stílusbeállítások vonatkoznak.</p>
+<p><img src="devtools.png" alt="devtools"></p>
+<h2 id="2-rész-szöveg-formázása-css-segítségével">2. rész: Szöveg formázása CSS segítségével</h2>
+<p>Az 1. részben gyűjtött tapasztalatok alapján a következő HTML dokumentumot igényesen formázd meg. Ha valamilyen CSS-t még nem ismersz, nyugodtan keress rá a neten és/vagy kérj segítséget a gyakorlatvezetőtől.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;A Római Birodalom Felemelkedése&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;header id=&quot;main-header&quot;&gt;
+        &lt;h1&gt;Antik Történelem Magazin&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Kezdőlap&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Görögország&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Róma&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Egyiptom&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2 class=&quot;article-title&quot;&gt;A Római Birodalom Felemelkedése: A Városállamtól a Világhatalomig&lt;/h2&gt;
+            
+            &lt;section&gt;
+                &lt;h3&gt;A kezdetek: Mítosz és valóság&lt;/h3&gt;
+                &lt;p&gt;Róma alapítását a hagyomány szerint Kr. e. 753-ra datálják, Romulus és Remus legendás történetével, akiket egy anyafarkas nevelt fel. Bár ez a történet a mitológia ködébe vész, a régészeti leletek valóban egy korai település nyomait tárták fel a Palatinus-dombon. A városállam kezdetben etruszk királyok uralma alatt állt, majd Kr. e. 509-ben a királyságot elűzve kikiáltották a köztársaságot. Ez a politikai fordulat alapozta meg Róma jövőbeli hatalmát. A köztársaság korai időszakát a patríciusok (arisztokrácia) és a plebejusok (köznép) közötti társadalmi küzdelmek jellemezték, amelyek végül a plebejusok jogainak kiterjesztéséhez és egy stabilabb politikai rendszer kialakulásához vezettek, amely a Szenátuson és a népgyűléseken alapult.&lt;/p&gt;
+                &lt;p&gt;A korai köztársaság folyamatos harcokat vívott a környező latin, etruszk és szabin törzsekkel az Itáliai-félsziget feletti hegemóniáért. Ezek a háborúk nemcsak Róma területét növelték, hanem formálták katonai szervezetét és stratégiáját is. A légiók fegyelmezettsége és a római hadmérnöki tudás páratlan volt a korban, ami lehetővé tette számukra, hogy sorozatos győzelmeket arassanak. A meghódított területekkel szemben Róma egyedülálló politikát folytatott: ahelyett, hogy teljesen leigázta volna őket, szövetségesi rendszert épített ki, amelyben a különböző városok jogokat és autonómiát kaptak, cserébe katonai szolgálatért és hűségért. Ez a &quot;divide et impera&quot; (oszd meg és uralkodj) elv biztosította a félsziget stabilitását és Róma tartós befolyását.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section&gt;
+                &lt;h3&gt;A pun háborúk és a Mediterráneum meghódítása&lt;/h3&gt;
+                &lt;p class=&quot;kiemelt-gondolat&quot;&gt;A Római Köztársaság igazi erőpróbája a Karthágó elleni három pun háború volt (Kr. e. 264–146). Karthágó, a föníciai alapítású észak-afrikai tengeri hatalom, Róma legfőbb riválisa volt a Földközi-tenger nyugati medencéjének irányításáért. Az első háború Szicília birtoklásáért folyt, és Róma tengeri flottájának felépítésével, valamint a karthágóiak legyőzésével ért véget. A második pun háború Hannibal legendás hadjáratáról híres, aki az Alpokon átkelve elefántjaival fenyegette Rómát, de végül vereséget szenvedett. A harmadik háború Karthágó teljes elpusztításával zárult, amivel Róma vitathatatlanul a Mediterráneum urává vált.&lt;/p&gt;
+                &lt;p&gt;A pun háborúk megnyerése után Róma terjeszkedése felgyorsult. Kelet felé fordulva meghódították a hellenisztikus királyságokat, köztük Makedóniát és Görögországot, amelynek gazdag kultúrája mély hatást gyakorolt a római társadalomra. A hódítások hatalmas gazdagságot és rabszolgatömegeket áramoltattak Rómába, ami alapjaiban változtatta meg a gazdasági és társadalmi viszonyokat. A kisbirtokos parasztság tönkrement, helyüket a rabszolgamunkán alapuló nagybirtokok (latifundiumok) vették át, ami súlyos társadalmi feszültségekhez és politikai instabilitáshoz vezetett.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section&gt;
+                &lt;h3&gt;A köztársaság válságától a császárságig&lt;/h3&gt;
+                &lt;p&gt;A Kr. e. 1. század a köztársaság válságának és a polgárháborúk korának időszaka volt. A hatalmasra nőtt birodalmat a régi köztársasági intézmények már nem tudták hatékonyan kormányozni. A hadsereg átalakult: a polgárkatonák helyét zsoldos seregek vették át, amelyek hűsége már nem a köztársasághoz, hanem közvetlenül a hadvezérükhöz kötődött. Olyan karizmatikus és ambiciózus hadvezérek emelkedtek fel, mint Marius, Sulla, Pompeius és a leghíresebb, Julius Caesar. Caesar galliai hódításaival óriási hírnévre és vagyonra tett szert, ami lehetővé tette számára, hogy szembeszálljon a Szenátussal és Pompeiusszal. A polgárháborúból győztesen került ki, és örökös diktátorrá neveztette ki magát, de reformjait már nem tudta befejezni, mert Kr. e. 44-ben a köztársaságpárti szenátorok egy csoportja meggyilkolta.&lt;/p&gt;
+                &lt;p&gt;Caesar halála újabb polgárháborúk sorozatát indította el, amelyből unokaöccse és fogadott fia, Octavianus került ki győztesen. Miután legyőzte riválisait, Marcus Antoniust és Kleopátrát az actiumi csatában (Kr. e. 31), Octavianus egyeduralkodóvá vált. Bölcsen elkerülte a királyi címet, és a köztársaság megmentőjeként tüntette fel magát. Létrehozta a principátus rendszerét, amelyben a köztársasági intézmények látszólag megmaradtak, de a tényleges hatalom az ő kezében összpontosult. A Szenátustól megkapta az &quot;Augustus&quot; (Fenséges) címet, és ezzel ő lett Róma első császára. Uralma egy hosszú, békés és virágzó időszakot hozott el, a &lt;a href=&quot;https://hu.wikipedia.org/wiki/Pax_Romana&quot; target=&quot;_blank&quot;&gt;Pax Romanát&lt;/a&gt;, amely a Római Birodalom aranykorát jelentette.&lt;/p&gt;
+            &lt;/section&gt;
+
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&amp;copy; 2025 Antik Történelem Magazin. Minden jog fenntartva.&lt;/p&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="kiinduló-css">Kiinduló CSS</h3>
+<pre><code class="lang-css">/* FELADAT: A SZÖVEG FORMÁZÁSA
+  Ebben a fájlban NINCSENEK szövegformázási szabályok (pl. font-family, color, font-size).
+  A te feladatod, hogy a tanult szelektorokkal és tulajdonságokkal
+  kialakítsd a cikk olvasható és esztétikus tipográfiáját.
+*/
+
+/* Az oldal alapvető beállításai */
+body {
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fejléc stílusai */
+header#main-header {
+    background-color: #333;
+    padding: 1rem;
+}
+
+/* Navigációs sáv */
+nav {
+    background-color: #444;
+    padding: 0.5rem 0;
+    text-align: center; /* A menüpontok középre igazítása */
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; /* A lista pontjainak eltávolítása */
+}
+
+nav ul li {
+    display: inline-block; /* A menüpontok egymás mellé kerülnek */
+    margin: 0 1rem;
+}
+
+/* A fő tartalmi rész konténere */
+main {
+    max-width: 900px; /* Olvasható sorszélesség beállítása */
+    margin: 2rem auto; /* Felül-alul térköz, oldalt automatikus középre igazítás */
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+/* Lábléc stílusai */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* ----- A TE MUNKÁD ITT KEZDŐDIK ----- */
+
+/* Példa feladatok, amiket meg kell oldanod:
+  1. Importálj egy betűtípust a Google Fonts-ból és állítsd be a body-ra!
+  2. Válassz szelektorokat (pl. h1, h2, .article-title, p) és adj nekik méretet, színt, sorközt!
+  3. Formázd a .kiemelt-gondolat osztályú bekezdést, hogy kitűnjön!
+  4. Formázd a linkeket (&lt;a&gt;), és adj nekik :hover állapotot!
+  5. Használj szelektor-készletet a h2 és h3 közös formázásához!
+*/
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

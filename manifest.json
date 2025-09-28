@@ -337,6 +337,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week03/03-mertekegysegek.md",
       "output": {
         ".html": {
@@ -361,6 +371,16 @@
       "output": {
         "resource": {
           "relative_path": "contents/week03/Low-fidelity-web.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week03/devtools.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week03/devtools.png"
         }
       },
       "version": ""
