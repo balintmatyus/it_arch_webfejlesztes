@@ -1,18 +1,16 @@
-# Felhasználói felület tervezése a webfejlesztés folyamatában
+# A webfejlesztés folyamata dióhéjban
 
 Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.
 
 A hatékony digitális design messze túlmutat az esztétikán: tudatos problémamegoldás, amelynek célja a felhasználói viselkedés pozitív befolyásolása. A **jó design** nem szubjektív ízlés kérdése, hanem jól definiált elveken alapul.
 
-## A webfejlesztés folyamata dióhéjban
-
 Bár a kurzus a HTML, CSS és JavaScript technikai részleteire koncentrál, a kódolás egy nagyobb, több lépésből álló folyamat része. A sikeres weboldal titka a gondos előkészítésben rejlik. Az alábbi vázlat egy általánosan elfogadott, **felhasználóközpontú folyamatot** mutat be, amely segít elhelyezni a programozói munkát a teljes projekt térképén.
 
-### 1. Kutatás és Stratégia (A „Miért?”)
+## 1. Kutatás és Stratégia (A „Miért?”)
 
 Mielőtt egyetlen vonalat is rajzolnánk vagy kódot írnánk, tisztázni kell a weboldal alapjait. Ebben a fázisban határozzuk meg a projekt **célját** (pl. eladás, informálás, regisztráció) és a **célközönségét** (kiknek készül az oldal?). Itt történik a piackutatás, a versenytársak elemzése és a legfontosabb funkciók meghatározása. Az eredmény egy letisztázott koncepció, ami a további munka alapját képezi.
 
-### 2. Tervezés: UX és UI (A „Hogyan?”)
+## 2. Tervezés: UX és UI (A „Hogyan?”)
 
 Ez a fázis alakítja a stratégiát kézzelfogható tervekké. A folyamat a durva vázlatoktól halad a részletesen kidolgozott, interaktív tervek felé. A két fő területe a felhasználói élmény (UX) és a felhasználói felület (UI) tervezése.
 
@@ -31,11 +29,11 @@ A tervezési folyamat kézzelfogható lépései és eredményei:
 > [!NOTE]
 > Több elmélet is létezik, amely leírja, hogy „mitől jó egy design”. Érdemes megemlíteni a [Gestalt-alapelveket](https://uxdesignblog.hu/articles/gestalt), valamint [Jakob Nielsen 10 használhatósági heurisztikáját](https://innovationdesign.hu/ux/10-usability-heurisztika-nielsen/), amelyek a jó felhasználói felület alapkövei.
 
-### 3. Fejlesztés (A megvalósítás)
+## 3. Fejlesztés (A megvalósítás)
 
 Itt kel életre a terv. A fejlesztők a jóváhagyott prototípus és a vizuális tervek alapján leprogramozzák a weboldal működő, interaktív felületét. A két fő területéről (Frontend, Backend) már korábban olvashattunk az [Egy modern webalkalmazás anatómiája](../week01/01-fullstack.md) fejezetben.
 
-### 4. Tesztelés, Indítás és Optimalizálás (A finomhangolás)
+## 4. Tesztelés, Indítás és Optimalizálás (A finomhangolás)
 
 Az elkészült oldalt alaposan tesztelni kell különböző eszközökön és böngészőkben, hogy minden hibátlanul működjön. Az indítás (élesítés) után a munka nem áll meg: **analitikai adatok** (pl. Google Analytics) alapján a szakemberek folyamatosan figyelik a felhasználói viselkedést, és fejlesztik a weboldalt a még jobb eredményekért.
 
