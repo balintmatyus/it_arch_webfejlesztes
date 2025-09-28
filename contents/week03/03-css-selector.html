@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CSS szelektorok | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CSS szelektorok | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-css-selector.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="css-szelektorok">CSS szelektorok</h1>
+
+<p>A CSS szelektorok mondják meg a böngészőnek, hogy mely HTML elemekre kell a stílusokat alkalmazni.</p>
+<p>Induljunk ki a következő HTML-ből.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;CSS Szelektorok Gyakorló&lt;/title&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1 id=&quot;heading&quot;&gt;CSS Szelektorok a gyakorlatban&lt;/h1&gt;
+
+    &lt;h2&gt;Típus-szelektor&lt;/h2&gt;
+    &lt;p&gt;Ez egy sima bekezdés, de van benne egy &lt;span&gt;span elem&lt;/span&gt;, aminek sárga a háttere a típus-szelektor miatt.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Osztály-szelektorok&lt;/h2&gt;
+    &lt;h1 class=&quot;highlight&quot;&gt;Ez egy h1 elem &quot;highlight&quot; osztállyal (rózsaszín háttér).&lt;/h1&gt;
+    &lt;p class=&quot;highlight&quot;&gt;Ez egy bekezdés &quot;highlight&quot; osztállyal (sárgás háttér).&lt;/p&gt;
+    &lt;div class=&quot;notebox&quot;&gt;Ez egy sima &quot;notebox&quot;. Nincs narancs kerete.&lt;/div&gt;
+    &lt;div class=&quot;notebox warning&quot;&gt;Ez a &quot;notebox&quot; megkapta a &quot;warning&quot; osztályt is, ezért vastag és narancs keretes.&lt;/div&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;ID-szelektor&lt;/h2&gt;
+    &lt;p id=&quot;one&quot;&gt;Ennek a bekezdésnek &quot;one&quot; az ID-ja, ezért kék a háttere.&lt;/p&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Szelektorkészlet&lt;/h2&gt;
+    &lt;p class=&quot;special&quot;&gt;Ez a bekezdés a &quot;.special&quot; osztály miatt alá van húzva. (A h1 címek is aláhúzottak a szelektorkészlet miatt).&lt;/p&gt;
+
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Kombinátorok&lt;/h2&gt;
+    
+    &lt;h3&gt;Leszármazott szelektor (szóköz)&lt;/h3&gt;
+    &lt;div id=&quot;leszarmazott-teszt&quot;&gt;
+        &lt;p&gt;Ez a bekezdés a div-en belül van, ezért zöld a bal oldali kerete.&lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;Ez egy mélyebben beágyazott bekezdés, de mivel leszármazott, ez is megkapja a zöld keretet.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;p&gt;Ez a bekezdés a div-en kívül van, nincs zöld kerete.&lt;/p&gt;
+    
+    &lt;h3&gt;Gyermek szelektor (&gt;)&lt;/h3&gt;
+    &lt;div id=&quot;gyermek-teszt&quot;&gt;
+        &lt;p&gt;Ez a bekezdés a div &lt;strong&gt;közvetlen gyermeke&lt;/strong&gt;, ezért piros a bal oldali kerete.&lt;/p&gt;
+        &lt;div&gt;
+            &lt;p&gt;Ez egy mélyebben beágyazott bekezdés. Ő már nem közvetlen gyermek, így **nem kapja meg** a piros keretet.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;hr&gt;
+    
+    &lt;h2&gt;Pszeudo-osztályok&lt;/h2&gt;
+    &lt;p&gt;Vidd az egeret a gombra, kattints a beviteli mezőbe, vagy tartsd lenyomva a gombot!&lt;/p&gt;
+    
+    &lt;button&gt;Interaktív Gomb&lt;/button&gt;
+    &lt;br&gt;&lt;br&gt;
+    &lt;input type=&quot;text&quot; placeholder=&quot;Kattints ide a fókuszért!&quot;&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="típus-szelektorok-element-selectors">Típus-szelektorok (Element Selectors)</h3>
+<p>A HTML elem nevével választják ki az elemeket. A lenti <code>span</code> szelektor az összes <code>&lt;span&gt;</code> elem háttérszínét sárgára állítja.</p>
+<pre><code class="lang-css">span { background-color: yellow; }
+</code></pre>
+<h3 id="osztály-szelektorok-class-selectors">Osztály-szelektorok (Class Selectors)</h3>
+<p>Egy pont (<code>.</code>) karakterrel kezdődnek, és minden olyan elemet kiválasztanak, amely rendelkezik a megadott <code>class</code> attribútummal.</p>
+<ul>
+<li><strong>Alapvető használat</strong>: A <code>.highlight</code> az összes <code>highlight</code> osztályú elemet célozza.
+<pre><code class="lang-css">.highlight { background-color: yellow; }
+</code></pre>
+</li>
+<li><strong>Célzás adott elemen</strong>: A <code>h1.highlight</code> csak az <code>&lt;h1&gt;</code> elemekre érvényes, amelyeknek van &quot;highlight&quot; osztályuk.
+<pre><code class="lang-css">h1.highlight { background-color: pink; }
+</code></pre>
+</li>
+<li><strong>Több osztály együttes célzása</strong>: A <code>.notebox.warning</code> csak azokra az elemekre vonatkozik, amelyeknek <em>mind</em> a &quot;notebox&quot;, <em>mind</em> a &quot;warning&quot; osztályuk meg van adva.
+<pre><code class="lang-css">.notebox {font-weight: bold;}
+.warning { border: 10px solid orange;}
+</code></pre>
+</li>
+</ul>
+<h3 id="id-szelektorok-id-selectors">ID-szelektorok (ID Selectors)</h3>
+<p>Egy hash jellel (<code>#</code>) kezdődnek. Fontos különbség, hogy egy <code>id</code> értéknek <strong>egyedinek kell lennie</strong> az egész HTML dokumentumban.</p>
+<pre><code class="lang-css">#one { background-color: blue; color: white;}
+h1#heading { color: rebeccapurple; }
+</code></pre>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Az azonos ID többszöri használata érvénytelen kódot eredményez, és hibás működést okozhat.</p>
+</div>
+<h3 id="szelektorkészletek-selector-lists">Szelektorkészletek (Selector Lists)</h3>
+<p>Ha több szelektorhoz azonos stílust szeretnénk rendelni, vesszővel elválasztva felsorolhatjuk őket.</p>
+<pre><code class="lang-css">h1, .special { text-decoration: underline; }
+</code></pre>
+<h3 id="univerzális-szelektor-universal-selector">Univerzális szelektor (Universal Selector)</h3>
+<p>A csillag (<code>*</code>) jelöli, és a dokumentum összes elemét kiválasztja. Gyakran használják böngésző stílusok &quot;resetelésére&quot;.</p>
+<pre><code class="lang-css">* {
+  margin: 0;
+  padding: 0;
+}
+</code></pre>
+<h3 id="kombinátorok-és-pszeudo-osztályok">Kombinátorok és Pszeudo-osztályok</h3>
+<p>A szelektorokat kombinálhatjuk is, hogy még pontosabban célozhassunk.</p>
+<ul>
+<li><strong>Leszármazott szelektor (szóköz):</strong> Egy elemen belüli <em>bármely</em> leszármazottat eléri. A <code>div p</code> minden <code>&lt;p&gt;</code> elemet kiválaszt, ami egy <code>&lt;div&gt;</code>-en belül van.</li>
+<li><strong>Gyermek szelektor (<code>&gt;</code>):</strong> Csak a <em>közvetlen</em> gyermek elemeket választja ki. A <code>div &gt; p</code> csak azokat a <code>&lt;p&gt;</code> elemeket célozza, amelyek közvetlenül a <code>&lt;div&gt;</code> elemen belül vannak.</li>
+</ul>
+<p>A <strong>pszeudo-osztályok</strong> egy elem speciális állapotát jelölik, és kettősponttal (<code>:</code>) kezdődnek. Elengedhetetlenek az interaktív felületekhez.</p>
+<ul>
+<li><code>:hover</code>: Akkor lép érvénybe, amikor a felhasználó az egeret az elem fölé viszi.</li>
+<li><code>:focus</code>: Akkor aktív, amikor egy elem (pl. egy űrlapmező) fókuszt kap (belekattintanak).</li>
+<li><code>:active</code>: Egy elem aktív állapotát jelöli (pl. amíg a gombot lenyomva tartjuk).</li>
+</ul>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-css">/* Amikor az egeret a gomb fölé visszük */
+button:hover {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+/* Amikor a beviteli mezőre kattintunk (fókuszba kerül) */
+input:focus {
+    border-color: dodgerblue;
+    outline: 2px solid lightblue;
+}
+
+/* Amikor a gombot lenyomva tartjuk */
+button:active {
+    transform: scale(0.95);
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-css-selector.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>CSS alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="CSS alapjai | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-css-alapjai.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="css-alapjai">CSS alapjai</h1>
+
+<p>CSS (Cascading Style Sheets) stílusleíró nyelv. Ötlete 1994-ben fogalmazódott meg Hakon Wium Lie-ben. Bár korábban verziókat (pl. CSS 2.1) különböztettünk meg, ma már a CSS-t modulokra bontva (színek, elrendezés, animációk stb.) fejlesztik és verziózzák. Ez a moduláris felépítés a modern CSS.</p>
+<p>A HTML önmagában struktúrát ad a dokumentumnak, de a böngészők alapértelmezett stílusai csak nagyon alapvető olvashatóságot biztosítanak. A CSS-sel azonban sokkal többet tehetünk:</p>
+<ul>
+<li>Szöveg stílusozása (szín, méret, betűtípusok).</li>
+<li>Elrendezések létrehozása (pl. grid vagy többoszlopos elrendezések).</li>
+<li>Speciális effektek, például animációk hozzáadása.</li>
+</ul>
+<h2 id="stílusok-definiálása">Stílusok definiálása</h2>
+<p>2 fő részből állnak: szelektorból (<code>h1</code>) és deklarációból (<code>color: red;</code>). A deklaráció is 2 részből, tulajdonságból (<code>color</code>) és értékből áll (<code>red</code>).</p>
+<pre><code class="lang-css">h1 {
+  color: red;
+  font-size: 24px;
+}
+</code></pre>
+<p>A CSS definiálása többféle módon lehetséges. HTML forráskódon belül:</p>
+<ul>
+<li><code>&lt;style&gt;</code> utasítás segítségével a HTML <code>&lt;head&gt;</code> blokkjában,</li>
+<li>külső stíluslapok használatával külön <code>*.css</code> kiterjesztésű fájlként kezelve</li>
+<li>in-line, amikor az egyes HTML elemek tag-jeiben definiáljuk</li>
+</ul>
+<h3 id="stíluslap-készítése-style-utasítás-segítségével"><strong>Stíluslap készítése <code>&lt;style&gt;</code> utasítás segítségével</strong></h3>
+<pre><code class="lang-html">&lt;head&gt;
+   &lt;style&gt;
+     h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
+     h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
+     h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
+   &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;h1&gt;Repülőgépek&lt;/h1&gt;
+   &lt;h2&gt;Vitorlázó gépek&lt;/h2&gt;
+   &lt;h3&gt;R26 Góbé&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Ez a megközelítés általában akkor lehet &quot;kézenfekvő&quot;, ha egy adott HTML oldalhoz nagyon specifikus, vagy csak arra az egy oldalra vonatkozó stílusokat szeretnél alkalmazni.</p>
+<h3 id="stíluslap-használata-külső-stíluslapokkal"><strong>Stíluslap használata külső stíluslapokkal</strong></h3>
+<p>A stíluslap külön, .css kiterjesztésű fájlban is létrehozható. Ilyenkor is a <code>&lt;head&gt;</code> részben hivatkozunk rá.</p>
+<p><strong>Példa:</strong></p>
+<pre><code class="lang-html">&lt;head&gt;
+   &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+</code></pre>
+<p>A törzsrész ugyanúgy néz ki, mint az első esetben.</p>
+<p>A külső stíluslap (<code>style.css</code>) a következőképpen nézhet ki:</p>
+<pre><code class="lang-css">h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
+h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
+h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
+</code></pre>
+<p>A külső stíluslap előnyei:</p>
+<ul>
+<li><strong>Könnyebben kezelhető:</strong> A HTML módosítása nélkül változtatható a stílus.</li>
+<li><strong>Átlátható:</strong> A stílus elkülönül a tartalomtól és a struktúrától.</li>
+<li><strong>Gyorsabb betöltés:</strong> A böngésző gyorsítótárazza (cache) a fájlt.</li>
+<li><strong>Újrahasznosítható:</strong> Egy CSS fájl több HTML oldalhoz is csatolható.</li>
+</ul>
+<h3 id="stíluslap-készítése-style-paraméter-segítségével-in-line-css"><strong>Stíluslap készítése style paraméter segítségével, in-line CSS</strong></h3>
+<pre><code class="lang-html">&lt;body&gt;
+   &lt;h1 style=&quot;font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;&quot;&gt;Repülőgépek&lt;/h1&gt;
+   &lt;h2 style=&quot;font-size: 24px; color: red; font-family: Verdana, sans-serif;&quot;&gt;Vitorlázó gépek&lt;/h2&gt;
+   &lt;h3 style=&quot;font-size: 18px; color: blue; font-family: 'Courier New', monospace;&quot;&gt;R26 Góbé&lt;/h3&gt;
+&lt;/body&gt;
+</code></pre>
+<p>Az inline stílusoknak magas a prioritásuk és azonnal hatnak, de használatuk a legtöbb esetben <strong>rossz gyakorlatnak</strong> minősül.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p><strong>Miért kerülendő az inline CSS?</strong></p>
+<ol>
+<li><strong>Rossz karbantarthatóság:</strong> Több száz oldalas webhelyen egy apró módosítás (pl. a betűszín megváltoztatása) több száz fájl szerkesztését igényelné. Külső stíluslap esetén ez egyetlen sor módosítása.</li>
+<li><strong>Nem újrahasznosítható:</strong> A stílus egy konkrét HTML elembe van &quot;égetve&quot;, máshol nem használható fel.</li>
+<li><strong>Szennyezi a HTML-t:</strong> A HTML feladata a struktúra leírása, a CSS-é a megjelenés. Az inline CSS összemossa ezt a két feladatkört, rontva a kód olvashatóságát.</li>
+</ol>
+</div>
+<h2 id="deklarációk-eredettípusai">Deklarációk eredettípusai</h2>
+<p>A CSS deklarációk három fő <strong>eredettípusból</strong> származnak, amelyeket a kaszkádolási algoritmus (lásd lentebb) a tulajdonságértékek meghatározására használ. Ezek az eredettípusok a következők: a <strong>Felhasználói ügynök stíluslapok</strong> (<em>User-agent stylesheets</em>), amelyeket a böngészők (user-agents) biztosítanak az alapvető, alapértelmezett stílusokhoz, a <strong>Szerzői stíluslapok</strong> (<em>Author stylesheets</em>), melyeket a webfejlesztők írnak az oldal dizájnjának és kinézetének meghatározására, beleértve az <strong>inline stílusokat</strong> is, amelyeket a <code>style</code> attribútummal definiálnak, valamint a <strong>Felhasználói stíluslapok</strong> (<em>User stylesheets</em>), melyekkel az olvasó felülírhatja a stílusokat a saját kívánságaihoz igazított böngészési élmény érdekében. A kaszkádolási algoritmus határozza meg, hogy ezen különböző eredetekből származó stílusok közül melyik kap precedenciát.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Mi a kurzus során <strong>szerzői stíluslapokat</strong> hozunk létre.</p>
+</div>
+<h3 id="a-kaszkád-elve-ki-nyer-a-végén">A kaszkád elve: Ki nyer a végén?</h3>
+<p>A <strong>kaszkád</strong> (cascade) egy alapvető algoritmus, amely a CSS (Cascading Style Sheets) nevében is szerepel. Ez az algoritmus határozza meg, hogy a felhasználói ügynökök (böngészők) hogyan kombinálják a különböző forrásokból származó CSS tulajdonságértékeket egy adott elemhez. A kaszkád megértése kulcsfontosságú, mert a legmagasabb precedenciájú eredetből származó tulajdonságérték érvényesül, még akkor is, ha egy alacsonyabb precedenciájú réteg vagy eredet szelektora specifikusabb lenne.</p>
+<p>A CSS deklarációk három fő <strong>eredettípusból</strong> származnak: a <strong>felhasználói ügynök stíluslapokból</strong> (User-agent stylesheets, a böngésző alapértelmezett stílusai), a <strong>szerzői stíluslapokból</strong> (Author stylesheets, a fejlesztők által írt stílusok), és a <strong>felhasználói stíluslapokból</strong> (User stylesheets, az olvasó által beállított stílusok).</p>
+<p>A kaszkádoló algoritmus öt lépésben dönti el a prioritást:</p>
+<ol>
+<li><strong>Relevancia (Relevance):</strong> Kiszűri azokat a szabályokat, amelyek az elemre vonatkoznak.</li>
+<li><strong>Eredet és fontosság (Origin and importance):</strong> A szabályokat az <code>!important</code> jelölés és az eredet (Origin) szerint rendezi. Ez a lépés megelőzi a specifikussági algoritmust. Például a normál szerzői stílusok magasabb precedenciájúak, mint a normál felhasználói és a normál felhasználói ügynök stílusok.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Prioritás</th>
+<th style="text-align: center;">Eredet</th>
+<th style="text-align: center;">Fontosság</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">user-agent (böngésző)</td>
+<td style="text-align: center;">normal</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">user (felhasználó)</td>
+<td style="text-align: center;">normal</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">author (fejlesztő)</td>
+<td style="text-align: center;">normal</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">author (fejlesztő)</td>
+<td style="text-align: center;">!important</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">user (felhasználó)</td>
+<td style="text-align: center;">!important</td>
+</tr>
+<tr>
+<td style="text-align: center;">6 (legfontosabb)</td>
+<td style="text-align: center;">user-agent (böngésző)</td>
+<td style="text-align: center;">!important</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><strong>Specifikusság (Specificity):</strong> Azonos eredet és fontosság esetén a legmagasabb specifikusságú szelektor nyer.</li>
+<li><strong>Megjelenési sorrend (Order of appearance):</strong> Ha minden más azonos, az utolsóként deklarált stílus érvényesül.</li>
+</ol>
+<p>A normál <strong>inline stílusok</strong> minden más normál szerzői stílusnál magasabb precedenciával rendelkeznek.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week03/03-css-alapjai.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

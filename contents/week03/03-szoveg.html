@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se I. | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>Sz&#246;veg form&#225;z&#225;sa | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Felhaszn&#225;l&#243;i fel&#252;let tervez&#233;se I. | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="Sz&#246;veg form&#225;z&#225;sa | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,269 +81,11 @@
         </div>
 
         <article data-uid="">
-<h1 id="felhasználói-felület-tervezése-i">Felhasználói felület tervezése I.</h1>
+<h1 id="szöveg-formázása">Szöveg formázása</h1>
 
-<p>Egy nagy látogatottsú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.</p>
-<p>A hatékony digitális design messze túlmutat az esztétikán: tudatos problémamegoldás, amelynek célja a felhasználói viselkedés pozitív befolyásolása. A <strong>jó design</strong> nem szubjektív ízlés kérdése, hanem jól definiált elveken alapul.</p>
-<h2 id="a-webfejlesztés-folyamata-dióhéjban">A webfejlesztés folyamata dióhéjban</h2>
-<p>Bár a kurzus a HTML, CSS és JavaScript technikai részleteire koncentrál, a kódolás egy nagyobb, több lépésből álló folyamat része. A sikeres weboldal titka a gondos előkészítésben rejlik. Az alábbi vázlat egy általánosan elfogadott, <strong>felhasználóközpontú folyamatot</strong> mutat be, amely segít elhelyezni a programozói munkát a teljes projekt térképén.</p>
-<h3 id="1-kutatás-és-stratégia-a-miért">1. Kutatás és Stratégia (A „Miért?”)</h3>
-<p>Mielőtt egyetlen vonalat is rajzolnánk vagy kódot írnánk, tisztázni kell a weboldal alapjait. Ebben a fázisban határozzuk meg a projekt <strong>célját</strong> (pl. eladás, informálás, regisztráció) és a <strong>célközönségét</strong> (kiknek készül az oldal?). Itt történik a piackutatás, a versenytársak elemzése és a legfontosabb funkciók meghatározása. Az eredmény egy letisztázott koncepció, ami a további munka alapját képezi.</p>
-<h3 id="2-tervezés-ux-és-ui-a-hogyan">2. Tervezés: UX és UI (A „Hogyan?”)</h3>
-<p>Ez a fázis alakítja a stratégiát kézzelfogható tervekké. A folyamat a durva vázlatoktól halad a részletesen kidolgozott, interaktív tervek felé. A két fő területe a felhasználói élmény (UX) és a felhasználói felület (UI) tervezése.</p>
-<ul>
-<li><strong>UX (User Experience) Design</strong>: A felhasználói élmény stratégiai tervezése. A cél, hogy a weboldal használata logikus, intuitív és hatékony legyen. A UX-tervező felel a tartalom struktúrájáért, a felhasználói útvonalakért és azért, hogy a felhasználó könnyen elérje a célját.</li>
-<li><strong>UI (User Interface) Design</strong>: A felhasználói felület vizuális megtervezése. Ide tartozik a gombok, menük, űrlapok és egyéb elemek kinézete, a színek, a tipográfia és a grafikai elemek egységes, esztétikus rendszere.</li>
-</ul>
-<p>A tervezési folyamat kézzelfogható lépései és eredményei:</p>
-<ol>
-<li><strong>Drótváz (Wireframe):</strong> Az első konkrét lépés. A drótváz egy <strong>alacsony részletességű, fekete-fehér vázlat</strong>, amely a weboldal „csontváza”. Csak az elemek elhelyezkedésére, a funkciókra és az információs architektúrára fókuszál, a vizuális megjelenésre nem. Célja a szerkezet gyors és olcsó tesztelése.</li>
-</ol>
-<p><img src="Low-fidelity-web.png" alt="Low-fidelity-web"></p>
-<ol start="2">
-<li><strong>Látványterv (Mockup):</strong> A drótvázra épülő <strong>statikus, de vizuálisan kidolgozott terv</strong>. A mockup már a végleges kinézetet mutatja be: tartalmazza a színeket, betűtípusokat, ikonokat és képeket. Lényegében egy nagy felbontású kép arról, hogyan fog kinézni a kész weboldal, de még nem interaktív.</li>
-<li><strong>Prototípus (Prototype):</strong> A látványtervekből készített <strong>interaktív, kattintható verzió</strong>. A prototípus már szimulálja a weboldal működését: a gombokra kattintva lehet navigálni az oldalak között, meg lehet nézni az animációkat. Lehetővé teszi a felhasználói élmény alapos tesztelését és a visszajelzések begyűjtését még a fejlesztés megkezdése előtt.</li>
-</ol>
-<div class="NOTE">
-<h5>Note</h5>
-<p>Több elmélet is létezik, amely leírja, hogy „mitől jó egy design”. Érdemes megemlíteni a <a href="https://uxdesignblog.hu/articles/gestalt">Gestalt-alapelveket</a>, valamint <a href="https://innovationdesign.hu/ux/10-usability-heurisztika-nielsen/">Jakob Nielsen 10 használhatósági heurisztikáját</a>, amelyek a jó felhasználói felület alapkövei.</p>
-</div>
-<h3 id="3-fejlesztés-a-megvalósítás">3. Fejlesztés (A megvalósítás)</h3>
-<p>Itt kel életre a terv. A fejlesztők a jóváhagyott prototípus és a vizuális tervek alapján leprogramozzák a weboldal működő, interaktív felületét. A két fő területéről (Frontend, Backend) már korábban olvashattunk az <a href="../week01/01-fullstack.html">Egy modern webalkalmazás anatómiája</a> fejezetben.</p>
-<h3 id="4-tesztelés-indítás-és-optimalizálás-a-finomhangolás">4. Tesztelés, Indítás és Optimalizálás (A finomhangolás)</h3>
-<p>Az elkészült oldalt alaposan tesztelni kell különböző eszközökön és böngészőkben, hogy minden hibátlanul működjön. Az indítás (élesítés) után a munka nem áll meg: <strong>analitikai adatok</strong> (pl. Google Analytics) alapján a szakemberek folyamatosan figyelik a felhasználói viselkedést, és fejlesztik a weboldalt a még jobb eredményekért.</p>
-<p>A webfejlesztés és a webdesign nem választható el élesen; a sikeres végtermék e szakterületek szoros együttműködésének eredménye.</p>
-<div class="NOTE">
-<h5>Note</h5>
-<p>Fenti felosztás egy lineáris (<a href="https://www.geeksforgeeks.org/software-engineering/waterfall-model/">vízesésszerű</a>) megközelítést vázol fel az érthetőség kedvéért. A modern gyakorlatban gyakran használnak iteratív, rugalmasabb módszereket, mint az <a href="https://www.geeksforgeeks.org/software-testing/what-is-agile-methodology/">Agilis módszertan</a> vagy a <a href="https://www.geeksforgeeks.org/devops/introduction-to-devops/">DevOps</a>.</p>
-</div>
-<h2 id="css-alapjai">CSS alapjai</h2>
-<p>CSS (Cascading Style Sheets) stílusleíró nyelv. Az első megjelenése 1994-ben volt Hakon Wium Lie ötlete alapján. Bár korábban verziókat (pl. CSS 2.1) különböztettünk meg, ma már a CSS-t modulokra bontva (színek, elrendezés, animációk stb.) fejlesztik és verziózzák. Ez a moduláris felépítés a modern CSS.</p>
-<p>A HTML önmagában struktúrát ad a dokumentumnak, de a böngészők alapértelmezett stílusai csak nagyon alapvető olvashatóságot biztosítanak. A CSS-sel azonban sokkal többet tehetünk:</p>
-<ul>
-<li>Szöveg stílusozása (szín, méret, betűtípusok).</li>
-<li>Elrendezések létrehozása (pl. grid vagy többoszlopos elrendezések).</li>
-<li>Speciális effektek, például animációk hozzáadása.</li>
-</ul>
-<h3 id="stílusok-definiálása">Stílusok definiálása</h3>
-<p>2 fő részből állnak: szelektorból (<code>h1</code>) és deklarációból (<code>color: red;</code>). A deklaráció is 2 részből, tulajdonságból (<code>color</code>) és értékből áll (<code>red</code>).</p>
-<pre><code class="lang-css">h1 {
-  color: red;
-  font-size: 24px;
-}
-</code></pre>
-<p>A CSS definiálása többféle módon lehetséges. HTML forráskódon belül:</p>
-<ul>
-<li><code>&lt;style&gt;</code> utasítás segítségével a HTML <code>&lt;head&gt;</code> blokkjában,</li>
-<li>külső stíluslapok használatával külön <code>*.css</code> kiterjesztésű fájlként kezelve</li>
-<li>in-line, amikor az egyes HTML elemek tag-jeiben definiáljuk</li>
-</ul>
-<h4 id="stíluslap-készítése-style-utasítás-segítségével"><strong>Stíluslap készítése <code>&lt;style&gt;</code> utasítás segítségével</strong></h4>
-<pre><code class="lang-html">&lt;head&gt;
-   &lt;style&gt;
-     h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
-     h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
-     h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
-   &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-   &lt;h1&gt;Repülőgépek&lt;/h1&gt;
-   &lt;h2&gt;Vitorlázó gépek&lt;/h2&gt;
-   &lt;h3&gt;R26 Góbé&lt;/h3&gt;
-&lt;/body&gt;
-</code></pre>
-<p>Ez a megközelítés általában akkor lehet &quot;kézenfekvő&quot;, ha egy adott HTML oldalhoz nagyon specifikus, vagy csak arra az egy oldalra vonatkozó stílusokat szeretnél alkalmazni.</p>
-<h4 id="stíluslap-használata-külső-stíluslapokkal"><strong>Stíluslap használata külső stíluslapokkal</strong></h4>
-<p>A stíluslap külön, .css kiterjesztésű fájlban is létrehozható. Ilyenkor is a <code>&lt;head&gt;</code> részben hivatkozunk rá.</p>
-<p><strong>Példa:</strong></p>
-<pre><code class="lang-html">&lt;head&gt;
-   &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
-&lt;/head&gt;
-</code></pre>
-<p>A törzsrész ugyanúgy néz ki, mint az első esetben.</p>
-<p>A külső stíluslap (<code>style.css</code>) a következőképpen nézhet ki:</p>
-<pre><code class="lang-css">h1 {font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;}
-h2 {font-size: 24px; color: red; font-family: Verdana, sans-serif;}
-h3 {font-size: 18px; color: blue; font-family: 'Courier New', monospace;}
-</code></pre>
-<p>A külső stíluslap előnyei:</p>
-<ul>
-<li><strong>Könnyebben kezelhető:</strong> A HTML módosítása nélkül változtatható a stílus.</li>
-<li><strong>Átlátható:</strong> A stílus elkülönül a tartalomtól és a struktúrától.</li>
-<li><strong>Gyorsabb betöltés:</strong> A böngésző gyorsítótárazza (cache) a fájlt.</li>
-<li><strong>Újrahasznosítható:</strong> Egy CSS fájl több HTML oldalhoz is csatolható.</li>
-</ul>
-<h4 id="stíluslap-készítése-style-paraméter-segítségével-in-line-css"><strong>Stíluslap készítése style paraméter segítségével, in-line CSS</strong></h4>
-<pre><code class="lang-html">&lt;body&gt;
-   &lt;h1 style=&quot;font-size: 32px; color: darkgreen; font-family: Arial, sans-serif;&quot;&gt;Repülőgépek&lt;/h1&gt;
-   &lt;h2 style=&quot;font-size: 24px; color: red; font-family: Verdana, sans-serif;&quot;&gt;Vitorlázó gépek&lt;/h2&gt;
-   &lt;h3 style=&quot;font-size: 18px; color: blue; font-family: 'Courier New', monospace;&quot;&gt;R26 Góbé&lt;/h3&gt;
-&lt;/body&gt;
-</code></pre>
-<p>Az inline stílusoknak magas a prioritásuk és azonnal hatnak, de használatuk a legtöbb esetben <strong>rossz gyakorlatnak</strong> minősül.</p>
-<div class="WARNING">
-<h5>Warning</h5>
-<p><strong>Miért kerülendő az inline CSS?</strong></p>
-<ol>
-<li><strong>Rossz karbantarthatóság:</strong> Több száz oldalas webhelyen egy apró módosítás (pl. a betűszín megváltoztatása) több száz fájl szerkesztését igényelné. Külső stíluslap esetén ez egyetlen sor módosítása.</li>
-<li><strong>Nem újrahasznosítható:</strong> A stílus egy konkrét HTML elembe van &quot;égetve&quot;, máshol nem használható fel.</li>
-<li><strong>Szennyezi a HTML-t:</strong> A HTML feladata a struktúra leírása, a CSS-é a megjelenés. Az inline CSS összemossa ezt a két feladatkört, rontva a kód olvashatóságát.</li>
-</ol>
-</div>
-<h4 id="a-kaszkád-elve-ki-nyer-a-végén">A kaszkád elve: Ki nyer a végén?</h4>
-<p>A CSS a <strong>Cascading Style Sheets</strong> rövidítése, ahol a &quot;Cascading&quot; (lépcsőzetes) szó a legfontosabb. Ez a mechanizmus dönti el, hogy melyik stílusszabály érvényesül, ha egy elemre több szabály is vonatkozik. Az erősorrend általában a következő (a leggyengébbtől a legerősebbig):</p>
-<ol>
-<li><strong>Böngésző alapértelmezett stílusai</strong> (pl. a linkek kékek és aláhúzottak).</li>
-<li><strong>Külső stíluslap</strong> (<code>.css</code> fájl).</li>
-<li><strong>Belső stíluslap</strong> (a <code>&lt;style&gt;</code> elemen belül).</li>
-<li><strong>Inline stílus</strong> (a HTML elem <code>style</code> attribútumában megadott).</li>
-</ol>
-<p>Ezért van az, hogy az inline stílus felülír minden mást. Ezt a hierarchiát nevezzük kaszkádnak.</p>
-<h2 id="css-szelektorok">CSS szelektorok</h2>
-<p>A CSS szelektorok mondják meg a böngészőnek, hogy mely HTML elemekre kell a stílusokat alkalmazni.</p>
-<p>Induljunk ki a következő HTML-ből.</p>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;hu&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;CSS Szelektorok Gyakorló&lt;/title&gt;
-
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h1 id=&quot;heading&quot;&gt;CSS Szelektorok a gyakorlatban&lt;/h1&gt;
-
-    &lt;h2&gt;Típus-szelektor&lt;/h2&gt;
-    &lt;p&gt;Ez egy sima bekezdés, de van benne egy &lt;span&gt;span elem&lt;/span&gt;, aminek sárga a háttere a típus-szelektor miatt.&lt;/p&gt;
-    
-    &lt;hr&gt;
-    
-    &lt;h2&gt;Osztály-szelektorok&lt;/h2&gt;
-    &lt;h1 class=&quot;highlight&quot;&gt;Ez egy h1 elem &quot;highlight&quot; osztállyal (rózsaszín háttér).&lt;/h1&gt;
-    &lt;p class=&quot;highlight&quot;&gt;Ez egy bekezdés &quot;highlight&quot; osztállyal (sárgás háttér).&lt;/p&gt;
-    &lt;div class=&quot;notebox&quot;&gt;Ez egy sima &quot;notebox&quot;. Nincs narancs kerete.&lt;/div&gt;
-    &lt;div class=&quot;notebox warning&quot;&gt;Ez a &quot;notebox&quot; megkapta a &quot;warning&quot; osztályt is, ezért vastag és narancs keretes.&lt;/div&gt;
-    
-    &lt;hr&gt;
-    
-    &lt;h2&gt;ID-szelektor&lt;/h2&gt;
-    &lt;p id=&quot;one&quot;&gt;Ennek a bekezdésnek &quot;one&quot; az ID-ja, ezért kék a háttere.&lt;/p&gt;
-    
-    &lt;hr&gt;
-    
-    &lt;h2&gt;Szelektorkészlet&lt;/h2&gt;
-    &lt;p class=&quot;special&quot;&gt;Ez a bekezdés a &quot;.special&quot; osztály miatt alá van húzva. (A h1 címek is aláhúzottak a szelektorkészlet miatt).&lt;/p&gt;
-
-    &lt;hr&gt;
-    
-    &lt;h2&gt;Kombinátorok&lt;/h2&gt;
-    
-    &lt;h3&gt;Leszármazott szelektor (szóköz)&lt;/h3&gt;
-    &lt;div id=&quot;leszarmazott-teszt&quot;&gt;
-        &lt;p&gt;Ez a bekezdés a div-en belül van, ezért zöld a bal oldali kerete.&lt;/p&gt;
-        &lt;div&gt;
-            &lt;p&gt;Ez egy mélyebben beágyazott bekezdés, de mivel leszármazott, ez is megkapja a zöld keretet.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;p&gt;Ez a bekezdés a div-en kívül van, nincs zöld kerete.&lt;/p&gt;
-    
-    &lt;h3&gt;Gyermek szelektor (&gt;)&lt;/h3&gt;
-    &lt;div id=&quot;gyermek-teszt&quot;&gt;
-        &lt;p&gt;Ez a bekezdés a div **közvetlen gyermeke**, ezért piros a bal oldali kerete.&lt;/p&gt;
-        &lt;div&gt;
-            &lt;p&gt;Ez egy mélyebben beágyazott bekezdés. Ő már nem közvetlen gyermek, így **nem kapja meg** a piros keretet.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    
-    &lt;hr&gt;
-    
-    &lt;h2&gt;Pszeudo-osztályok&lt;/h2&gt;
-    &lt;p&gt;Vidd az egeret a gombra, kattints a beviteli mezőbe, vagy tartsd lenyomva a gombot!&lt;/p&gt;
-    
-    &lt;button&gt;Interaktív Gomb&lt;/button&gt;
-    &lt;br&gt;&lt;br&gt;
-    &lt;input type=&quot;text&quot; placeholder=&quot;Kattints ide a fókuszért!&quot;&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h4 id="típus-szelektorok-element-selectors">Típus-szelektorok (Element Selectors)</h4>
-<p>A HTML elem nevével választják ki az elemeket. A lenti <code>span</code> szelektor az összes <code>&lt;span&gt;</code> elem háttérszínét sárgára állítja.</p>
-<pre><code class="lang-css">span { background-color: yellow; }
-</code></pre>
-<h4 id="osztály-szelektorok-class-selectors">Osztály-szelektorok (Class Selectors)</h4>
-<p>Egy pont (<code>.</code>) karakterrel kezdődnek, és minden olyan elemet kiválasztanak, amely rendelkezik a megadott <code>class</code> attribútummal.</p>
-<ul>
-<li><strong>Alapvető használat</strong>: A <code>.highlight</code> az összes <code>highlight</code> osztályú elemet célozza.
-<pre><code class="lang-css">.highlight { background-color: yellow; }
-</code></pre>
-</li>
-<li><strong>Célzás adott elemen</strong>: A <code>h1.highlight</code> csak az <code>&lt;h1&gt;</code> elemekre érvényes, amelyeknek van &quot;highlight&quot; osztályuk.
-<pre><code class="lang-css">h1.highlight { background-color: pink; }
-</code></pre>
-</li>
-<li><strong>Több osztály együttes célzása</strong>: A <code>.notebox.warning</code> csak azokra az elemekre vonatkozik, amelyeknek <em>mind</em> a &quot;notebox&quot;, <em>mind</em> a &quot;warning&quot; osztályuk meg van adva.
-<pre><code class="lang-css">.notebox {font-weight: bold;}
-.warning { border: 10px solid orange;}
-</code></pre>
-</li>
-</ul>
-<h4 id="id-szelektorok-id-selectors">ID-szelektorok (ID Selectors)</h4>
-<p>Egy hash jellel (<code>#</code>) kezdődnek. Fontos különbség, hogy egy <code>id</code> értéknek <strong>egyedinek kell lennie</strong> az egész HTML dokumentumban.</p>
-<pre><code class="lang-css">#one { background-color: blue; color: white}
-h1#heading { color: rebeccapurple; }
-</code></pre>
-<div class="WARNING">
-<h5>Warning</h5>
-<p>Az azonos ID többszöri használata érvénytelen kódot eredményez, és hibás működést okozhat.</p>
-</div>
-<h4 id="szelektorkészletek-selector-lists">Szelektorkészletek (Selector Lists)</h4>
-<p>Ha több szelektorhoz azonos stílust szeretnénk rendelni, vesszővel elválasztva felsorolhatjuk őket.</p>
-<pre><code class="lang-css">h1, .special { text-decoration: underline; }
-</code></pre>
-<h4 id="univerzális-szelektor-universal-selector">Univerzális szelektor (Universal Selector)</h4>
-<p>A csillag (<code>*</code>) jelöli, és a dokumentum összes elemét kiválasztja. Gyakran használják böngésző stílusok &quot;resetelésére&quot;.</p>
-<pre><code class="lang-css">* {
-  margin: 0;
-  padding: 0;
-}
-</code></pre>
-<h4 id="kombinátorok-és-pszeudo-osztályok">Kombinátorok és Pszeudo-osztályok</h4>
-<p>A szelektorokat kombinálhatjuk is, hogy még pontosabban célozhassunk.</p>
-<ul>
-<li><strong>Leszármazott szelektor (szóköz):</strong> Egy elemen belüli <em>bármely</em> leszármazottat eléri. A <code>div p</code> minden <code>&lt;p&gt;</code> elemet kiválaszt, ami egy <code>&lt;div&gt;</code>-en belül van.</li>
-<li><strong>Gyermek szelektor (<code>&gt;</code>):</strong> Csak a <em>közvetlen</em> gyermek elemeket választja ki. A <code>div &gt; p</code> csak azokat a <code>&lt;p&gt;</code> elemeket célozza, amelyek közvetlenül a <code>&lt;div&gt;</code> elemen belül vannak.</li>
-</ul>
-<p>A <strong>pszeudo-osztályok</strong> egy elem speciális állapotát jelölik, és kettősponttal (<code>:</code>) kezdődnek. Elengedhetetlenek az interaktív felületekhez.</p>
-<ul>
-<li><code>:hover</code>: Akkor lép érvénybe, amikor a felhasználó az egeret az elem fölé viszi.</li>
-<li><code>:focus</code>: Akkor aktív, amikor egy elem (pl. egy űrlapmező) fókuszt kap (belekattintanak).</li>
-<li><code>:active</code>: Egy elem aktív állapotát jelöli (pl. amíg a gombot lenyomva tartjuk).</li>
-</ul>
-<p><strong>Példa:</strong></p>
-<pre><code class="lang-css">/* Amikor az egeret a gomb fölé visszük */
-button:hover {
-    background-color: #555;
-    color: white;
-    cursor: pointer;
-}
-
-/* Amikor a beviteli mezőre kattintunk (fókuszba kerül) */
-input:focus {
-    border-color: dodgerblue;
-    outline: 2px solid lightblue;
-}
-
-/* Amikor a gombot lenyomva tartjuk */
-button:active {
-    transform: scale(0.95);
-}
-</code></pre>
-<h2 id="szöveg-formázása">Szöveg formázása</h2>
 <p>Fontos a szöveg formázásáról is külön szót ejteni, hisz a legtöbb információtartalmat a szöveg hordozza. Ez a tudományterület - <strong>tipográfia</strong> - már <a href="https://en.wikipedia.org/wiki/Johannes_Gutenberg">Gutenberg</a> kora óta fejlődik.</p>
 <p>A képernyőn való olvasás gyökeresen eltér a nyomtatott szöveg befogadásától. A szemünk nem folyamatosan halad, hanem ugrásokkal (fixációkkal) pásztázza a tartalmat. A kutatások azt mutatják, hogy egyszerre egy 12-20 karakteres blokkot vagyunk képesek hatékonyan feldolgozni. A jó web-tipográfia célja, hogy segítse ezt a folyamatot, és a szöveget könnyen &quot;szkennelhetővé&quot; tegye. Emiatt részesítjük előnyben a <em>sans-serif</em> betűtípusokat, a rövid, tömör mondatokat és a megfelelő sortávolságot.</p>
-<h3 id="szövegek-használata-a-képernyőn">Szövegek használata a képernyőn</h3>
+<h2 id="szövegek-használata-a-képernyőn">Szövegek használata a képernyőn</h2>
 <p>Kétféle betűforma létezik. Az emberek a <strong>serif</strong> betűformákat klasszikusnak és elegánsnak tartják, ezzel szemben a <strong>sans serif</strong> betűformát modernnek és világosnak ítélik meg. Honlapok esetében célszerű a sans serif formákat előnyben részesíteni, mert a szem könnyebben behatárolja a betűformákat a képernyőn.</p>
 <p>Ha egy oldalon túl sok betűtípus található, a megjelenés zavaros lesz. A néző a szerkezet megfejtésével törődik, és nem összpontosít az üzenetre. A szövegelemek megkülönböztetésére használjunk inkább különböző betűméreteket, stílusokat vagy háttereket.</p>
 <div class="WARNING">
@@ -351,14 +93,14 @@ button:active {
 <p>A csupa nagybetűből álló szöveg kevésbé olvasható, mint a nagy- és kisbetűt keverve használó. A szem nehezebben ismeri fel a szavakat, és a mondatok kezdete sem tűnik ki. A nagybetűs szöveg használatát rövid címekre és kiemelésekre korlátozzuk.
 A <strong>félkövér</strong> betűket is korlátozottan használjuk. Túl sok félkövér szövegrész a szöveget súlyossá teszi és elvész a figyelemfelkeltő jellege.</p>
 </div>
-<h3 id="betűtípusok-használata-font-family">Betűtípusok használata (<code>font-family</code>)</h3>
-<h4 id="1-rendszer-biztonságos-betűtípusok">1. Rendszer (biztonságos) betűtípusok</h4>
+<h2 id="betűtípusok-használata-font-family">Betűtípusok használata (<code>font-family</code>)</h2>
+<h3 id="1-rendszer-biztonságos-betűtípusok">1. Rendszer (biztonságos) betűtípusok</h3>
 <p>Ezek a legtöbb operációs rendszeren előre telepített betűtípusok (pl. Arial, Helvetica, Times New Roman). Érdemes mindig egy &quot;fallback&quot; listát (betűtípus-családot) megadni. A böngésző az első elérhető típust fogja használni. A lista végén általában egy általános kategóriát adunk meg (pl. <code>sans-serif</code>).</p>
 <pre><code class="lang-css">p {
   font-family: Helvetica, Arial, sans-serif;
 }
 </code></pre>
-<h4 id="2-google-fonts-és-más-webszolgáltatások">2. Google Fonts és más webszolgáltatások</h4>
+<h3 id="2-google-fonts-és-más-webszolgáltatások">2. Google Fonts és más webszolgáltatások</h3>
 <p>A <strong>Google Fonts</strong> egy ingyenes, hatalmas betűtípus-gyűjtemény. Használata:</p>
 <ol>
 <li>Válaszd ki a betűtípust a <a href="https://fonts.google.com">fonts.google.com</a> oldalon.</li>
@@ -376,7 +118,7 @@ A HTML <code>&lt;head&gt;</code> szekciójában:</p>
   font-family: 'Roboto', sans-serif;
 }
 </code></pre>
-<h4 id="3-saját-egyedi-betűtípusok-font-face">3. Saját, egyedi betűtípusok (<code>@font-face</code>)</h4>
+<h3 id="3-saját-egyedi-betűtípusok-font-face">3. Saját, egyedi betűtípusok (<code>@font-face</code>)</h3>
 <p>Ha teljesen egyedi betűtípust szeretnél használni, azt a <code>@font-face</code> szabállyal teheted meg. Szükséged lesz a betűtípus fájljaira (pl. <code>.woff2</code>, <code>.woff</code>).</p>
 <pre><code class="lang-css">@font-face {
   font-family: 'SajatBetutipusom'; /* Tetszőlegesen választott név */
@@ -392,7 +134,7 @@ A HTML <code>&lt;head&gt;</code> szekciójában:</p>
 }
 </code></pre>
 <hr>
-<h3 id="szövegstílus-és-méret">Szövegstílus és méret</h3>
+<h2 id="szövegstílus-és-méret">Szövegstílus és méret</h2>
 <p>A szöveg kinézetét számos tulajdonsággal finomhangolhatjuk.</p>
 <table>
 <thead>
@@ -450,7 +192,7 @@ A HTML <code>&lt;head&gt;</code> szekciójában:</p>
 }
 </code></pre>
 <hr>
-<h3 id="térközök-és-igazítás">Térközök és igazítás</h3>
+<h2 id="térközök-és-igazítás">Térközök és igazítás</h2>
 <p>A szöveg olvashatóságát nagyban befolyásolja a sorok, szavak és betűk közötti távolság.</p>
 <table>
 <thead>

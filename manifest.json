@@ -307,6 +307,36 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-css-alapjai.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-css-alapjai.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-css-selector.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-css-selector.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week03/03-fejlesztesi-folyamat.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week03/03-fejlesztesi-folyamat.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week03/03-mertekegysegek.md",
       "output": {
         ".html": {
