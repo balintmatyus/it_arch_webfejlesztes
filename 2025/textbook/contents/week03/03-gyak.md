@@ -4,7 +4,7 @@ A feladat két részből áll. Az első részben a Moodle-be feltöltött érté
 
 ## 1. rész: Weboldalak kiértékelése
 
-A Moodle gyakorlati színterébe feltöltött adatlap segítségével értékelj ki három weboldalt. A gyakorlat célja, hogy jó gyakorlatokat gyűjtsetek lehetséges hiányosságok, fejlesztendő területek azonosítása mellett. Használjátok bátran az `F12` billentyű lenyomásával megjelenő *DevTools* eszközt, amivel megvizsgálhatjátok, hogy adott HTML tag-re milyen stílusbeállítások vonatkoznak.
+A Moodle gyakorlati színterébe feltöltött adatlap segítségével értékelj ki három weboldalt. A feladat célja, hogy jó gyakorlatokat gyűjtsetek lehetséges hiányosságok, fejlesztendő területek azonosítása mellett. Használjátok bátran az `F12` billentyű lenyomásával megjelenő *DevTools* eszközt, amivel megvizsgálhatjátok, hogy adott HTML tag-re milyen stílusbeállítások vonatkoznak.
 
 ![devtools](devtools.png)
 
