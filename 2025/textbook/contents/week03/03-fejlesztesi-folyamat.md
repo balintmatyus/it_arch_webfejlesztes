@@ -1,4 +1,4 @@
-# Felhasználói felület tervezése I.
+# Felhasználói felület tervezése a webfejlesztés folyamatában
 
 Egy nagy látogatottságú weboldal jelentős értékkel bír. Miután növeli a cég imidzsét, láthatóvá teszi a céget akár távoli régiókban is, növeli a piacot, gyors és megbízható kommunikációt tesz lehetővé. Nem mellesleg 24 órás reklámhordozó.
 
