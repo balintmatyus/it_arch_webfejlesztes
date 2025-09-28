@@ -24,7 +24,13 @@
     href: week02/02-html5-gyak.md
 - name: 3. hét
   items:
-  - name: 💡 Stílusok definiálása és szövegek formázása
+  - name: 💡 Webfejlesztés folyamata
+    href: week03/03-fejlesztesi-folyamat.md
+  - name: 💡 CSS alapjai
+    href: week03/03-css-alapjai.md
+  - name: 💡 CSS szelektorok
+    href: week03/03-css-selector.md
+  - name: 💡 Szövegek formázása
     href: week03/03-szoveg.md
   - name: 💡 Mértékegységek CSS-ben
     href: week03/03-mertekegysegek.md
