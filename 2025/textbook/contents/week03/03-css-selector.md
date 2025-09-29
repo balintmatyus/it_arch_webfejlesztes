@@ -82,19 +82,17 @@ span { background-color: yellow; }
 Egy pont (`.`) karakterrel kezdődnek, és minden olyan elemet kiválasztanak, amely rendelkezik a megadott `class` attribútummal.
 
 * **Alapvető használat**: A `.highlight` az összes `highlight` osztályú elemet célozza.
-    ```css 
-    .highlight { background-color: yellow; }
-    ```
+```css 
+.highlight { background-color: yellow; }
+```
 * **Célzás adott elemen**: A `h1.highlight` csak az `<h1>` elemekre érvényes, amelyeknek van "highlight" osztályuk.
-    ```css
-    h1.highlight { background-color: pink; }
-    ```
+```css
+h1.highlight { background-color: pink; }
+```
 * **Több osztály együttes célzása**: A `.notebox.warning` csak azokra az elemekre vonatkozik, amelyeknek *mind* a "notebox", *mind* a "warning" osztályuk meg van adva.
-    ```css
-    .notebox {font-weight: bold;}
-    .warning { border: 10px solid orange;}
-    ```
-
+```css
+.notebox.warning {font-weight: bold;border: 10px solid orange;}
+```
 ### ID-szelektorok (ID Selectors)
 Egy hash jellel (`#`) kezdődnek. Fontos különbség, hogy egy `id` értéknek **egyedinek kell lennie** az egész HTML dokumentumban.
 ```css
