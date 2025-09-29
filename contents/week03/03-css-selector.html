@@ -158,20 +158,20 @@
 <h3 id="osztály-szelektorok-class-selectors">Osztály-szelektorok (Class Selectors)</h3>
 <p>Egy pont (<code>.</code>) karakterrel kezdődnek, és minden olyan elemet kiválasztanak, amely rendelkezik a megadott <code>class</code> attribútummal.</p>
 <ul>
-<li><strong>Alapvető használat</strong>: A <code>.highlight</code> az összes <code>highlight</code> osztályú elemet célozza.
+<li><strong>Alapvető használat</strong>: A <code>.highlight</code> az összes <code>highlight</code> osztályú elemet célozza.</li>
+</ul>
 <pre><code class="lang-css">.highlight { background-color: yellow; }
 </code></pre>
-</li>
-<li><strong>Célzás adott elemen</strong>: A <code>h1.highlight</code> csak az <code>&lt;h1&gt;</code> elemekre érvényes, amelyeknek van &quot;highlight&quot; osztályuk.
+<ul>
+<li><strong>Célzás adott elemen</strong>: A <code>h1.highlight</code> csak az <code>&lt;h1&gt;</code> elemekre érvényes, amelyeknek van &quot;highlight&quot; osztályuk.</li>
+</ul>
 <pre><code class="lang-css">h1.highlight { background-color: pink; }
 </code></pre>
-</li>
-<li><strong>Több osztály együttes célzása</strong>: A <code>.notebox.warning</code> csak azokra az elemekre vonatkozik, amelyeknek <em>mind</em> a &quot;notebox&quot;, <em>mind</em> a &quot;warning&quot; osztályuk meg van adva.
-<pre><code class="lang-css">.notebox {font-weight: bold;}
-.warning { border: 10px solid orange;}
-</code></pre>
-</li>
+<ul>
+<li><strong>Több osztály együttes célzása</strong>: A <code>.notebox.warning</code> csak azokra az elemekre vonatkozik, amelyeknek <em>mind</em> a &quot;notebox&quot;, <em>mind</em> a &quot;warning&quot; osztályuk meg van adva.</li>
 </ul>
+<pre><code class="lang-css">.notebox.warning {font-weight: bold;border: 10px solid orange;}
+</code></pre>
 <h3 id="id-szelektorok-id-selectors">ID-szelektorok (ID Selectors)</h3>
 <p>Egy hash jellel (<code>#</code>) kezdődnek. Fontos különbség, hogy egy <code>id</code> értéknek <strong>egyedinek kell lennie</strong> az egész HTML dokumentumban.</p>
 <pre><code class="lang-css">#one { background-color: blue; color: white;}
