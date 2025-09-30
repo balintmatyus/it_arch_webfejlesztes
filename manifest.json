@@ -13,6 +13,16 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "contents/general/drills/drills-index.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/drills/drills-index.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "contents/toc.yml",
       "output": {
@@ -387,10 +397,30 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "contents/week04/04-szines.md",
+      "source_relative_path": "contents/week04/04-dobozmodell.md",
       "output": {
         ".html": {
-          "relative_path": "contents/week04/04-szines.html"
+          "relative_path": "contents/week04/04-dobozmodell.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week04/04-kepek.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week04/04-kepek.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week04/04-szinek.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week04/04-szinek.html"
         }
       },
       "version": ""
@@ -401,6 +431,36 @@
       "output": {
         ".html": {
           "relative_path": "contents/week04/04-tablazatok.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week04/GoldenGateBridge-001.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week04/GoldenGateBridge-001.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week04/city.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week04/city.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week04/street.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week04/street.jpg"
         }
       },
       "version": ""
