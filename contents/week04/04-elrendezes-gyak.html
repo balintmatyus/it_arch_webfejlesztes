@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Akci&#243;s term&#233;k doboz - Poz&#237;cion&#225;l&#225;s gyakorlat | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Akci&#243;s term&#233;k doboz - Poz&#237;cion&#225;l&#225;s gyakorlat | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-elrendezes-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="akciós-termék-doboz---pozícionálás-gyakorlat">Akciós termék doboz - Pozícionálás gyakorlat</h1>
+
+<h2 id="célkitűzés">Célkitűzés</h2>
+<p>Egy termékkártya létrehozása (<code>termek_akcio.html</code>), amely bemutatja a relatív és abszolút pozícionálás működését. A termék képére egy &quot;AKCIÓ&quot; címkét helyezünk el CSS pozícionálással.</p>
+<p><img src="akcio.png" alt="akcio"></p>
+<h2 id="css-fájl-beillesztése">CSS fájl beillesztése</h2>
+<p>Töltsd le a <code>termek_alap.css</code> fájlt a Moodle-ből ugyanabba a mappába, ahol a HTML fájlod lesz! Ez tartalmazza az oldal és a termékdoboz alapformázását. Kapcsold be a HTML fájlodba a megfelelő módon.</p>
+<h2 id="1-html-alapstruktúra">1. HTML alapstruktúra</h2>
+<p>Készítsd el a <code>termek_akcio.html</code> fájlt a szokásos HTML5 struktúrával. Az oldalnak legyen:</p>
+<ul>
+<li>Egy főcíme (&quot;Akciós termékek&quot;)</li>
+<li>Egy konténer div <code>termek-kontener</code> osztállyal</li>
+<li>A konténeren belül egy kép és egy akciós címke</li>
+</ul>
+<h2 id="2-termék-konténer-felépítése">2. Termék konténer felépítése</h2>
+<p>A <code>termek-kontener</code> div-be helyezz el:</p>
+<ul>
+<li>Egy termékkép (<code>&lt;img&gt;</code> elem), amely lehet bármilyen termék fotója (pl. laptop.jpg)
+<ul>
+<li><strong>Tipp:</strong> Használhatsz placeholder képet: <code>https://placehold.co/300x200/3498db/ffffff?text=Laptop	</code></li>
+<li>Adj alt szöveget a képhez!</li>
+</ul>
+</li>
+<li>Egy span vagy div elemet <code>akcio-cimke</code> osztállyal, amelybe az &quot;AKCIÓ -20%&quot; szöveg kerül</li>
+<li>A kép után adj hozzá egy címsort a termék nevével</li>
+<li>Egy div-et, amiben két span található <code>eredeti-ar</code> és <code>akcio-ar</code> osztályokkal. Eredeti ár áthúzva és új ár kiemelve.</li>
+<li>Egy rövid termékleírást bekezdésbe.</li>
+</ul>
+<h2 id="3-css-pozícionálás-beállítása">3. CSS pozícionálás beállítása</h2>
+<p>A HTML fájlban hozz létre egy <code>&lt;style&gt;</code> elemet a <code>&lt;head&gt;</code> részben. Itt fogod beállítani a pozícionálást.</p>
+<h3 id="konténer-beállítása">Konténer beállítása</h3>
+<p>A <code>termek-kontener</code> osztály kapjon:</p>
+<ul>
+<li>300 pixel szélességet</li>
+<li>Fehér háttérszínt</li>
+<li>Vékony szürke keretet</li>
+<li>Belső térközt (padding) 15 pixel</li>
+<li>És ami a legfontosabb: relatív pozícionálást!</li>
+</ul>
+<p><strong>Miért kell a relative?</strong> Ez hozza létre azt a &quot;koordináta-rendszert&quot;, amihez képest az absolute elemeket pozícionálhatjuk.</p>
+<h3 id="akciós-címke-pozícionálása">Akciós címke pozícionálása</h3>
+<p>Az <code>akcio-cimke</code> osztály beállításai:</p>
+<ul>
+<li>Abszolút pozícionálás (így kivesszük a normál dokumentumfolyamból)</li>
+<li>Helyezd a konténer jobb felső sarkába
+<ul>
+<li><strong>Tipp:</strong> Használd a <code>top</code> és <code>right</code> tulajdonságokat, 10-10 pixel távolsággal</li>
+</ul>
+</li>
+<li>Piros háttérszín (<code>#e74c3c</code>)</li>
+<li>Fehér szövegszín</li>
+<li>Padding a szöveg körül (5px vízszintesen, 10px függőlegesen)</li>
+<li>Félkövér betűtípus</li>
+</ul>
+<h2 id="4-kép-formázása">4. Kép formázása</h2>
+<p>Állítsd be, hogy a termék képe:</p>
+<ul>
+<li>Teljes szélességben kitöltse a konténert</li>
+<li>Megtartsa az arányait (<code>height: auto</code>)</li>
+<li>Blokkszintű elem legyen (hogy ne legyen alatta üres hely)</li>
+</ul>
+<h2 id="5-kísérletezz-a-pozícionálással">5. Kísérletezz a pozícionálással!</h2>
+<h3 id="különböző-pozíciók-kipróbálása">Különböző pozíciók kipróbálása</h3>
+<p>Próbáld ki az akciós címkét más pozíciókban is:</p>
+<ul>
+<li>Bal felső sarok: <code>top: 10px; left: 10px;</code></li>
+<li>Jobb alsó sarok: mit kell használni?</li>
+<li>Pontosan középen: <code>top: 50%; left: 50%; transform: translate(-50%, -50%);</code></li>
+</ul>
+<h3 id="mi-történik-relative-nélkül">Mi történik relative nélkül?</h3>
+<p>Kommenteld ki ideiglenesen a <code>position: relative</code> sort a konténerből! Hova kerül a címke? Miért?</p>
+<h3 id="extra-címkék-hozzáadása">Extra címkék hozzáadása</h3>
+<p>Adj hozzá egy második címkét &quot;ÚJ&quot; felirattal a bal felső sarokba! Használj zöld hátteret.</p>
+<h2 id="6-ár-és-leírás-formázása">6. Ár és leírás formázása</h2>
+<p>Formázd meg a termék információit:</p>
+<ul>
+<li>A termék neve legyen nagyobb méretű és félkövér</li>
+<li>Az eredeti ár legyen áthúzott (<code>text-decoration: line-through</code>) és szürke</li>
+<li>Az akciós ár legyen nagyobb és piros színű</li>
+<li>A leírás legyen kisebb betűméretű és szürke</li>
+</ul>
+<h2 id="ellenőrzési-lista">Ellenőrzési lista</h2>
+<ul>
+<li>[ ] Van DOCTYPE és megfelelő HTML struktúra?</li>
+<li>[ ] A külső CSS fájl be van linkelve?</li>
+<li>[ ] A termék konténer relative pozícionálású?</li>
+<li>[ ] Az akciós címke absolute pozícionálású?</li>
+<li>[ ] A címke a megfelelő sarokban van (top/right értékekkel)?</li>
+<li>[ ] A kép responsive (width: 100%)?</li>
+<li>[ ] Van termék név, ár és leírás?</li>
+<li>[ ] A címke a kép fölött jelenik meg?</li>
+<li>[ ] Kipróbáltad más pozíciókban is a címkét?</li>
+</ul>
+<h2 id="megoldás-feltöltése">Megoldás feltöltése</h2>
+<p>Töltsd fel a kész <code>termek_akcio.html</code> fájlt a Moodle-re.</p>
+<p><strong>Hasznos tipp:</strong> A böngésző Fejlesztői eszközeiben kapcsold ki/be a <code>position</code> tulajdonságokat, hogy lásd, hogyan változik az elrendezés!</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-elrendezes-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

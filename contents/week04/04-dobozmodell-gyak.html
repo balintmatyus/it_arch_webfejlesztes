@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>N&#233;vjegyk&#225;rtya k&#233;sz&#237;t&#233;se - Dobozmodell gyakorlat | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="N&#233;vjegyk&#225;rtya k&#233;sz&#237;t&#233;se - Dobozmodell gyakorlat | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-dobozmodell-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="névjegykártya-készítése---dobozmodell-gyakorlat">Névjegykártya készítése - Dobozmodell gyakorlat</h1>
+
+<h2 id="célkitűzés">Célkitűzés</h2>
+<p>Digitális névjegykártyák létrehozása (<code>nevjegykartya.html</code>), amelyek bemutatják a CSS dobozmodell működését különböző padding, margin és border beállításokkal.</p>
+<p><img src="nevjegy.png" alt="névjegykártya változatok"></p>
+<h2 id="css-fájl-beillesztése">CSS fájl beillesztése</h2>
+<p>Töltsd le a <code>doboz_alap.css</code> fájlt a Moodle-ről ugyanabba a mappába, ahol a HTML fájlod lesz! Ez tartalmazza az oldal alapformázását. Kapcsold be a HTML fájlodba a megfelelő módon a <code>&lt;head&gt;</code> részben.</p>
+<h2 id="1-html-alapstruktúra">1. HTML alapstruktúra</h2>
+<p>Készítsd el a <code>nevjegykartya.html</code> fájlt a szokásos HTML5 struktúrával. Az oldalnak legyen egy főcíme, valamint három div elem, amelyek a névjegykártya változatokat fogják tartalmazni. Mindegyik div kapjon egy egyedi osztályt: <code>kartya-1</code>, <code>kartya-2</code>, és <code>kartya-3</code>.</p>
+<h2 id="2-kártyák-tartalma">2. Kártyák tartalma</h2>
+<p>Mindhárom kártyába helyezz el:</p>
+<ul>
+<li>Egy második szintű címsort a névvel (pl. &quot;Nagy Péter&quot;)</li>
+<li>Egy bekezdést a beosztással, amely kapjon egy &quot;beosztas&quot; osztályt</li>
+<li>Egy bekezdést az email címmel, &quot;email&quot; osztállyal</li>
+<li>Egy bekezdést a telefonszámmal, &quot;telefon&quot; osztállyal</li>
+</ul>
+<p>Használj saját adatokat vagy kitalált információkat.</p>
+<h2 id="3-css-stílusok-hozzáadása">3. CSS stílusok hozzáadása</h2>
+<p>A HTML fájlban hozz létre egy <code>&lt;style&gt;</code> elemet a <code>&lt;head&gt;</code> részben, a külső CSS link után. Itt fogod megírni a dobozmodell gyakorló stílusokat.</p>
+<h3 id="alapbeállítások">Alapbeállítások</h3>
+<p>Először állítsd be, hogy mindhárom kártya 350 pixel széles legyen, fehér háttérszínű, és vízszintesen középre igazított az oldalon.</p>
+<p><strong>Tipp:</strong></p>
+<ul>
+<li>Több osztályt vesszővel elválasztva lehet egyszerre kiválasztani</li>
+<li>A <code>margin: 20px auto;</code> középre igazít egy fix szélességű elemet</li>
+</ul>
+<h2 id="4-egyedi-kártya-stílusok">4. Egyedi kártya stílusok</h2>
+<h3 id="első-kártya---egyszerű-változat">Első kártya - Egyszerű változat</h3>
+<p>Adj hozzá egy vékony, világosszürke keretet és kisebb belső térközt (padding). Használj 1 pixel vastag, <code>#cccccc</code> színű szegélyt.</p>
+<h3 id="második-kártya---vastag-keret">Második kártya - Vastag keret</h3>
+<p>Készíts egy feltűnőbb változatot vastagabb, sötétebb kerettel (5 pixel, <code>#2c3e50</code> szín) és nagyobb belső térközzel (25 pixel minden oldalon).</p>
+<h3 id="harmadik-kártya---modern-változat">Harmadik kártya - Modern változat</h3>
+<p>Alkalmazz:</p>
+<ul>
+<li>2 pixel vastag kék keretet (<code>#3498db</code>)</li>
+<li>Aszimmetrikus paddinget (függőlegesen 30px, vízszintesen 20px)</li>
+<li>Kerekített sarkokat 10 pixel sugarú ívvel</li>
+<li>Enyhe árnyékot a doboz alatt</li>
+</ul>
+<p><strong>Tipp:</strong> Az árnyékhoz használd: <code>box-shadow: 0 2px 5px rgba(0,0,0,0.1);</code></p>
+<h2 id="5-szövegelemek-formázása">5. Szövegelemek formázása</h2>
+<p>Formázd meg a kártyákon belüli szövegeket:</p>
+<ul>
+<li>A nevek legyenek sötét színűek, és ne legyen felső margójuk</li>
+<li>A beosztás legyen szürkés és dőlt betűs</li>
+<li>Az email és telefon elemek kapjanak kis függőleges margót (5px)</li>
+</ul>
+<h2 id="6-kísérletezz-és-figyeld-meg">6. Kísérletezz és figyeld meg!</h2>
+<h3 id="teljes-szélesség-számítása">Teljes szélesség számítása</h3>
+<p>Számold ki mindhárom kártya valódi szélességét! Ne felejtsd el hozzáadni:</p>
+<ul>
+<li>Az alapszélességet (width)</li>
+<li>A bal és jobb paddinget</li>
+<li>A bal és jobb border vastagságát</li>
+</ul>
+<p>Írd le HTML kommentben a számításaidat!</p>
+<h3 id="margó-összeomlás-tesztelése">Margó összeomlás tesztelése</h3>
+<p>Adj alsó margót a kártyáknak és figyeld meg, hogyan viselkednek egymás alatt! Miért nem adódnak össze a margók?</p>
+<h3 id="extra-kihívás-border-box-kísérlet">Extra kihívás: Border-box kísérlet</h3>
+<p>Készíts egy negyedik kártyát, amelynél alkalmazod a <code>box-sizing: border-box</code> tulajdonságot. Használd ugyanazokat a méreteket, mint a második kártyánál. Mi a különbség?</p>
+<h2 id="ellenőrzési-lista">Ellenőrzési lista</h2>
+<ul>
+<li>[ ] Van DOCTYPE és megfelelő HTML struktúra?</li>
+<li>[ ] A külső CSS fájl be van linkelve?</li>
+<li>[ ] Mindhárom kártya elkészült a saját osztályával?</li>
+<li>[ ] A kártyák tartalma teljes (név, beosztás, email, telefon)?</li>
+<li>[ ] A kártyák középre vannak igazítva?</li>
+<li>[ ] Különböző padding és border beállítások alkalmazva?</li>
+<li>[ ] A harmadik kártya kerekített és árnyékolt?</li>
+<li>[ ] A teljes szélesség számítások dokumentálva vannak?</li>
+</ul>
+<h2 id="megoldás-feltöltése">Megoldás feltöltése</h2>
+<p>Töltsd fel a kész <code>nevjegykartya.html</code> fájlt a Moodle-re.</p>
+<p><strong>Hasznos eszköz:</strong> A böngésző Fejlesztői eszközeiben (F12) a &quot;Computed&quot; fülön vizuálisan láthatod a dobozmodell minden értékét!</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-dobozmodell-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
