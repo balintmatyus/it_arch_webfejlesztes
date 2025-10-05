@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>Dobozmodell &#233;s szeg&#233;lyek | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="Dobozmodell &#233;s szeg&#233;lyek | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,7 +81,268 @@
         </div>
 
         <article data-uid="">
+<h1 id="dobozmodell-és-szegélyek">Dobozmodell és szegélyek</h1>
 
+<h2 id="bevezetés-a-dobozmodellbe">Bevezetés a Dobozmodellbe</h2>
+<p>A weboldalon lévő minden elem körül egy doboz helyezkedik el. E dobozok megértése kulcsfontosságú a komplex elrendezések (layoutok) létrehozásához és az elemek egymáshoz való igazításához.</p>
+<p><img src="boxes.png" alt="dobozok"></p>
+<h3 id="a-dobozok-alaptípusai-block-és-inline">A dobozok alaptípusai: Block és Inline</h3>
+<p>A CSS dobozok viselkedését alapvetően a <strong>külső megjelenítési típus</strong> (outer display type) határozza meg, amely megmondja, hogyan helyezkedik el a doboz a többi dobozhoz képest.</p>
+<ol>
+<li><p><strong>Block Dobozok (Blokkszintű elemek):</strong></p>
+<ul>
+<li>A doboz mindig <strong>új sorban kezdődik</strong>.</li>
+<li>A <code>width</code> (szélesség) és <code>height</code> (magasság) tulajdonságok érvényesülnek.</li>
+<li>A beállított margók (<em>margin</em>), kitöltések (<em>padding</em>) és szegélyek (<em>border</em>) eltolják a többi elemet a doboztól.</li>
+<li>Ha nincs szélesség megadva, a doboz kitölti a rendelkezésre álló helyet a konténerében (általában 100% szélesség).</li>
+<li><em>Példa</em>: <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code> elemek alapértelmezetten blokk típusúak.</li>
+</ul>
+</li>
+<li><p><strong>Inline Dobozok (Sorszintű elemek):</strong></p>
+<ul>
+<li>A doboz <strong>nem kezdődik új sorban</strong>.</li>
+<li>A <code>width</code> és <code>height</code> tulajdonságokat <strong>figyelmen kívül hagyja</strong>.</li>
+<li>A felső és alsó margók, kitöltések és szegélyek érvényesülnek, de <strong>nem tolják el</strong> a körülötte lévő tartalom sorait (átfedést okozhatnak).</li>
+<li>A bal és jobb oldali margók, kitöltések és szegélyek érvényesülnek, és eltolják a többi sorszintű dobozt.</li>
+<li><em>Példa</em>: <code>&lt;a&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;em&gt;</code> elemek alapértelmezetten sorszintűek.</li>
+</ul>
+</li>
+</ol>
+<h3 id="alaptípusok-átmenete-inline-block">Alaptípusok átmenete: inline-block</h3>
+<p>Ez egy speciális <code>display</code> érték, amely átmenetet képez a sorszintű és a blokkszintű viselkedés között.</p>
+<ul>
+<li><strong>Nem kezd új sorban</strong> (inline tulajdonság).</li>
+<li><strong>Figyelembe veszi</strong> a <code>width</code> és <code>height</code> tulajdonságokat (block tulajdonság).</li>
+<li>A margók, kitöltések és szegélyek minden oldalon <strong>eltolják a többi elemet</strong> (elkerülve az átfedést, ami az alapértelmezett inline elemeknél történik).</li>
+<li>Gyakran használják navigációs sávok linkjeinél, ahol szeretnénk kitöltést alkalmazni az elemekre anélkül, hogy új sorba törnénk őket.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A tananyag alján lehet látni egy összetett példát, amiben említett beállítások kipróbálhatók.</p>
+</div>
+<h2 id="a-css-dobozmodell-részei">A CSS Dobozmodell Részei</h2>
+<p>A blokkszintű doboz négy koncentrikus rétegből áll:</p>
+<ol>
+<li><strong>Tartalom Doboz (Content box):</strong> A terület, ahol a tartalom (szöveg, képek) megjelenik. Ezt méretezzük a <code>width</code> és <code>height</code> tulajdonságokkal.</li>
+<li><strong>Kitöltés Doboz (Padding box):</strong> A tartalom körül lévő fehér tér. Ezt a <code>padding</code> tulajdonsággal méretezzük.</li>
+<li><strong>Szegély Doboz (Border box):</strong> A szegély/keret, amely a tartalmat és a kitöltést veszi körül. Ezt a <code>border</code> tulajdonsággal méretezzük.</li>
+<li><strong>Margó Doboz (Margin box):</strong> A legkülső réteg, amely láthatatlan teret hoz létre a doboz és más elemek között (whitespace). Ezt a <code>margin</code> tulajdonsággal méretezzük.</li>
+</ol>
+<p><img src="css-box-model.png" alt="dobozmodell"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A margó nem számít bele magának a doboznak a tényleges méretébe — csak az általa elfoglalt teljes területbe a lapon. A doboz területe a szegélynél áll meg, nem terjed ki a margóra.</p>
+</div>
+<h2 id="standard-vs-alternatív-dobozmodell">Standard vs. Alternatív Dobozmodell</h2>
+<p>Kétféle dobozmodell létezik; alapértelmezetten a böngészők a standard dobozmodellt használják.</p>
+<h3 id="1-standard-dobozmodell-content-box">1. Standard Dobozmodell (Content-Box)</h3>
+<p>Ebben a modellben a <code>width</code> és <code>height</code> értékek a <strong>tartalom doboz</strong> szélességét és magasságát határozzák meg.</p>
+<ul>
+<li><strong>Teljes szélesség</strong> = <em>tartalom szélessége</em> (<code>width</code>) + <em>kitöltés</em> (bal és jobb) + <em>szegély</em> (bal és jobb).</li>
+<li><em>Példa:</em> Ha egy doboz <code>width</code>-e 350px, a <code>padding</code> 25px mindkét oldalon, és a <code>border</code> 5px mindkét oldalon, akkor a teljes helyigénye: <span class="math">\(350 + 25 + 25 + 5 + 5 = **410px**\)</span>.</li>
+</ul>
+<h3 id="2-alternatív-dobozmodell-border-box">2. Alternatív Dobozmodell (Border-Box)</h3>
+<p>Ebben a modellben a beállított <code>width</code> és <code>height</code> értékek magát a <strong>látható doboz</strong> méretét (tartalom + kitöltés + szegély) határozzák meg.</p>
+<ul>
+<li>A tartalom területének szélessége a beállított szélesség mínusz a kitöltés és a szegély szélessége.</li>
+<li>Ez kényelmes, mivel nem kell külön összeadnunk a szegélyt és a kitöltést, hogy megkapjuk a doboz valós méretét.</li>
+<li>A modell aktiválása: a <code>box-sizing</code> tulajdonság beállításával.</li>
+</ul>
+<pre><code class="lang-css">.box {
+    box-sizing: border-box; /* Alternatív dobozmodell bekapcsolása */
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Gyakori választás a fejlesztők körében, hogy az alternatív dobozmodellt használják minden elemen. Ezt egy univerzális resettel lehet beállítani, az <code>&lt;html&gt;</code> elemen beállítva a <code>box-sizing</code>-ot, majd a többi elemen örököltetve azt.</p>
+</div>
+<pre><code class="lang-css">html { box-sizing: border-box; }
+* { box-sizing: inherit; }
+</code></pre>
+<h2 id="szegélyek-kitöltés-és-margók-részletesen">Szegélyek, Kitöltés és Margók Részletesen</h2>
+<h3 id="a-szegély-border">A Szegély (Border)</h3>
+<p>A szegély a margó és a kitöltés között helyezkedik el.</p>
+<h4 id="szegély-tulajdonságok">Szegély Tulajdonságok</h4>
+<p>A szegélyek stílusához, szélességéhez és színéhez számos tulajdonság áll rendelkezésre, amelyekkel mind a négy oldalt egyszerre lehet beállítani (shorthand), vagy oldalanként/tulajdonságonként külön-külön (longhand).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tulajdonság típusa</th>
+<th style="text-align: left;">Leírás</th>
+<th style="text-align: left;">Példa (shorthand)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Összes szegély (Shorthand)</strong></td>
+<td style="text-align: left;">Beállítja mind a négy oldal szélességét, stílusát és színét.</td>
+<td style="text-align: left;"><code>border: 5px solid black;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Oldalankénti beállítás</strong></td>
+<td style="text-align: left;">A négy oldal egyedi beállítása.</td>
+<td style="text-align: left;"><code>border-top</code>, <code>border-right</code>, <code>border-bottom</code>, <code>border-left</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Egyedi tulajdonságok</strong></td>
+<td style="text-align: left;">A stílus, a szélesség vagy a szín beállítása az összes oldalra.</td>
+<td style="text-align: left;"><code>border-width</code>, <code>border-style: dotted;</code>, <code>border-color</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Granuláris beállítás</strong></td>
+<td style="text-align: left;">Egy adott oldal adott tulajdonságának beállítása (pl. stílus).</td>
+<td style="text-align: left;"><code>border-bottom-color: hotpink;</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kitöltés-padding">Kitöltés (Padding)</h3>
+<p>A kitöltés (belső térköz) a szegély és a tartalom területe között helyezkedik el, és a tartalom eltolására szolgál a szegélytől.</p>
+<ul>
+<li>A kitöltés értéke <strong>nem lehet negatív</strong>.</li>
+<li>Az elem háttere a kitöltés mögött is megjelenik.</li>
+<li>Sorszintű elemeknél (pl. <code>&lt;span&gt;</code>) a felső/alsó kitöltés nem tolja el a sorokat, átfedést okozhat.</li>
+</ul>
+<h4 id="kitöltés-tulajdonságok">Kitöltés Tulajdonságok</h4>
+<p>A <code>padding</code> tulajdonság beállítja az összes oldalt egyszerre.</p>
+<ul>
+<li><strong>Összefoglaló (Shorthand):</strong> <code>padding: 1em;</code> (mind a négy oldalra 1em).</li>
+<li><strong>Oldalankénti (Longhand):</strong> <code>padding-top</code>, <code>padding-right</code>, <code>padding-bottom</code>, <code>padding-left</code>.</li>
+</ul>
+<h3 id="margó-margin">Margó (Margin)</h3>
+<p>A margó (külső térköz) egy láthatatlan tér a doboz körül, amely <strong>eltolja a többi elemet</strong>. A margó a látható doboz méretének kiszámítása után adódik hozzá.</p>
+<ul>
+<li>A margók értéke lehet <strong>pozitív vagy negatív</strong>; a negatív margók elemek átfedését okozhatják.</li>
+<li>Sorszintű elemeknél (inline) a felső és alsó margó érvényesül, de nem tolja el a környező sorokat; csak a bal és jobb margó okoz eltolást.</li>
+</ul>
+<h4 id="margó-tulajdonságok">Margó Tulajdonságok</h4>
+<p>A <code>margin</code> tulajdonság beállítja mind a négy oldalt egyszerre.</p>
+<ul>
+<li><strong>Összefoglaló (Shorthand):</strong> A margók beállíthatók egy rövidített formában, az óramutató járásával megegyező sorrendben (felül, jobb, alul, bal).</li>
+</ul>
+<pre><code class="lang-css">.box {
+    margin: 20px 1em 40px 2em;
+}
+/* Felül 20px, Jobbra 1em, Alul 40px, Balra 2em */
+</code></pre>
+<ul>
+<li><strong>Oldalankénti (Longhand):</strong> <code>margin-top</code>, <code>margin-right</code>, <code>margin-bottom</code>, <code>margin-left</code>.</li>
+</ul>
+<h3 id="margó-összeomlás-margin-collapsing">Margó Összeomlás (Margin Collapsing)</h3>
+<p>Ez a jelenség akkor fordul elő, amikor két blokkszintű elem <strong>függőleges margói</strong> (pl. az első elem <code>margin-bottom</code>-je és a második elem <code>margin-top</code>-ja) összeérnek.</p>
+<ul>
+<li><strong>Két pozitív margó esetén:</strong> A két margó egy margóvá egyesül, melynek mérete a <strong>két margó közül a legnagyobbik</strong> értékkel lesz egyenlő.</li>
+<li><strong>Két negatív margó esetén:</strong> Az omlás után a kisebb (nullától távolabbi) negatív érték lesz a mérvadó.</li>
+<li>Ha az egyik margó negatív, az érték <strong>kivonódik</strong> az összegből.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A margó összeomlás (collapsing) csak a <strong>függőleges margókra</strong> vonatkozik; a vízszintes margók nem omlanak össze.</p>
+</div>
+<p>A böngésző Fejlesztői Eszközei (DevTools) segítségével mindig ellenőrizheti az elemek valós méretét, margóját, kitöltését és szegélyét, ami megkönnyíti a dobozmodell megértését.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;CSS Dobozmodell bemutató&lt;/title&gt;
+    &lt;style&gt;
+        /* Alapértelmezett beállítások és közös stílusok */
+        body { 
+            font-family: sans-serif; 
+            margin: 20px;
+            background-color: #f4f4f9; 
+        }
+
+        /* Minden dobozra beállítjuk a méretet és a térközt */
+        .box {
+            width: 300px;
+            height: 70px;
+            padding: 20px;
+            margin: 30px;
+            border: 5px solid darkblue;
+            box-sizing: content-box; /* Standard dobozmodell (alapértelmezett) */
+            text-align: center;
+            line-height: 70px; /* Magasság közepére igazítás a tartalom dobozon belül */
+        }
+
+        h3 {
+            margin-top: 40px; 
+            color: #333;
+        }
+        
+        /* ------------------------------------------- */
+        /* 1. BLOKKSZINTŰ DOBOZ (Alapértelmezett viselkedés) */
+        /* ------------------------------------------- */
+        .block-example {
+            background-color: lightcoral;
+            /* width és height érvényesül. A teljes méret (40px padding + 10px border) hozzáadódik a 300px width-hez. */
+        }
+
+        /* ------------------------------------------- */
+        /* 2. SORSZINTŰ DOBOZ (display: inline) */
+        /* ------------------------------------------- */
+        .inline-container {
+            border: 2px dashed #607d8b;
+            padding: 10px;
+            line-height: 1.8; /* Hogy jobban látszódjon az átfedés */
+        }
+
+        .inline-example {
+            background-color: yellow;
+            color: black;
+            border-color: red;
+            /* A width és height (300px / 70px) figyelmen kívül hagyódik.
+               A függőleges padding és border ÉRVÉNYESÜL, de átfedést okoz a környező szöveggel. 
+               A bal/jobb padding és margin ELTOLJA a tartalmat. */
+        }
+
+        /* ------------------------------------------- */
+        /* 3. INLINE-BLOCK DOBOZ (display: inline-block) */
+        /* ------------------------------------------- */
+        .inline-block-example {
+            background-color: lightgreen;
+            color: darkgreen;
+            border-color: darkgreen;
+            display: inline-block; /* A kulcs: sorszintű, de blokk viselkedéssel */
+            /* A width és height ÉRVÉNYESÜL.
+               A padding, border és margin eltávolítja a többi elemet. */
+        }
+
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;A Dobozmodell: Display típusok összehasonlítása&lt;/h1&gt;
+
+    &lt;h3&gt;1. Blokkszintű doboz (Block Box)&lt;/h3&gt;
+    &lt;div class=&quot;box block-example&quot;&gt;
+        Ez egy div (blokk). Új sort kezd és a width/height érvényes.
+    &lt;/div&gt;
+    &lt;div class=&quot;box block-example&quot; style=&quot;width: 150px; height: 30px;&quot;&gt;
+        Ez egy másik blokk. Láthatóan alá került.
+    &lt;/div&gt;
+
+    &lt;h3&gt;2. Sorszintű doboz (Inline Box)&lt;/h3&gt;
+    &lt;p class=&quot;inline-container&quot;&gt;
+        Ez egy bekezdés, amelyen belül van egy &lt;span class=&quot;box inline-example&quot;&gt;Inline SPAN&lt;/span&gt; elem, ami nem kezd új sort.
+        Figyeljük meg, hogy a beállított 300px szélességet és 70px magasságot a böngésző **figyelmen kívül hagyja**, és a doboz csak akkora, amekkora a tartalom. A függőleges margók és kitöltések **átfedést** okoznak a szöveg soraival.
+    &lt;/p&gt;
+
+    &lt;h3&gt;3. Inline-Block doboz&lt;/h3&gt;
+    &lt;p class=&quot;inline-container&quot;&gt;
+        Ez egy bekezdés, amelyen belül van egy &lt;span class=&quot;box inline-block-example&quot;&gt;Inline-Block SPAN&lt;/span&gt; elem.
+        Ez az elem már **figyelembe veszi** a 300px szélességet és a 70px magasságot, és a padding/border/margin vertikálisan is **eltolja** a környező elemeket, de **nem kezd** új sort, ellentétben a blokk elemekkel.
+    &lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>A szöveg AI felhasználásával készült.</p>
+<p>Források:</p>
+<ul>
+<li><a href="https://www.theodinproject.com/lessons/foundations-the-box-model">The Odin Project: The Box Model</a></li>
+<li><a href="https://www.csssolid.com/css-box-model.html">CSS Solid: CSS Box Model</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model">MDN: The Box Model</a></li>
+</ul>
 
 </article>
 

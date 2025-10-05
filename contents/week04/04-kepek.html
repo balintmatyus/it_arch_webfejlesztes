@@ -158,12 +158,41 @@ body {
 </code></pre>
 <h2 id="képek-méretezése">Képek méretezése</h2>
 <p>Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. <code>width: 100px; height: 100px</code>) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár <em>MS Paint</em>). A weben leginkább használható képfájl típusok: <strong>gif, jpg, png, webp</strong>.</p>
-<p>Átmérezetést követően, ha szeretnénk, hogy <strong>reszponzív módon</strong> jelenjenek meg a képek, az alábbi CSS beállításokat szükséges használni.</p>
-<pre><code class="lang-css">img {
-  max-width: 100%;
-  height: auto;
+<p>A képek méretét a CSS <code>width</code> (szélesség) és <code>height</code> (magasság) tulajdonságaival szabályozhatjuk. Ezek az értékek megadhatók pixelben (<code>px</code>), százalékban (<code>%</code>), vagy más, a szülőelemhez vagy a képernyőmérethez viszonyított relatív mértékegységben is.</p>
+<h3 id="fix-méretezés-pixelben">Fix méretezés pixelben</h3>
+<pre><code class="lang-css">img.logo {
+    width: 150px; /* A kép szélessége fixen 150 pixel lesz */
+    height: auto;  /* A magasság automatikusan igazodik, megőrizve a képarányt */
 }
 </code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Kritikus fontosságú, hogy általában csak az egyik méretet (a szélességet <strong>vagy</strong> a magasságot) állítsuk be, a másikat pedig hagyjuk <code>auto</code> értéken. Ezzel elkerülhetjük a kép torzulását, mivel a böngésző automatikusan kiszámolja a helyes arányokat. Ha mindkét értéket manuálisan adjuk meg, és azok nem felelnek meg az eredeti képarányoknak, a kép összenyomódik vagy megnyúlik.</p>
+</div>
+<h3 id="százalékos-reszponzív-méretezés">Százalékos, reszponzív méretezés</h3>
+<p>A modern, reszponzív webdesign alapja, hogy az elemek alkalmazkodjanak a különböző képernyőméretekhez. Ha a kép szélességét százalékban adjuk meg, akkor a mérete a <strong>szülőelem</strong> (pl. egy <code>&lt;div&gt;</code> vagy a <code>&lt;body&gt;</code>) <strong>szélességéhez fog igazodni</strong>.</p>
+<pre><code class="lang-css">img.reszponziv-kep {
+    width: 50%; /* A kép a szülőelem szélességének felét fogja kitölteni */
+    height: auto;
+}
+</code></pre>
+<p>Ez a megoldás rugalmas, de önmagában nem tökéletes. Egy nagyon széles képernyőn a kép feleslegesen nagyra nőhet, ami rontja a minőségét (pixelessé válik), míg egy keskeny mobilos nézetben túl apróvá zsugorodhat.</p>
+<h3 id="a-max-width-tulajdonság-a-legjobb-gyakorlat">A <code>max-width</code> tulajdonság: a legjobb gyakorlat</h3>
+<p>A legelterjedtebb és legbiztonságosabb módszer a képek reszponzív méretezésére a <code>max-width</code> tulajdonság használata. Ez a technika ötvözi a fix és a relatív méretezés előnyeit.</p>
+<pre><code class="lang-css">img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Eltávolítja az esetleges alsó üres helyet az elem alatt */
+}
+</code></pre>
+<p><strong>Hogyan működik?</strong></p>
+<ul>
+<li><strong><code>max-width: 100%</code></strong>: A kép maximális szélessége a szülőelemének 100%-a lehet. Ez azt jelenti, hogy a kép soha nem lesz szélesebb, mint a tárolója, így <strong>nem &quot;lóg ki&quot; belőle</strong> kisebb képernyőkön, hanem arányosan zsugorodik.</li>
+<li><strong>Eredeti méret megőrzése</strong>: Ha a tároló szélesebb, mint a kép eredeti, természetes mérete, a kép <strong>nem fog felnagyítódni</strong> és pixelessé válni. Megtartja az eredeti maximális szélességét.</li>
+<li><strong><code>height: auto</code></strong>: Biztosítja a helyes képarányt minden méretben.</li>
+<li><strong><code>display: block</code></strong>: Az <code>&lt;img&gt;</code> elem alapértelmezetten <code>inline-block</code> típusú, ami néha váratlan térközöket eredményezhet alatta. A <code>display: block</code> ezt a gyakori problémát orvosolja.</li>
+</ul>
+<p>Ez a technika garantálja, hogy a kép mindig jól látható, de soha nem töri szét az elrendezést, így elengedhetetlen a mobilbarát weboldalak készítésénél.</p>
 <h2 id="képkeretek">Képkeretek</h2>
 <p>A <code>border-radius</code> segítségével kerekített szegélyeket is használhatunk.</p>
 <pre><code class="lang-css">img {

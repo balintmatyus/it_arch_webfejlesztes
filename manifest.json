@@ -407,6 +407,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week04/04-elrendezes.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week04/04-elrendezes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week04/04-kepek.md",
       "output": {
         ".html": {
@@ -426,21 +436,31 @@
       "version": ""
     },
     {
-      "type": "Conceptual",
-      "source_relative_path": "contents/week04/04-tablazatok.md",
+      "type": "Resource",
+      "source_relative_path": "contents/week04/GoldenGateBridge-001.jpg",
       "output": {
-        ".html": {
-          "relative_path": "contents/week04/04-tablazatok.html"
+        "resource": {
+          "relative_path": "contents/week04/GoldenGateBridge-001.jpg"
         }
       },
       "version": ""
     },
     {
       "type": "Resource",
-      "source_relative_path": "contents/week04/GoldenGateBridge-001.jpg",
+      "source_relative_path": "contents/week04/boxes.png",
       "output": {
         "resource": {
-          "relative_path": "contents/week04/GoldenGateBridge-001.jpg"
+          "relative_path": "contents/week04/boxes.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week04/cipo.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week04/cipo.png"
         }
       },
       "version": ""
@@ -457,6 +477,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "contents/week04/css-box-model.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week04/css-box-model.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "contents/week04/street.jpg",
       "output": {
         "resource": {
@@ -467,10 +497,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "contents/week05/05-css-basics.md",
+      "source_relative_path": "contents/week05/05-tablazatok.md",
       "output": {
         ".html": {
-          "relative_path": "contents/week05/05-css-basics.html"
+          "relative_path": "contents/week05/05-tablazatok.html"
         }
       },
       "version": ""

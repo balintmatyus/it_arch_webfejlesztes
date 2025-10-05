@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Abszol&#250;t &#233;s Relat&#237;v Poz&#237;cion&#225;l&#225;s | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Abszol&#250;t &#233;s Relat&#237;v Poz&#237;cion&#225;l&#225;s | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-elrendezes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="abszolút-és-relatív-pozícionálás">Abszolút és Relatív Pozícionálás</h1>
+
+<p>A CSS-ben az elemek elrendezése (Layout) alapvető fontosságú. A pozícionálás a CSS elrendezési módszerek közé tartozik. A pozícionálás megértése kulcsfontosságú az elemek oldalra való elhelyezéséhez vagy egymáshoz viszonyított igazításához.</p>
+<h2 id="a-pozícionálás-módjai">A Pozícionálás Módjai</h2>
+<p>A CSS elrendezésben a <code>position</code> tulajdonság segítségével térhetünk el az elemek normál dokumentumfolyamban történő elhelyezkedésétől.</p>
+<h3 id="relatív-pozícionálás">Relatív Pozícionálás</h3>
+<p>A <strong>relatív pozícionálás</strong> (<code>position: relative;</code>) egy elem eredeti, a normál dokumentumfolyamatban elfoglalt helyéhez képest történő elmozdítását teszi lehetővé. Fontos megjegyezni, hogy bár az elem vizuálisan elmozdul, az eredeti helye üresen marad, és a többi elem továbbra is úgy viselkedik, mintha az elem az eredeti pozíciójában lenne. Az elmozdítást a <code>top</code>, <code>right</code>, <code>bottom</code>, és <code>left</code> tulajdonságokkal adhatjuk meg.</p>
+<p>Például, ha egy elemet <code>10px</code>-lel lejjebb és <code>20px</code>-lel jobbra szeretnénk tolni az eredeti helyéről:</p>
+<pre><code class="lang-css">.relativ-elem {
+  position: relative;
+  top: 10px;
+  left: 20px;
+}
+</code></pre>
+<p>Ez a beállítás azt eredményezi, hogy az <code>.relativ-elem</code> osztályú elem a normál pozíciójától 10 pixellel lefelé és 20 pixellel jobbra fog megjelenni, de az őt körülvevő elemek elrendezése nem változik.</p>
+<h3 id="abszolút-pozícionálás">Abszolút Pozícionálás</h3>
+<p>Az <strong>abszolút pozícionálás</strong> (<code>position: absolute;</code>) teljesen kiveszi az elemet a dokumentum normál folyamatából. Ez azt jelenti, hogy a többi elem úgy fog viselkedni, mintha az abszolút pozicionált elem ott sem lenne, és az általa korábban elfoglalt helyet is elfoglalhatják.</p>
+<p>Az abszolút pozicionált elem a legközelebbi, nem <code>static</code> (azaz <code>relative</code>, <code>absolute</code>, <code>fixed</code>, vagy <code>sticky</code>) pozíciójú szülőeleméhez képest pozícionálódik a <code>top</code>, <code>right</code>, <code>bottom</code>, és <code>left</code> tulajdonságok segítségével. Ha nincs ilyen szülőelem, akkor a <code>&lt;body&gt;</code> elemhez, azaz a dokumentum széléhez igazodik.</p>
+<p>Például, ha van egy szülő- és egy gyerek-elemünk:</p>
+<pre><code class="lang-html">&lt;div class=&quot;szulo&quot;&gt;
+  &lt;div class=&quot;gyerek&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>És a következő CSS-t alkalmazzuk:</p>
+<pre><code class="lang-css">.szulo {
+  position: relative; /* Pozícionálási kontextust ad a gyereknek */
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.gyerek {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
+</code></pre>
+<p>A <code>.gyerek</code> elem a <code>.szulo</code> elem jobb felső sarkától <code>20px</code>-re fog elhelyezkedni, mivel a szülő <code>position: relative;</code> tulajdonsága pozícionálási kontextust teremt számára. Ha a szülőnek nem adnánk meg a <code>position: relative;</code>-et, a piros négyzet a <code>&lt;body&gt;</code> elem jobb felső sarkához igazodna.</p>
+<h3 id="gyakorlati-alkalmazás-és-reszponzivitás">Gyakorlati alkalmazás és reszponzivitás</h3>
+<p>A modern webfejlesztésben a <code>position: relative</code> és <code>position: absolute</code> párosítása az egyik leggyakrabban használt technika, különösen reszponzív környezetben. Bár az oldalak fő szerkezetét ma már leginkább a <strong>Flexbox</strong> és a <strong>Grid</strong> határozza meg, a pozícionálás továbbra is nélkülözhetetlen az elemek egymáson való rétegzéséhez és a komponenseken belüli finomhangoláshoz.</p>
+<h4 id="a-relatív-szülő-mint-ketrec">A relatív szülő mint &quot;ketrec&quot;</h4>
+<p>Fontos megérteni, hogy amint egy szülőelemre (<code>&lt;div&gt;</code>) rákerül a <code>position: relative;</code>, az egyfajta <strong>koordináta-rendszert vagy &quot;ketrecet&quot; hoz létre</strong> a benne lévő, <code>position: absolute;</code>-tal ellátott gyerek-elemek számára. A <code>top: 0; left: 0;</code> egy abszolút pozicionált elemen belül azt jelenti, hogy a relatív szülő bal felső sarkához igazodik (pontosabban a <code>padding</code>-on belüli területhez), nem pedig a böngészőablak széléhez.</p>
+<p>Ez a &quot;ketrec&quot; modell teszi lehetővé, hogy összetett, mégis jól kontrollálható és reszponzív komponenseket hozzunk létre. Mivel a gyerek-elem a szülőhöz igazodik, a szülő mozgatásával vagy átméretezésével a gyerek is arányosan vele mozog, megőrizve a belső elrendezést.</p>
+<h4 id="hol-használjuk-a-reszponzív-designban">Hol használjuk a reszponzív designban?</h4>
+<ol>
+<li><p><strong>Feliratok és ikonok elhelyezése képeken:</strong> Ez a leggyakoribb felhasználási mód. Egy képkonténer kap egy <code>position: relative</code>-et, a képre helyezett szöveg, &quot;Új&quot; címke, vagy egy lejátszás ikon pedig <code>position: absolute</code>-ot kap. Így a felirat mindig a kép sarkában vagy közepén marad, függetlenül attól, hogy a kép hogyan méreteződik át a különböző képernyőkön.</p>
+</li>
+<li><p><strong>Lenyíló menük és tooltip-ek (buborékok):</strong> Amikor egy menüpont vagy egy ikon fölé visszük az egeret, a megjelenő almenü vagy információs buborék (<code>tooltip</code>) <code>position: absolute</code>-ot használ, hogy a megfelelő helyen jelenjen meg anélkül, hogy szétlökne más elemeket az oldalon. A szülő menüpont <code>position: relative</code>-et kap.</p>
+</li>
+<li><p><strong>Ikonok beviteli mezőkben:</strong> Egy keresőmezőben elhelyezett nagyító ikon tipikusan egy <code>position: relative</code> tárolóban lévő <code>&lt;input&gt;</code> mező mellett <code>position: absolute</code>-tal van beigazítva a mező szélére.</p>
+</li>
+</ol>
+<p>Az alábbi példa egy reszponzív termékkártyát mutat, ahol egy &quot;Akció!&quot; címke van a kép sarkára helyezve. A kártya mérete változhat, de a címke a helyén marad.</p>
+<p><img src="cipo.png" alt="cipő"></p>
+<pre><code class="lang-html">&lt;div class=&quot;termek-kartya&quot;&gt;
+  &lt;img src=&quot;cipok.jpg&quot; alt=&quot;Futócipő&quot;&gt;
+  &lt;span class=&quot;akcio-cimke&quot;&gt;Akció!&lt;/span&gt;
+  &lt;h3&gt;Prémium cipő&lt;/h3&gt;
+  &lt;p&gt;Könnyű és rugalmas, minden távra.&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="lang-css">.termek-kartya {
+  position: relative; /* Létrehozza a &quot;ketrecet&quot; a címke számára */
+  width: 80%; /* Reszponzív szélesség */
+  max-width: 300px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+
+.termek-kartya img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.akcio-cimke {
+  position: absolute; /* Kiemeljük a normál dokumentumfolyamból */
+  top: 10px;          /* A szülő tetejétől 10px-re */
+  left: 0;            /* A szülő bal oldalához igazítva */
+  background-color: #e44d26;
+  color: white;
+  padding: 5px 10px;
+}
+</code></pre>
+<p>Ez a módszer biztosítja, hogy a vizuális elemek szorosan összetartozzanak és együtt mozogjanak, ami a reszponzív design alapkövetelménye.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-elrendezes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
