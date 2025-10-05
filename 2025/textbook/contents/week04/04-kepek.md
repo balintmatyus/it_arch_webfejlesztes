@@ -79,14 +79,52 @@ body {
 
 Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. `width: 100px; height: 100px`) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár *MS Paint*). A weben leginkább használható képfájl típusok: **gif, jpg, png, webp**.
 
-Átmérezetést követően, ha szeretnénk, hogy **reszponzív módon** jelenjenek meg a képek, az alábbi CSS beállításokat szükséges használni.
+A képek méretét a CSS `width` (szélesség) és `height` (magasság) tulajdonságaival szabályozhatjuk. Ezek az értékek megadhatók pixelben (`px`), százalékban (`%`), vagy más, a szülőelemhez vagy a képernyőmérethez viszonyított relatív mértékegységben is.
+
+### Fix méretezés pixelben
+
+```css
+img.logo {
+    width: 150px; /* A kép szélessége fixen 150 pixel lesz */
+    height: auto;  /* A magasság automatikusan igazodik, megőrizve a képarányt */
+}
+```
+
+> [!IMPORTANT]
+> Kritikus fontosságú, hogy általában csak az egyik méretet (a szélességet **vagy** a magasságot) állítsuk be, a másikat pedig hagyjuk `auto` értéken. Ezzel elkerülhetjük a kép torzulását, mivel a böngésző automatikusan kiszámolja a helyes arányokat. Ha mindkét értéket manuálisan adjuk meg, és azok nem felelnek meg az eredeti képarányoknak, a kép összenyomódik vagy megnyúlik.
+
+### Százalékos, reszponzív méretezés
+
+A modern, reszponzív webdesign alapja, hogy az elemek alkalmazkodjanak a különböző képernyőméretekhez. Ha a kép szélességét százalékban adjuk meg, akkor a mérete a **szülőelem** (pl. egy `<div>` vagy a `<body>`) **szélességéhez fog igazodni**.
+
+```css
+img.reszponziv-kep {
+    width: 50%; /* A kép a szülőelem szélességének felét fogja kitölteni */
+    height: auto;
+}
+```
+
+Ez a megoldás rugalmas, de önmagában nem tökéletes. Egy nagyon széles képernyőn a kép feleslegesen nagyra nőhet, ami rontja a minőségét (pixelessé válik), míg egy keskeny mobilos nézetben túl apróvá zsugorodhat.
+
+### A `max-width` tulajdonság: a legjobb gyakorlat
+
+A legelterjedtebb és legbiztonságosabb módszer a képek reszponzív méretezésére a `max-width` tulajdonság használata. Ez a technika ötvözi a fix és a relatív méretezés előnyeit.
 
 ```css
 img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
+    display: block; /* Eltávolítja az esetleges alsó üres helyet az elem alatt */
 }
 ```
+
+**Hogyan működik?**
+* **`max-width: 100%`**: A kép maximális szélessége a szülőelemének 100%-a lehet. Ez azt jelenti, hogy a kép soha nem lesz szélesebb, mint a tárolója, így **nem "lóg ki" belőle** kisebb képernyőkön, hanem arányosan zsugorodik.
+* **Eredeti méret megőrzése**: Ha a tároló szélesebb, mint a kép eredeti, természetes mérete, a kép **nem fog felnagyítódni** és pixelessé válni. Megtartja az eredeti maximális szélességét.
+* **`height: auto`**: Biztosítja a helyes képarányt minden méretben.
+* **`display: block`**: Az `<img>` elem alapértelmezetten `inline-block` típusú, ami néha váratlan térközöket eredményezhet alatta. A `display: block` ezt a gyakori problémát orvosolja.
+
+Ez a technika garantálja, hogy a kép mindig jól látható, de soha nem töri szét az elrendezést, így elengedhetetlen a mobilbarát weboldalak készítésénél.
 
 ## Képkeretek
 

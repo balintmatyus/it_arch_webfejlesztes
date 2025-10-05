@@ -40,16 +40,18 @@
   items:
   - name: 💡 Színek és hátterek
     href: week04/04-szinek.md
-  - name: 💡 Dobozmodell
+  - name: 💡 Dobozmodell és szegélyek
     href: week04/04-dobozmodell.md
+  - name: 💡 Elrendezés
+    href: week04/04-elrendezes.md
   - name: 💡 Képek
     href: week04/04-kepek.md
-  - name: 💡 Táblázatok formázása
-    href: week04/04-tablazatok.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
 - name: 5. hét
   items:
+  - name: 💡 Táblázatok formázása
+    href: week05/05-tablazatok.md
   - name: 💡 Reszponzív design
     href: todo.md #week05/05-css-basics.md
   - name: 🛠 Gyakorló feladatok

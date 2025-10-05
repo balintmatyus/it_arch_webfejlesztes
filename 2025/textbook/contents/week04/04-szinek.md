@@ -37,7 +37,7 @@ A háttér a képernyő egyik fontos eleme, amely előkészíti az információt
 A színeket és ezen belül is a hátteret érdemes a stílusbeállításokkal együtt kezelni.
 
 ```css
-p {
+div {
   color: rgba(255, 0, 0, 0.9);
   background-color: rgba(100, 100, 100, 0.2);
 }
