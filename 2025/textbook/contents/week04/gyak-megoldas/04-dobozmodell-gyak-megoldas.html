@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitális Névjegykártyák</title>
+    <link rel="stylesheet" href="doboz_alap.css">
+    
+    <style>
+        /* Közös beállítások mindhárom kártyára */
+        .kartya-1, .kartya-2, .kartya-3 {
+            width: 350px;
+            background-color: white;
+            margin: 20px auto;  /* Középre igazítás és térköz */
+        }
+        
+        /* Első kártya - Egyszerű változat */
+        .kartya-1 {
+            padding: 15px;
+            border: 1px solid #cccccc;
+        }
+        /* Teljes szélesség: 350px + 15px + 15px + 1px + 1px = 382px */
+        
+        /* Második kártya - Vastag keret változat */
+        .kartya-2 {
+            padding: 25px;
+            border: 5px solid #2c3e50;
+            margin-bottom: 30px; /* Margó összeomlás teszteléshez */
+        }
+        /* Teljes szélesség: 350px + 25px + 25px + 5px + 5px = 410px */
+        
+        /* Harmadik kártya - Kerekített, árnyékolt változat */
+        .kartya-3 {
+            padding: 30px 20px;  /* Fent-lent 30px, jobb-bal 20px */
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-top: 30px; /* Margó összeomlás teszteléshez */
+        }
+        /* Teljes szélesség: 350px + 20px + 20px + 2px + 2px = 394px */
+        
+        /* Negyedik kártya - Border-box kísérlet */
+        .kartya-4 {
+            width: 350px;
+            background-color: white;
+            margin: 20px auto;
+            padding: 25px;
+            border: 5px solid #e74c3c;
+            box-sizing: border-box;  /* Ez a kulcs különbség! */
+        }
+        /* Border-box esetén a teljes szélesség: 350px (fix marad!) */
+        
+        /* Szövegelemek formázása */
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;      /* Felső margó eltávolítása */
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .beosztas {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+        
+        .email, .telefon {
+            color: #34495e;
+            margin: 5px 0;      /* Függőleges margó */
+            font-size: 14px;
+        }
+        
+        /* Extra stílus az email címhez */
+        .email::before {
+            content: "✉ ";
+            margin-right: 5px;
+        }
+        
+        /* Extra stílus a telefonszámhoz */
+        .telefon::before {
+            content: "☎ ";
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Névjegykártya változatok</h1>
+    
+    <!-- Első kártya -->
+    <div class="kartya-1">
+        <h2>Nagy Péter</h2>
+        <p class="beosztas">Marketing Manager</p>
+        <p class="email">peter.nagy@cegem.hu</p>
+        <p class="telefon">+36 30 123 4567</p>
+    </div>
+    
+    <!-- Második kártya -->
+    <div class="kartya-2">
+        <h2>Nagy Péter</h2>
+        <p class="beosztas">Marketing Manager</p>
+        <p class="email">peter.nagy@cegem.hu</p>
+        <p class="telefon">+36 30 123 4567</p>
+    </div>
+    
+    <!-- Harmadik kártya -->
+    <div class="kartya-3">
+        <h2>Nagy Péter</h2>
+        <p class="beosztas">Marketing Manager</p>
+        <p class="email">peter.nagy@cegem.hu</p>
+        <p class="telefon">+36 30 123 4567</p>
+    </div>
+    
+    <!-- Negyedik kártya - Border-box példa -->
+    <div class="kartya-4">
+        <h2>Nagy Péter</h2>
+        <p class="beosztas">Marketing Manager</p>
+        <p class="email">peter.nagy@cegem.hu</p>
+        <p class="telefon">+36 30 123 4567</p>
+    </div>
+    
+    <!-- 
+    Dobozmodell számítások:
+    
+    1. kártya (standard box model):
+    - Width: 350px
+    - Padding: 15px + 15px = 30px
+    - Border: 1px + 1px = 2px
+    - Teljes szélesség: 382px
+    
+    2. kártya (standard box model):
+    - Width: 350px
+    - Padding: 25px + 25px = 50px
+    - Border: 5px + 5px = 10px
+    - Teljes szélesség: 410px
+    
+    3. kártya (standard box model):
+    - Width: 350px
+    - Padding: 20px + 20px = 40px
+    - Border: 2px + 2px = 4px
+    - Teljes szélesség: 394px
+    
+    4. kártya (border-box model):
+    - Width: 350px (fix marad!)
+    - A padding és border BELESZÁMÍT a 350px-be
+    - Belső tartalom területe: 350px - 50px - 10px = 290px
+    
+    Margó összeomlás megfigyelés:
+    A 2. és 3. kártya között nem 60px (30px + 30px), 
+    hanem csak 30px távolság lesz a margó összeomlás miatt!
+    -->
+    
+</body>
+</html>
