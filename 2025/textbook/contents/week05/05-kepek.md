@@ -54,7 +54,7 @@ body {
 
 /*
 .szovegblokk {
-    overflow: auto;
+    display: flow-root;
     margin-bottom: 25px;
 }
 */
@@ -76,7 +76,10 @@ body {
 
 A `float` tulajdonság segítségével egy elemet a tartalmazó doboz bal vagy jobb oldalához igazíthatunk, lehetővé téve, hogy a szöveg és más elemek körbevegyék. Eredetileg képek szöveg melletti elhelyezésére találták ki, de sokáig weboldalak több hasábos elrendezésének készítésére is használták. A `float` használatakor az elem kikerül a normál dokumentumfolyamból, ami azt jelenti, hogy a szülőelem "nem látja" a magasságát, és ez elrendezési problémákat okozhat.
 
-A `.szovegblokk` CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az `overflow: auto;` létrehoz egy új "blokk formázási kontextust" (block formatting context). Ennek egyik mellékhatása, hogy a szülőelem (`.szovegblokk`) kénytelen lesz magába foglalni a benne elhelyezett `float`-olt elemeket is, így azok már nem "lógnak ki" belőle, és a szülőelem felveszi a megfelelő magasságot.
+A `.szovegblokk` CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az `display: flow-root;` létrehoz egy új "blokk formázási kontextust" (block formatting context). Ennek következménye, hogy a szülőelem (`.szovegblokk`) kénytelen lesz magába foglalni a benne elhelyezett `float`-olt elemeket is, így azok már nem "lógnak ki" belőle, és a szülőelem felveszi a megfelelő magasságot.
+
+>[!NOTE]
+>Jövő órán tanulunk egy modernebb technikát e probléma megoldására.
 
 ## Képek méretezése
 
