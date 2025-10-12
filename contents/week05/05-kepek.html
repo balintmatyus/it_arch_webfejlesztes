@@ -136,7 +136,7 @@ body {
 
 /*
 .szovegblokk {
-    overflow: auto;
+    display: flow-root;
     margin-bottom: 25px;
 }
 */
@@ -156,7 +156,11 @@ body {
 }
 </code></pre>
 <p>A <code>float</code> tulajdonság segítségével egy elemet a tartalmazó doboz bal vagy jobb oldalához igazíthatunk, lehetővé téve, hogy a szöveg és más elemek körbevegyék. Eredetileg képek szöveg melletti elhelyezésére találták ki, de sokáig weboldalak több hasábos elrendezésének készítésére is használták. A <code>float</code> használatakor az elem kikerül a normál dokumentumfolyamból, ami azt jelenti, hogy a szülőelem &quot;nem látja&quot; a magasságát, és ez elrendezési problémákat okozhat.</p>
-<p>A <code>.szovegblokk</code> CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az <code>overflow: auto;</code> létrehoz egy új &quot;blokk formázási kontextust&quot; (block formatting context). Ennek egyik mellékhatása, hogy a szülőelem (<code>.szovegblokk</code>) kénytelen lesz magába foglalni a benne elhelyezett <code>float</code>-olt elemeket is, így azok már nem &quot;lógnak ki&quot; belőle, és a szülőelem felveszi a megfelelő magasságot.</p>
+<p>A <code>.szovegblokk</code> CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az <code>display: flow-root;</code> létrehoz egy új &quot;blokk formázási kontextust&quot; (block formatting context). Ennek következménye, hogy a szülőelem (<code>.szovegblokk</code>) kénytelen lesz magába foglalni a benne elhelyezett <code>float</code>-olt elemeket is, így azok már nem &quot;lógnak ki&quot; belőle, és a szülőelem felveszi a megfelelő magasságot.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Jövő órán tanulunk egy modernebb technikát e probléma megoldására.</p>
+</div>
 <h2 id="képek-méretezése">Képek méretezése</h2>
 <p>Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. <code>width: 100px; height: 100px</code>) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár <em>MS Paint</em>). A weben leginkább használható képfájl típusok: <strong>jpg, png, webp, gif</strong>.</p>
 <p>A képek méretét a CSS <code>width</code> (szélesség) és <code>height</code> (magasság) tulajdonságaival szabályozhatjuk. Ezek az értékek megadhatók pixelben (<code>px</code>), százalékban (<code>%</code>), vagy más, a szülőelemhez vagy a képernyőmérethez viszonyított relatív mértékegységben is.</p>
