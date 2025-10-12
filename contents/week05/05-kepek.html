@@ -16,7 +16,7 @@
       
       
       
-      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-kepek.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/05-kepek.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -105,7 +105,6 @@
 &lt;html lang=&quot;hu&quot;&gt;
 &lt;head&gt;
     &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;title&gt;Kép igazítása&lt;/title&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
 &lt;/head&gt;
@@ -115,12 +114,12 @@
 
     &lt;p class=&quot;szovegblokk&quot;&gt;
         &lt;img src=&quot;./city.jpg&quot; alt=&quot;Balra igazított kép&quot; class=&quot;kep-bal&quot;&gt;
-        Ez a szöveg egy **balra igazított kép** mellett jelenik meg. A CSS `float: left;` tulajdonsága a képet a szülőelem bal szélére helyezi, a szöveg pedig körülötte folytatódik a jobb oldalon. A `margin` tulajdonsággal biztosítunk elegendő térközt a kép és a szöveg között, hogy az elrendezés szellős és olvasható legyen. Ez a leggyakoribb megoldás, ha a kép egy bekezdés elején, fókuszpontként szerepel.
+        Ez a szöveg egy &lt;strong&gt;balra igazított kép&lt;/strong&gt; mellett jelenik meg.
     &lt;/p&gt;
 
     &lt;p class=&quot;szovegblokk&quot;&gt;
         &lt;img src=&quot;./street.jpg&quot; alt=&quot;Jobbra igazított kép&quot; class=&quot;kep-jobb&quot;&gt;
-        Ez a szöveg egy **jobbra igazított kép** mellett látható. A `float: right;` utasítás a képet a tároló jobb szélére tolja, a szöveg pedig a bal oldalán folyik körbe. Ez a technika akkor hasznos, ha a kép egy gondolatot illusztrál vagy zár le anélkül, hogy megtörné az olvasás folyamatát. A kép és a szöveg közötti távolságot itt is a `margin` segítségével állítjuk be.
+        Ez a szöveg egy &lt;strong&gt;jobbra igazított kép&lt;/strong&gt; mellett látható.
     &lt;/p&gt;
 
 &lt;/body&gt;
@@ -156,8 +155,10 @@ body {
     margin-bottom: 5px;   /* Térköz a kép alatt */
 }
 </code></pre>
+<p>A <code>float</code> tulajdonság segítségével egy elemet a tartalmazó doboz bal vagy jobb oldalához igazíthatunk, lehetővé téve, hogy a szöveg és más elemek körbevegyék. Eredetileg képek szöveg melletti elhelyezésére találták ki, de sokáig weboldalak több hasábos elrendezésének készítésére is használták. A <code>float</code> használatakor az elem kikerül a normál dokumentumfolyamból, ami azt jelenti, hogy a szülőelem &quot;nem látja&quot; a magasságát, és ez elrendezési problémákat okozhat.</p>
+<p>A <code>.szovegblokk</code> CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az <code>overflow: auto;</code> létrehoz egy új &quot;blokk formázási kontextust&quot; (block formatting context). Ennek egyik mellékhatása, hogy a szülőelem (<code>.szovegblokk</code>) kénytelen lesz magába foglalni a benne elhelyezett <code>float</code>-olt elemeket is, így azok már nem &quot;lógnak ki&quot; belőle, és a szülőelem felveszi a megfelelő magasságot.</p>
 <h2 id="képek-méretezése">Képek méretezése</h2>
-<p>Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. <code>width: 100px; height: 100px</code>) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár <em>MS Paint</em>). A weben leginkább használható képfájl típusok: <strong>gif, jpg, png, webp</strong>.</p>
+<p>Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. <code>width: 100px; height: 100px</code>) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár <em>MS Paint</em>). A weben leginkább használható képfájl típusok: <strong>jpg, png, webp, gif</strong>.</p>
 <p>A képek méretét a CSS <code>width</code> (szélesség) és <code>height</code> (magasság) tulajdonságaival szabályozhatjuk. Ezek az értékek megadhatók pixelben (<code>px</code>), százalékban (<code>%</code>), vagy más, a szülőelemhez vagy a képernyőmérethez viszonyított relatív mértékegységben is.</p>
 <h3 id="fix-méretezés-pixelben">Fix méretezés pixelben</h3>
 <pre><code class="lang-css">img.logo {
@@ -165,8 +166,8 @@ body {
     height: auto;  /* A magasság automatikusan igazodik, megőrizve a képarányt */
 }
 </code></pre>
-<div class="IMPORTANT">
-<h5>Important</h5>
+<div class="NOTE">
+<h5>Note</h5>
 <p>Kritikus fontosságú, hogy általában csak az egyik méretet (a szélességet <strong>vagy</strong> a magasságot) állítsuk be, a másikat pedig hagyjuk <code>auto</code> értéken. Ezzel elkerülhetjük a kép torzulását, mivel a böngésző automatikusan kiszámolja a helyes arányokat. Ha mindkét értéket manuálisan adjuk meg, és azok nem felelnek meg az eredeti képarányoknak, a kép összenyomódik vagy megnyúlik.</p>
 </div>
 <h3 id="százalékos-reszponzív-méretezés">Százalékos, reszponzív méretezés</h3>
@@ -247,7 +248,7 @@ img:hover {
   margin: auto;
 }
 </code></pre>
-<h3 id="bal-felső-sarki-szöveg">Bal felső sarki szöveg</h3>
+<h3 id="bal-felső-sarki-szöveg-ismétlés">Bal felső sarki szöveg (ismétlés)</h3>
 <p>A szöveget a tároló bal felső sarkához igazítjuk a <code>top</code> és <code>left</code> tulajdonságokkal. Egy kis <code>padding</code> (belső margó) hozzáadásával elkerülhetjük, hogy a szöveg teljesen a kép szélére tapadjon.</p>
 <pre><code class="lang-css">.container {
   position: relative; /* A belső elemek ehhez képest pozícionálódnak */
@@ -263,20 +264,6 @@ img:hover {
 
 img {
     width: 100%;
-}
-</code></pre>
-<h3 id="jobb-alsó-sarki-szöveg">Jobb alsó sarki szöveg</h3>
-<p>Hasonlóan az előzőhöz, itt a <code>bottom</code> és <code>right</code> tulajdonságokat használjuk a szöveg pozicionálására a tároló jobb alsó sarkába.</p>
-<pre><code class="lang-css">.container {
-  position: relative; /* A belső elemek ehhez képest pozícionálódnak */
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.szoveg-jobb-also {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
 }
 </code></pre>
 <h3 id="középre-igazított-szöveg">Középre igazított szöveg</h3>
@@ -359,7 +346,7 @@ img {
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week04/04-kepek.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/05-kepek.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

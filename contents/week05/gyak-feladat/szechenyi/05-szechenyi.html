@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Rubicon cikk oldal | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Rubicon cikk oldal | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/gyak-feladat/szechenyi/05-szechenyi.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="rubicon-cikk-oldal">Rubicon cikk oldal</h1>
+
+<h2 id="célkitűzés">Célkitűzés</h2>
+<p>Egy híroldalhoz hasonló cikk oldal létrehozása, amely lehetőséget ad az eddigiek gyakorlására. Az oldalon egy header menüt, kétoszlopos tartalmat és lebegő képet fogunk formázni.</p>
+<p><img src="rubicon-screenshot.png" alt="Rubicon cikk referencia"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Ne feledd:</strong> A cél nem a pixel-pontos másolás, hanem a gyakorlás. Ha valami kicsit másképp néz ki, mint a referencia, az rendben van, amíg az alapelvek helyesek.</p>
+</div>
+<h2 id="kiindulási-fájlok">Kiindulási fájlok</h2>
+<p>Töltsd le a <code>rubicon_article_alap.html</code> fájlt a Moodle-ről! Ez tartalmazza az oldal HTML vázát, de még nincsenek rajta osztálynevek és formázások.</p>
+<h2 id="1-előkészületek-és-alapbeállítások">1. Előkészületek és alapbeállítások</h2>
+<h3 id="11-univerzális-reset-és-body-beállítások">1.1 Univerzális reset és body beállítások</h3>
+<p>Kezdd a CSS-t úgy, hogy minden elemet nullázol (margin, padding), és beállítod a <code>box-sizing: border-box</code> tulajdonságot.</p>
+<p>Ezután a body elemre állítsd be:</p>
+<ul>
+<li>A betűtípust (Georgia vagy más serif)</li>
+<li>A sortávolságot (legyen kényelmesen olvasható, 1.5-1.8 körüli érték)</li>
+<li>A szöveg színét (sötétszürke)</li>
+<li>A háttérszínt (fehér)</li>
+</ul>
+<h2 id="2-header-elkészítése-float-elrendezéssel">2. Header elkészítése float elrendezéssel</h2>
+<p><img src="header.png" alt="header"></p>
+<h3 id="21-header-alap-formázása">2.1 Header alap formázása</h3>
+<p>A header elem számára:</p>
+<ul>
+<li>Adj alsó szegélyt, ami 3 pixel vastag és arany színű (a sárga árnyalata: <code>#f4c430</code>)</li>
+<li>Adj belső térközt felül-alul (15 pixel körül)</li>
+<li><strong>Kritikus:</strong> Állítsd be a <code>display</code> tulajdonságát <code>flow-root</code> értékre, hogy a benne lebegő elemek ne &quot;lógjanak ki&quot; belőle</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Miért kell a flow-root?</strong> Amikor float-okat használsz, azok &quot;kikerülnek&quot; a normál dokumentumfolyamból. A flow-root biztosítja, hogy a konténer magassága igazodjon a float elemekhez.</p>
+</div>
+<h3 id="22-header-konténer-szélesség-korlátozás">2.2 Header konténer (szélesség korlátozás)</h3>
+<p>Most szükségünk van egy osztályra a header-en belüli div számára, hogy korlátozhassuk a szélességet és középre igazíthassuk.</p>
+<p><strong>Először:</strong> Adj egy <code>header-container</code> osztályt a header-en belüli első div-nek a HTML-ben.</p>
+<p><strong>Ezután a CSS-ben:</strong> Erre az osztályra írj szabályt:</p>
+<ul>
+<li>Maximális szélességet állíts be (1200 pixel)</li>
+<li>Középre igazítás: használd a margin tulajdonságot 0 értékkel felül-alul, és auto értékkel oldalt</li>
+</ul>
+<h3 id="23-logó-formázása">2.3 Logó formázása</h3>
+<p>A RUBICON ONLINE linkre külön formázást szeretnénk.</p>
+<p><strong>Először:</strong> Adj egy <code>logo</code> osztályt ennek a linknek a HTML-ben.</p>
+<p><strong>Ezután a CSS-ben:</strong> A logó link számára:</p>
+<ul>
+<li><strong>Float-old balra!</strong> Ez az első lebegő elem.</li>
+<li>Nagyobb betűméret (25-30 pixel körül)</li>
+<li>Vastag betű</li>
+<li>Arany szín (<code>#f4c430</code>)</li>
+<li>Távolítsd el az alapértelmezett link aláhúzást</li>
+<li>Adj jobb oldali margót, hogy ne érjen hozzá a mellette lévő elemhez (20 pixel)</li>
+</ul>
+<p>A logón belüli span elem (ami az &quot;ONLINE&quot; szót tartalmazza) legyen más színű:</p>
+<ul>
+<li>Legyen sötétszürke</li>
+<li>Normál betűvastagság (nem vastag)</li>
+</ul>
+<h3 id="24-navigáció-pozicionálása">2.4 Navigáció pozicionálása</h3>
+<p>A nav elem is lebegjen balra, így a logó mellé kerül. Ehhez:</p>
+<ul>
+<li>Float balra</li>
+<li>Adj belső térközt felül-alul, hogy függőlegesen középen legyen (8 pixel)</li>
+<li>Állítsd be a sormagasságot is a logóéhoz hasonlóra (28 pixel körül)</li>
+</ul>
+<p>A nav-on belüli linkek számára:</p>
+<ul>
+<li>Legyenek inline-block elemek</li>
+<li>Távolítsd el az aláhúzást</li>
+<li>Adj oldalsó margót, hogy szép távolság legyen közöttük (8-10 pixel)</li>
+<li>Színük legyen sötétszürke</li>
+</ul>
+<h3 id="25-jobb-oldali-elemek-misc">2.5 Jobb oldali elemek (misc)</h3>
+<p>Most a header jobb oldalán lévő elemekre van szükségünk (ELŐFIZETÉS gomb, keresés, nyelv).</p>
+<p><strong>Először:</strong> Adj egy <code>misc</code> osztályt annak a div-nek, amely ezeket az elemeket tartalmazza.</p>
+<p><strong>Ezután a CSS-ben:</strong> Ez a div:</p>
+<ul>
+<li><strong>Float-old jobbra!</strong> Ez kerül a másik oldalra.</li>
+<li>Adj belső térközt (8 pixel felül-alul, 20 pixel oldalt)</li>
+</ul>
+<p>A benne lévő linkeknek:</p>
+<ul>
+<li>Távolítsd el az aláhúzást</li>
+<li>Sötétszürke szín</li>
+</ul>
+<h3 id="26-előfizetés-gomb-kiemelése">2.6 Előfizetés gomb kiemelése</h3>
+<p>Az ELŐFIZETÉS link legyen gomb kinézetű.</p>
+<p><strong>Először:</strong> Adj egy <code>subscribe</code> osztályt az ELŐFIZETÉS linknek.</p>
+<p><strong>Ezután a CSS-ben:</strong></p>
+<ul>
+<li>Sötétszürke szöveg és keret (2 pixel vastag, tömör vonal)</li>
+<li>Belső térköz a szöveg körül (8-10 pixel)</li>
+<li>Vastag betű</li>
+<li>Hover állapotban: arany háttérszín (használd a <code>:hover</code> pszeudo-osztályt!)</li>
+</ul>
+<h2 id="3-main-tartalom-kétoszlopos-elrendezése-float-tal">3. Main tartalom kétoszlopos elrendezése float-tal</h2>
+<p><img src="main.png" alt="main"></p>
+<h3 id="31-a-main-elem-és-szélesség-beállítása">3.1 A main elem és szélesség beállítása</h3>
+<p>A main elemet most float-okkal fogod két oszlopra osztani, így az article és az aside egymás mellé kerül.</p>
+<p>Állítsd be a main elemre:</p>
+<ul>
+<li>Maximális szélesség (1200 pixel)</li>
+<li>Középre igazítás (margin auto oldalt)</li>
+<li>Felső margó (40 pixel)</li>
+<li><strong>Display: flow-root</strong> - ez biztosítja, hogy a main elem magassága igazodjon a benne lebegő elemekhez (article és aside)</li>
+</ul>
+<h3 id="32-article-pozicionálása">3.2 Article pozicionálása</h3>
+<p>Az article elemet balra kell lebegtetni. Ehhez:</p>
+<ul>
+<li><strong>Float balra</strong></li>
+<li>Szélesség beállítása: ezt okosan kell kiszámolni. Ha az aside 300 pixel széles lesz, és szeretnénk közéjük 40 pixel térközt, akkor az article-nek a maradék helyet kell elfoglalnia.
+<ul>
+<li><strong>Első megoldás (egyszerűbb):</strong> Adj meg körülbelül 70% szélességet</li>
+<li><strong>Második megoldás (pontosabb):</strong> Használd a <code>calc()</code> függvényt: a teljes szélességből (100%) vonj ki 300 pixelt (aside) és 40 pixelt (gap), tehát: <code>calc(100% - 340px)</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Melyiket válaszd?</strong> A calc() pontosabb, de ha egyszerűbb megoldást szeretnél, a 70% is jól működik (ebben az esetben az aside majd &quot;kiszorítja&quot; a helyét).</p>
+<h3 id="33-aside-pozicionálása">3.3 Aside pozicionálása</h3>
+<p>Az aside elemet jobbra kell lebegtetni:</p>
+<ul>
+<li><strong>Float jobbra</strong></li>
+<li>Fix szélesség: 300 pixel</li>
+</ul>
+<h3 id="34-mi-történik">3.4 Mi történik?</h3>
+<p>Amikor mindkét elem float-ol (egyik balra, másik jobbra), akkor:</p>
+<ul>
+<li>Az article elfoglalja a bal oldalt (a megadott szélességgel)</li>
+<li>Az aside a jobb oldalra kerül (300 pixel szélességgel)</li>
+<li>A köztük lévő hely automatikusan térközként fog működni, ha jól számoltad ki a szélességeket</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Ha az article szélességét 70%-ra állítod, akkor automatikusan marad 30% az aside-nak és a térköznek. Ha az aside 300px és a main max-width 1200px, akkor 300px az 25%, így marad 5% térköz (ami 60 pixel 1200px szélesség esetén).</p>
+</div>
+<p><strong>Ha calc()-ot használsz:</strong> Az article pontosan annyi helyet foglal, amennyi marad az aside és a gap után, így garantáltan jól fog kinézni.</p>
+<h3 id="35-tesztelés">3.5 Tesztelés</h3>
+<p>Miután beállítottad mindkét float-ot:</p>
+<ul>
+<li>Ellenőrizd, hogy az article és aside egymás mellett vannak-e</li>
+<li>Ha az aside &quot;lecsúszik&quot; az article alá, akkor valószínűleg az article túl széles (csökkentsd a szélességét)</li>
+<li>Ha túl nagy a rés közöttük, csökkentsd az article szélességét</li>
+<li>Ha túl kicsi a rés, növeld az article szélességét vagy adj neki jobb oldali margót</li>
+</ul>
+<p><strong>Alternatív megoldás térköz létrehozására:</strong>
+Ahelyett, hogy a szélességekkel játszanál, adhatsz az article-nek jobb oldali margót (40 pixel), és akkor az article szélessége lehet <code>calc(100% - 340px)</code> vagy akár fix pixel érték is (pl. 860px, ha 1200px - 300px - 40px = 860px).</p>
+<h2 id="4-cikk-fejléc-és-meta-információk">4. Cikk fejléc és meta információk</h2>
+<h3 id="41-főcím-h1-és-alcím-h2">4.1 Főcím (h1) és alcím (h2)</h3>
+<p>Az article-n belüli címek formázásához használj gyerek szelektort: <code>main &gt; article &gt; h1</code> és <code>main &gt; article &gt; h2</code></p>
+<p><strong>A főcím (h1) számára:</strong></p>
+<ul>
+<li>Nagy betűméret (40-45 pixel)</li>
+<li>Vastag betű</li>
+<li>Alsó margó (10 pixel)</li>
+<li>Csökkentett sormagasság (1.2 körül), hogy a többsoros címek ne legyenek túl széttartva</li>
+</ul>
+<p><strong>Az alcím (h2) számára:</strong></p>
+<ul>
+<li>Közepes betűméret (20 pixel körül)</li>
+<li>Normál betűvastagság</li>
+<li>Alsó térköz (15 pixel) és alsó szegély (arany, 3 pixel vastag)</li>
+<li>Halványabb szín (világosszürke, <code>#666</code>)</li>
+</ul>
+<h3 id="42-meta-információs-sáv">4.2 Meta információs sáv</h3>
+<p>A meta információkat (ingyen olvasható, 16 perc olvasás, share gombok) tartalmazó div-nek szüksége van formázásra.</p>
+<p><strong>Először:</strong> Adj egy <code>meta</code> osztályt ennek a div-nek.</p>
+<p><strong>Ezután a CSS-ben:</strong></p>
+<ul>
+<li>Alsó szegély (vékony, 1 pixel, világosszürke <code>#ddd</code>)</li>
+<li>Flow-root display (mert benne float elemek lesznek)</li>
+<li>Felső és alsó margó (15 pixel)</li>
+<li>Felső és alsó belső térköz (15 pixel)</li>
+<li>Szürke szövegszín (#<code>666</code>)</li>
+<li>Állítsd be a sormagasságot is (35 pixel), hogy a gombok szépen igazodjanak</li>
+</ul>
+<p>A meta div-en belüli span elemek:</p>
+<ul>
+<li>Jobb oldali margó, hogy szép távolság legyen közöttük (25 pixel)</li>
+</ul>
+<h3 id="43-share-gombok">4.3 Share gombok</h3>
+<p>A share gombok (f és 🔗) jobbra kell kerüljenek a sávban.</p>
+<p><strong>Először:</strong> Adj egy <code>share</code> osztályt a share gombokat tartalmazó div-nek.</p>
+<p><strong>Ezután a CSS-ben:</strong> Ez a div:</p>
+<ul>
+<li>Float jobbra, hogy a sáv jobb oldalára kerüljön</li>
+</ul>
+<p>A share div-en belüli linkek:</p>
+<ul>
+<li>Inline-block megjelenítés</li>
+<li>Fix szélesség és magasság (35-35 pixel, azaz négyzet alakúak)</li>
+<li>Középre igazított szöveg</li>
+<li>Szegély (1 pixel, sötétszürke)</li>
+<li>A sor magasságát állítsd a magassággal megegyezőre (35 pixel), így a tartalom függőlegesen középen lesz</li>
+<li>Távolítsd el az aláhúzást</li>
+<li>Sötétszürke szín</li>
+</ul>
+<h2 id="5-szöveges-tartalom-formázása">5. Szöveges tartalom formázása</h2>
+<h3 id="51-bekezdések">5.1 Bekezdések</h3>
+<p>A section-ökön belüli bekezdések formázására használd a <code>section &gt; p</code> szelektort:</p>
+<ul>
+<li>Felső és alsó margó (20 pixel)</li>
+<li>Sorkizárt szöveg (így lesz szépen megtöltve a teljes szélesség, használd a <code>text-align</code> tulajdonságot)</li>
+<li>Kissé megnövelt betűméret (17-18 pixel) a jobb olvashatóság érdekében</li>
+</ul>
+<h3 id="52-szakasz-címek-h3">5.2 Szakasz címek (h3)</h3>
+<p>A section-ökön belüli h3 címekre (<code>section &gt; h3</code>):</p>
+<ul>
+<li>Piros szín (<code>#d32f2f</code>)</li>
+<li>Közepes betűméret (24 pixel)</li>
+</ul>
+<h2 id="6-kép-lebegtetése-float-tal">6. Kép lebegtetése float-tal</h2>
+<p><img src="float.png" alt="float"></p>
+<h3 id="61-általános-kép-beállítások">6.1 Általános kép beállítások</h3>
+<p>Az img elemek számára:</p>
+<ul>
+<li>Fix szélesség (300 pixel)</li>
+<li>Auto magasság (megtartja az arányt)</li>
+</ul>
+<h3 id="62-figure-elem-pozicionálása">6.2 Figure elem pozicionálása</h3>
+<p>Itt jön a varázslat! A figure elemet balra fogod lebegtetni, így a szöveg jobbra folytatódik mellette.</p>
+<p>A figure elem számára:</p>
+<ul>
+<li><strong>Float balra!</strong></li>
+<li>Fix szélesség (300 pixel, a képével megegyező)</li>
+<li>Sorkizárt szöveg (a képaláírás számára)</li>
+<li><strong>Jobb oldali margó (20 pixel)</strong> - ez a kulcs, hogy a szöveg ne érjen hozzá a képhez</li>
+<li>Kis betűméret a képaláíráshoz (12 pixel)</li>
+</ul>
+<p><strong>Mi történik?</strong> A float miatt a kép kikerül a normál folyamból, és a szöveg &quot;körülölelje&quot; jobbról és alulról.</p>
+<p><strong>Próbáld ki:</strong> Ha később kiveszed a float-ot, látni fogod, hogy a kép &quot;elfoglalja&quot; a teljes sort, és a szöveg csak alatta folytatódik.</p>
+<h2 id="7-szerző-doboz-formázása">7. Szerző doboz formázása</h2>
+<h3 id="71-szerző-konténer">7.1 Szerző konténer</h3>
+<p>A szerző információit tartalmazó doboznak szüksége van stílusra.</p>
+<p><strong>Először:</strong> Adj egy <code>author</code> osztályt az aside-on belüli div-nek.</p>
+<p><strong>Ezután a CSS-ben:</strong></p>
+<ul>
+<li>Halvány sárga háttérszín (<code>#fffaeb</code>)</li>
+<li>Belső térköz (20 pixel)</li>
+<li>Középre igazított szöveg</li>
+</ul>
+<h3 id="72-szerző-címe">7.2 Szerző címe</h3>
+<p>Az author osztályon belüli h3 számára (<code>.author h3</code>):</p>
+<ul>
+<li>Nagyobb betűméret (24 pixel)</li>
+<li>Vastag betű</li>
+</ul>
+<h3 id="73-szerző-képe">7.3 Szerző képe</h3>
+<p>Az author osztályon belüli img számára:</p>
+<ul>
+<li><strong>Kör alakú:</strong> használd a border-radius tulajdonságot 50%-os értékkel!</li>
+<li>Fix szélesség (100 pixel)</li>
+<li>Auto magasság</li>
+<li>Felső és alsó margó (20 pixel)</li>
+</ul>
+<h3 id="74-szerző-neve-és-linkek">7.4 Szerző neve és linkek</h3>
+<p>A szerző neve (p elem az author-on belül):</p>
+<ul>
+<li>Vastag betű</li>
+<li>Nagyobb betűméret (20 pixel)</li>
+</ul>
+<p>A linkek az author-on belül:</p>
+<ul>
+<li>Block megjelenítés (így minden link új sorban lesz)</li>
+<li>Nincs aláhúzás</li>
+<li>Sötétszürke szín</li>
+</ul>
+<h2 id="ellenőrzési-lista">Ellenőrzési lista</h2>
+<ul>
+<li>[ ] Van univerzális reset (*-os szabály)?</li>
+<li>[ ] A body alap stílusai be vannak állítva?</li>
+<li>[ ] A header-nek van arany alsó szegélye?</li>
+<li>[ ] A header <code>display: flow-root</code> tulajdonsággal rendelkezik?</li>
+<li>[ ] Van <code>header-container</code> osztály a HTML-ben és CSS-ben?</li>
+<li>[ ] A logó balra float-ol, arany színű, és van jobb margója?</li>
+<li>[ ] A navigáció is balra float-ol?</li>
+<li>[ ] A <code>misc</code> osztályú div jobbra float-ol?</li>
+<li>[ ] Van <code>subscribe</code> osztály az ELŐFIZETÉS gombnak?</li>
+<li>[ ] Az ELŐFIZETÉS gombnak van hover effektje?</li>
+<li>[ ] A main Grid elrendezésű, két oszloppal (1fr 300px)?</li>
+<li>[ ] A címek megfelelően formázottak?</li>
+<li>[ ] Van <code>meta</code> osztály és szépen néz ki a meta sáv?</li>
+<li>[ ] Van <code>share</code> osztály és a share gombok jobbra vannak?</li>
+<li>[ ] A figure balra float-ol és van jobb margója?</li>
+<li>[ ] A szöveg körülfolyja a képet?</li>
+<li>[ ] Az aside a második oszlopban jelenik meg automatikusan?</li>
+<li>[ ] Van <code>author</code> osztály az aside-on belüli div-en?</li>
+<li>[ ] A szerző képe kör alakú?</li>
+<li>[ ] Az oldal hasonlít a referenciaképre?</li>
+</ul>
+<h2 id="megoldás-feltöltése">Megoldás feltöltése</h2>
+<p>Töltsd fel a kész <code>rubicon_article_styled.html</code> fájlt a Moodle-re.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/gyak-feladat/szechenyi/05-szechenyi.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -437,30 +437,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "contents/week04/04-kepek.md",
-      "output": {
-        ".html": {
-          "relative_path": "contents/week04/04-kepek.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "contents/week04/04-szinek.md",
       "output": {
         ".html": {
           "relative_path": "contents/week04/04-szinek.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
-      "source_relative_path": "contents/week04/GoldenGateBridge-001.jpg",
-      "output": {
-        "resource": {
-          "relative_path": "contents/week04/GoldenGateBridge-001.jpg"
         }
       },
       "version": ""
@@ -497,16 +477,6 @@
     },
     {
       "type": "Resource",
-      "source_relative_path": "contents/week04/city.jpg",
-      "output": {
-        "resource": {
-          "relative_path": "contents/week04/city.jpg"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Resource",
       "source_relative_path": "contents/week04/css-box-model.png",
       "output": {
         "resource": {
@@ -526,11 +496,11 @@
       "version": ""
     },
     {
-      "type": "Resource",
-      "source_relative_path": "contents/week04/street.jpg",
+      "type": "Conceptual",
+      "source_relative_path": "contents/week05/05-kepek.md",
       "output": {
-        "resource": {
-          "relative_path": "contents/week04/street.jpg"
+        ".html": {
+          "relative_path": "contents/week05/05-kepek.html"
         }
       },
       "version": ""
@@ -541,6 +511,126 @@
       "output": {
         ".html": {
           "relative_path": "contents/week05/05-tablazatok.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/GoldenGateBridge-001.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/GoldenGateBridge-001.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/city.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/city.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/05-szechenyi.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/05-szechenyi.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/csorba.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/csorba.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/float.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/float.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/header.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/header.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/main.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/main.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/rubicon-screenshot.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/rubicon-screenshot.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/style.css",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/style.css"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/szechenyi/szechenyi.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/szechenyi/szechenyi.jpg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/hero.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/hero.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/street.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/street.jpg"
         }
       },
       "version": ""
