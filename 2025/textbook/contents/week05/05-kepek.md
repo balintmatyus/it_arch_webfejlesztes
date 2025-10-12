@@ -21,7 +21,6 @@ A kép a honlapon leginkább a törzsben használatos. Ez az `<img>` tag segíts
 <html lang="hu">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kép igazítása</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,12 +30,12 @@ A kép a honlapon leginkább a törzsben használatos. Ez az `<img>` tag segíts
 
     <p class="szovegblokk">
         <img src="./city.jpg" alt="Balra igazított kép" class="kep-bal">
-        Ez a szöveg egy **balra igazított kép** mellett jelenik meg. A CSS `float: left;` tulajdonsága a képet a szülőelem bal szélére helyezi, a szöveg pedig körülötte folytatódik a jobb oldalon. A `margin` tulajdonsággal biztosítunk elegendő térközt a kép és a szöveg között, hogy az elrendezés szellős és olvasható legyen. Ez a leggyakoribb megoldás, ha a kép egy bekezdés elején, fókuszpontként szerepel.
+        Ez a szöveg egy <strong>balra igazított kép</strong> mellett jelenik meg.
     </p>
 
     <p class="szovegblokk">
         <img src="./street.jpg" alt="Jobbra igazított kép" class="kep-jobb">
-        Ez a szöveg egy **jobbra igazított kép** mellett látható. A `float: right;` utasítás a képet a tároló jobb szélére tolja, a szöveg pedig a bal oldalán folyik körbe. Ez a technika akkor hasznos, ha a kép egy gondolatot illusztrál vagy zár le anélkül, hogy megtörné az olvasás folyamatát. A kép és a szöveg közötti távolságot itt is a `margin` segítségével állítjuk be.
+        Ez a szöveg egy <strong>jobbra igazított kép</strong> mellett látható.
     </p>
 
 </body>
@@ -75,9 +74,13 @@ body {
 }
 ```
 
+A `float` tulajdonság segítségével egy elemet a tartalmazó doboz bal vagy jobb oldalához igazíthatunk, lehetővé téve, hogy a szöveg és más elemek körbevegyék. Eredetileg képek szöveg melletti elhelyezésére találták ki, de sokáig weboldalak több hasábos elrendezésének készítésére is használták. A `float` használatakor az elem kikerül a normál dokumentumfolyamból, ami azt jelenti, hogy a szülőelem "nem látja" a magasságát, és ez elrendezési problémákat okozhat.
+
+A `.szovegblokk` CSS szabály erre a problémára nyújt egy modern és egyszerű megoldást. Az `overflow: auto;` létrehoz egy új "blokk formázási kontextust" (block formatting context). Ennek egyik mellékhatása, hogy a szülőelem (`.szovegblokk`) kénytelen lesz magába foglalni a benne elhelyezett `float`-olt elemeket is, így azok már nem "lógnak ki" belőle, és a szülőelem felveszi a megfelelő magasságot.
+
 ## Képek méretezése
 
-Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. `width: 100px; height: 100px`) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár *MS Paint*). A weben leginkább használható képfájl típusok: **gif, jpg, png, webp**.
+Figyelnünk kell azonban arra is, hogy a képek ne legyenek nagy méretűek. Előfordulhat, ha a kép sokáig tölt be, akkor a látogató  elhagyja az oldalt (különösen gyenge térerő mellett mobilon). A CSS átméretező tulajdonságai (pl. `width: 100px; height: 100px`) nem az eredeti kép méretét változtatja meg, hanem a megjelenítés módját. Ha a képeket más méretben szeretnénk használni, mint az eredeti mérete, akkor érdemes azt előtte egy képszerkesztő programmal átméretezni (akár *MS Paint*). A weben leginkább használható képfájl típusok: **jpg, png, webp, gif**.
 
 A képek méretét a CSS `width` (szélesség) és `height` (magasság) tulajdonságaival szabályozhatjuk. Ezek az értékek megadhatók pixelben (`px`), százalékban (`%`), vagy más, a szülőelemhez vagy a képernyőmérethez viszonyított relatív mértékegységben is.
 
@@ -90,7 +93,7 @@ img.logo {
 }
 ```
 
-> [!IMPORTANT]
+> [!NOTE]
 > Kritikus fontosságú, hogy általában csak az egyik méretet (a szélességet **vagy** a magasságot) állítsuk be, a másikat pedig hagyjuk `auto` értéken. Ezzel elkerülhetjük a kép torzulását, mivel a böngésző automatikusan kiszámolja a helyes arányokat. Ha mindkét értéket manuálisan adjuk meg, és azok nem felelnek meg az eredeti képarányoknak, a kép összenyomódik vagy megnyúlik.
 
 ### Százalékos, reszponzív méretezés
@@ -195,7 +198,7 @@ A közös CSS alapbeállítás a tárolóelemre:
 }
 ```
 
-### Bal felső sarki szöveg
+### Bal felső sarki szöveg (ismétlés)
 
 A szöveget a tároló bal felső sarkához igazítjuk a `top` és `left` tulajdonságokkal. Egy kis `padding` (belső margó) hozzáadásával elkerülhetjük, hogy a szöveg teljesen a kép szélére tapadjon.
 
@@ -214,24 +217,6 @@ A szöveget a tároló bal felső sarkához igazítjuk a `top` és `left` tulajd
 
 img {
     width: 100%;
-}
-```
-
-### Jobb alsó sarki szöveg
-
-Hasonlóan az előzőhöz, itt a `bottom` és `right` tulajdonságokat használjuk a szöveg pozicionálására a tároló jobb alsó sarkába.
-
-```css
-.container {
-  position: relative; /* A belső elemek ehhez képest pozícionálódnak */
-  color: white;
-  font-family: Arial, sans-serif;
-}
-
-.szoveg-jobb-also {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
 }
 ```
 

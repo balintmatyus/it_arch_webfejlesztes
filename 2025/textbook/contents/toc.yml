@@ -44,23 +44,21 @@
     href: week04/04-dobozmodell.md
   - name: 💡 Elrendezés
     href: week04/04-elrendezes.md
-  - name: 💡 Képek
-    href: week04/04-kepek.md
   - name: 🛠 Dobozmodell gyak.
     href: week04/04-dobozmodell-gyak.md
   - name: 🛠 Elrendezés gyak.
     href: week04/04-elrendezes-gyak.md
 - name: 5. hét
   items:
+  - name: 💡 Képek
+    href: week05/05-kepek.md
   - name: 💡 Táblázatok formázása
     href: week05/05-tablazatok.md
-  - name: 💡 Reszponzív design
-    href: todo.md #week05/05-css-basics.md
-  - name: 🛠 Gyakorló feladatok
-    href: todo.md
+  - name: 🛠 Komplex feladat (Rubicon)
+    href: week05/gyak-feladat/szechenyi/05-szechenyi.md
 - name: 6. hét
   items:
-  - name: 💡 Komplex CSS feladat
+  - name: 💡 Reszponzív design
     href: todo.md
   - name: 🛠 Gyakorló feladatok
     href: todo.md
