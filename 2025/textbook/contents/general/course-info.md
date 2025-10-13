@@ -67,11 +67,11 @@ A kurzus két, egymástól független fő blokkból áll:
 ### Webfejlesztés blokk (1-12. hét)
 
  1. Internet és HTML alapok
- 2. HTML5 szemantikus elemek és verziókezelés
- 3. Felhasználói felületek tervezése I.
- 4. Felhasználói felületek tervezése II.
- 5. CSS
- 6. Reszponzív felületek Flexbox segítségével
+ 2. HTML5 szemantikus elemek
+ 3. CSS: Szelektorok, mértékegységek és szövegek formázása
+ 4. CSS: Dobozmodell és elrendezés
+ 5. CSS: Képek és táblázatok
+ 6. CSS: Reszponzív felületek tervezése
  7. JavaScript: Programozási alapok
  8. JavaScript: Tömbök és objektumok
  9. JavaScript: DOM elérése és eseménykezelés
@@ -85,8 +85,8 @@ A kurzus két, egymástól független fő blokkból áll:
  2. Szöveg-, dátum- és logikai függvények
  3. Adatvizualizáció, Feltételes formázás, Kereső függvények, validálás
  4. Táblázat, Kimutatás, Dashboard
- 5. Szűrések, komplex feladat
- 6. **Első zárthelyi (15 pont)**
+ 5. **Első zárthelyi (15 pont)**
+ 6. *október 23. nincs óra*
  7. Adatelemzés és vizualizáció (csoportos beadandó 5 pont)
  8. Pénzügyi függvények
  9. Célértékkeresés, Solver
