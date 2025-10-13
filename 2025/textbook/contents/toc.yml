@@ -1,5 +1,7 @@
 - name: Tantárgy leírása és követelmények
   href: general/course-info.md
+- name: Beadandó követelmények
+  href: general/beadando.md
 - name: 1. hét	
   items:
   - name: 💡 Hogyan működik a web?
