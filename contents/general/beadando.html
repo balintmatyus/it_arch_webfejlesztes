@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/general/beadando.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<h3 id="a-beadandó-feladat-áttekintése">A beadandó feladat áttekintése</h3>
+<p>A feladat egy <strong>35 pont</strong> értékű, egyénileg készített weboldal létrehozása HTML, CSS és JavaScript technológiák használatával. A weboldalnak egy szabadon választott, nem megosztó témát kell feldolgoznia. A projekt célja a modern webfejlesztési technikák gyakorlati alkalmazásának bemutatása, különös tekintettel a reszponzív kialakításra és az interaktív elemekre. 👨‍💻</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Határidő: <strong>2025.december 7. (vasárnap) 23:55</strong></p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A beadandó hamarabb is beadható és bemutatható gyakorlatokon. Konzultációra is van lehetőség igény szerint, egyeztetés alapján.</p>
+</div>
+<h3 id="technikai-és-szerkezeti-követelmények">Technikai és szerkezeti követelmények</h3>
+<ul>
+<li><strong>Technológiák:</strong> A weboldalt kötelezően <strong>HTML és CSS</strong> nyelveken kell megírni. A funkcionalitást <strong>natív JavaScript</strong> segítségével kell megvalósítani. Használható harmadik féltől származó js könyvtár, azonban el ezt az <code>olvassel.txt</code>-ben jelezni kell, valamint el kell tudni magyarázni működését röviden.</li>
+<li><strong>Oldalszerkezet:</strong> A weboldalnak minimum <strong>4, maximum 8 oldalból</strong> kell állnia. A navigációnak egyszerűnek és következetesnek kell lennie, hogy bármelyik oldalról bármelyik másikra könnyen el lehessen jutni.</li>
+<li><strong>Reszponzivitás:</strong> Az oldalnak teljes mértékben reszponzívnak kell lennie. A kialakításhoz a modern CSS eszközöket, mint a <strong>Flexbox, a Grid és a media query-ket</strong> kell használni. A lényeg a megfelelő megjelenés különböző képernyőméreteken.</li>
+<li><strong>Kódminőség:</strong> A kódnak &quot;tisztának&quot;, formázottnak és a <strong>HTML5 szabvány szerint validáltnak</strong> kell lennie. <a href="https://validator.w3.org/">HTML validátor</a></li>
+<li><strong>Fájlstruktúra:</strong> A projekt fájljait (CSS, JS, képek stb.) értelemszerűen rendezett almappákba kell szervezni.</li>
+<li><strong>Stíluslap:</strong> A formázást elsősorban egyetlen külső CSS fájllal kell megoldani.</li>
+<li><strong>Metaadatok:</strong> A <code>&lt;title&gt;</code> és a <code>&lt;meta&gt;</code> tageket (karakterkódolás, szerző, leírás) helyesen ki kell tölteni. Emellett egyedi <strong>favicont</strong> is kell használni.</li>
+<li><strong>Betűtípus:</strong> Kötelező egyedi vagy Google Web Font betűtípust alkalmazni.</li>
+</ul>
+<h3 id="kötelező-tartalmi-elemek-és-pontozás-35-pont">Kötelező tartalmi elemek és pontozás (35 pont)</h3>
+<ol>
+<li><p><strong>Űrlap validálással (10 pont):</strong></p>
+<ul>
+<li>Legalább egy oldalon kell lennie egy űrlapnak, amely <strong>minimum 7 különböző típusú</strong> beviteli mezőt tartalmaz.</li>
+<li>Minden űrlap elemnél kötelező a <code>&lt;label&gt;</code> tag használata a felhasználóbarát kialakítás érdekében.</li>
+<li>Az űrlap validálását (legalább 5 mezőre) <strong>natív JavaScript</strong> vagy egy választott <strong>keretrendszer</strong> segítségével kell megvalósítani. A kódnak egyedi, a tanultakon alapuló megoldásnak kell lennie.</li>
+</ul>
+</li>
+<li><p><strong>Saját interaktív program (8 pont):</strong></p>
+<ul>
+<li>Az oldalon lennie kell egy összetettebb, saját, &quot;kézzel írt&quot; programnak, ami <strong>nem validálási célt szolgál</strong>.</li>
+<li>Ez lehet például egy interaktív fotóalbum, egy a weboldal témájához illeszkedő kalkulátor, egy egyszerű játék, vagy bármilyen kreatív, interaktív elem, amely megvalósítható natív JavaScripttel vagy egy keretrendszerrel is.</li>
+<li>A programnak illeszkednie kell a weboldal témájához, és nem lehet &quot;minimalista&quot;. A kódot külön fájlba kell szervezni.</li>
+</ul>
+</li>
+<li><p><strong>Reszponzivitás és GitHub (10 pont):</strong></p>
+<ul>
+<li>A teljes oldalnak hibátlanul reszponzívnak kell lennie (5 pont).</li>
+<li>A kész weboldalnak a megadott URL-en (pl. GitHub Pages) hibátlanul kell működnie (5 pont).</li>
+</ul>
+</li>
+<li><p><strong>Egyéb követelmények (7 pont):</strong></p>
+<ul>
+<li>Kód tisztasága és validálása (3 pont).</li>
+<li>Fájlok mappákba rendezése (1 pont).</li>
+<li>Helyes metaadatok (1 pont).</li>
+<li>Favicon használata (1 pont).</li>
+<li>Egyedi font használata (1 pont).</li>
+</ul>
+</li>
+</ol>
+<h3 id="leadás-és-etikai-irányelvek">Leadás és etikai irányelvek</h3>
+<ul>
+<li><p><strong>Leadási formátum:</strong> A kész munkát <code>VezeteknevKeresztnev.zip</code> néven kell feltölteni a Moodle rendszerbe.</p>
+</li>
+<li><p><strong><code>olvassel.txt</code> fájl:</strong> A projekt gyökérkönyvtárában el kell helyezni egy <code>olvassel.txt</code> fájlt, amely a következőket tartalmazza:</p>
+<ul>
+<li>A készítő neve.</li>
+<li>A működő weboldal URL címe.</li>
+<li>A weboldal témájának rövid, 2 mondatos leírása.</li>
+<li>A saját JavaScript kód helyének és működésének leírása.</li>
+<li>A használt egyedi fonttípus és annak helye.</li>
+<li>Minden felhasznált külső forrás (kódrészlet, segítség) pontos megjelölése.</li>
+</ul>
+</li>
+<li><p><strong>Határidő:</strong> A határidőn túli leadás naponta <strong>10 pont levonással</strong> jár.</p>
+</li>
+<li><p><strong>Védés és plágium:</strong> 📜</p>
+<ul>
+<li>A beadandót személyesen be kell mutatni (&quot;megvédeni&quot;) az oktatónak, aki célzott kérdésekkel ellenőrzi, hogy a munka a hallgató saját alkotása-e.</li>
+<li><strong>A mesterséges intelligencia (pl. ChatGPT) által generált kód felhasználása megengedett, de csak abban az esetben, ha a hallgató a védés során maradéktalanul el tudja magyarázni a generált kód működését.</strong></li>
+<li>Amennyiben a hallgató nem érti a saját maga által beadott (akár külső segítséggel vagy AI-val készített) kódot, az plágiumnak minősül, az adott részre <strong>nem jár pont</strong>, és súlyosabb esetben etikai eljárást von maga után.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/general/beadando.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

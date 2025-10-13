@@ -4,6 +4,16 @@
   "files": [
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/general/beadando.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/general/beadando.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/general/course-info.md",
       "output": {
         ".html": {
