@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Reszponz&#237;v portf&#243;li&#243; oldal | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Reszponz&#237;v portf&#243;li&#243; oldal | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-gyakorlo.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="reszponzív-portfólió-oldal">Reszponzív portfólió oldal</h1>
+
+<h2 id="célkitűzés">Célkitűzés</h2>
+<p>Egy egyszerű, reszponzív portfólió oldal elkészítése, amely mobilon egyoszlopos, tableten kétoszlopos, asztali nézetben pedig háromoszlopos elrendezést használ. A feladat során gyakorolhatod a mobile-first megközelítést, a Flexbox használatát és a media query-k alkalmazását.</p>
+<p><img src="portfolio.png" alt="Portfólió referencia"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Ne feledd:</strong> A cél a tanulás és a gyakorlás. Az oldal nem kell pixel-pontosan hasonlítson a referenciára, a lényeg az alapelvek helyes alkalmazása.</p>
+</div>
+<h2 id="kiindulási-fájlok">Kiindulási fájlok</h2>
+<p>Töltsd le a <code>portfolio_alap.html</code> fájlt a Moodle-ről! Ez tartalmazza az oldal HTML vázát, de még nincsenek rajta osztálynevek és formázások.</p>
+<h2 id="1-alapbeállítások-és-reset-mobile-first">1. Alapbeállítások és reset (Mobile First)</h2>
+<h3 id="11-univerzális-reset">1.1 Univerzális reset</h3>
+<p>Kezdd a CSS fájl létrehozásával! Az első szabály legyen az univerzális selektor, amely:</p>
+<ul>
+<li>Nullázza az összes elem margóját és paddingját</li>
+<li>Beállítja a box-sizing tulajdonságot, hogy a padding és border ne növelje meg az elemek teljes szélességét</li>
+</ul>
+<h3 id="12-body-alapstílusok">1.2 Body alapstílusok</h3>
+<p>A body elem számára állíts be:</p>
+<ul>
+<li>Egy jól olvasható, modern betűtípust (sans-serif családból)</li>
+<li>Megfelelő sortávolságot az olvashatóság érdekében (nagyobb, mint az alapértelmezett 1)</li>
+<li>Semleges, világos háttérszínt</li>
+<li>Sötét szövegszínt a jó kontraszthoz</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Mobile First koncepció:</strong> Először a legkisebb képernyőmérethez (mobilhoz) írjuk meg a stílusokat, majd media query-kkel fokozatosan bővítjük nagyobb képernyőkhöz. Ez biztosítja, hogy minden eszközön működjön az oldal.</p>
+</div>
+<h2 id="2-header-elkészítése">2. Header elkészítése</h2>
+<h3 id="21-header-konténer">2.1 Header konténer</h3>
+<p>A header elem formázása:</p>
+<ul>
+<li>Add meg a háttérszínét (válassz egy jellegzetes, sötétebb tónust)</li>
+<li>Állíts be elegendő belső térközt minden irányban, hogy levegős legyen</li>
+<li>Világos színű szöveg, hogy ellentétben álljon a sötét háttérrel</li>
+</ul>
+<h3 id="22-név-és-szerepkör-formázása">2.2 Név és szerepkör formázása</h3>
+<p>A header-en belüli címsor (h1):</p>
+<ul>
+<li>Nagyobb betűméret</li>
+<li>Minimális vagy nulla margó minden irányban</li>
+<li>Esetleg csökkentett sortávolság, ha többsoros</li>
+</ul>
+<p>A második szintű címsor (h2), ami a szakmát/szerepkört jelzi:</p>
+<ul>
+<li>Kisebb betűméret, mint a név</li>
+<li>Vékonyabb betűvastagság</li>
+<li>Esetleg egy halványabb színárnyalat</li>
+</ul>
+<h3 id="23-navigáció-mobilon">2.3 Navigáció mobilon</h3>
+<p>A nav elemen belüli lista formázása:</p>
+<ul>
+<li>Távolítsd el az alapértelmezett listajelölést</li>
+<li>Távolítsd el a padding és margin értékeket</li>
+</ul>
+<p>A navigációs linkek:</p>
+<ul>
+<li>Blokk szintű megjelenítés (így egymás alatt lesznek mobilon)</li>
+<li>Távolítsd el az aláhúzást</li>
+<li>Adj hozzá belső térközt a könnyebb kattinthatóság érdekében</li>
+<li>Egyértelmű szín, ami illik a témához</li>
+<li>Opcionális: hover effekt színváltással</li>
+</ul>
+<h2 id="3-bemutatkozó-szekció-herointro">3. Bemutatkozó szekció (hero/intro)</h2>
+<h3 id="31-intro-konténer">3.1 Intro konténer</h3>
+<p>A bemutatkozó szekció formázása:</p>
+<ul>
+<li>Jelentős felső és alsó belső térköz</li>
+<li>Középre igazított szöveg</li>
+<li>Esetleg eltérő háttérszín vagy kép a vizuális hierarchia érdekében</li>
+</ul>
+<h3 id="32-profil-kép">3.2 Profil kép</h3>
+<p>Az intro-ban található kép:</p>
+<ul>
+<li>Kör alakú (használd a border-radius tulajdonságot)</li>
+<li>Korlátozott maximális szélesség, hogy ne legyen túl nagy mobilon</li>
+<li>Automatikus magasság az arány megtartásához</li>
+<li>Esetleg vékony szegély</li>
+</ul>
+<h3 id="33-bemutatkozó-szöveg">3.3 Bemutatkozó szöveg</h3>
+<p>A szekción belüli bekezdés:</p>
+<ul>
+<li>Valamivel nagyobb betűméret az olvashatóság érdekében</li>
+<li>Megfelelő margó felül-alul</li>
+</ul>
+<h2 id="4-projektek-szekció-flexbox-használata">4. Projektek szekció (Flexbox használata)</h2>
+<h3 id="41-projektek-konténer-mobil-nézet">4.1 Projektek konténer (mobil nézet)</h3>
+<p>A projektek főkonténere:</p>
+<ul>
+<li>Megfelelő belső térköz minden irányban</li>
+<li>Opcionális háttérszín vagy szegély</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Mobilon még NEM használunk Flexbox-ot, az elemek maradjanak egyszerű blokk elrendezésben egymás alatt!</p>
+</div>
+<h3 id="42-projekt-grid-wrapper">4.2 Projekt grid wrapper</h3>
+<p><strong>Először:</strong> Adj egy osztályt annak a div-nek, amely közvetlenül tartalmazza a projekt kártyákat (pl. <code>project-grid</code> vagy hasonló).</p>
+<h3 id="43-egyedi-projekt-kártya">4.3 Egyedi projekt kártya</h3>
+<p>Minden projekt kártyához (div vagy article elem) adj egy közös osztályt.</p>
+<p>Erre az osztályra írd meg:</p>
+<ul>
+<li>Háttérszín (világos, semleges)</li>
+<li>Belső térköz minden irányban</li>
+<li>Alsó margó (hogy térköz legyen a kártyák között)</li>
+<li>Opcionális: lekerekített sarkok</li>
+<li>Opcionális: finom árnyék a mélység érzékeléséhez</li>
+</ul>
+<h3 id="44-projekt-tartalom">4.4 Projekt tartalom</h3>
+<p>A projekt kártyán belüli elemek:</p>
+<ul>
+<li>A projektkép legyen teljes szélességű a kártyán belül</li>
+<li>Automatikus magasság</li>
+<li>Kis lekerekítés a sarkokon</li>
+<li>A címsor (h3) legyen hangsúlyos, megfelelő méretű</li>
+<li>A leírás (p) legyen jól olvasható, megfelelő sorközzel</li>
+</ul>
+<h2 id="5-kapcsolat-szekció">5. Kapcsolat szekció</h2>
+<h3 id="51-kapcsolat-konténer">5.1 Kapcsolat konténer</h3>
+<p>A kapcsolat szekció:</p>
+<ul>
+<li>Jelentős belső térköz</li>
+<li>Középre igazított szöveg</li>
+<li>Esetleg eltérő háttérszín</li>
+</ul>
+<h3 id="52-kapcsolati-linkek-lista">5.2 Kapcsolati linkek lista</h3>
+<p>A kapcsolati linkeket tartalmazó lista:</p>
+<ul>
+<li>Nincs listajelölés</li>
+<li>Nincs padding</li>
+<li>Az elemek egymás alatt mobilon</li>
+</ul>
+<p>Minden lista elem:</p>
+<ul>
+<li>Alsó margó az elemek szeparálásához</li>
+</ul>
+<p>A linkek:</p>
+<ul>
+<li>Nincs aláhúzás</li>
+<li>Kifejező szín</li>
+<li>Blokk szintű megjelenítés</li>
+<li>Belső térköz a kattinthatóság növelésére</li>
+<li>Hover effekt</li>
+</ul>
+<h2 id="6-footer">6. Footer</h2>
+<p>A footer elem:</p>
+<ul>
+<li>Középre igazított szöveg</li>
+<li>Belső térköz minden irányban</li>
+<li>Halványabb szövegszín</li>
+<li>Kisebb betűméret</li>
+<li>Opcionális: háttérszín vagy felső szegély</li>
+</ul>
+<h2 id="7-első-media-query---tablet-nézet">7. Első media query - Tablet nézet</h2>
+<h3 id="71-töréspont-meghatározása">7.1 Töréspont meghatározása</h3>
+<p>Most hozzáadunk egy media query-t, amely akkor lép életbe, amikor a viewport eléri vagy meghaladja a tablet méretet.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Tipp:</strong> Használj em vagy rem egységeket a töréspontokhoz! Egy jó kiindulási pont tablet nézethez kb. 40-48em (~640-768px, ha az alap betűméret 16px).</p>
+</div>
+<p><strong>Példa szerkezet:</strong></p>
+<pre><code class="lang-css">@media (min-width: [válassz egy em értéket]) {
+    /* Tablet stílusok */
+}
+</code></pre>
+<h3 id="72-navigáció-átrendezése">7.2 Navigáció átrendezése</h3>
+<p>A tablet nézettől kezdve a navigáció legyen vízszintes:</p>
+<ul>
+<li>A nav elemen állítsd be a Flexbox konténert</li>
+<li>Az elemek legyenek sorban (ez az alapértelmezett, de explicit kiírhatod)</li>
+<li>Adj térközt az elemek közé (használd a gap tulajdonságot)</li>
+<li>Esetleg igazítsd középre vagy a jobb oldalra az elemeket</li>
+</ul>
+<p>A navigációs linkek:</p>
+<ul>
+<li>Már nem blokk szintűek</li>
+<li>Megfelelő oldalsó belső térköz</li>
+</ul>
+<h3 id="73-intro-szekció-kétoszlopos-elrendezése">7.3 Intro szekció kétoszlopos elrendezése</h3>
+<p>A bemutatkozó szekcióban használj Flexbox-ot:</p>
+<ul>
+<li>Az intro konténer legyen flex konténer</li>
+<li>Állítsd be, hogy az elemek középre legyenek igazítva mindkét tengelyen</li>
+<li>Esetleg változtasd meg a flex-direction-t, ha szükséges</li>
+<li>A profil kép és a szöveg közé adj térközt</li>
+</ul>
+<h3 id="74-projektek-kétoszlopos-grid">7.4 Projektek kétoszlopos grid</h3>
+<p>Most aktiváljuk a Flexbox-ot a projekt kártyákhoz!</p>
+<p>A project-grid osztályú elemre:</p>
+<ul>
+<li>Állítsd be Flexbox konténernek</li>
+<li>Engedélyezd a sortörést (wrap)</li>
+<li>Adj térközt az elemek közé (gap tulajdonság)</li>
+</ul>
+<p>Az egyedi projekt kártyák:</p>
+<ul>
+<li>Állítsd be a flex tulajdonságot úgy, hogy kb. fele akkora szélesek legyenek, mint a konténer</li>
+<li><strong>Tipp:</strong> Ha a gap miatt nem fér ki két kártya egymás mellé, csökkentsd a flex-basis értéket (pl. 45% vagy használj calc() függvényt)</li>
+<li>Vedd ki az alsó margót (a gap kezeli a térközt)</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Flexbox vs margó:</strong> Amikor Flexbox gap-et használsz, ne használj margót az elemek szeparálására, mert duplikálódik a térköz!</p>
+</div>
+<h3 id="75-kapcsolati-linkek-sorba-rendezése">7.5 Kapcsolati linkek sorba rendezése</h3>
+<p>A kapcsolat szekció listája:</p>
+<ul>
+<li>Flexbox konténer</li>
+<li>Középre igazítva</li>
+<li>Térköz az elemek között</li>
+</ul>
+<h2 id="8-második-media-query---desktop-nézet">8. Második media query - Desktop nézet</h2>
+<h3 id="81-desktop-töréspont">8.1 Desktop töréspont</h3>
+<p>Adj hozzá egy újabb media query-t nagyobb képernyőkhöz (kb. 60-64em, ~960-1024px).</p>
+<h3 id="82-szélesség-korlátozás">8.2 Szélesség korlátozás</h3>
+<p>Több konténer számára (header konténer, intro, projektek, kapcsolat) adj meg:</p>
+<ul>
+<li>Maximális szélességet (hogy széles képernyőn ne legyen túl széthúzva a tartalom)</li>
+<li>Automatikus margót oldalt (középre igazítás)</li>
+</ul>
+<h3 id="83-navigáció-finomhangolása">8.3 Navigáció finomhangolása</h3>
+<p>A navigáció desktop nézetben:</p>
+<ul>
+<li>Esetleg a header-en belül Flexbox-szal rendezd át, hogy a név balra, a nav jobbra kerüljön</li>
+<li>Vagy használd a space-between igazítást</li>
+</ul>
+<h3 id="84-projektek-háromoszlopos-grid">8.4 Projektek háromoszlopos grid</h3>
+<p>A project-grid-nél:</p>
+<ul>
+<li>Módosítsd a projekt kártyák flex értékét úgy, hogy kb. harmad akkora szélesek legyenek</li>
+<li><strong>Tipp:</strong> 33.333% vagy calc() függvény használata a gap figyelembevételével</li>
+</ul>
+<h3 id="85-intro-szekció-finomítása">8.5 Intro szekció finomítása</h3>
+<p>Az intro szekció desktop nézetben:</p>
+<ul>
+<li>Növeld a profil kép méretét</li>
+<li>Esetleg változtasd meg az elrendezést (kép és szöveg egymás mellett)</li>
+<li>Növeld a betűméreteket</li>
+</ul>
+<h3 id="86-általános-finomítások">8.6 Általános finomítások</h3>
+<p>Desktop nézetben:</p>
+<ul>
+<li>Növeld a fő betűméretet</li>
+<li>Növeld a padding/margin értékeket (levegősebb megjelenés)</li>
+<li>Finomhangold a címek méretét</li>
+</ul>
+<h2 id="9-speciális-media-query-k-opcionális">9. Speciális media query-k (opcionális)</h2>
+<h3 id="91-tájolás-kezelése">9.1 Tájolás kezelése</h3>
+<p>Adj hozzá egy media query-t, amely reagál a tájolásra:</p>
+<ul>
+<li>Tablet álló nézetben (portrait) maradjanak a kártyák kétoszloposak</li>
+<li>Tablet fekvő nézetben (landscape) már lehessenek háromoszloposak</li>
+</ul>
+<p><strong>Példa szerkezet:</strong></p>
+<pre><code class="lang-css">@media (orientation: landscape) and (min-width: [tablet em érték]) and (max-width: [desktop em érték előtti érték]) {
+    /* Landscape specifikus stílusok */
+}
+</code></pre>
+<h3 id="92-hover-támogatás-detektálása">9.2 Hover támogatás detektálása</h3>
+<p>Adj hozzá finomabb hover effekteket azoknak, akiknek van hover képességük (egér):</p>
+<pre><code class="lang-css">@media (hover: hover) {
+    /* Hover effektek */
+}
+</code></pre>
+<p>Ebben írhatod meg:</p>
+<ul>
+<li>Projekt kártyák hover állapotát (árnyék növelése, felemelés)</li>
+<li>Navigációs linkek animált átmenetét</li>
+<li>Stb.</li>
+</ul>
+<h2 id="10-nyomtatási-nézet-opcionális">10. Nyomtatási nézet (opcionális)</h2>
+<p>Adj hozzá egy @media print szabályt:</p>
+<ul>
+<li>Rejts el elemeket, amelyek nem kellenek nyomtatáskor (navigáció, kapcsolat linkek)</li>
+<li>Állítsd át a háttérszíneket semlegesre</li>
+<li>Optimalizáld a betűméreteket</li>
+<li>Kerüld az oldaltöréseket a projekt kártyákon belül</li>
+</ul>
+<h2 id="ellenőrzési-lista">Ellenőrzési lista</h2>
+<p><strong>Alapok:</strong></p>
+<ul>
+<li>[ ] Van univerzális reset (*-os szabály)?</li>
+<li>[ ] A body alapstílusai megfelelőek?</li>
+<li>[ ] Mobile-first megközelítést követted?</li>
+</ul>
+<p><strong>Header:</strong></p>
+<ul>
+<li>[ ] A header formázott, van háttérszín és térköz?</li>
+<li>[ ] A név és szerepkör jól látható?</li>
+<li>[ ] A navigáció mobilon függőlegesen rendezett?</li>
+</ul>
+<p><strong>Intro:</strong></p>
+<ul>
+<li>[ ] A profil kép kör alakú?</li>
+<li>[ ] A szekció középre igazított?</li>
+<li>[ ] Megfelelő térköz van az elemek között?</li>
+</ul>
+<p><strong>Projektek:</strong></p>
+<ul>
+<li>[ ] Van külön osztály a projekt grid-nek és a kártyáknak?</li>
+<li>[ ] A kártyák mobilon egymás alatt vannak?</li>
+<li>[ ] A kártyák stílusosak (háttér, padding, árnyék)?</li>
+</ul>
+<p><strong>Kapcsolat és Footer:</strong></p>
+<ul>
+<li>[ ] A kapcsolat szekció formázott?</li>
+<li>[ ] A footer megfelelően néz ki?</li>
+</ul>
+<p><strong>Tablet nézet (első media query):</strong></p>
+<ul>
+<li>[ ] A navigáció vízszintesen rendezett Flexbox-szal?</li>
+<li>[ ] A projekt kártyák kétoszloposak?</li>
+<li>[ ] Flexbox gap-et használsz margó helyett?</li>
+</ul>
+<p><strong>Desktop nézet (második media query):</strong></p>
+<ul>
+<li>[ ] Van maximális szélesség korlátozás?</li>
+<li>[ ] A projekt kártyák háromoszloposak?</li>
+<li>[ ] A betűméretek és térközök nagyobbak?</li>
+</ul>
+<p><strong>Extra pontok:</strong></p>
+<ul>
+<li>[ ] Van tájolás-specifikus media query?</li>
+<li>[ ] Van hover-specifikus media query?</li>
+<li>[ ] Van nyomtatási nézet?</li>
+</ul>
+<h2 id="tippek-és-gyakori-hibák">Tippek és gyakori hibák</h2>
+<h3 id="flexbox-gap-vs-margó">Flexbox gap vs margó</h3>
+<p>❌ <strong>Rossz:</strong></p>
+<pre><code class="lang-css">.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.project-card {
+    margin: 10px; /* Ez duplázza a térközt */
+}
+</code></pre>
+<p>✅ <strong>Jó:</strong></p>
+<pre><code class="lang-css">.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Egy helyen kezeld a térközt */
+}
+.project-card {
+    /* Nincs margó */
+}
+</code></pre>
+<h3 id="flex-méretezés-számítása">Flex méretezés számítása</h3>
+<p>Ha 2 oszlopot szeretnél gap-pel:</p>
+<pre><code class="lang-css">.project-card {
+    flex: 1 1 calc(50% - 10px); /* Ha a gap 20px, akkor oszd ketté */
+}
+</code></pre>
+<p>Vagy egyszerűbben:</p>
+<pre><code class="lang-css">.project-card {
+    flex: 1 1 45%; /* Kisebb érték, ami biztosan elfér */
+}
+</code></pre>
+<h3 id="media-query-sorrend">Media query sorrend</h3>
+<p>Mindig növekvő sorrendben írd a töréspontokat:</p>
+<pre><code class="lang-css">/* Mobil (alap, nincs media query) */
+
+@media (min-width: 48em) {
+    /* Tablet */
+}
+
+@media (min-width: 64em) {
+    /* Desktop */
+}
+</code></pre>
+<h2 id="megoldás-feltöltése">Megoldás feltöltése</h2>
+<p>Töltsd fel a kész <code>portfolio_styled.html</code> és <code>style.css</code> fájlokat a Moodle-re!</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p><strong>Tesztelés:</strong> A böngésző fejlesztői eszközeivel (F12) változtasd a viewport méretét és figyeld meg, hogy az oldal hogyan adaptálódik a különböző képernyőméretekhez!</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-gyakorlo.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

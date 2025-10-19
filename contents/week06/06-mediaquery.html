@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Media Query-k – A T&#246;r&#233;spontok kezel&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Media Query-k – A T&#246;r&#233;spontok kezel&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-mediaquery.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="media-query-k--a-töréspontok-kezelése">Media Query-k – A Töréspontok kezelése</h1>
+
+<p>A Media Query-k a reszponzív webdesign kulcsfontosságú elemei, amelyek lehetővé teszik a CSS-szabályok szelektív alkalmazását a felhasználó eszközének tulajdonságai alapján. Ebben a tananyagban egy gyakorlati példán keresztül fogjuk megismerni őket.</p>
+<h2 id="a-példa-html-struktúra">A példa HTML struktúra</h2>
+<p>Készítsünk egy egyszerű blog oldalt, amelyet fokozatosan teszünk reszponzívvá:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Reszponzív Blog&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;h1&gt;Saját Blogom&lt;/h1&gt;
+            &lt;nav&gt;
+                &lt;ul class=&quot;menu&quot;&gt;
+                    &lt;li&gt;&lt;a href=&quot;#home&quot;&gt;Kezdőlap&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;Rólam&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#blog&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Kapcsolat&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;main class=&quot;container&quot;&gt;
+        &lt;article class=&quot;content&quot;&gt;
+            &lt;section class=&quot;post&quot;&gt;
+                &lt;h2&gt;Első blogbejegyzésem&lt;/h2&gt;
+                &lt;p class=&quot;meta&quot;&gt;2025. október 15.&lt;/p&gt;
+                &lt;img src=&quot;https://placehold.co/600x400&quot; alt=&quot;Placeholder kép&quot;&gt;
+                &lt;p&gt;Ez egy hosszabb bekezdés, amely bemutatja, hogyan néz ki a tartalom. 
+                A reszponzív tervezés célja, hogy az oldalunk minden eszközön jól 
+                olvasható és használható legyen. A szöveg hossza fontos tényező a 
+                töréspontok meghatározásánál.&lt;/p&gt;
+                &lt;p&gt;További tartalom következik itt, amely segít bemutatni, hogyan 
+                viselkedik az oldalunk különböző képernyőméreteken.&lt;/p&gt;
+            &lt;/section&gt;
+
+            &lt;section class=&quot;post&quot;&gt;
+                &lt;h2&gt;Második bejegyzés&lt;/h2&gt;
+                &lt;p class=&quot;meta&quot;&gt;2025. október 10.&lt;/p&gt;
+                &lt;img src=&quot;https://placehold.co/600x400&quot; alt=&quot;Placeholder kép&quot;&gt;
+                &lt;p&gt;A reszponzív webdesign alapelve, hogy a tartalom alkalmazkodjon 
+                az eszközhöz, nem pedig fordítva. Ezért kezdjük a legkisebb nézettel.&lt;/p&gt;
+            &lt;/section&gt;
+        &lt;/article&gt;
+
+        &lt;aside class=&quot;sidebar&quot;&gt;
+            &lt;div class=&quot;widget&quot;&gt;
+                &lt;h3&gt;Rólam&lt;/h3&gt;
+                &lt;p&gt;Webes fejlesztő vagyok, és szeretem a reszponzív dizájnt.&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;widget&quot;&gt;
+                &lt;h3&gt;Kategóriák&lt;/h3&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Webfejlesztés&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;CSS&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Reszponzív dizájn&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/aside&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;div class=&quot;container&quot;&gt;
+            &lt;p&gt;&amp;copy; 2025 Saját Blogom. Minden jog fenntartva.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="1-alap-stílusok-mobile-first-megközelítés">1. Alap stílusok (Mobile First megközelítés)</h2>
+<p>A <strong>&quot;mobile first&quot;</strong> tervezés során a legkisebb nézettel kezdünk. Ez az alap CSS még <strong>nem tartalmaz Media Query-ket</strong>, és egyoszlopos, egyszerű elrendezést biztosít:</p>
+<pre><code class="lang-css">/* Alapvető reset és globális stílusok */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Konténer: korlátozza a szélességet és középre igazít */
+.container {
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Header stílusok */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Navigáció: mobil nézetben egymás alatt */
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 0.5rem;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem;
+    background-color: #34495e;
+    border-radius: 4px;
+}
+
+.menu a:hover {
+    background-color: #1abc9c;
+}
+
+/* Fő tartalom */
+main {
+    padding: 2rem 0;
+}
+
+/* Blogbejegyzések */
+.post {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.post h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+}
+
+.meta {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 4px;
+}
+
+.post p {
+    margin-bottom: 1rem;
+}
+
+/* Oldalsáv: mobil nézetben a tartalom alatt */
+.sidebar {
+    margin-top: 2rem;
+}
+
+.widget {
+    background-color: #ecf0f1;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.widget h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget li {
+    margin-bottom: 0.3rem;
+}
+
+.widget a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.widget a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+</code></pre>
+<p><strong>Fontos:</strong> Figyeljük meg, hogy ebben az alapstílusban minden egyszerű, egyoszlopos. A navigációs elemek egymás alatt vannak, az oldalsáv a fő tartalom alatt helyezkedik el.</p>
+<h2 id="2-media-query-k-alapjai-és-szintaktikája">2. Media Query-k alapjai és szintaktikája</h2>
+<h3 id="a-media-query-szerkezete">A Media Query szerkezete</h3>
+<p>A Media Query egy <strong>CSS3-ban bevezetett technika</strong>, amely az <code>@media</code> szabályt használja. Az alapvető szintaktika:</p>
+<pre><code class="lang-css">@media media-type and (media-feature-rule) {
+    /* CSS szabályok */
+}
+</code></pre>
+<p>Például:</p>
+<pre><code class="lang-css">@media screen and (min-width: 600px) {
+    /* Ezek a stílusok csak 600px-nél szélesebb képernyőkön érvényesek */
+    body {
+        font-size: 18px;
+    }
+}
+</code></pre>
+<p>A Media Query fő részei:</p>
+<ol>
+<li><strong>Médiatípus (<code>media-type</code>)</strong>: pl. <code>screen</code> (képernyő), <code>print</code> (nyomtatás), vagy <code>all</code></li>
+<li><strong>Média kifejezés (<code>media-feature-rule</code>)</strong>: pl. <code>(min-width: 600px)</code></li>
+</ol>
+<h2 id="3-az-első-töréspont-tablet-nézet-40em--640px">3. Az első töréspont: Tablet nézet (≥40em / ~640px)</h2>
+<p>Most adjuk hozzá az első Media Query-t, amely <strong>akkor lép életbe, ha a viewport legalább 40em széles</strong>. Használjunk <code>em</code> egységet a töréspontoknál a jobb hozzáférhetőség érdekében:</p>
+<pre><code class="lang-css">/* Tablet nézet: 40em felett (~640px, ha az alap font-size 16px) */
+@media (min-width: 40em) {
+    
+    /* A navigáció most vízszintesen */
+    .menu {
+        display: block;
+    }
+    
+    .menu li {
+        display: inline-block;
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+    
+    .menu a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+    }
+    
+    /* Képek kisebb méretben a szöveg mellett */
+    .post img {
+        width: 60%;
+        float: right;
+        margin-left: 1rem;
+    }
+    
+    /* Oldalsáv kezd oldalt lebegni */
+    .content {
+        width: 65%;
+        float: left;
+        padding-right: 2rem;
+    }
+    
+    .sidebar {
+        width: 35%;
+        float: right;
+        margin-top: 0;
+    }
+    
+    /* Clearfix a main konténerhez */
+    main::after {
+        content: &quot;&quot;;
+        display: table;
+        clear: both;
+    }
+}
+</code></pre>
+<p><strong>Mit értünk el?</strong></p>
+<ul>
+<li>A navigáció most vízszintes sávként jelenik meg</li>
+<li>A képek kisebb méretben a szöveg mellett lebegnek</li>
+<li>A tartalom és az oldalsáv egymás mellett kezd megjelenni (65% - 35%)</li>
+</ul>
+<h2 id="4-desktop-nézet-szélesebb-töréspontok-60em--960px">4. Desktop nézet: Szélesebb töréspontok (≥60em / ~960px)</h2>
+<p>Hozzáadunk egy újabb töréspontot a nagyobb képernyőkhöz:</p>
+<pre><code class="lang-css">/* Desktop nézet: 60em felett (~960px) */
+@media (min-width: 60em) {
+    
+    /* Nagyobb header */
+    header h1 {
+        font-size: 2.5rem;
+    }
+    
+    /* Navigáció jobbra igazítása */
+    header .container {
+        position: relative;
+    }
+    
+    header h1 {
+        display: inline-block;
+        width: 40%;
+    }
+    
+    nav {
+        display: inline-block;
+        width: 58%;
+        text-align: right;
+        vertical-align: bottom;
+    }
+    
+    /* Nagyobb betűméret */
+    body {
+        font-size: 18px;
+    }
+    
+    .post h2 {
+        font-size: 2rem;
+    }
+    
+    /* Képek eredeti méretben */
+    .post img {
+        width: 100%;
+        float: none;
+        margin-left: 0;
+    }
+}
+</code></pre>
+<h2 id="5-mértékegységek-a-töréspontokban">5. Mértékegységek a töréspontokban</h2>
+<p><strong>Miért használjunk <code>em</code> vagy <code>rem</code> egységeket?</strong></p>
+<p>Az <code>em</code> egységek használata biztosítja, hogy ha a felhasználó megnöveli a böngésző alap betűméretét, a töréspontok is arányosan eltolódnak:</p>
+<pre><code class="lang-css">/* Rossz gyakorlat: fix pixel érték */
+@media (min-width: 768px) { /* ... */ }
+
+/* Jó gyakorlat: relatív em egység */
+@media (min-width: 48em) { /* 768px / 16px = 48em */ }
+</code></pre>
+<p><strong>Átváltás:</strong> Ha az alap font-size 16px, akkor:</p>
+<ul>
+<li>600px = 37.5em</li>
+<li>768px = 48em</li>
+<li>1024px = 64em</li>
+</ul>
+<h2 id="6-tartomány-szintaktika-range-syntax">6. Tartomány szintaktika (Range Syntax)</h2>
+<p>A modern CSS lehetővé teszi olvashatóbb tartomány-szintaktikát:</p>
+<pre><code class="lang-css">/* Hagyományos módszer */
+@media (min-width: 40em) and (max-width: 60em) {
+    .sidebar .widget {
+        background-color: #d5dbdb;
+    }
+}
+
+/* Modern tartomány szintaktika (CSS4) */
+@media (40em &lt;= width &lt;= 60em) {
+    .sidebar .widget {
+        background-color: #d5dbdb;
+    }
+}
+
+/* Vagy így is írható */
+@media (width &gt;= 40em) and (width &lt;= 60em) {
+    .sidebar .widget {
+        background-color: #d5dbdb;
+    }
+}
+</code></pre>
+<h2 id="7-logikai-operátorok">7. Logikai operátorok</h2>
+<h3 id="and-operátor">AND operátor</h3>
+<p>Több feltétel kombinálása:</p>
+<pre><code class="lang-css">/* Mindkét feltételnek teljesülnie kell */
+@media screen and (min-width: 40em) and (max-width: 60em) {
+    .post {
+        border: 2px solid #3498db;
+    }
+}
+</code></pre>
+<h3 id="or-operátor-vessző">OR operátor (vessző)</h3>
+<pre><code class="lang-css">/* Bármelyik feltétel teljesülése elég */
+@media (max-width: 40em), (min-width: 80em) {
+    /* Nagyon kicsi vagy nagyon nagy képernyőkön */
+    .widget {
+        border: 2px dashed #e74c3c;
+    }
+}
+</code></pre>
+<h3 id="not-operátor">NOT operátor</h3>
+<pre><code class="lang-css">/* Nem nyomtatáskor */
+@media not print {
+    nav {
+        display: block;
+    }
+}
+</code></pre>
+<h2 id="8-tájolás-orientation">8. Tájolás (Orientation)</h2>
+<p>Az eszköz fekvő vagy álló tájolásának vizsgálata:</p>
+<pre><code class="lang-css">/* Álló (portrait) tájolás */
+@media (orientation: portrait) {
+    .post img {
+        width: 100%;
+    }
+}
+
+/* Fekvő (landscape) tájolás */
+@media (orientation: landscape) and (max-width: 60em) {
+    /* Tablet fekvő módban */
+    .post img {
+        width: 50%;
+        float: left;
+        margin-right: 1rem;
+    }
+}
+</code></pre>
+<h2 id="9-mutatóeszköz-vizsgálata-hover-és-pointer">9. Mutatóeszköz vizsgálata (Hover és Pointer)</h2>
+<p>A modern Media Query-k lehetővé teszik annak tesztelését, hogy milyen mutatóeszközt használ a felhasználó:</p>
+<pre><code class="lang-css">/* Ha van hover képesség (egér) */
+@media (hover: hover) {
+    .menu a {
+        transition: background-color 0.3s ease;
+    }
+    
+    .menu a:hover {
+        background-color: #1abc9c;
+        transform: translateY(-2px);
+    }
+}
+
+/* Ha nincs hover (érintőképernyő) */
+@media (hover: none) {
+    .menu a {
+        padding: 1rem;
+        /* Nagyobb kattintási terület */
+    }
+}
+
+/* Pontos mutató (egér) */
+@media (pointer: fine) {
+    .widget a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Durva mutató (érintés) */
+@media (pointer: coarse) {
+    .widget a {
+        font-size: 1rem;
+        padding: 0.5rem;
+        display: block;
+        /* Nagyobb célterület ujjnak */
+    }
+}
+</code></pre>
+<h2 id="10-nyomtatási-stílusok">10. Nyomtatási stílusok</h2>
+<p>A <code>@media print</code> segítségével eltávolíthatjuk a navigációt és optimalizálhatjuk a tartalmat nyomtatáshoz:</p>
+<pre><code class="lang-css">@media print {
+    /* Navigáció és oldalsáv elrejtése */
+    header nav,
+    .sidebar,
+    footer {
+        display: none;
+    }
+    
+    /* Tartalom teljes szélességben */
+    .content {
+        width: 100%;
+        float: none;
+    }
+    
+    /* Fekete-fehér optimalizálás */
+    body {
+        color: black;
+        background: white;
+    }
+    
+    /* Linkek megjelenítése */
+    a[href]::after {
+        content: &quot; (&quot; attr(href) &quot;)&quot;;
+    }
+    
+    /* Oldaltörések */
+    .post {
+        page-break-inside: avoid;
+    }
+    
+    h2 {
+        page-break-after: avoid;
+    }
+}
+</code></pre>
+<h2 id="11-flexbox-használata-media-query-kkel-modern-megközelítés">11. Flexbox használata Media Query-kkel (Modern megközelítés)</h2>
+<p>Az előző példákban <code>float</code> alapú elrendezést használtunk, ami a klasszikus megközelítés. A modern CSS azonban a <strong>Flexbox</strong> használatát ajánlja, amely egyszerűbb, tisztább kódot eredményez és nem igényel clearfix megoldásokat.</p>
+<p>Nézzük meg, hogyan írhatjuk újra a korábbi reszponzív elrendezést Flexbox segítségével!</p>
+<h3 id="alap-stílusok-módosítása-mobile-first">Alap stílusok módosítása (Mobile First)</h3>
+<p>A mobile nézetben még nincs szükség Flexbox-ra, minden marad egyoszlopos:</p>
+<pre><code class="lang-css">/* Main konténer - mobil nézetben egyszerű blokk */
+main {
+    padding: 2rem 0;
+}
+
+.content,
+.sidebar {
+    width: 100%;
+}
+</code></pre>
+<h3 id="tablet-nézet-flexbox-szal-40em">Tablet nézet Flexbox-szal (≥40em)</h3>
+<p>A <code>float</code> helyett most Flexbox-ot használunk:</p>
+<pre><code class="lang-css">@media (min-width: 40em) {
+    
+    /* Main konténer flexbox konténerré alakítása */
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    /* Tartalom és oldalsáv méretezése */
+    .content {
+        flex: 1 1 60%;
+    }
+    
+    .sidebar {
+        flex: 1 1 35%;
+    }
+    
+    /* Navigáció is flexbox */
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .menu li {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+</code></pre>
+<p><strong>Előnyök a float-hoz képest:</strong></p>
+<ul>
+<li>Nincs szükség clearfix-re vagy <code>display: flow-root;</code>-ra.</li>
+<li>A <code>gap</code> tulajdonság egyszerűen kezeli a térközöket</li>
+<li>Automatikus magasság-kiegyenlítés a <code>.content</code> és <code>.sidebar</code> között</li>
+</ul>
+<h3 id="desktop-nézet-finomhangolása-60em">Desktop nézet finomhangolása (≥60em)</h3>
+<pre><code class="lang-css">@media (min-width: 60em) {
+    
+    /* Header is flexbox elrendezés */
+    header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header h1 {
+        flex: 0 0 auto;
+        margin-bottom: 0;
+    }
+    
+    nav {
+        flex: 0 0 auto;
+    }
+    
+    /* Tartalom arányok módosítása */
+    .content {
+        flex: 1 1 65%;
+    }
+    
+    .sidebar {
+        flex: 1 1 30%;
+    }
+    
+    /* Widget-ek flexbox elrendezése */
+    .widget ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}
+</code></pre>
+<h3 id="különleges-esetek-orientation-és-flexbox">Különleges esetek: Orientation és Flexbox</h3>
+<pre><code class="lang-css">/* Tablet fekvő módban más elrendezés */
+@media (orientation: landscape) and (min-width: 40em) and (max-width: 60em) {
+    
+    main {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .content {
+        flex: 2;
+    }
+    
+    .sidebar {
+        flex: 1;
+    }
+    
+    /* Blogbejegyzések is flexbox */
+    .post {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .post h2,
+    .post .meta {
+        flex: 1 1 100%;
+    }
+    
+    .post img {
+        flex: 0 0 40%;
+        margin-right: 1rem;
+    }
+    
+    .post p {
+        flex: 1;
+    }
+}
+</code></pre>
+<h3 id="float-vs-flexbox-összehasonlítás">Float vs Flexbox összehasonlítás</h3>
+<table>
+<thead>
+<tr>
+<th>Szempont</th>
+<th>Float</th>
+<th>Flexbox</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clearfix szükséges</td>
+<td>✅ Igen</td>
+<td>❌ Nem</td>
+</tr>
+<tr>
+<td>Térköz kezelés</td>
+<td><code>margin</code></td>
+<td><code>gap</code></td>
+</tr>
+<tr>
+<td>Függőleges igazítás</td>
+<td>Bonyolult</td>
+<td><code>align-items</code></td>
+</tr>
+<tr>
+<td>Sorrend változtatás</td>
+<td>HTML módosítás</td>
+<td><code>order</code></td>
+</tr>
+<tr>
+<td>Rugalmas méretezés</td>
+<td>Fix <code>width</code></td>
+<td><code>flex-grow/shrink</code></td>
+</tr>
+<tr>
+<td>Kód olvashatóság</td>
+<td>Kevésbé</td>
+<td>Jobban</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gyakorlati-tippek-flexbox--media-query-használatához">Gyakorlati tippek Flexbox + Media Query használatához</h3>
+<ol>
+<li><strong>Mobile first mindig</strong>: A Flexbox tulajdonságokat fokozatosan add hozzá</li>
+<li><strong>Gap használata</strong>: A <code>gap</code> egyszerűsíti a térköz-kezelést a töréspontokon át</li>
+<li><strong>Flex értékek változtatása</strong>: Az arányokat könnyű módosítani különböző töréspontoknál</li>
+<li><strong>Kombináld a flex-direction-nel</strong>: Tájolásfüggő elrendezésekhez hasznos</li>
+</ol>
+<pre><code class="lang-css">/* Példa: Álló tájolásban oszlopos, fekvőben soros */
+@media (orientation: portrait) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (orientation: landscape) and (min-width: 40em) {
+    main {
+        flex-direction: row;
+    }
+}
+</code></pre>
+<h3 id="mikor-használj-float-ot-és-mikor-flexbox-ot">Mikor használj Float-ot és mikor Flexbox-ot?</h3>
+<p><strong>Használj Flexbox-ot:</strong></p>
+<ul>
+<li>Modern projekteknél (IE11+ nem számít)</li>
+<li>Komplex reszponzív elrendezéseknél</li>
+<li>Ha függőleges igazításra van szükség</li>
+<li>Komponens-alapú elrendezéseknél</li>
+</ul>
+<p><strong>Használj Float-ot:</strong></p>
+<ul>
+<li>Régi böngésző támogatás szükséges (IE9-10)</li>
+<li>Szöveg körüli kép lebegtetésnél (klasszikus használat)</li>
+<li>Egyszerű, két-oszlopos elrendezésnél</li>
+</ul>
+<p>A modern webfejlesztésben a <strong>Flexbox az ajánlott megoldás</strong>, különösen Media Query-kkel kombinálva, mert tisztább, karbantarthatóbb kódot eredményez.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-mediaquery.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

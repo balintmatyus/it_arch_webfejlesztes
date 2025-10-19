@@ -647,6 +647,76 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week06/06-flexbox.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week06/06-flexbox.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week06/06-grid.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week06/06-grid.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week06/06-gyakorlo.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week06/06-gyakorlo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week06/06-mediaquery.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week06/06-mediaquery.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week06/06-responsive.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week06/06-responsive.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week06/portfolio.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week06/portfolio.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week06/tervezesi-sorrend.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week06/tervezesi-sorrend.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week07/07-js-gyakorlo.md",
       "output": {
         ".html": {

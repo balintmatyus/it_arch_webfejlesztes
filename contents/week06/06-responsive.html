@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Bevezet&#233;s a Reszponz&#237;v Webdesignba | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Bevezet&#233;s a Reszponz&#237;v Webdesignba | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-responsive.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="bevezetés-a-reszponzív-webdesignba">Bevezetés a Reszponzív Webdesignba</h1>
+
+<h2 id="mi-az-a-reszponzív-webdesign-rwd">Mi az a Reszponzív Webdesign (RWD)?</h2>
+<p>A reszponzív webdesign (RWD) <strong>nem egy különálló technológia, hanem egy tervezési megközelítés</strong> és a legjobb gyakorlatok összessége. Az RWD célja, hogy a weboldalak jól jelenjenek meg és <strong>jó használhatóságot biztosítsanak minden képernyőméreten és felbontáson</strong>.</p>
+<p>Az RWD lényege, hogy a weboldal <strong>HTML és CSS használatával automatikusan átméreteződjön</strong>, elrejtőzzön, zsugorodjon vagy megnagyobbodjon, hogy <strong>optimális megjelenést és felhasználói élményt</strong> nyújtson minden böngészésre alkalmas eszközön (asztali gép, táblagép, telefon, TV, stb.).</p>
+<p>A weboldal rugalmasan alkalmazkodik a különböző böngészők képernyőjének méretéhez. Ez a megközelítés magában foglalja a <strong>fluid rácsok, fluid képek és a Media Query-k</strong> alkalmazását reszponzív tartalom létrehozásához. A modern CSS elrendezési módszerek, mint a Flexbox és a CSS Grid, eleve reszponzívak.</p>
+<h2 id="az-rwd-jelentősége-és-előnyei">Az RWD jelentősége és előnyei</h2>
+<p>A reszponzív webdesignra való áttérés jelentősége 2015 áprilisában nőtt meg különösen, amikor a Google megváltoztatta a rangsorolási algoritmusát, előnyben részesítve a mobilbarát weboldalakat, ami a „mobilgeddon” néven vált ismertté.</p>
+<p>Az RWD alkalmazása előnyös a felhasználók szempontjából is, mivel egyre nagyobb az igény a mobilbarát weboldalakra.</p>
+<p><strong>Az RWD fő előnyei a különálló mobilos/desktopos verziókkal szemben:</strong></p>
+<ol>
+<li><strong>Keresőoptimalizálás (SEO):</strong> A Google előrébb sorolja a reszponzív oldalakat a keresési eredményekben.</li>
+<li><strong>Felhasználói metrikák:</strong> Csökken a visszapattanási arány (bounce rate).</li>
+<li><strong>Teljesítmény:</strong> Gyorsabb lesz az oldal, mivel nincs szükség átirányításokra a különböző verziók között.</li>
+<li><strong>Fejlesztési hatékonyság:</strong> Könnyebb fejleszteni és karbantartani, mivel csak egy helyen kell módosítani a kódot.</li>
+<li><strong>Jövőállóság:</strong> A megoldás felkészül a jövőben megjelenő, ma még nem létező eszközökre is (pl. okosóra, hajlítható mobiltelefon, phablet, VR szemüveg).</li>
+<li><strong>Felhasználói élmény:</strong> A navigáció és az olvasás nem válik nehézkessé, az oldalsó oszlopok fokozatosan kerülnek egymás alá a képernyőméret függvényében.</li>
+</ol>
+<h2 id="a-mobile-first-megközelítés">A &quot;Mobile First&quot; megközelítés</h2>
+<p>A <strong>&quot;Mobile First&quot;</strong> egy tervezési stratégia és egyben az egyik leggyakoribb megközelítés a reszponzív webdesignban.</p>
+<p><img src="tervezesi-sorrend.png" alt="tervezési sorrend"></p>
+<p><strong>A megközelítés lényege és okai:</strong></p>
+<ol>
+<li><strong>Tervezési sorrend:</strong> Először a mobil nézetet készítjük el, majd ezután a desktoposat és a többit.</li>
+<li><strong>Korlátozások kezelése:</strong> A Mobile First megoldás mellett szól az az ok, hogy a mobil verzió esetében kell szembesülni a kis képernyőméret miatti legnagyobb korlátozásokkal. Az ebből való kiindulás előnyösebb, mintha egy komplex asztali dizájnt próbálnánk zsugorítani.</li>
+<li><strong>Kiindulási alap:</strong> A legkisebb (pl. 320 pixel) töréspontból érdemes kiindulni, és onnan haladni &quot;felfelé&quot; (pl. 2000 pixel).</li>
+<li><strong>Egyszerűség:</strong> A legkisebb eszközök nézete gyakran egyszerű, <strong>egyoszlopos tartalom</strong>, ami a normál áramlásban (normal flow) jelenik meg, így kevés layout beállítást igényel. Ez azt jelenti, hogy kezdetben viszonylag kevés layout CSS-re van szükség, mivel a HTML forráskód sorrendje biztosítja a tartalmi érthetőséget.</li>
+</ol>
+<p>A Media Query-kkel ezután tudunk elrendezési szabályokat adni hozzá, ahogy a nézőkép szélesedik (például két- vagy háromoszlopos elrendezéseket hozva létre).</p>
+<p>A reszponzív webdesign egyik alapkövetelménye, hogy a böngésző pontosan tudja, milyen méretű területen dolgozunk, és hogy az elemek méretezése ne fix, hanem relatív (folyékony) legyen. Ezt a fejezet három fő technikai alapkövét tárgyalja.</p>
+<h2 id="a-viewport-beállítása">A Viewport beállítása</h2>
+<p>A <code>viewport</code> <strong>a weboldal felhasználó által látható területe</strong>. Ennek mérete különböző kijelzőméreteknél változik.</p>
+<p>A reszponzív weboldalak alapvető feltétele, hogy a HTML dokumentum <code>&lt;head&gt;</code> részében <strong>mindig</strong> szerepeljen a <strong>Viewport meta tag</strong>. A Viewport egy <strong>HTML5-ben bevezetett meta elem</strong>, amelyet az alábbi formában kell beállítani:</p>
+<pre><code class="lang-html">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+</code></pre>
+<p>Ez a beállítás két fontos dolgot közöl a mobil böngészővel:</p>
+<ol>
+<li><strong><code>width=device-width</code></strong>: A weboldal <code>width</code> tulajdonsága kövesse a kijelző szélességét.</li>
+<li><strong><code>initial-scale=1.0</code></strong>: Meghatározza, hogy az oldal <strong>mekkora nagyítást (zoomot) használjon</strong> az első betöltéskor. Ez segít a betűk konzisztens méretének biztosításában,.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A Viewport meta tag azért elengedhetetlen, mert a mobil böngészők történelmileg hajlamosak voltak „hazudni” a viewport szélességéről (pl. 980 pixelt állítottak be), majd a teljes oldalt lekicsinyítették. Ez a meta tag <strong>felülírja ezt az alapértelmezett viselkedést</strong>, biztosítva, hogy a mobil böngésző az <strong>oldalt mobilképesnek érzékelje</strong>, és ne a teljes verziót próbálja meg összenyomni,. Enélkül a reszponzív kialakítás (a töréspontok és média lekérdezések) nem működhetnek megfelelően a mobil böngészőkben.</p>
+</div>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week06/06-responsive.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
