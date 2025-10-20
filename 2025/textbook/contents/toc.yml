@@ -58,6 +58,8 @@
     href: week05/05-tablazatok.md
   - name: 🛠 Komplex feladat (Rubicon)
     href: week05/gyak-feladat/szechenyi/05-szechenyi.md
+  - name: 🛠 Sakk feladat (hallgatói)
+    href: week05/gyak-feladat/sakk/docs/lepesek.md
 - name: 6. hét
   items:
   - name: 💡 Reszponzív design
