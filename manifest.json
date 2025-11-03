@@ -547,6 +547,86 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/docs/lepesek.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/docs/lepesek.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/docs/megoldas.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/docs/megoldas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/docs/megoldas.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/docs/megoldas.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/images/feher_bastya.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/images/feher_bastya.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/images/feher_kiraly.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/images/feher_kiraly.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/images/fekete_huszar.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/images/fekete_huszar.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/images/fekete_kiralyno.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/images/fekete_kiralyno.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week05/gyak-feladat/sakk/styles/style.css",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week05/gyak-feladat/sakk/styles/style.css"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week05/gyak-feladat/szechenyi/05-szechenyi.md",
       "output": {
         ".html": {

@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    float: left;
+    width: fit-content;
+    padding: 0 40px;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+td, th{
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+tbody tr:first-child td, tbody td:first-child{
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(n+2):nth-child(odd) td:nth-child(n+2):nth-child(even),
+tbody tr:nth-child(n+2):nth-child(even) td:nth-child(n+2):nth-child(odd) {
+    background-color: black;
+}
+
+tbody tr td{
+    padding: 10px;
+    text-align: center;
+}
+
+tbody tr:first-child td:first-child{
+    background-color: white;
+}
+
+img {  
+    height: 100%;
+}
+
+h1{
+    text-align: center;
+    font-size: 36px;
+    margin: 20px;
+}
+
+h2{
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p#bekezdes{
+    margin: 15px;
+    font-style: italic;
+    font-size: 1.2em;
+}
+
+p#befejezes{
+    margin: 15px;
+    color: red;
+}
+
+p#bekezdes, p#befejezes{
+    line-height: 1.5;
+}
+
+footer p{
+    color: yellow;
+    background-color: brown;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+}
+
+p a{
+    color: darkred;
+    text-decoration: none;
+}
+
+p a:hover{
+    text-decoration: underline;
+}
+
+p a:visited{
+    color: black;
+}

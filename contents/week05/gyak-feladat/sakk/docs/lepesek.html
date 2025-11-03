@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sakk weboldal k&#233;sz&#237;t&#233;se - L&#233;p&#233;sről l&#233;p&#233;sre &#250;tmutat&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sakk weboldal k&#233;sz&#237;t&#233;se - L&#233;p&#233;sről l&#233;p&#233;sre &#250;tmutat&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/gyak-feladat/sakk/docs/lepesek.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../../index.html">
+            <img id="logo" class="svg" src="../../../../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sakk-weboldal-készítése---lépésről-lépésre-útmutató">Sakk weboldal készítése - Lépésről lépésre útmutató</h1>
+
+<p><strong>Szerző:</strong> Békefi Ottó
+<strong>Közreműködött:</strong> Biró András</p>
+<p>Az elkészítendő weboldal célja a sakkjáték bemutatása egy egyszerű, letisztult felületen. A központi elem egy sakktábla, amelyen néhány sakk figurát helyezünk el. Az oldal tartalmaz rövid ismertetőt a játékról, és egy összegző gondolatot a sakk szellemi értékeiről. Az oldalon való navigálását menü segíti.</p>
+<p>Készítsd el a weboldalt az alábbi kép mintájára!</p>
+<p><img src="megoldas.png" alt="Megoldás"></p>
+<h2 id="1-lépés-projekt-előkészítése">1. lépés: Projekt előkészítése</h2>
+<p>Alakíts ki egy modern weboldalnak megfelelő mappastruktúrát!</p>
+<ul>
+<li>Pl.: képek külön mappában, egyértelmű, egyszerű fájlnevekkel</li>
+</ul>
+<h2 id="2-lépés-html-alap-létrehozása">2. lépés: HTML alap létrehozása</h2>
+<p>Nyisd meg az <code>index.html</code> fájlt és állítsd be az alapvető HTML struktúrát, megfelelő paraméterekkel (nyelv, stíluslap, stb.)</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>VS Code-ban gépeld be a &quot;!&quot; karaktert és nyomj Enter-t a HTML váz automatikus létrehozásához.</p>
+</div>
+<h2 id="3-lépés-html-struktúra-létrehozása">3. lépés: HTML struktúra létrehozása</h2>
+<p>Az oldal három fő részből álljon:</p>
+<ol>
+<li>Fejléc: Főcím és bevezető bekezdés</li>
+<li>Tartalom: Navigációs menü, a sakktábla és egy záró bekezdés</li>
+<li>Lábléc: Lábjegyzet szerzői jogi információval</li>
+</ol>
+<h3 id="fejléc-létrehozása">Fejléc létrehozása</h3>
+<p>A fejléc részbe helyezz el:</p>
+<ul>
+<li>Egy 1. szintű címsort &quot;A sakk játék lényege&quot; szöveggel</li>
+<li>Egy bekezdést a sakkról szóló ismertetővel, amely <code>bekezdes</code> azonosítóval rendelkezik</li>
+</ul>
+<h3 id="tartalom-létrehozása">Tartalom létrehozása</h3>
+<p>A tartalom részbe kerüljön:</p>
+<ol>
+<li><p>Egy navigációs menü a következő tartalommal:</p>
+<ul>
+<li>Egy 2. szintű címsor &quot;Tartalom&quot; szöveggel</li>
+<li>Egy rendezetlen lista, amely az oldal fő részeire (2 bekezdés: az oldal elején, és végén) mutató linkeket tartalmaz</li>
+</ul>
+</li>
+<li><p>Egy 9×9-es táblázat, amely a sakktáblát reprezentálja:</p>
+<ul>
+<li>Az első sor megfelelő celláiba írd az A-H betűket</li>
+<li>A többi sor első cellájába írd az 1-8 számokat</li>
+<li>A megfelelő cellákba helyezd el a sakk bábuk képeit:
+<ul>
+<li>fekete királynő</li>
+<li>fehér király</li>
+<li>fekete huszár</li>
+<li>fehér bástya</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>VS Code-ban használhatod az Emmet rövidítést a táblázat vázának gyors létrehozásához: <code>table&gt;tbody&gt;tr*9&gt;td*9</code></p>
+</div>
+<ol start="2">
+<li>Egy záró bekezdés, amelynek azonosítója <code>befejezes</code>, és tartalmaz egy összefoglalást és egy speciálisan formázott linket a sakk Wikipédia oldalára (Például: <code>Összegzésként elmondható, hogy a sakk nem csupán egy játék, hanem igazi szellemi kihívás, amely fejleszti a logikát, a türelmet és a stratégiai gondolkodást. Akár kezdőként, akár tapasztalt játékosként ülünk a tábla mellé, minden parti új lehetőséget kínál a fejlődésre és az önmegismerésre. A sakk világa végtelen – és éppen ez teszi olyan izgalmassá.</code>)</li>
+</ol>
+<h3 id="lábléc-létrehozása">Lábléc létrehozása</h3>
+<p>A láblécbe helyezz egy bekezdést, amely tartalmazza a &quot;2025 (copyright jel) Minden jog fenntartva&quot; szöveget.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>A copyright jelet a speciális karakterként adhatod hozzá (&amp; jellel kezdődnek, pontosvesszővel végződnek)!</p>
+</div>
+<h2 id="4-lépés-css-stílusok-létrehozása">4. lépés: CSS stílusok létrehozása</h2>
+<p>Hozz létre egy <code>style.css</code> fájlt és haladj végig az alábbi lépéseken:</p>
+<h3 id="41-alapbeállítások">4.1 Alapbeállítások</h3>
+<p>Nullázd le a margót, és a padding-et minden elemre, illetve állíts be egyéni betűtípust a teljes oldalra.</p>
+<p>Állítsd be a navigációs menü megfelelő elhelyezését is:</p>
+<ul>
+<li>A menü balra igazítása</li>
+<li>A menü a tartalom méretét vegye fel</li>
+<li>Padding hozzáadása jobb- és baloldalra</li>
+</ul>
+<h3 id="42-táblázat-formázása">4.2 Táblázat formázása</h3>
+<ul>
+<li>Tüntesd el a felesleges dupla szegélyeket</li>
+<li>Igazítsd középre a táblázatot</li>
+<li>A cellákra állíts be fekete szegélyt, minden cella négyzet alakú legyen</li>
+<li>Gondoskodj a cellák tartalmának középre igazításáról</li>
+</ul>
+<h3 id="43-sakktábla-mintázat-kialakítása">4.3 Sakktábla mintázat kialakítása</h3>
+<p>A sakktábla fekete-fehér mintázatának kialakításához használhatsz CSS <strong>pszeudo-osztályokat</strong> vagy <strong>általános osztályokat</strong> is.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>CSS pszeudo-osztályok magyarázata:</strong></p>
+<p>A pszeudo-osztályok speciális szelektorok, amelyek lehetővé teszik elemek kiválasztását a dokumentum-struktúrában elfoglalt helyük vagy állapotuk alapján:</p>
+<ul>
+<li><code>:first-child</code> - Kiválasztja az elemet, ha az a szülőjének első gyermeke</li>
+<li><code>:nth-child(n)</code> - Kiválasztja az elemet, ha az a szülőjének n-edik gyermeke</li>
+<li><code>:nth-child(even)</code> - Kiválasztja a páros sorszámú gyermekelemeket</li>
+<li><code>:nth-child(odd)</code> - Kiválasztja a páratlan sorszámú gyermekelemeket</li>
+<li><code>:nth-child(n+m)</code> - Kiválasztja az elemeket az m-ediktől kezdve</li>
+</ul>
+<p>Az <code>n</code> helyére képletet is írhatunk, például:</p>
+<ul>
+<li><code>2n</code> vagy <code>even</code>: minden páros elem (2., 4., 6. stb.)</li>
+<li><code>2n+1</code> vagy <code>odd</code>: minden páratlan elem (1., 3., 5. stb.)</li>
+<li><code>n+4</code>: a 4. elemtől kezdve minden elem</li>
+<li><code>3n+1</code>: minden 3. elem, kezdve az 1. elemmel (1., 4., 7. stb.)</li>
+</ul>
+</div>
+<p>Állítsd be a következő stílusokat:</p>
+<ul>
+<li>Az első sor összes cellája és minden sor első cellája legyen világoskék hátterű és a szöveg félkövér</li>
+<li>Az első sor első cellája (a bal felső sarok) legyen fehér hátterű</li>
+</ul>
+<h3 id="44-képek-formázása">4.4 Képek formázása</h3>
+<ol>
+<li>Állíts be megfelelő stílusokat a sakk bábuk képeire:
+<ul>
+<li>A képek mérete a cella magasságához igazodjon</li>
+<li>A képek a cella közepén helyezkedjenek el</li>
+</ul>
+</li>
+</ol>
+<h3 id="45-szöveges-elemek-formázása">4.5 Szöveges elemek formázása</h3>
+<p>Formázd a következő szöveges elemeket:</p>
+<ul>
+<li>h1 címsor: középre igazított, 36px méret, 20px margó</li>
+<li>h2 címsor: 24px méret, 15px alsó margó</li>
+<li>Bevezető bekezdés (<code>bekezdes</code> azonosító): 15px margó, dőlt betűs, 1.2em betűméret</li>
+<li>Záró bekezdés (<code>befejezes</code> azonosító): 15px margó, piros betűszín</li>
+<li>Mind a bevezető, mind a záró bekezdés: 1.5-ös sormagasság</li>
+<li>Lábléc bekezdés: sárga betűszín, barna háttérszín, 1.5em betűméret, középre igazított, 20px padding</li>
+</ul>
+<h3 id="46-link-formázása-a-láblécben">4.6 Link formázása a láblécben</h3>
+<p>Állítsd be a link különböző állapotainak stílusait:</p>
+<ul>
+<li>Alapértelmezett állapot: sötétvörös szín, nincs aláhúzás</li>
+<li>Ha felévisszük a kurzort: aláhúzott</li>
+<li>Meglátogatott állapot: fekete szín</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Ügyelj arra, hogy csak a láblécben található linket formázd, a navigációs menüben találhatóakat ne!</p>
+</div>
+<p>Jó munkát!</p>
+<p><a href="megoldas.html">Megoldás</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week05/gyak-feladat/sakk/docs/lepesek.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
