@@ -614,8 +614,8 @@ function PitagoraszTetel(a, b = 4) { // 'b' alapértelmezett értéke 4
   return (a**2 + b**2)**0.5;
 }
 
-document.write(PitagoraszTetel(3)); // kimenet: 5 (3*3 + 4*4 = 25, gyöke 5)
-document.write(PitagoraszTetel(5, 12)); // kimenet: 13 (5*5 + 12*12 = 169, gyöke 13, itt felülírta a 'b' alapértelmezett értékét)
+console.log(PitagoraszTetel(3)); // kimenet: 5 (3*3 + 4*4 = 25, gyöke 5)
+console.log(PitagoraszTetel(5, 12)); // kimenet: 13 (5*5 + 12*12 = 169, gyöke 13, itt felülírta a 'b' alapértelmezett értékét)
 
 function udvozol(nev = "Vendég") { // 'nev' alapértelmezett értéke "Vendég"
   console.log(`Hello, ${nev}!`);
