@@ -590,8 +590,8 @@ osszegKiir(5, 10); // Argumentumok: 5 és 10
   return (a**2 + b**2)**0.5;
 }
 
-document.write(PitagoraszTetel(3)); // kimenet: 5 (3*3 + 4*4 = 25, gyöke 5)
-document.write(PitagoraszTetel(5, 12)); // kimenet: 13 (5*5 + 12*12 = 169, gyöke 13, itt felülírta a 'b' alapértelmezett értékét)
+console.log(PitagoraszTetel(3)); // kimenet: 5 (3*3 + 4*4 = 25, gyöke 5)
+console.log(PitagoraszTetel(5, 12)); // kimenet: 13 (5*5 + 12*12 = 169, gyöke 13, itt felülírta a 'b' alapértelmezett értékét)
 
 function udvozol(nev = &quot;Vendég&quot;) { // 'nev' alapértelmezett értéke &quot;Vendég&quot;
   console.log(`Hello, ${nev}!`);
