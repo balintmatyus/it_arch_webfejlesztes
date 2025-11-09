@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>Gyakorl&#243; Feladatok - JavaScript Objektumok &#233;s T&#246;mb&#246;k | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="Gyakorl&#243; Feladatok - JavaScript Objektumok &#233;s T&#246;mb&#246;k | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,7 +81,224 @@
         </div>
 
         <article data-uid="">
+<h1 id="gyakorló-feladatok---javascript-objektumok-és-tömbök">Gyakorló Feladatok - JavaScript Objektumok és Tömbök</h1>
 
+<h2 id="1-feladat-könyvtári-katalógus"><strong>1. feladat: Könyvtári katalógus</strong></h2>
+<h3 id="kiinduló-állapot">Kiinduló állapot</h3>
+<p>Egy kis iskolai könyvtár digitális nyilvántartását kell elkészítened. A könyvtáros szeretné követni, hogy mely könyvek vannak a polcokon, és melyek vannak éppen kikölcsönözve.</p>
+<h3 id="lépések">Lépések</h3>
+<p><strong>A) Hozz létre egy könyv objektumot</strong></p>
+<p>Készíts egy <code>konyv1</code> nevű objektumot, amely a következő tulajdonságokkal rendelkezik:</p>
+<ul>
+<li><code>cim</code>: a könyv címe (pl. &quot;Az öreg halász és a tenger&quot;)</li>
+<li><code>szerzo</code>: a szerző neve</li>
+<li><code>oldalszam</code>: hány oldalas a könyv (szám típus!)</li>
+<li><code>kolcsonozve</code>: logikai érték, hogy éppen ki van-e kölcsönözve</li>
+</ul>
+<p>Adj hozzá egy <code>adatokKiirasa</code> nevű metódust is, amely a konzolra kiírja a könyv adatait olvasható formában. Használd a <code>this</code> kulcsszót a tulajdonságok eléréséhez!</p>
+<p><strong>Gondolkodtató:</strong> Hogyan tudod egy metóduson belül hivatkozni az objektum saját tulajdonságaira?</p>
+<p><strong>B) Készíts katalógust (tömböt)</strong></p>
+<p>Hozz létre egy <code>konyvtar</code> nevű üres tömböt, amely a könyveket fogja tárolni.</p>
+<p><strong>C) Könyvek hozzáadása</strong></p>
+<ul>
+<li>Adj hozzá 3-4 könyvet a katalógushoz. Használd a megfelelő tömb metódust!</li>
+<li>Írd ki a konzolra, hogy hány könyv van összesen a katalógusban.</li>
+</ul>
+<p><strong>Tipp:</strong> Melyik tulajdonság mondja meg egy tömb hosszát?</p>
+<p><strong>D) Legutolsó könyv eltávolítása</strong></p>
+<p>Valaki kivette az utolsó könyvet a rendszerből (hibás bevitel volt). Távolítsd el a legutolsó elemet a tömbből, és írd ki, hogy melyik könyvet távolítottad el.</p>
+<p><strong>Tipp:</strong> Van egy metódus, amely kifejezetten az utolsó elemet távolítja el ÉS vissza is adja azt.</p>
+<p><strong>E) Új könyv az elejére</strong></p>
+<p>Érkezett egy új beszerzés, ami prioritást kap. Add hozzá egy új könyv objektumot a tömb <strong>elejéhez</strong>.</p>
+<p><strong>Gondolkodtató:</strong> Melyik metódus ad hozzá elemet a tömb elejéhez, nem a végéhez?</p>
+<h2 id="2-feladat-termék-leltár"><strong>2. feladat: Termék leltár</strong></h2>
+<h3 id="kiinduló-állapot-1">Kiinduló állapot</h3>
+<p>Egy kisvállalkozás raktárkészletét kell nyilvántartanod. A termékeknél a nevet és az egységárat tárolják.</p>
+<pre><code class="lang-javascript">const termekek = [
+    { nev: &quot;Laptop&quot;, ar: 250000 },
+    { nev: &quot;Egér&quot;, ar: 5000 },
+    { nev: &quot;Billentyűzet&quot;, ar: 15000 },
+    { nev: &quot;Monitor&quot;, ar: 80000 },
+    { nev: &quot;Webkamera&quot;, ar: 12000 }
+];
+</code></pre>
+<h3 id="lépések-1">Lépések</h3>
+<p><strong>A) Listázd ki az összes terméket</strong></p>
+<p>Írd ki a konzolra az összes termék nevét és árát olvasható formában (pl. &quot;Laptop - 250000 Ft&quot;).</p>
+<p><strong>Gondolkodtató:</strong> Melyik ciklus típust érdemes használni, ha nem kell az index, csak az értékek kellenek?</p>
+<p><strong>B) Keress egy konkrét terméket</strong></p>
+<p>Kérdezd le, hogy a &quot;Monitor&quot; termék hányadik helyen található a tömbben (hanyadik index).</p>
+<p><strong>Tipp:</strong> Van egy metódus, amely egy keresett elem indexét adja vissza. Mit ad vissza, ha nem találja?</p>
+<p><strong>C) Számítsd ki az összes termék átlagárát</strong></p>
+<p>Járd be a tömböt, add össze az árakat, majd oszd el a termékek számával.</p>
+<p><strong>Gondolkodtató:</strong> Milyen kezdőértékkel kell indítanod egy összeadást? Hogyan jutasz hozzá egy termék <code>ar</code> tulajdonságához a cikluson belül?</p>
+<p><strong>D) Drága termékek számlálása</strong></p>
+<p>Számold meg, hogy hány olyan termék van, amelynek az ára meghaladja a 20000 Ft-ot. Használj egy számlálót és egy feltételes utasítást a cikluson belül!</p>
+<p><strong>E) Termékrotáció</strong></p>
+<p>Az első terméket mozgasd a lista végére (szimulálva egy raktári rotációt):</p>
+<ul>
+<li>Távolítsd el az első elemet</li>
+<li>Add hozzá a tömb végéhez</li>
+</ul>
+<p>Írd ki az új sorrendet!</p>
+<p><strong>Tipp:</strong> Van metódus a tömb elejéről való eltávolításra, és van a végére való hozzáadásra is.</p>
+<h2 id="3-feladat-hallgatói-eredmények-feldolgozása"><strong>3. feladat: Hallgatói eredmények feldolgozása</strong></h2>
+<h3 id="kiinduló-állapot-2">Kiinduló állapot</h3>
+<p>Egy vizsga eredményeit kaptad meg pontszámokban (0-100 skálán). Ezeket kell feldolgoznod és különböző riportokat készítened.</p>
+<pre><code class="lang-javascript">const pontszamok = [85, 92, 78, 45, 67, 88, 91, 34, 72, 95];
+</code></pre>
+<h3 id="lépések-2">Lépések</h3>
+<p><strong>A) Alakítsd át a pontszámokat százalékká</strong></p>
+<p>Hozz létre egy új tömböt, amely minden pontszámhoz egy szöveget tartalmaz: <code>&quot;85%&quot;</code>, <code>&quot;92%&quot;</code> stb.</p>
+<p><strong>Gondolkodtató:</strong> Melyik tömb metódus hoz létre új tömböt úgy, hogy minden elemet átalakít? Hogyan fűzhetsz össze egy számot egy szöveggel?</p>
+<p><strong>B) Szűrd ki a bukott hallgatókat</strong></p>
+<p>Készíts egy új tömböt csak azokkal a pontszámokkal, amelyek 50 alatt vannak (bukás).</p>
+<p><strong>Tipp:</strong> Melyik metódus választja ki azokat az elemeket, amelyek megfelelnek egy feltételnek?</p>
+<p><strong>Próbáld ki:</strong> Módosítsd a feltételt úgy, hogy a sikeres (50 vagy feletti) pontszámokat kapd meg!</p>
+<p><strong>C) Számítsd ki a sikeres vizsgák átlagát</strong></p>
+<p>Kombináld a szűrést és az átlagszámítást:</p>
+<ol>
+<li>Először szűrd ki a sikeres vizsgákat (50 vagy magasabb)</li>
+<li>Majd számítsd ki ezek átlagát</li>
+</ol>
+<p><strong>Gondolkodtató:</strong> Hogyan lehet egy metódus eredményén (ami egy tömb) további műveleteket végezni?</p>
+<p><strong>D) Többszintű szűrés</strong></p>
+<p>Készíts egy új tömböt, amely csak a &quot;közepes&quot; eredményeket tartalmazza: 60 és 80 közötti pontszámok (mindkettő beleértve).</p>
+<p><strong>Tipp:</strong> Egy <code>filter()</code> feltételében használhatsz <code>&amp;&amp;</code> (és) operátort két feltétel egyidejű ellenőrzésére.</p>
+<p><strong>E) Láncolt műveletek</strong></p>
+<p>Egyetlen utasításban (metóduslánccal):</p>
+<ol>
+<li>Szűrd ki a 70 feletti pontszámokat</li>
+<li>Alakítsd át őket úgy, hogy mindegyikhez hozzáadsz 5 bónuszpontot</li>
+<li>Az eredményt tárold egy új tömbben</li>
+</ol>
+<p><strong>Gondolkodtató:</strong> Hogyan lehet egy <code>filter()</code> után közvetlenül <code>map()</code>-et hívni?</p>
+<h2 id="4-feladat-versenyeredmények-rangsorolása"><strong>4. feladat: Versenyeredmények rangsorolása</strong></h2>
+<h3 id="kiinduló-állapot-3">Kiinduló állapot</h3>
+<p>Egy atlétikai verseny futóinak eredményeit kell feldolgoznod és különböző szempontok szerint rangsorolnod.</p>
+<pre><code class="lang-javascript">const versenyzok = [
+    { nev: &quot;Kiss Anna&quot;, orszag: &quot;Magyarország&quot;, ido: 12.5 },
+    { nev: &quot;Smith John&quot;, orszag: &quot;USA&quot;, ido: 11.8 },
+    { nev: &quot;Müller Hans&quot;, orszag: &quot;Németország&quot;, ido: 12.1 },
+    { nev: &quot;Kovács Béla&quot;, orszag: &quot;Magyarország&quot;, ido: 13.2 },
+    { nev: &quot;Dubois Marie&quot;, orszag: &quot;Franciaország&quot;, ido: 11.9 }
+];
+</code></pre>
+<h3 id="lépések-3">Lépések</h3>
+<p><strong>A) Rendezd ABC sorrendbe a neveket</strong></p>
+<p>Rendezd a versenyzőket név szerint, ábécé sorrendben. Írd ki az eredményt!</p>
+<p><strong>Figyelem:</strong> A <code>sort()</code> módosítja az eredeti tömböt! Gondolkodj el, hogy szeretnéd-e megőrizni az eredeti sorrendet is.</p>
+<p><strong>Tipp stringekhez:</strong> A <code>localeCompare()</code> metódus a legmegbízhatóbb szövegek összehasonlítására.</p>
+<p><strong>B) Rangsorold eredmény szerint (legjobb → legrosszabb)</strong></p>
+<p>Rendezd a versenyzőket idő szerint, ahol a legkisebb idő (leggyorsabb) az első.</p>
+<p><strong>Gondolkodtató:</strong> Milyen összehasonlító függvényt kell írnod számokhoz? Emlékszel, hogy <code>a - b</code> növekvő vagy csökkenő sorrendet ad?</p>
+<p><strong>C) Fordított rangsor</strong></p>
+<p>Most rendezd úgy, hogy a leglassabb legyen elöl (csökkenő idő szerint).</p>
+<p><strong>Tipp:</strong> Csak a kivonás sorrendjét kell megfordítanod az összehasonlító függvényben.</p>
+<p><strong>D) Védett rendezés</strong></p>
+<p>Mielőtt újra rendeznél, készíts egy másolatot a tömbről, hogy az eredeti sorrend megmaradjon!</p>
+<p>Rendezd országonként ABC sorrendbe ezt az új tömböt.</p>
+<p><strong>Gondolkodtató:</strong> Hogyan tudsz egy tömb másolatot készíteni? (Tipp: spread operátor <code>[...eredeti]</code> vagy <code>slice()</code>)</p>
+<p><strong>E) Hibakeresés: Miért hibás ez a rendezés?</strong></p>
+<p>Futtasd le a következő kódot és figyeld meg az eredményt:</p>
+<pre><code class="lang-javascript">const idok = [12.5, 11.8, 12.1, 13.2, 11.9];
+idok.sort();
+console.log(idok);
+</code></pre>
+<p><strong>Kérdések:</strong></p>
+<ul>
+<li>Helyes a sorrend? Miért nem?</li>
+<li>Mit kellene használnod összehasonlító függvény helyett?</li>
+<li>Javítsd ki a kódot!</li>
+</ul>
+<h2 id="5-feladat-online-áruház-kezelő-komplex-integráció"><strong>5. feladat: Online áruház kezelő (Komplex integráció)</strong></h2>
+<h3 id="kiinduló-állapot-4">Kiinduló állapot</h3>
+<p>Egy webáruház termékkatalógusát kell kezelned. Minden termék objektum a következő adatokat tartalmazza:</p>
+<pre><code class="lang-javascript">const termekek = [
+    { id: 1, nev: &quot;Okostelefon&quot;, ar: 150000, kategoria: &quot;Elektronika&quot;, keszlet: 15 },
+    { id: 2, nev: &quot;Laptop&quot;, ar: 300000, kategoria: &quot;Elektronika&quot;, keszlet: 0 },
+    { id: 3, nev: &quot;Póló&quot;, ar: 5000, kategoria: &quot;Ruházat&quot;, keszlet: 50 },
+    { id: 4, nev: &quot;Futócipő&quot;, ar: 25000, kategoria: &quot;Sport&quot;, keszlet: 8 },
+    { id: 5, nev: &quot;Könyv&quot;, ar: 4000, kategoria: &quot;Könyv&quot;, keszlet: 30 },
+    { id: 6, nev: &quot;Fejhallgató&quot;, ar: 15000, kategoria: &quot;Elektronika&quot;, keszlet: 12 },
+    { id: 7, nev: &quot;Hátizsák&quot;, ar: 18000, kategoria: &quot;Sport&quot;, keszlet: 0 }
+];
+</code></pre>
+<h3 id="lépések-4">Lépések</h3>
+<p><strong>A) Black Friday akció - Árcsökkentés</strong></p>
+<p>Készíts egy új tömböt, ahol az összes Elektronika kategóriájú termék ára 20%-kal csökkentett. A többi termék eredeti áron marad.</p>
+<p><strong>Gondolkodtató:</strong></p>
+<ul>
+<li>Melyik metódussal alakíthatsz át minden elemet?</li>
+<li>Hogyan ellenőrzöd a kategóriát?</li>
+<li>Hogyan számolod a 20%-os csökkentést? (Tipp: eredeti ár * 0.8)</li>
+</ul>
+<p><strong>B) Csak raktáron lévő termékek</strong></p>
+<p>Szűrd ki azokat a termékeket, amelyek raktáron vannak (készlet &gt; 0). Az eredményt tárold egy új változóban.</p>
+<p><strong>Tipp:</strong> Ez egy egyszerű <code>filter()</code> művelet egy feltétellel.</p>
+<p><strong>C) Kategóriánkénti szűrés és számítás</strong></p>
+<p>Válaszd ki csak a &quot;Sport&quot; kategóriájú termékeket, majd számítsd ki, hogy összesen mekkora értékben van Sport termék a raktárban (ár × készlet mindegyiknél, majd összeadva).</p>
+<p><strong>Gondolkodtató:</strong></p>
+<ol>
+<li>Először szűrés kategória alapján</li>
+<li>Majd egy ciklus vagy <code>map()</code> az értékek kiszámítására</li>
+<li>Végül összegzés</li>
+</ol>
+<p><strong>D) Árrangsor készítése</strong></p>
+<p>Rendezd a termékeket ár szerint csökkenő sorrendbe (legdrágább elől), de csak azokat, amelyek raktáron vannak!</p>
+<p>Írd ki az első 3 legdrágább, raktáron lévő terméket!</p>
+<p><strong>Lépések:</strong></p>
+<ol>
+<li>Szűrés (készlet &gt; 0)</li>
+<li>Rendezés (ár szerint csökkenő)</li>
+<li>Az első 3 elem kiírása</li>
+</ol>
+<p><strong>Tipp:</strong> A tömb első N elemét elérheted indexszel vagy a <code>.slice(0, 3)</code> metódussal.</p>
+<p><strong>E) Bevásárlókosár objektum metódusokkal</strong></p>
+<p>Készíts egy <code>kosar</code> objektumot a következő metódusokkal:</p>
+<pre><code class="lang-javascript">const kosar = {
+    termekek: [],  // üres tömb a kosárban lévő termékeknek
+    
+    hozzaad: function(termek) {
+        // Add hozzá a terméket a kosárhoz
+        // Írd ki: &quot;Hozzáadva: [terméknév]&quot;
+    },
+    
+    eltavolit: function(termekId) {
+        // Távolítsd el a terméket ID alapján
+        // Tipp: indexOf() + splice() vagy filter()
+    },
+    
+    osszegez: function() {
+        // Számítsd ki és írd ki a kosár összértékét
+        // Tipp: Végigmenni a termékek tömbjén és összeadni az árakat
+    },
+    
+    listaz: function() {
+        // Írd ki az összes kosárban lévő termék nevét és árát
+    }
+};
+</code></pre>
+<p><strong>Feladat:</strong></p>
+<ol>
+<li>Valósítsd meg a metódusokat!</li>
+<li>Teszteld: adj hozzá 3 terméket, távolíts el egyet ID alapján, számold ki az összeget!</li>
+</ol>
+<p><strong>Gondolkodtató:</strong></p>
+<ul>
+<li>A metódusokon belül hogyan éred el a <code>termekek</code> tömböt? (<code>this.termekek</code>)</li>
+<li>Az <code>eltavolit</code> metódusnál hogyan találod meg a terméket ID alapján?</li>
+<li>Az <code>osszegez</code> metódusnál hogyan adsz össze értékeket egy tömbből?</li>
+</ul>
+<p><strong>Bónusz kihívás:</strong> Módosítsd a <code>kosar</code> objektumot úgy, hogy ne a teljes termék objektumot tárolja, hanem csak az ID-t és a darabszámot. Így ugyanabból a termékből többet is lehet vásárolni!</p>
+<h2 id="megoldás-után">Megoldás után</h2>
+<p>Miután végeztél a feladatokkal, érdemes átgondolni:</p>
+<ul>
+<li>Melyik metódus módosítja az eredeti tömböt, és melyik hoz létre újat?</li>
+<li>Mikor használsz <code>for...of</code> ciklust és mikor <code>map()</code>/<code>filter()</code>-t?</li>
+<li>Hogyan kombinálhatod a metódusokat (láncolás)?</li>
+<li>Mikor kell összehasonlító függvényt használnod a <code>sort()</code>-nál?</li>
+</ul>
 
 </article>
 

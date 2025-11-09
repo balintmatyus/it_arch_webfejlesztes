@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title> | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <title>JavaScript Objektumok &#233;s T&#246;mb&#246;k | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content=" | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      <meta name="title" content="JavaScript Objektumok &#233;s T&#246;mb&#246;k | Informatika &#233;s IT Architekt&#250;ra alapjai ">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -81,7 +81,298 @@
         </div>
 
         <article data-uid="">
+<h1 id="javascript-objektumok-és-tömbök">JavaScript Objektumok és Tömbök</h1>
 
+<h2 id="komplex-adattípusok-bevezetése-objektumok">Komplex Adattípusok Bevezetése: Objektumok</h2>
+<p>A JavaScript egy objektumalapú nyelv. Ez az jelenti, hogy szinte mindent objektumként kezel, ami komplex adatokat tárol. Míg az alapvető típusok, mint a <code>string</code> vagy <code>number</code>, egyetlen elemi értéket tárolnak, az objektumok lehetővé teszik számunkra, hogy összetartozó információkat csoportosítsunk egyetlen elnevezett &quot;konténerbe&quot;. Egy <strong>objektum</strong> lényegében egy komplex változó, amely több, elnevezett értéket (kulcs-érték párokat) tárol. Ezek az értékek lehetnek <strong>tulajdonságok</strong> (adatok) vagy <strong>metódusok</strong> (fügvények, amelyek viselkedést definiálnak).</p>
+<p>Gondoljunk például egy <em>hallgatói rekordra</em>. Egy hallgatónak van például neve, Neptun-kódja és tanulmányi átlaga. Ezeket a különböző típusú adatokat egyetlen objektumban tárolhatjuk.</p>
+<h3 id="objektumok-használata-és-felépítése">Objektumok használata és felépítése</h3>
+<p>Objektumot létrehozhatunk a literál szintaxissal (kapcsos zárójelekkel).</p>
+<pre><code class="lang-javascript">const hallgato = {
+    // Tulajdonságok (kulcs: érték párok)
+    nev: &quot;Minta János&quot;,
+    neptunKod: &quot;A1B2C3&quot;,
+    szak: &quot;Gazdaságinformatikus&quot;,
+    aktivFelev: true,
+    tanulmanyiAtlag: 4.25,
+
+    // Metódus (egy függvény, ami az objektumhoz tartozik)
+    koszon: function() {
+        // A 'this' kulcsszó az aktuális objektumra (hallgato) hivatkozik
+        console.log(`Sziasztok, a nevem ${this.nev} és a Neptun-kódom ${this.neptunKod}.`);
+    },
+
+    // Modern (ES6) szintaxis metódusokra
+    setAtlag(ujAtlag) {
+        if (ujAtlag &gt;= 1.0 &amp;&amp; ujAtlag &lt;= 5.0) {
+            this.tanulmanyiAtlag = ujAtlag;
+            console.log(`A tanulmányi átlag frissítve: ${this.tanulmanyiAtlag}`);
+        } else {
+            console.error(&quot;Érvénytelen átlag!&quot;);
+        }
+    }
+};
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Miért <code>const</code>?</strong></p>
+<p>A <code>const</code> kulcsszót objektumok (és tömbök) esetén azért preferáljuk, mert magát a <strong>hivatkozást (referenciát)</strong> teszi állandóvá, nem az objektum tartalmát.</p>
+<ul>
+<li><strong>Megakadályozza:</strong> Azt nem tehetjük meg, hogy a <code>hallgato</code> változónak egy teljesen új objektumot vagy más értéket adjunk (<code>hallgato = { ... }</code>). Ez hibát dobna.</li>
+<li><strong>Lehetővé teszi:</strong> Azt viszont szabadon megtehetjük, hogy az objektum <em>belül</em> lévő tulajdonságait módosítjuk (pl. <code>hallgato.nev = &quot;Minta Janka&quot;</code> vagy <code>hallgato.setAtlag(4.5)</code>).</li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Elemtípus</th>
+<th style="text-align: left;">Leírás</th>
+<th style="text-align: left;">Példák (a <code>hallgato</code> objektumból)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tulajdonság</strong></td>
+<td style="text-align: left;">Az objektumot leíró adat. Meghatározzák az objektum állapotát.</td>
+<td style="text-align: left;"><code>hallgato.nev</code> (a hallgató neve), <code>hallgato.szak</code> (szak neve).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Metódus</strong></td>
+<td style="text-align: left;">Az objektumon végrehajtható művelet, azaz egy hozzárendelt függvény.</td>
+<td style="text-align: left;"><code>hallgato.koszon()</code> (hallgató köszön), <code>hallgato.setAtlag(4.1)</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gyakorlati-objektum-tulajdonságok">Gyakorlati objektum tulajdonságok</h3>
+<p>A weboldalunkkal kapcsolatban rengeteg hasznos információt érhetünk el a beépített <code>document</code> objektumon keresztül, például:</p>
+<ul>
+<li><code>document.lastModified</code>: a dokumentum utolsó módosításának ideje.</li>
+<li><code>document.title</code>: a dokumentum címe.</li>
+<li><code>document.body.style.backgroundColor</code>: a dokumentum háttérszíne.</li>
+</ul>
+<h2 id="tömbök-arrays--listák-kezelése">Tömbök (Arrays) – Listák Kezelése</h2>
+<p>A <strong>tömbök</strong> (arrays) listaszerű objektumok, amelyek több értéket tárolnak egyetlen változónév alatt. Ez a kulcs ahhoz, hogy hatékonyan tudjunk kezelni nagy mennyiségű, hasonló adatot (gondoljunk csak 100 hallgatóra egy évfolyamon!).</p>
+<h3 id="tömbök-létrehozása-és-elérése">Tömbök létrehozása és elérése</h3>
+<ol>
+<li><p><strong>Létrehozás:</strong> Szögletes zárójelekkel <code>[]</code> és vesszővel elválasztott elemekkel. Lehet bennük string, szám, objektum, sőt, akár más tömb is (többdimenziós tömb).</p>
+<pre><code class="lang-javascript">const gyumolcsok = [&quot;alma&quot;, &quot;körte&quot;, &quot;szilva&quot;];
+const vegyesAdatok = [&quot;fa&quot;, 795,]; // vegyes típusok engedélyezettek
+</code></pre>
+</li>
+<li><p><strong>Hossz (Length):</strong> A <code>length</code> tulajdonság adja vissza a tömbben lévő elemek számát.</p>
+</li>
+<li><p><strong>Indexelés és elérés:</strong> Az elemek számozása <strong>nullától (0)</strong> kezdődik. Az egyes elemeket szögletes zárójelekkel érhetjük el:</p>
+<pre><code class="lang-javascript">console.log(gyumolcsok[0]); // &quot;alma&quot;
+console.log(gyumolcsok[gyumolcsok.length - 1]); // Utolsó elem
+</code></pre>
+</li>
+<li><p><strong>Módosítás:</strong> Az egyes indexekhez új értéket rendelve módosíthatjuk a tömb tartalmát.</p>
+<pre><code class="lang-javascript">const kedvencEtelem = [&quot;pizza&quot;, &quot;csoki&quot;];
+kedvencEtelem[1] = &quot;tökfőzelék&quot;; // a &quot;csoki&quot; helyére kerül
+</code></pre>
+</li>
+<li><p><strong>Elem indexének keresése:</strong> Az <code>indexOf()</code> metódus visszaadja a keresett elem első előfordulásának indexét, vagy <code>-1</code>-et, ha nem találja.</p>
+</li>
+</ol>
+<h3 id="elemek-hozzáadása-és-eltávolítása">Elemek hozzáadása és eltávolítása</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Metódus</th>
+<th style="text-align: left;">Leírás</th>
+<th style="text-align: left;">Hol történik a módosítás?</th>
+<th style="text-align: left;">Visszatérési érték</th>
+<th style="text-align: left;">Forrás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>push()</code></td>
+<td style="text-align: left;">Egy vagy több elemet ad a tömb végéhez.</td>
+<td style="text-align: left;">Vég</td>
+<td style="text-align: left;">A tömb új hossza.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>pop()</code></td>
+<td style="text-align: left;">Eltávolítja az utolsó elemet.</td>
+<td style="text-align: left;">Vég</td>
+<td style="text-align: left;">Az eltávolított elem.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>unshift()</code></td>
+<td style="text-align: left;">Egy vagy több elemet ad a tömb elejéhez.</td>
+<td style="text-align: left;">Eleje</td>
+<td style="text-align: left;">A tömb új hossza.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>shift()</code></td>
+<td style="text-align: left;">Eltávolítja az első elemet.</td>
+<td style="text-align: left;">Eleje</td>
+<td style="text-align: left;">Az eltávolított elem.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>splice(i, n)</code></td>
+<td style="text-align: left;">Eltávolítja az <span class="math">\(i\)</span>-edik indextől kezdve <span class="math">\(n\)</span> darab elemet.</td>
+<td style="text-align: left;">Bárhol</td>
+<td style="text-align: left;">Az eltávolított elemek tömbje.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="adatfolyam-kezelése">Adatfolyam kezelése</h2>
+<p>A nagy mennyiségű adat (pl. táblázatok, felhasználói listák) kezelésének kulcsa, hogy képesek legyünk végigmenni a tömbökön, szűrni őket, vagy átalakítani az elemeket.</p>
+<h3 id="iteráció">Iteráció</h3>
+<p>A ciklusok arra szolgálnak, hogy elvégezzünk egy feladatot a tömb minden elemén.</p>
+<ul>
+<li><p><strong><code>for...of</code> ciklus (Érték-alapú iteráció)</strong>: Ezzel a ciklussal közvetlenül a tömb <strong>értékein</strong> (elemein) tudunk végigmenni, indexek használata nélkül. Ez a leggyakrabban használt és legolvashatóbb módszer tömbök bejárására.</p>
+<pre><code class="lang-javascript">for (const elem of tomb_nev) {
+  console.log(elem); // Elem értékét kapjuk meg
+}
+</code></pre>
+</li>
+<li><p><strong><code>for...in</code> ciklus (Kulcs-alapú iteráció)</strong>: Ezt a ciklust inkább <strong>objektumok tulajdonságainak kulcsain</strong> (nevein) való iterálásra használjuk, nem tömbök elemeinek bejárására. Tömböknél a kulcsok az indexek.</p>
+</li>
+<li><p><strong>Hagyományos <code>for</code> ciklus</strong>: Akkor hasznos, ha feltétlenül szükségünk van az aktuális indexre, vagy ha speciális számlálást akarunk végezni.</p>
+<pre><code class="lang-javascript">for (let i = 0; i &lt; tomb.length; i++) {
+  console.log(`Elem az indexen ${i}: ${tomb[i]}`);
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="leképezés-map">Leképezés (<code>map()</code>)</h3>
+<p>A <code>map()</code> metódus minden elemet átalakít egy tömbön belül a megadott függvény szerint, majd az eredményekből egy <strong>új tömböt</strong> hoz létre.</p>
+<p><strong>Például:</strong> Tömb elemeinek megkettőzése: [1,2,3] --&gt; [2,4,6]</p>
+<pre><code class="lang-javascript">// 1. Az eredeti tömb
+const szamok = [1, 2, 3];
+
+// 2. Definiáljuk a logikát egy különálló, elnevezett függvényben
+// Ez a függvény egyetlen számot vár (amit &quot;egySzam&quot;-nak nevezünk)
+// és visszaadja annak a dupláját.
+function duplazoFuggveny(egySzam) {
+    return 2 * egySzam;
+}
+
+// 3. A .map() metódus hívása
+// A map-nek átadjuk a 'duplazoFuggveny' nevét.
+// Fontos: Zárójel () nélkül adjuk át!
+// A JavaScript motor automatikusan meghívja ezt a függvényt
+// a tömb minden elemére (először 1-re, aztán 2-re, végül 3-ra).
+const duplaSzamok = szamok.map(duplazoFuggveny);
+
+// Rövidebb (és gyakoribb) szintaxis arrow function-nel:
+// const duplaSzamok = szamok.map(szam =&gt; szam * 2);
+
+// 3. Az eredmény
+console.log(duplaSzamok); // Eredmény: [2, 4, 6]
+
+// Fontos: Az eredeti tömb változatlan marad!
+console.log(szamok);       // Eredmény: [1, 2, 3]
+</code></pre>
+<h3 id="szűrés-filter">Szűrés (<code>filter()</code>)</h3>
+<p>A <code>filter()</code> metódus egy <strong>logikai tesztet</strong> (predicate) futtat minden elemen, és csak azokat az elemeket gyűjti össze egy <strong>új tömbbe</strong>, amelyekre a feltétel <code>true</code> értéket ad vissza.</p>
+<p><strong>Például:</strong> Megfelelő adatok kiválasztása egy halmazból (lásd: csak a 8 karakternél hosszabb városnevek kiválasztása).</p>
+<pre><code class="lang-javascript">// 1. Az eredeti tömb (a &quot;halmaz&quot;)
+const varosok = ['Budapest', 'Debrecen', 'Szeged', 'Miskolc', 'Pécs', 'Győr', 'Nyíregyháza'];
+
+// 2. A szűrő függvény (a &quot;logikai teszt&quot;)
+// Ez a függvény minden elemre lefut. Ha true-t ad vissza,
+// az elem bekerül az új tömbbe, ha false-t, akkor nem.
+const hosszuVarosok = varosok.filter((varosnev) =&gt; {
+  return varosnev.length &gt; 8;
+});
+
+// Rövidebb (gyakoribb) szintaxis:
+// const hosszuVarosok = varosok.filter(varosnev =&gt; varosnev.length &gt; 8);
+
+// 3. Az eredmény
+console.log(hosszuVarosok);
+// Eredmény: ['Budapest', 'Debrecen', 'Nyíregyháza']
+
+// Fontos: Az eredeti tömb most sem változott!
+console.log(varosok);
+// Eredmény: ['Budapest', 'Debrecen', 'Szeged', 'Miskolc', 'Pécs', 'Győr', 'Nyíregyháza']
+</code></pre>
+<h3 id="sorbarendezés-sort">Sorbarendezés (<code>sort()</code>)</h3>
+<p>A <code>.sort()</code> metódus a tömb elemeit rendezi sorba.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>A <code>.map()</code> és <code>.filter()</code> metódusokkal ellentétben (amelyek új tömböt hoznak létre), a <code>.sort()</code> <strong>közvetlenül módosítja (mutálja) az eredeti tömböt!</strong> Ez egy alapvető különbség és gyakori hibaforrás.</p>
+</div>
+<h4 id="alapértelmezett-szöveges-rendezés">Alapértelmezett (szöveges) rendezés</h4>
+<p>A <code>sort()</code> metódus alapértelmezés szerint <strong>minden elemet szövegként kezel</strong> és ábécé sorrendbe (pontosabban: UTF-16 kódpontok szerint) rendezi. Ez stringeknél tökéletesen működik, de számoknál váratlan és hibás eredményt ad.</p>
+<pre><code class="lang-javascript">// Stringek rendezése (Várt eredmény)
+const gyumolcsok = ['körte', 'alma', 'banán', 'szilva'];
+gyumolcsok.sort();
+console.log(gyumolcsok);
+// Eredmény: ['alma', 'banán', 'körte', 'szilva']
+
+// ---
+
+// Számok rendezése (Hibás eredmény)
+const pontszamok = [10, 5, 100, 2];
+pontszamok.sort();
+console.log(pontszamok);
+// Eredmény: [10, 100, 2, 5]
+</code></pre>
+<p>A fenti példa azért hibás, mert a <code>sort()</code> a számokat szövegként hasonlítja össze: a &quot;100&quot; szöveg a &quot;2&quot; szöveg elé kerül az ábécében (az első karakter, &quot;1&quot;, előbb van, mint &quot;2&quot;).</p>
+<h4 id="helyes-rendezés-az-összehasonlító-függvény">Helyes rendezés: Az összehasonlító függvény</h4>
+<p>Ahhoz, hogy a rendezés helyesen (pl. számérték szerint) működjön, egy <strong>összehasonlító függvényt</strong> (compare function) kell átadnunk a <code>sort()</code> metódusnak.</p>
+<p>Ez a függvény két elemet kap paraméterként (nevezzük őket <code>a</code>-nak és <code>b</code>-nek), és a visszatérési értékével jelzi a helyes sorrendet:</p>
+<ul>
+<li>Ha <strong>negatív számot</strong> ad vissza: <code>a</code> kerül <code>b</code> elé (a sorrend jó).</li>
+<li>Ha <strong>pozitív számot</strong> ad vissza: <code>b</code> kerül <code>a</code> elé (cserélni kell).</li>
+<li>Ha <strong>nullát</strong> ad vissza: a sorrend mindegy.</li>
+</ul>
+<p>Szerencsére számok esetén ezt nagyon egyszerűen meg lehet oldani:</p>
+<ul>
+<li><strong>Növekvő sorrend:</strong> <code>(a, b) =&gt; a - b</code></li>
+<li><strong>Csökkenő sorrend:</strong> <code>(a, b) =&gt; b - a</code></li>
+</ul>
+<pre><code class="lang-javascript">const pontszamok = [10, 5, 100, 2];
+
+// Számok növekvő rendezése (helyesen)
+pontszamok.sort((a, b) =&gt; a - b);
+console.log(pontszamok);
+// Eredmény: [2, 5, 10, 100]
+
+// Számok csökkenő rendezése (helyesen)
+pontszamok.sort((a, b) =&gt; b - a);
+console.log(pontszamok);
+// Eredmény: [100, 10, 5, 2]
+</code></pre>
+<h4 id="objektumok-rendezése-tulajdonság-szerint">Objektumok rendezése tulajdonság szerint</h4>
+<p>Az összehasonlító függvény logikája tökéletesen alkalmas arra, hogy objektumokból álló tömböket is rendezzünk egy adott tulajdonságuk alapján.</p>
+<pre><code class="lang-javascript">// Lásd a korábbi 'hallgato' objektum sémáját
+const hallgatok = [
+  { nev: 'Minta János', tanulmanyiAtlag: 4.25 },
+  { nev: 'Kovács Éva', tanulmanyiAtlag: 3.8 },
+  { nev: 'Nagy Béla', tanulmanyiAtlag: 4.5 }
+];
+
+// Rendezés tanulmányi átlag szerint (csökkenő)
+hallgatok.sort((a, b) =&gt; b.tanulmanyiAtlag - a.tanulmanyiAtlag);
+
+console.log(hallgatok);
+// Eredmény:
+// 1. Nagy Béla (4.5)
+// 2. Minta János (4.25)
+// 3. Kovács Éva (3.8)
+
+// Rendezés név szerint (növekvő, ábécé)
+// Stringek összehasonlítására a .localeCompare() a legbiztosabb módszer!
+hallgatok.sort((a, b) =&gt; a.nev.localeCompare(b.nev));
+
+console.log(hallgatok);
+// Eredmény:
+// 1. Kovács Éva
+// 2. Minta János
+// 3. Nagy Béla
+</code></pre>
+<p>A szöveg AI felhasználásával készült.</p>
 
 </article>
 
