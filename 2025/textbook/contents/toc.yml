@@ -89,9 +89,9 @@
 - name: 9. hét
   items:
   - name: 💡 JavaScript események, DOM manipuláció
-    href: todo.md
+    href: week09/09-js-dom-events.md
   - name: 🛠 Gyakorló feladatok
-    href: todo.md
+    href: week09/09-js-dom-gyak.md
 - name: 10. hét
   items:
   - name: 💡 Űrlapok validálása Javascripttel
