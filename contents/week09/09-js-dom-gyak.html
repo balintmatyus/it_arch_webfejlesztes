@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Gyakorl&#243; Feladatok - JavaScript DOM manipul&#225;ci&#243; &#233;s esem&#233;nyek | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Gyakorl&#243; Feladatok - JavaScript DOM manipul&#225;ci&#243; &#233;s esem&#233;nyek | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week09/09-js-dom-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gyakorló-feladatok---javascript-dom-manipuláció-és-események">Gyakorló Feladatok - JavaScript DOM manipuláció és események</h1>
+
+<h2 id="1-feladat-termékek-megjelenítése-táblázatban"><strong>1. feladat: Termékek megjelenítése táblázatban</strong></h2>
+<h3 id="kiinduló-állapot">Kiinduló állapot</h3>
+<p>Egy webáruház termékadatait kaptad JSON formátumban. A feladatod, hogy ezeket az adatokat dinamikusan jelenítsd meg egy HTML táblázatban a DOM manipuláció segítségével.</p>
+<pre><code class="lang-javascript">const termekek = [
+    { id: 1, nev: &quot;Wireless egér&quot;, kategoria: &quot;Elektronika&quot;, ar: 8500, keszlet: 23 },
+    { id: 2, nev: &quot;USB-C kábel&quot;, kategoria: &quot;Kiegészítők&quot;, ar: 2500, keszlet: 150 },
+    { id: 3, nev: &quot;Laptop táska&quot;, kategoria: &quot;Kiegészítők&quot;, ar: 12000, keszlet: 8 },
+    { id: 4, nev: &quot;Bluetooth hangszóró&quot;, kategoria: &quot;Elektronika&quot;, ar: 15000, keszlet: 0 },
+    { id: 5, nev: &quot;Webkamera&quot;, kategoria: &quot;Elektronika&quot;, ar: 18000, keszlet: 12 },
+    { id: 6, nev: &quot;Monitor állvány&quot;, kategoria: &quot;Kiegészítők&quot;, ar: 9500, keszlet: 15 },
+    { id: 7, nev: &quot;Mechanikus billentyűzet&quot;, kategoria: &quot;Elektronika&quot;, ar: 25000, keszlet: 5 },
+    { id: 8, nev: &quot;HDMI kábel&quot;, kategoria: &quot;Kiegészítők&quot;, ar: 3000, keszlet: 89 }
+];
+</code></pre>
+<h3 id="html-kiinduló-struktúra">HTML kiinduló struktúra</h3>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Terméklista&lt;/title&gt;
+    &lt;style&gt;
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .keszlet-nincs {
+            color: red;
+            font-weight: bold;
+        }
+        
+        .keszlet-keves {
+            color: orange;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Terméklista&lt;/h1&gt;
+    &lt;div id=&quot;tablazat-container&quot;&gt;&lt;/div&gt;
+    
+    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="lépések">Lépések</h3>
+<p><strong>A) Táblázat alapstruktúrájának létrehozása</strong></p>
+<p>Hozd létre a táblázat vázát JavaScriptben:</p>
+<ul>
+<li>Készíts egy <code>&lt;table&gt;</code> elemet</li>
+<li>Add hozzá a fejlécet (<code>&lt;thead&gt;</code>) a következő oszlopokkal: &quot;ID&quot;, &quot;Terméknév&quot;, &quot;Kategória&quot;, &quot;Ár (Ft)&quot;, &quot;Készlet&quot;</li>
+<li>Hozz létre egy üres <code>&lt;tbody&gt;</code> elemet a termékek számára</li>
+<li>Add hozzá a táblázatot a <code>tablazat-container</code> div-hez</li>
+</ul>
+<p><strong>Tipp:</strong> Használd a <code>document.createElement()</code> és <code>appendChild()</code> metódusokat!</p>
+<pre><code class="lang-javascript">function tablazatLetrehozas() {
+    // 1. Táblázat létrehozása
+    const tabla = document.createElement(&quot;table&quot;);
+    
+    // 2. Fejléc létrehozása
+    const thead = document.createElement(&quot;thead&quot;);
+    const fejlecSor = document.createElement(&quot;tr&quot;);
+    
+    // Oszlopnevek tömbje
+    const oszlopnevek = [&quot;ID&quot;, &quot;Terméknév&quot;, &quot;Kategória&quot;, &quot;Ár (Ft)&quot;, &quot;Készlet&quot;];
+    
+    // TODO: Ciklussal hozd létre a th elemeket és add hozzá a fejlécsorhoz
+    
+    // 3. Tbody létrehozása
+    const tbody = document.createElement(&quot;tbody&quot;);
+    
+    // TODO: Add hozzá a thead-et és tbody-t a táblázathoz
+    
+    // 4. Táblázat hozzáadása a containerhez
+    // TODO: Keresd meg a container elemet és add hozzá a táblázatot
+    
+    return tbody; // Visszaadjuk, mert később ebbe tesszük a terméksorokat
+}
+</code></pre>
+<hr>
+<p><strong>B) Terméksorok generálása</strong></p>
+<p>Írd meg azt a függvényt, amely végigmegy a <code>termekek</code> tömbön, és minden termékhez létrehoz egy sort a táblázatban.</p>
+<pre><code class="lang-javascript">function termekekMegjelenites(tbody) {
+    // TODO: Menj végig a termekek tömbön
+    // Minden termékhez:
+    // 1. Hozz létre egy sort (tr)
+    // 2. Hozz létre 5 cellát (td) az adatoknak
+    // 3. Állítsd be a cellák tartalmát (innerHTML vagy textContent)
+    // 4. Add hozzá a cellákat a sorhoz
+    // 5. Add hozzá a sort a tbody-hoz
+}
+</code></pre>
+<p><strong>Segítség a cella létrehozásához:</strong></p>
+<pre><code class="lang-javascript">const idCella = document.createElement(&quot;td&quot;);
+idCella.textContent = termek.id;
+</code></pre>
+<hr>
+<p><strong>C) Feltételes formázás készletre</strong></p>
+<p>Módosítsd a készlet cella megjelenítését:</p>
+<ul>
+<li>Ha a készlet 0, add hozzá a <code>keszlet-nincs</code> CSS osztályt (piros, vastag betű)</li>
+<li>Ha a készlet 1-10 között van, add hozzá a <code>keszlet-keves</code> CSS osztályt (narancssárga)</li>
+</ul>
+<p><strong>Tipp:</strong> Használd a <code>classList.add()</code> metódust!</p>
+<pre><code class="lang-javascript">// Példa:
+if (termek.keszlet === 0) {
+    keszletCella.classList.add(&quot;keszlet-nincs&quot;);
+} else if (termek.keszlet &gt;= 1 &amp;&amp; termek.keszlet &lt;= 10) {
+    keszletCella.classList.add(&quot;keszlet-keves&quot;);
+}
+</code></pre>
+<hr>
+<p><strong>D) Ár formázása</strong></p>
+<p>Az ár celláknál jelenítsd meg az árat ezres tagolással és &quot;Ft&quot; végződéssel (pl. &quot;8 500 Ft&quot;).</p>
+<p><strong>Tipp:</strong> Használd a <code>toLocaleString('hu-HU')</code> metódust!</p>
+<pre><code class="lang-javascript">const formataltAr = termek.ar.toLocaleString('hu-HU') + &quot; Ft&quot;;
+</code></pre>
+<hr>
+<p><strong>E) A program összeállítása</strong></p>
+<p>Hívd meg a megfelelő sorrendben a függvényeket, amikor az oldal betöltődött:</p>
+<pre><code class="lang-javascript">// Amikor az oldal betöltődik
+window.addEventListener('load', function() {
+    const tbody = tablazatLetrehozas();
+    termekekMegjelenites(tbody);
+});
+</code></pre>
+<hr>
+<h2 id="2-feladat-termékek-szűrése-név-alapján"><strong>2. feladat: Termékek szűrése név alapján</strong></h2>
+<h3 id="kiinduló-állapot-1">Kiinduló állapot</h3>
+<p>Bővítsd az előző feladatot úgy, hogy a felhasználó egy beviteli mező és egy gomb segítségével szűrhesse a termékeket név szerint.</p>
+<h3 id="html-bővítése">HTML bővítése</h3>
+<p>Add hozzá a következő HTML kódot a <code>&lt;h1&gt;</code> címsor alá, a táblázat elé:</p>
+<pre><code class="lang-html">&lt;div style=&quot;margin: 20px 0;&quot;&gt;
+    &lt;label for=&quot;kereses&quot;&gt;Keresés terméknévre:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;kereses&quot; placeholder=&quot;Írd be a termék nevét...&quot;&gt;
+    &lt;button id=&quot;kereses-gomb&quot;&gt;Keresés&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>A <code>label for=&quot;kereses&quot;</code> egy szöveges címke. Arra szolgál, hogy leírja egy űrlapmező (mint például egy input) funkcióját.</li>
+<li>Az <code>input</code> maga a beviteli mező, ahová a felhasználó gépelni tud. A <code>type=&quot;text&quot;</code> jelzi, hogy ez egy sima, egysoros szöveges mező.</li>
+<li>A <code>button</code> lesz a kattintható gomb, amivel keresés indítható.</li>
+</ul>
+<h3 id="lépések-1">Lépések</h3>
+<p><strong>A) Alapszintű szűrés - Pontos egyezés</strong></p>
+<p>Írd meg azt a függvényt, amely a keresőmezőbe írt szöveg alapján szűri a termékeket (pontos egyezés, kis- és nagybetű érzékeny).</p>
+<pre><code class="lang-javascript">function termekekSzures() {
+    // 1. Keresd meg a keresőmező elemet
+    const keresoMezo = document.getElementById(&quot;kereses&quot;);
+    
+    // 2. Olvasd ki az értékét
+    const keresettNev = keresoMezo.value;
+    
+    // 3. Szűrd a termékek tömböt
+    // TODO: Használj filter() metódust, amely csak azokat a termékeket adja vissza,
+    // amelyek neve pontosan megegyezik a keresett névvel
+    
+    // 4. Frissítsd a táblázatot a szűrt eredménnyel
+    // TODO: Töröld a tbody tartalmát
+    // TODO: Jelenítsd meg a szűrt termékeket
+}
+</code></pre>
+<hr>
+<p><strong>B) Eseménykezelő hozzáadása</strong></p>
+<p>Add hozzá az eseménykezelőt a gombhoz, hogy kattintásra frissüljön a lista.</p>
+<pre><code class="lang-javascript">window.addEventListener('load', function() {
+    const tbody = tablazatLetrehozas();
+    termekekMegjelenites(tbody);
+    
+    // Eseménykezelő a keresés gombhoz
+    const keresGomb = document.getElementById(&quot;kereses-gomb&quot;);
+    keresGomb.addEventListener(&quot;click&quot;, termekekSzures);
+});
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A <code>click</code> esemény akkor aktiválódik, amikor a felhasználó rákattint egy elemre (pl. gombra). Ez a leggyakrabban használt esemény interaktív elemek esetén.</p>
+</div>
+<hr>
+<p><strong>C) EXTRA: Részleges egyezés (startsWith)</strong></p>
+<p>Módosítsd a szűrési logikát úgy, hogy ne csak pontos egyezést keressen, hanem minden olyan terméket mutasson, amelynek neve a beírt szöveggel kezdődik.</p>
+<p><strong>Tipp:</strong> Használd a <code>.toLowerCase()</code> metódust mindkét oldalon!</p>
+<pre><code class="lang-javascript">const szurtTermekek = termekek.filter(termek =&gt; {
+    return termek.nev.toLowerCase().startsWith(keresettNev.toLowerCase());
+});
+</code></pre>
+<hr>
+<p><strong>D) EXTRA: Kijelzés, ha nincs találat</strong></p>
+<p>Ha a szűrés után nem marad egyetlen termék sem, jelenítsd meg egy üzenetet: &quot;Nincs találat a keresésre.&quot;</p>
+<pre><code class="lang-javascript">function termekekSzures() {
+    // ... előző kód ...
+    
+    const szurtTermekek = termekek.filter(/* ... */);
+    
+    if (szurtTermekek.length === 0) {
+        // TODO: Hozz létre egy sort egyetlen cellával (colspan=&quot;5&quot;)
+        // TODO: Írd bele: &quot;Nincs találat a keresésre.&quot;
+        // TODO: Add hozzá a tbody-hoz
+    } else {
+        // TODO: Jelenítsd meg a szűrt termékeket
+    }
+}
+</code></pre>
+<p><strong>Segítség a colspan használatához:</strong></p>
+<pre><code class="lang-javascript">const uzenetSor = document.createElement(&quot;tr&quot;);
+const uzenetCella = document.createElement(&quot;td&quot;);
+uzenetCella.setAttribute(&quot;colspan&quot;, &quot;5&quot;);
+uzenetCella.textContent = &quot;Nincs találat a keresésre.&quot;;
+uzenetCella.style.textAlign = &quot;center&quot;;
+uzenetCella.style.fontStyle = &quot;italic&quot;;
+</code></pre>
+<hr>
+<p><strong>E) EXTRA: Találatok száma</strong></p>
+<p>Jelenítsd meg a keresőmező alatt, hogy hány termék felel meg a keresési feltételnek.</p>
+<p>Módosítsd a HTML-t:</p>
+<pre><code class="lang-html">&lt;div style=&quot;margin: 20px 0;&quot;&gt;
+    &lt;label for=&quot;kereses&quot;&gt;Keresés terméknévre:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;kereses&quot; placeholder=&quot;Írd be a termék nevét...&quot;&gt;
+    &lt;button id=&quot;kereses-gomb&quot;&gt;Keresés&lt;/button&gt;
+    &lt;p id=&quot;talalatok-szama&quot;&gt;&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>JavaScript kód:</p>
+<pre><code class="lang-javascript">function termekekSzures() {
+    // ... szűrési logika ...
+    
+    // Találatok számának kijelzése
+    const talalatokSzamaElem = document.getElementById(&quot;talalatok-szama&quot;);
+    talalatokSzamaElem.textContent = `Találatok száma: ${szurtTermekek.length}`;
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week09/09-js-dom-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

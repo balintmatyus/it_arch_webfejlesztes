@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>JavaScript esem&#233;nyek, DOM manipul&#225;ci&#243; (Document Object Model) | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="JavaScript esem&#233;nyek, DOM manipul&#225;ci&#243; (Document Object Model) | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week09/09-js-dom-events.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="javascript-események-dom-manipuláció-document-object-model">JavaScript események, DOM manipuláció (Document Object Model)</h1>
+
+<h2 id="a-színfalak-a-document-object-model-dom">A színfalak: A Document Object Model (DOM)</h2>
+<h3 id="mi-az-a-dom">Mi az a DOM?</h3>
+<p>A DOM, azaz a <strong>Document Object Model</strong>, egy programozási interfész a HTML dokumentumokhoz. Képzeld el úgy, mint a HTML-oldalad faszerkezetét, ahol minden HTML-tag egy csomópont (node) vagy objektum.</p>
+<p><img src="dom.png" alt="dom"></p>
+<p>A JavaScript a DOM-on keresztül fér hozzá a weboldal elemeihez, lehetővé téve, hogy:</p>
+<ul>
+<li>Elérd az oldal bármely elemét (pl. egy gombot, egy bekezdést).</li>
+<li>Módosítsd az elemek tartalmát, stílusát és attribútumait.</li>
+<li>Új elemeket hozz létre és adj hozzá az oldalhoz.</li>
+<li>Reagálj a felhasználói eseményekre.</li>
+</ul>
+<p>A legfontosabb szülőobjektum, amivel dolgozni fogunk, a <code>document</code>.</p>
+<h3 id="elemek-elérése">Elemek elérése</h3>
+<p>Ahhoz, hogy manipuláljunk egy elemet, meg kell szereznünk rá a hivatkozást (referenciát). Ehhez az elemeket meg kell találni a DOM-ban.</p>
+<p><strong>A) Elérés egyedi azonosítóval: <code>document.getElementById()</code></strong></p>
+<p>Ez a leghagyományosabb és leggyorsabb módszer, ami abból áll, hogy egy HTML elemet az <code>id</code> attribútuma alapján érhetünk el. Az <code>id</code> attribútumnak <strong>egyedinek</strong> kell lennie a teljes dokumentumban! Ha az <code>id</code> egyedi, a metódus pontosan arra az elemre fog hivatkozni, amit keresünk.</p>
+<pre><code class="lang-html">&lt;p id=&quot;bekezdes&quot;&gt;Ezt a bekezdést szeretném javascript változóba tenni.&lt;/p&gt;
+</code></pre>
+<pre><code class="lang-javascript">// A HTML-ben: &lt;p id=&quot;bekezdes&quot;&gt;&lt;/p&gt;
+const elem = document.getElementById(&quot;bekezdes&quot;);
+
+if (elem) {
+  console.log(&quot;Elem megtalálva:&quot;, elem);
+} else {
+  console.error(&quot;Hiba: Az elem nem található!&quot;);
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p><code>if</code> segítségével ellenőrizhető, hogy létezik-e az adott elem. Elegendő az elemet, mint ellenőrizendő kifejezést beírni. Ha null, akkor false-ként működik, ha van mögötte érték, akkor igazként.</p>
+</div>
+<p><strong>B) Elérés CSS Szelektorokkal: <code>querySelector()</code> és <code>querySelectorAll()</code></strong></p>
+<p>Mivel már otthonosan mozogsz a CSS-ben, ez a módszer hamar a kedvenceddé válhat. Ez a metódus lehetővé teszi, hogy CSS-szelektorok (pl. osztálynév, tag neve, vagy komplex szelektor) segítségével hivatkozz elemekre.</p>
+<ul>
+<li><strong><code>document.querySelector('szelektor')</code></strong>: Ez a metódus a megadott CSS szelektorral megegyező <strong>első</strong> HTML elemet adja vissza. Ha egy gombra vagy egyedi elemre van szükséged, ez a legegyszerűbb választás.
+<pre><code class="lang-javascript">const gomb = document.querySelector('button'); // Az első gombot választja ki
+const uzenetMezo = document.querySelector('#uzenet'); // ID-ra hivatkozás
+const pirosOsztaly = document.querySelector('.piros'); // Az első .piros osztályú elemet
+</code></pre>
+</li>
+<li><strong><code>document.querySelectorAll('szelektor')</code></strong>: Ez a metódus az összes olyan elemet kiválasztja, amely megfelel a megadott szelektorunknak, és ezeket egy listában (pontosabban egy NodeList-ben) tárolja. Ez különösen hasznos, ha több azonos típusú elemen (pl. az összes gombon) akarunk műveletet végrehajtani, például egy ciklus segítségével.</li>
+</ul>
+<pre><code class="lang-javascript">const osszesgomb = document.querySelectorAll('button');
+osszesgomb.forEach(function(gomb) {
+  console.log(gomb);
+});
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Ha van <code>id</code>, akkor a <code>getElementById</code>-t használd a jobb teljesítmény miatt.</p>
+</div>
+<h2 id="eseménykezelés-event-handling">Eseménykezelés (Event Handling)</h2>
+<p>Az eseménykezelés azt jelenti, hogy a programunk reagál a felhasználó vagy a böngésző által kiváltott eseményekre.</p>
+<h3 id="gyakori-eseménytípusok">Gyakori eseménytípusok</h3>
+<p>A JavaScript rengeteg beépített eseményt kezel. Ezek közül néhány alapvető:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Esemény neve</th>
+<th style="text-align: left;">Mikor következik be?</th>
+<th style="text-align: left;">Forrás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>load</code></td>
+<td style="text-align: left;">A teljes oldal betöltődése után, beleértve a képeket, CSS fájlokat stb. (window esetén).</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>click</code></td>
+<td style="text-align: left;">Elemre kattintáskor.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mouseover</code></td>
+<td style="text-align: left;">Az egeret az elem fölé húzzuk.</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>mouseout</code></td>
+<td style="text-align: left;">Az egérmutató elhagyja az elemet.</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="eseménykezelés-addeventlistener-segítségével">Eseménykezelés <code>addEventListener()</code> segítségével</h3>
+<p>Ez a de facto szabvány a modern webfejlesztésben.</p>
+<ul>
+<li><strong>Szintaxis:</strong> <code>objektum.addEventListener(&quot;esemény&quot;, függvény);</code>.</li>
+<li><strong>Fő előny:</strong> Teljesen elkülönítheted a HTML fájlt és a hozzá tartozó JavaScript programot. Ez sokkal tisztább, karbantarthatóbb kódot eredményez.</li>
+</ul>
+<pre><code class="lang-html">&lt;button id=&quot;gomb&quot;&gt;
+</code></pre>
+<pre><code class="lang-javascript">function kezelGombKattintas() {
+  console.log(&quot;Gombra kattintottak!&quot;);
+}
+
+const gomb = document.getElementById(&quot;gomb&quot;);
+
+if (gomb) {
+  // Eseménykezelő hozzáadása
+  gomb.addEventListener(&quot;click&quot;, kezelGombKattintas);
+  
+  // Később eltávolíthatjuk
+  gomb.removeEventListener(&quot;click&quot;, kezelGombKattintas);
+}
+</code></pre>
+<h2 id="a-dom-tartalmának-és-stílusának-módosítása">A DOM tartalmának és stílusának módosítása</h2>
+<p>Miután elértük az elemet, és tudunk rá reagálni, módosítani akarjuk a kinézetét és tartalmát.</p>
+<h3 id="tartalom-módosítása">Tartalom módosítása</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tulajdonság</th>
+<th style="text-align: left;">Mire használjuk?</th>
+<th style="text-align: left;">Példa</th>
+<th style="text-align: left;">Forrás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>value</code></td>
+<td style="text-align: left;"><strong>Űrlapelemek</strong> (input, select) aktuális értékének lekérdezése/beállítása.</td>
+<td style="text-align: left;"><code>document.getElementById(&quot;bevmez&quot;).value = &quot;Új érték&quot;;</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>innerHTML</code></td>
+<td style="text-align: left;">HTML elemek <strong>belső tartalmának</strong> beállítása. HTML-tag-ek is megadhatók, így dinamikusan hozhatunk létre struktúrát.</td>
+<td style="text-align: left;"><code>document.getElementById(&quot;bekezdes&quot;).innerHTML = &quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;;</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>innerText</code> / <code>textContent</code></td>
+<td style="text-align: left;">HTML elemek <strong>textuális tartalmának</strong> beállítása. Csak a szöveges tartalmat kezeli, HTML tag-ek nélkül.</td>
+<td style="text-align: left;"><code>document.getElementById(&quot;bekezdes&quot;).innerText = &quot;Hello&quot;;</code></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="stílus-módosítása">Stílus módosítása</h3>
+<p>A <code>style</code> tulajdonsággal közvetlenül az elem inline CSS stílusait tudjuk módosítani. Fontos, hogy a CSS tulajdonságok nevei itt is <code>camelCase</code>-ben íródnak (pl. <code>backgroundColor</code>):</p>
+<pre><code class="lang-javascript">document.getElementById(&quot;bekezdes&quot;).style.color = &quot;red&quot;;
+document.getElementById(&quot;bekezdes&quot;).style.border = &quot;3px solid black&quot;;
+</code></pre>
+<h3 id="új-elemek-dinamikus-hozzáadása">Új elemek dinamikus hozzáadása</h3>
+<p>Ha a kódunk futásakor szeretnénk új elemeket megjeleníteni, két alapvető DOM metódust használunk:</p>
+<ul>
+<li><strong><code>document.createElement(&quot;tag&quot;)</code></strong>: Létrehozza a megadott HTML elemet (pl. <code>&quot;p&quot;</code> vagy <code>&quot;div&quot;</code>).</li>
+<li><strong><code>objektum.appendChild(gyermek_objektum)</code></strong>: Hozzáadja az újonnan létrehozott elemet a megadott szülőobjektumhoz (pl. a <code>body</code>-hoz).</li>
+</ul>
+<pre><code class="lang-javascript">function myFunction() {
+  var par = document.createElement(&quot;p&quot;); // Új p tag létrehozása
+  par.innerHTML = &quot;Új paragrafus&quot;;
+  document.body.appendChild(par); // Hozzáadjuk a body végéhez
+}
+</code></pre>
+<h3 id="elemek-eltávolítása">Elemek eltávolítása</h3>
+<p>Az <code>elem.remove()</code> metódus segítségével történik.</p>
+<pre><code class="lang-javascript">const elem = document.getElementById(&quot;torlendo&quot;);
+
+if (elem) {
+  elem.remove();
+  console.log(&quot;Elem eltávolítva!&quot;);
+}
+</code></pre>
+<p>A szöveg AI felhasználásával készült.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week09/09-js-dom-events.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

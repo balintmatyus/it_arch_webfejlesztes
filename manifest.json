@@ -847,6 +847,36 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week09/09-js-dom-events.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week09/09-js-dom-events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week09/09-js-dom-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week09/09-js-dom-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week09/dom.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week09/dom.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
