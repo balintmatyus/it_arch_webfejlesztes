@@ -136,7 +136,7 @@ Ha a kódunk futásakor szeretnénk új elemeket megjeleníteni, két alapvető 
 
 ```javascript
 function myFunction() {
-  var par = document.createElement("p"); // Új p tag létrehozása
+  let par = document.createElement("p"); // Új p tag létrehozása
   par.innerHTML = "Új paragrafus";
   document.body.appendChild(par); // Hozzáadjuk a body végéhez
 }
