@@ -159,7 +159,7 @@ Az ár celláknál jelenítsd meg az árat ezres tagolással és "Ft" végződé
 **Tipp:** Használd a `toLocaleString('hu-HU')` metódust!
 
 ```javascript
-const formataltAr = termek.ar.toLocaleString('hu-HU') + " Ft";
+const formazottAr = termek.ar.toLocaleString('hu-HU') + " Ft";
 ```
 
 ---
