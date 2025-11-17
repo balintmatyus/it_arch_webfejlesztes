@@ -236,7 +236,7 @@ document.getElementById(&quot;bekezdes&quot;).style.border = &quot;3px solid bla
 <li><strong><code>objektum.appendChild(gyermek_objektum)</code></strong>: Hozzáadja az újonnan létrehozott elemet a megadott szülőobjektumhoz (pl. a <code>body</code>-hoz).</li>
 </ul>
 <pre><code class="lang-javascript">function myFunction() {
-  var par = document.createElement(&quot;p&quot;); // Új p tag létrehozása
+  let par = document.createElement(&quot;p&quot;); // Új p tag létrehozása
   par.innerHTML = &quot;Új paragrafus&quot;;
   document.body.appendChild(par); // Hozzáadjuk a body végéhez
 }
