@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Term&#233;kszűrő Űrlap K&#233;sz&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Term&#233;kszűrő Űrlap K&#233;sz&#237;t&#233;se | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week10/10-js-forms-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="termékszűrő-űrlap-készítése">Termékszűrő Űrlap Készítése</h1>
+
+<p>A feladatod egy HTML űrlap (Form) elkészítése, amely képes kommunikálni a megadott webszerverrel. Az űrlap segítségével a felhasználó különböző feltételek (név, ár, kategória) alapján szűrheti a termékeket.</p>
+<p>Kiinduló állomány:</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Termék Kereső&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type=&quot;text&quot;],
+        input[type=&quot;number&quot;],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Hogy a padding ne nyomja szét a keretet */
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+        input[type=&quot;checkbox&quot;] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Termék Szűrő&lt;/h1&gt;
+
+    &lt;form&gt;
+        
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;!-- nev --&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;!-- kategoria --&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;!-- min_ar --&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;!-- max_ar --&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;form-group checkbox-group&quot;&gt;
+            &lt;!-- keszleten --&gt;
+        &lt;/div&gt;
+
+    &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>A szerver címe (ahová az adatokat küldeni kell): <strong><code>https://7ulrq73p67t2h3lrkbzfjeb7y40rgooa.lambda-url.us-east-1.on.aws/</code></strong> (Ezt használd az <code>action</code> attribútumban).</p>
+<h2 id="1-lépés-a-kommunikációs-csatorna-megnyitása">1. Lépés: A kommunikációs csatorna megnyitása</h2>
+<p>Elsőként magát az űrlap keretet kell létrehoznod. Hozd létre a <code>&lt;form&gt;</code> elemet. Állítsd be a célpontot (<code>action</code>) a fenti szerver címre, és válaszd ki a megfelelő metódust (<code>method</code>). Mivel szűrésről van szó, javaslom a <strong>GET</strong> használatát, ahogy azt az elméletben is láttuk.</p>
+<pre><code class="lang-html">&lt;form action=&quot;HOVA_KÜLDÖM&quot; method=&quot;HOGYAN_KÜLDÖM&quot;&gt; ... &lt;/form&gt;
+</code></pre>
+<h2 id="2-lépés-szöveges-keresés-és-ársávok">2. Lépés: Szöveges keresés és Ársávok</h2>
+<p><strong>A szerver által várt paraméterek:</strong></p>
+<ul>
+<li><code>nev</code>: A termék neve (részleges egyezés is elég).</li>
+<li><code>min_ar</code>: A minimum ár.</li>
+<li><code>max_ar</code>: A maximum ár.</li>
+</ul>
+<p><strong>Feladat:</strong>
+Hozd létre a szükséges <code>&lt;input&gt;</code> mezőket az űrlapon belül.</p>
+<ol>
+<li>A névhez használj egyszerű szöveges mezőt.</li>
+<li>Az árakhoz használj szám típusú mezőt.</li>
+</ol>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>A szerver <strong>pontosan</strong> ezeken a neveken (<code>nev</code>, <code>min_ar</code>, <code>max_ar</code>) keresi az adatokat. Ha az <code>&lt;input&gt;</code> elemed <code>name</code> attribútuma más (pl. <code>name=&quot;termekNeve&quot;</code>), a szerver nem fogja megtalálni, és a szűrés nem működik!</p>
+</div>
+<h2 id="3-lépés-kategória-választó-a-pontos-egyezés">3. Lépés: Kategória választó (A pontos egyezés)</h2>
+<p>A szerver működése alapján, ha van kategória szűrés, akkor annak <strong>betűre pontosan</strong> egyeznie kell. Ha a felhasználó kézzel írja be, könnyen elgépelheti.</p>
+<p><strong>Feladat:</strong>
+Ahelyett, hogy gépelésre kényszerítenéd a felhasználót, használj egy legördülő listát (<code>&lt;select&gt;</code>).</p>
+<p>Lehetséges kategóriák: Elektronika, Kiegészítők</p>
+<ul>
+<li>Készítsd el a legördülő listát a megfelelő <code>name</code> attribútummal (<code>kategoria</code>).</li>
+<li>Vedd fel opcióként (<code>&lt;option&gt;</code>) az adatbázisban szereplő kategóriákat.</li>
+</ul>
+<h2 id="4-lépés-raktáron-szűrő">4. Lépés: &quot;Raktáron&quot; szűrő</h2>
+<p><strong>Feladat:</strong>
+Hozz létre egy jelölőnégyzetet (<code>checkbox</code>), amivel a felhasználó jelezheti, hogy csak olyan terméket kér, ami van készleten. A paraméter neve: <code>keszleten</code>.</p>
+<h2 id="5-lépés-a-küldés-gomb">5. Lépés: A küldés gomb</h2>
+<p>Végül szükség van egy gombra, ami elindítja a folyamatot.</p>
+<p><strong>Feladat:</strong>
+Helyezz el egy gombot az űrlap végén, ami elküldi (<code>submit</code>) az adatokat.</p>
+<h2 id="ellenőrzés-és-tesztelés">Ellenőrzés és Tesztelés</h2>
+<p>Ha elkészültél, mentsd el a HTML fájlt és nyisd meg a böngészőben.</p>
+<ol>
+<li>Írj be egy nevet (pl. &quot;kábel&quot;) -&gt; Nyomd meg a gombot.</li>
+<li>Figyeld meg a böngésző címsorát (URL)! Ha jól dolgoztál és GET metódust használtál, valami ilyesmit kell látnod:
+<code>&lt;szerver-címe&gt;?nev=kabel&amp;min_ar=&amp;max_ar=&amp;kategoria=...</code></li>
+<li>Látod a paramétereket az URL-ben?
+<ul>
+<li>A <code>name</code> attribútumok (nev, min_ar) lettek a kulcsok?</li>
+<li>Az általad beírt értékek lettek az értékek?</li>
+</ul>
+</li>
+<li>Ha pipálod a készletet, megjelenik az URL végén, hogy <code>&amp;keszleten=on</code>?</li>
+</ol>
+<h2 id="bónusz-gondolkodnivaló">Bónusz gondolkodnivaló</h2>
+<p>Próbáld ki, hogy átírod a <code>&lt;form&gt;</code>-ban a <code>method=&quot;GET&quot;</code>-et <code>method=&quot;POST&quot;</code>-ra.</p>
+<ul>
+<li>Frissítsd az oldalt és küldd el újra az űrlapot.</li>
+<li>Mi változott az URL-ben?</li>
+</ul>
+<p>A szerver úgy van megírva, hogy kezelje a POST kéréseket is. :)</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week10/10-js-forms-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

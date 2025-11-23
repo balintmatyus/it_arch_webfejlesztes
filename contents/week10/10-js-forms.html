@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Űrlapok kezel&#233;se: HTTP Met&#243;dusok &#233;s Valid&#225;ci&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Űrlapok kezel&#233;se: HTTP Met&#243;dusok &#233;s Valid&#225;ci&#243; | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week10/10-js-forms.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="űrlapok-kezelése-http-metódusok-és-validáció">Űrlapok kezelése: HTTP Metódusok és Validáció</h1>
+
+<p>A mai leckében folytatjuk a Javascript megismerését. A korábbiakban megtanultuk, hogyan kezeljünk kliens oldalon adatokat (objektumok), amelyeket egy tömbben tárolunk. Most a kliens-szerver közötti kommunikációval fogunk foglalkozni. A weben több fajta technológia is rendelkezésre áll, amelyek segítségével kommunikáció végezhető résztvevők között, mi a HTTP protokollra fogunk fókuszálni.</p>
+<h2 id="kliens-szerver-és-a-kérés">Kliens, Szerver és a Kérés</h2>
+<p>Első lépésként tisztázzuk, hogy</p>
+<ul>
+<li><strong>Kliens:</strong> A böngésző, ahol kitöltöd az űrlapot.</li>
+<li><strong>Szerver:</strong> A távoli gép, ami várja az adatokat.</li>
+<li><strong>HTTP Protokoll:</strong> A &quot;nyelv&quot;, amin beszélgetnek.</li>
+</ul>
+<p>Amikor rányomsz a &quot;Küldés&quot; gombra, a böngésző egy <strong>HTTP Kérést (Request)</strong> csomagol össze. De nem mindegy, <em>hogyan</em> csomagolja! Itt jön képbe a két legfontosabb metódus: a <strong>GET</strong> és a <strong>POST</strong>.</p>
+<p><img src="get-post.png" alt="get-post"></p>
+<h3 id="get-vs-post-mi-a-különbség">GET vs. POST: Mi a különbség?</h3>
+<p>Képzeld el, hogy levelet küldesz.</p>
+<ul>
+<li><p><strong>GET (A Képeslap):</strong></p>
+<ul>
+<li><strong>Nyílt lap:</strong> Mindenki látja, mi van ráírva.</li>
+<li><strong>URL-ben utazik:</strong> Az adatok a webcím végére kerülnek (pl. <code>kereses.php?kulcsszo=cipő</code>).</li>
+<li><strong>Mire jó?</strong> Kereséshez, szűréshez, olyan adatokhoz, amik nem titkosak. Könyvjelzőzhető!</li>
+<li><strong>Mire NEM jó?</strong> Jelszavakhoz (látszik az előzményekben!), túl sok adathoz.</li>
+</ul>
+</li>
+<li><p><strong>POST (A Lezárt Boríték):</strong></p>
+<ul>
+<li><strong>Rejtett tartalom:</strong> Az adat a kérés &quot;testében&quot; (body) utazik, nem a címzésben.</li>
+<li><strong>Nincs az URL-ben:</strong> A címsor tiszta marad.</li>
+<li><strong>Mire jó?</strong> Regisztrációhoz, bejelentkezéshez, nagy mennyiségű szöveg küldéséhez.</li>
+<li><strong>Mire NEM jó?</strong> Nem lehet könyvjelzőzni az eredményt.</li>
+</ul>
+</li>
+</ul>
+<h3 id="összehasonlító-táblázat">Összehasonlító táblázat</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tulajdonság</th>
+<th style="text-align: left;">GET</th>
+<th style="text-align: left;">POST</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Adatok helye</strong></td>
+<td style="text-align: left;">Az URL-ben (<code>?nev=ertek</code>)</td>
+<td style="text-align: left;">A kérés testében (Request Body)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Láthatóság</strong></td>
+<td style="text-align: left;"><strong>Mindenki látja</strong> a címsorban</td>
+<td style="text-align: left;">Rejtett (átlagfelhasználó számára)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Adatmennyiség</strong></td>
+<td style="text-align: left;">Korlátozott (max pár ezer karakter)</td>
+<td style="text-align: left;">Szinte korlátlan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Gyorsítótár (Cache)</strong></td>
+<td style="text-align: left;">A böngésző elmentheti</td>
+<td style="text-align: left;">Nem mentődik el automatikusan</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipikus használat</strong></td>
+<td style="text-align: left;">Keresés, adatlekérés</td>
+<td style="text-align: left;">Bejelentkezés, mentés, rendelés</td>
+</tr>
+</tbody>
+</table>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Soha ne használj <strong>GET</strong> metódust jelszavak vagy bankkártya adatok küldésére! Bárki, aki ránéz a monitorodra vagy a böngészési előzményeidre, látni fogja a jelszót.</p>
+</div>
+<h2 id="az-űrlap-felépítése">Az űrlap felépítése</h2>
+<p>A HTML-ben a <code>&lt;form&gt;</code> elem attribútumaival szabályozzuk, hova és hogyan menjen az adat.</p>
+<ul>
+<li><code>action</code>: <strong>Hova?</strong> A szerver címe (URL), ami feldolgozza az adatot.</li>
+<li><code>method</code>: <strong>Hogyan?</strong> Itt adjuk meg, hogy <code>GET</code> vagy <code>POST</code>.</li>
+</ul>
+<pre><code class="lang-html">&lt;!-- Példa egy biztonságosabb, adatküldő űrlapra --&gt;
+&lt;form id=&quot;loginForm&quot; action=&quot;https://httpbin.org/post&quot; method=&quot;POST&quot;&gt;
+    
+    &lt;label for=&quot;user&quot;&gt;Felhasználónév:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;user&quot; name=&quot;username&quot;&gt;
+
+    &lt;label for=&quot;pass&quot;&gt;Jelszó:&lt;/label&gt;
+    &lt;input type=&quot;password&quot; id=&quot;pass&quot; name=&quot;password&quot;&gt;
+
+    &lt;button type=&quot;submit&quot;&gt;Belépés&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+<h2 id="html-beviteli-mezők">HTML Beviteli Mezők</h2>
+<p>A HTML űrlapok lelke az <code>&lt;input&gt;</code> elem. Azt, hogy hogyan néz ki és hogyan viselkedik, a <code>type=&quot;...&quot;</code> attribútum határozza meg.</p>
+<h3 id="szöveges-beviteli-mezők">Szöveges beviteli mezők</h3>
+<p>Ezek a leggyakoribbak. Mindegyiknél az <code>elem.value</code> adja vissza a beírt szöveget stringként.</p>
+<h4 id="typetext-egysoros-szöveg"><code>type=&quot;text&quot;</code> (Egysoros szöveg)</h4>
+<p>A legáltalánosabb mező. Nincs benne extra logika, bármit elfogad.</p>
+<ul>
+<li><strong>Használat:</strong> Név, felhasználónév, cím, tárgy.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;text&quot; placeholder=&quot;Pl. Kovács Béla&quot;&gt;</code></li>
+</ul>
+<h4 id="typepassword-jelszó"><code>type=&quot;password&quot;</code> (Jelszó)</h4>
+<p>Ugyanaz, mint a text, de a karaktereket elrejti (általában pöttyökkel).</p>
+<ul>
+<li><strong>Használat:</strong> Jelszavak, PIN kódok.</li>
+<li><strong>Fontos:</strong> Ez csak vizuális védelem! A hálózaton titkosítás nélkül (HTTPS) ugyanúgy látható lenne.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;password&quot;&gt;</code></li>
+</ul>
+<h4 id="typeemail-email-cím"><code>type=&quot;email&quot;</code> (Email cím)</h4>
+<p>Mobiltelefonon megnyitja a <code>@</code> jelet tartalmazó billentyűzetet. Alapvető formai ellenőrzést végez (pl. kell bele @ jel).</p>
+<ul>
+<li><strong>Használat:</strong> Email címek.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;email&quot;&gt;</code></li>
+</ul>
+<h4 id="textarea-többsoros-szöveg"><code>&lt;textarea&gt;</code> (Többsoros szöveg)</h4>
+<p>Ez a kakukktojás, mert ez <strong>nem</strong> <code>&lt;input&gt;</code> típus, hanem egy külön HTML tag, de ide tartozik.</p>
+<ul>
+<li><strong>Használat:</strong> Üzenetek, megjegyzések, leírások.</li>
+<li><strong>HTML:</strong> <code>&lt;textarea rows=&quot;4&quot; cols=&quot;50&quot;&gt;&lt;/textarea&gt;</code></li>
+<li><strong>JS:</strong> Ugyanúgy <code>.value</code>-val olvassuk ki.</li>
+</ul>
+<h3 id="számok-és-dátumok">Számok és Dátumok</h3>
+<h4 id="typenumber-szám"><code>type=&quot;number&quot;</code> (Szám)</h4>
+<p>Csak számokat enged beírni. Mobilon megnyitja a számbillentyűzetet.</p>
+<ul>
+<li><strong>Extrák:</strong> <code>min</code>, <code>max</code> (korlátok), <code>step</code> (lépésköz).</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot;&gt;</code></li>
+<li><strong>JS:</strong> <code>.value</code>-t ad vissza (ami string!), ha számként kell, használd a <code>Number(elem.value)</code>-t.</li>
+</ul>
+<h4 id="typedate-dátumválasztó"><code>type=&quot;date&quot;</code> (Dátumválasztó)</h4>
+<p>Megjelenít egy naptárat (date picker).</p>
+<ul>
+<li><strong>Használat:</strong> Születésnap, foglalási időpont.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;date&quot;&gt;</code></li>
+<li><strong>JS:</strong> A dátumot <code>YYYY-MM-DD</code> formátumú stringként adja vissza (pl. &quot;2023-10-27&quot;).</li>
+</ul>
+<h3 id="kiválasztók-choice-inputs">Kiválasztók (Choice Inputs)</h3>
+<p>Itt trükkösebb a JavaScript, mert nem mindig a <code>.value</code> a lényeg.</p>
+<h4 id="typecheckbox-jelölőnégyzet"><code>type=&quot;checkbox&quot;</code> (Jelölőnégyzet)</h4>
+<p>Kétállapotú kapcsoló: vagy be van pipálva, vagy nincs.</p>
+<ul>
+<li><strong>Használat:</strong> &quot;Elfogadom a feltételeket&quot;, &quot;Hírlevél feliratkozás&quot;.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;checkbox&quot; id=&quot;aszf&quot;&gt; &lt;label for=&quot;aszf&quot;&gt;Elfogadom&lt;/label&gt;</code></li>
+<li><strong>JS:</strong> <strong>Fontos!</strong> Itt nem a <code>.value</code>-t nézzük, hanem a <code>.checked</code> tulajdonságot, ami <code>true</code> vagy <code>false</code>.
+<pre><code class="lang-javascript">if (document.getElementById('aszf').checked) { ... }
+</code></pre>
+</li>
+</ul>
+<h4 id="typeradio-rádiógomb"><code>type=&quot;radio&quot;</code> (Rádiógomb)</h4>
+<p>Amikor <strong>több opcióból csak EGYET</strong> lehet választani.</p>
+<ul>
+<li><strong>Működés:</strong> A csoportosítást a <code>name</code> attribútum végzi. Amelyiknek ugyanaz a neve, azok tartoznak egy csoportba.</li>
+<li><strong>Használat:</strong> Nem/Igen, Fizetési mód választás.</li>
+<li><strong>HTML:</strong>
+<pre><code class="lang-html">&lt;input type=&quot;radio&quot; name=&quot;nem&quot; value=&quot;ferfi&quot;&gt; Férfi
+&lt;input type=&quot;radio&quot; name=&quot;nem&quot; value=&quot;no&quot;&gt; Nő
+</code></pre>
+</li>
+<li><strong>JS:</strong> Azt kell megkeresni, amelyik <code>.checked</code> tulajdonsága igaz.</li>
+</ul>
+<h4 id="select-legördülő-lista--dropdown"><code>&lt;select&gt;</code> (Legördülő lista / Dropdown)</h4>
+<p>Helytakarékos megoldás sok opció esetén.</p>
+<ul>
+<li><strong>HTML:</strong>
+<pre><code class="lang-html">&lt;select id=&quot;varos&quot;&gt;
+  &lt;option value=&quot;bp&quot;&gt;Budapest&lt;/option&gt;
+  &lt;option value=&quot;db&quot;&gt;Debrecen&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+</li>
+<li><strong>JS:</strong> <code>document.getElementById('varos').value</code> visszaadja a kiválasztott <code>option</code> <em>value</em> értékét (pl. &quot;bp&quot;).</li>
+</ul>
+<h3 id="speciális-inputok">Speciális Inputok</h3>
+<h4 id="typefile-fájlfeltöltés"><code>type=&quot;file&quot;</code> (Fájlfeltöltés)</h4>
+<p>Lehetővé teszi fájlok kiválasztását a számítógépről.</p>
+<ul>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;file&quot; accept=&quot;image/png, image/jpeg&quot;&gt;</code></li>
+<li><strong>JS:</strong> Itt a <code>.files</code> tömböt használjuk a <code>.value</code> helyett a fájl adatainak eléréséhez.</li>
+</ul>
+<h4 id="typehidden-rejtett-mező"><code>type=&quot;hidden&quot;</code> (Rejtett mező)</h4>
+<p>A felhasználó számára láthatatlan, de az űrlap elküldésekor az adat utazik a szerverre.</p>
+<ul>
+<li><strong>Használat:</strong> Azonosítók (ID), biztonsági tokenek küldése.</li>
+<li><strong>HTML:</strong> <code>&lt;input type=&quot;hidden&quot; name=&quot;userId&quot; value=&quot;12345&quot;&gt;</code></li>
+</ul>
+<h3 id="összefoglaló-referencia-táblázat">Összefoglaló Referencia Táblázat</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Típus (<code>type=&quot;...&quot;</code>)</th>
+<th style="text-align: left;">Mire jó?</th>
+<th style="text-align: left;">JS érték lekérése</th>
+<th style="text-align: left;">JS ellenőrzés példa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>text</code></td>
+<td style="text-align: left;">Általános szöveg</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;"><code>.value === &quot;&quot;</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>password</code></td>
+<td style="text-align: left;">Titkosított szöveg</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;"><code>.value.length &lt; 8</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>email</code></td>
+<td style="text-align: left;">Email cím</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;"><code>.validity.valid</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>number</code></td>
+<td style="text-align: left;">Számok</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;"><code>Number(elem.value) &gt; 18</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>checkbox</code></td>
+<td style="text-align: left;">Igen/Nem kapcsoló</td>
+<td style="text-align: left;"><strong><code>.checked</code></strong></td>
+<td style="text-align: left;"><code>!elem.checked</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>radio</code></td>
+<td style="text-align: left;">Választás listából</td>
+<td style="text-align: left;"><strong><code>.checked</code></strong></td>
+<td style="text-align: left;">(a csoportot kell vizsgálni)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>date</code></td>
+<td style="text-align: left;">Dátum</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;">(string összehasonlítás)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>&lt;select&gt;</code></td>
+<td style="text-align: left;">Legördülő lista</td>
+<td style="text-align: left;"><code>.value</code></td>
+<td style="text-align: left;"><code>.value === &quot;valasztas&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="javascript-validáció-és-beküldés">JavaScript Validáció és Beküldés</h2>
+<p>A JavaScript feladata a &quot;kapuőr&quot; szerep. Megvizsgálja a boríték tartalmát, mielőtt a postás (a böngésző) elvinné.</p>
+<h3 id="a-logika-lépései">A logika lépései:</h3>
+<ol>
+<li><strong>Eseményfigyelés:</strong> A <code>submit</code> esemény elkapása.</li>
+<li><strong>Validáció:</strong> Ellenőrizzük, hogy a mezők megfelelően vannak-e kitöltve.</li>
+<li><strong>Döntés (Control Flow):</strong>
+<ul>
+<li><strong>Ha hiba van:</strong> <code>event.preventDefault()</code> -&gt; Megállítjuk a folyamatot, és hibaüzenetet adunk.</li>
+<li><strong>Ha minden oké:</strong> <em>Nem</em> hívjuk meg a preventDefault-ot. Hagyjuk, hogy a HTML <code>method=&quot;POST&quot;</code> beállítása érvényesüljön, és az adatok elinduljanak a szerver felé.</li>
+</ul>
+</li>
+</ol>
+<h3 id="gyakorlati-példa-teljes-kód">Gyakorlati Példa (Teljes kód)</h3>
+<p>Ez a kód egy bejelentkezést szimulál. Ha helyesek az adatok, elküldi őket a <code>httpbin.org</code>-ra, ahol láthatod, hogy <code>POST</code> kéréssel érkeztek meg.</p>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;hu&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Mindent Bele Űrlap - Validációval&lt;/title&gt;
+    &lt;style&gt;
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; padding: 20px; display: flex; justify-content: center; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 600px; width: 100%; }
+        h1 { text-align: center; color: #333; }
+        p.info { font-size: 0.9em; color: #666; text-align: center; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+        
+        /* Input stílusok */
+        input[type=&quot;text&quot;], input[type=&quot;email&quot;], input[type=&quot;password&quot;], 
+        input[type=&quot;number&quot;], input[type=&quot;date&quot;], select, textarea, input[type=&quot;file&quot;] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Hogy a padding ne növelje a szélességet */
+            font-size: 16px;
+        }
+
+        /* Checkbox és Radio stílusok */
+        .radio-group label, .checkbox-group label { display: inline; font-weight: normal; margin-right: 15px; }
+        input[type=&quot;radio&quot;], input[type=&quot;checkbox&quot;] { transform: scale(1.2); margin-right: 5px; }
+
+        /* Gomb stílus */
+        button { width: 100%; padding: 12px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; font-weight: bold; transition: background 0.3s; }
+        button:hover { background-color: #218838; }
+
+        /* Hibaüzenetek */
+        .error-msg { color: #dc3545; font-size: 0.85em; margin-top: 5px; height: 1.2em; }
+        
+        /* Sikeres validáció jelzésére (opcionális) */
+        input.input-error { border-color: #dc3545; background-color: #fff8f8; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;h1&gt;Regisztrációs Űrlap&lt;/h1&gt;
+    &lt;p class=&quot;info&quot;&gt;Töltsd ki az adatokat! A &quot;Küldés&quot; gomb után a httpbin.org jeleníti meg a szerverre érkezett adatokat.&lt;/p&gt;
+
+    &lt;!-- 
+        enctype=&quot;multipart/form-data&quot;: Ez kötelező, ha fájlt is küldünk!
+        A httpbin a fájlokat a &quot;files&quot;, az adatokat a &quot;form&quot; részben mutatja majd.
+    --&gt;
+    &lt;form id=&quot;fullForm&quot; action=&quot;https://httpbin.org/post&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+        
+        &lt;!-- REJTETT MEZŐ (Pl. felhasználó azonosító) --&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;user_id&quot; value=&quot;UID_998877&quot;&gt;
+
+        &lt;!-- 1. SZÖVEG --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;fullname&quot;&gt;Teljes név:&lt;/label&gt;
+            &lt;input type=&quot;text&quot; id=&quot;fullname&quot; name=&quot;fullname&quot; placeholder=&quot;Pl. Kiss Anna&quot;&gt;
+            &lt;div id=&quot;error-name&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 2. EMAIL --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;email&quot;&gt;Email cím:&lt;/label&gt;
+            &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;pelda@mail.com&quot;&gt;
+            &lt;div id=&quot;error-email&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 3. JELSZÓ --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;password&quot;&gt;Jelszó (min. 6 karakter):&lt;/label&gt;
+            &lt;input type=&quot;password&quot; id=&quot;password&quot; name=&quot;password&quot;&gt;
+            &lt;div id=&quot;error-pass&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 4. DÁTUM és 5. SZÁM --&gt;
+        &lt;div style=&quot;display: flex; gap: 15px;&quot;&gt;
+            &lt;div class=&quot;form-group&quot; style=&quot;flex: 1;&quot;&gt;
+                &lt;label for=&quot;birthdate&quot;&gt;Születési dátum:&lt;/label&gt;
+                &lt;input type=&quot;date&quot; id=&quot;birthdate&quot; name=&quot;birthdate&quot;&gt;
+                &lt;div id=&quot;error-date&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot; style=&quot;flex: 1;&quot;&gt;
+                &lt;label for=&quot;age&quot;&gt;Életkor (18+):&lt;/label&gt;
+                &lt;input type=&quot;number&quot; id=&quot;age&quot; name=&quot;age&quot; min=&quot;1&quot;&gt;
+                &lt;div id=&quot;error-age&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 6. RÁDIÓ GOMBOK (Csak egy választható) --&gt;
+        &lt;div class=&quot;form-group radio-group&quot;&gt;
+            &lt;label style=&quot;display:block; margin-bottom:10px;&quot;&gt;Nem:&lt;/label&gt;
+            &lt;input type=&quot;radio&quot; id=&quot;female&quot; name=&quot;gender&quot; value=&quot;no&quot; checked&gt;
+            &lt;label for=&quot;female&quot;&gt;Nő&lt;/label&gt;
+            
+            &lt;input type=&quot;radio&quot; id=&quot;male&quot; name=&quot;gender&quot; value=&quot;ferfi&quot;&gt;
+            &lt;label for=&quot;male&quot;&gt;Férfi&lt;/label&gt;
+
+            &lt;input type=&quot;radio&quot; id=&quot;other&quot; name=&quot;gender&quot; value=&quot;egyeb&quot;&gt;
+            &lt;label for=&quot;other&quot;&gt;Egyéb&lt;/label&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 7. SELECT (Legördülő) --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;position&quot;&gt;Munkakör:&lt;/label&gt;
+            &lt;select id=&quot;position&quot; name=&quot;job_position&quot;&gt;
+                &lt;option value=&quot;&quot;&gt;-- Válassz egyet --&lt;/option&gt;
+                &lt;option value=&quot;developer&quot;&gt;Fejlesztő&lt;/option&gt;
+                &lt;option value=&quot;designer&quot;&gt;Designer&lt;/option&gt;
+                &lt;option value=&quot;manager&quot;&gt;Menedzser&lt;/option&gt;
+            &lt;/select&gt;
+            &lt;div id=&quot;error-job&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 8. FÁJL FELTÖLTÉS --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;profile_pic&quot;&gt;Profilkép feltöltése:&lt;/label&gt;
+            &lt;input type=&quot;file&quot; id=&quot;profile_pic&quot; name=&quot;profile_pic&quot; accept=&quot;image/*&quot;&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 9. TEXTAREA (Hosszú szöveg) --&gt;
+        &lt;div class=&quot;form-group&quot;&gt;
+            &lt;label for=&quot;bio&quot;&gt;Rövid bemutatkozás:&lt;/label&gt;
+            &lt;textarea id=&quot;bio&quot; name=&quot;bio&quot; rows=&quot;4&quot; placeholder=&quot;Írj magadról pár mondatot...&quot;&gt;&lt;/textarea&gt;
+        &lt;/div&gt;
+
+        &lt;!-- 10. CHECKBOX (Jelölőnégyzet) --&gt;
+        &lt;div class=&quot;form-group checkbox-group&quot;&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;terms&quot; name=&quot;terms_accepted&quot;&gt;
+            &lt;label for=&quot;terms&quot;&gt;Elfogadom az Adatvédelmi Nyilatkozatot *&lt;/label&gt;
+            &lt;div id=&quot;error-terms&quot; class=&quot;error-msg&quot;&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;button type=&quot;submit&quot;&gt;Regisztráció Küldése&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    const form = document.getElementById('fullForm');
+    
+    // Elemek referenciái
+    const nameInput = document.getElementById('fullname');
+    const passInput = document.getElementById('password');
+    const ageInput = document.getElementById('age');
+    const jobInput = document.getElementById('position');
+    const termsInput = document.getElementById('terms'); // Checkbox
+
+    // Hibaüzenet tárolók
+    const errorName = document.getElementById('error-name');
+    const errorPass = document.getElementById('error-pass');
+    const errorAge = document.getElementById('error-age');
+    const errorJob = document.getElementById('error-job');
+    const errorTerms = document.getElementById('error-terms');
+
+    form.addEventListener('submit', function(event) {
+        let isValid = true;
+
+        // 1. Töröljük az előző hibaüzeneteket és stílusokat
+        const errors = document.querySelectorAll('.error-msg');
+        errors.forEach(el =&gt; el.textContent = '');
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(el =&gt; el.classList.remove('input-error'));
+
+        // --- VALIDÁCIÓK ---
+
+        // Név ellenőrzése (nem lehet üres)
+        if (nameInput.value.trim() === &quot;&quot;) {
+            errorName.textContent = &quot;A név megadása kötelező!&quot;;
+            nameInput.classList.add('input-error');
+            isValid = false;
+        }
+
+        // Jelszó hossza (min 6)
+        if (passInput.value.length &lt; 6) {
+            errorPass.textContent = &quot;A jelszó túl rövid (min. 6 karakter).&quot;;
+            passInput.classList.add('input-error');
+            isValid = false;
+        }
+
+        // Életkor vizsgálat (számmá alakítás és értékvizsgálat)
+        // Megj: a HTML type=&quot;number&quot; már korlátoz, de JS-ben is érdemes csekkolni
+        if (Number(ageInput.value) &lt; 18) {
+            errorAge.textContent = &quot;Csak 18 éven felüliek regisztrálhatnak.&quot;;
+            ageInput.classList.add('input-error');
+            isValid = false;
+        }
+
+        // Select ellenőrzése (választott-e valamit?)
+        if (jobInput.value === &quot;&quot;) {
+            errorJob.textContent = &quot;Kérlek válassz munkakört!&quot;;
+            jobInput.classList.add('input-error');
+            isValid = false;
+        }
+
+        // Checkbox ellenőrzése (kötelező pipa) - .checked tulajdonság!
+        if (!termsInput.checked) {
+            errorTerms.textContent = &quot;A regisztrációhoz el kell fogadnod a feltételeket.&quot;;
+            isValid = false;
+        }
+
+        // --- DÖNTÉS ---
+        
+        if (!isValid) {
+            event.preventDefault(); // Megállítjuk a küldést, ha hiba van
+            console.log(&quot;Hiba az űrlapon!&quot;);
+        } else {
+            // Ha minden OK, engedjük tovább a httpbin-re
+            console.log(&quot;Minden adat rendben, küldés...&quot;);
+        }
+    });
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week10/10-js-forms.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
