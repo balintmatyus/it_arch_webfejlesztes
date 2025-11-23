@@ -95,9 +95,9 @@
 - name: 10. hét
   items:
   - name: 💡 Űrlapok validálása Javascripttel
-    href: todo.md
+    href: week10/10-js-forms.md
   - name: 🛠 Gyakorló feladatok
-    href: todo.md
+    href: week10/10-js-forms-gyak.md
 - name: 11. hét
   items:
   - name: 💡 AJAX és fetch API

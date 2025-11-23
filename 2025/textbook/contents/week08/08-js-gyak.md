@@ -339,8 +339,6 @@ const kosar = {
 
 **Bónusz kihívás:** Módosítsd a `kosar` objektumot úgy, hogy ne a teljes termék objektumot tárolja, hanem csak az ID-t és a darabszámot. Így ugyanabból a termékből többet is lehet vásárolni!
 
-
-
 ## Megoldás után
 
 Miután végeztél a feladatokkal, érdemes átgondolni:
