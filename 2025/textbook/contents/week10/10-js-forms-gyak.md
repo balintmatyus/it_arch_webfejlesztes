@@ -179,3 +179,63 @@ Próbáld ki, hogy átírod a `<form>`-ban a `method="GET"`-et `method="POST"`-r
 * Mi változott az URL-ben?
 
 A szerver úgy van megírva, hogy kezelje a POST kéréseket is. :)
+
+# Szerver oldali kód érdeklődőknek
+
+A szervert fenti példában az AWS Lambda szolgáltatása biztosítja. A szolgáltatás egymillió havi kérésig ingyenesen használható (légyszi ne terheljétek túl :)) Több programozási nyelvben is írható hozzá függvény, ami valamilyen műveletet hajt végre. Jelen esetben egy webszervert szimulálunk általa. A kódot egy-két elemet leszámítva, már a korábbi leckék alapján értelmezni tudjátok.
+
+```javascript
+export const handler = async (event) => {
+  // 1. Adatbázis
+  const termekek = [
+    { id: 1, nev: "Wireless egér", kategoria: "Elektronika", ar: 8500, keszlet: 23 },
+    { id: 2, nev: "USB-C kábel", kategoria: "Kiegészítők", ar: 2500, keszlet: 150 },
+    { id: 3, nev: "Laptop táska", kategoria: "Kiegészítők", ar: 12000, keszlet: 8 },
+    { id: 4, nev: "Bluetooth hangszóró", kategoria: "Elektronika", ar: 15000, keszlet: 0 },
+    { id: 5, nev: "Webkamera", kategoria: "Elektronika", ar: 18000, keszlet: 12 },
+    { id: 6, nev: "Monitor állvány", kategoria: "Kiegészítők", ar: 9500, keszlet: 15 },
+    { id: 7, nev: "Mechanikus billentyűzet", kategoria: "Elektronika", ar: 25000, keszlet: 5 },
+    { id: 8, nev: "HDMI kábel", kategoria: "Kiegészítők", ar: 3000, keszlet: 89 }
+  ];
+
+  // 2. Paraméterek okos kiolvasása (GET és POST támogatás)
+  let params = {};
+
+  if (event.requestContext.http.method === 'GET') {
+      // Ha GET kérés (URL-ből jön az adat)
+      params = event.queryStringParameters || {};
+  } 
+  else if (event.requestContext.http.method === 'POST' && event.body) {
+      // Ha POST kérés (Body-ból jön az adat)
+      // Megpróbáljuk eldönteni, hogy JSON vagy HTML űrlap (form)
+      try {
+          // Megpróbáljuk JSON-ként értelmezni
+          params = JSON.parse(event.body);
+      } catch (e) {
+          // Ha nem JSON, akkor valószínűleg HTML Form (application/x-www-form-urlencoded)
+          // Ezt a Node.js beépített URLSearchParams osztályával parse-oljuk
+          const urlParams = new URLSearchParams(event.body);
+          params = Object.fromEntries(urlParams);
+      }
+  }
+
+  // 3. Szűrési logika
+  let eredmeny = termekek.filter(item => {
+    if (params.nev && !item.nev.toLowerCase().includes(params.nev.toLowerCase())) return false;
+    if (params.kategoria && item.kategoria !== params.kategoria) return false;
+    if (params.min_ar && item.ar < parseInt(params.min_ar)) return false;
+    if (params.max_ar && item.ar > parseInt(params.max_ar)) return false;
+    if (params.keszleten && item.keszlet === 0) {
+      return false;
+    }
+    return true;
+  });
+
+  // 4. Válasz
+  return {
+    statusCode: 200,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(eredmeny),
+  };
+};
+```
