@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f0f0f0;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        header {
+            background: #5a67d8;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .add-form {
+            padding: 15px;
+            background: #f7f7f7;
+            display: flex;
+            gap: 10px;
+        }
+
+        .add-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .add-form button {
+            padding: 10px 20px;
+            background: #48bb78;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .add-form button:hover {
+            background: #38a169;
+        }
+
+        #status {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        #status.loading { background: #e6f3ff; color: #0066cc; }
+        #status.error { background: #ffe6e6; color: #cc0000; }
+        #status.success { background: #e6ffe6; color: #006600; }
+
+        #todo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .todo-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+
+        .todo-id {
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .todo-title {
+            flex: 1;
+        }
+
+        .todo-status {
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .todo-status.done {
+            background: #e6ffe6;
+            color: #006600;
+        }
+
+        .todo-status.pending {
+            background: #fff3e6;
+            color: #cc6600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>📝 Todo Lista</h1>
+    </header>
+
+    <form class="add-form" id="add-form">
+        <input type="text" id="new-todo" placeholder="Új teendő..." required>
+        <button type="submit">Hozzáad</button>
+    </form>
+
+    <div id="status"></div>
+
+    <ul id="todo-list"></ul>
+</div>
+
+<script>
+// ==========================================
+// GLOBÁLIS VÁLTOZÓK
+// ==========================================
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
+
+const todoList = document.getElementById("todo-list");
+const statusDiv = document.getElementById("status");
+const addForm = document.getElementById("add-form");
+const newTodoInput = document.getElementById("new-todo");
+
+// ==========================================
+// SEGÉDFÜGGVÉNYEK
+// ==========================================
+
+function showStatus(message, type) {
+    statusDiv.textContent = message;
+    statusDiv.className = type;
+}
+
+function createTodoHTML(todo) {
+    const statusClass = todo.completed ? "done" : "pending";
+    const statusText = todo.completed ? "Kész" : "Folyamatban";
+    
+    return `
+        <li class="todo-item">
+            <span class="todo-id">#${todo.id}</span>
+            <span class="todo-title">${todo.title}</span>
+            <span class="todo-status ${statusClass}">${statusText}</span>
+        </li>
+    `;
+}
+
+// ==========================================
+// GET - TEENDŐK BETÖLTÉSE
+// ==========================================
+
+async function loadTodos() {
+    showStatus("⏳ Betöltés...", "loading");
+
+    try {
+        const response = await fetch(API_URL + "?_limit=10");
+        const todos = await response.json();
+        
+        let html = "";
+        for (let i = 0; i < todos.length; i++) {
+            html += createTodoHTML(todos[i]);
+        }
+        
+        todoList.innerHTML = html;
+        showStatus("✅ Betöltve!", "success");
+        
+    } catch (error) {
+        console.error("Hiba:", error);
+        showStatus("❌ Nem sikerült betölteni!", "error");
+    }
+}
+
+// ==========================================
+// POST - ÚJ TEENDŐ HOZZÁADÁSA
+// ==========================================
+
+async function addTodo(title) {
+    showStatus("⏳ Mentés...", "loading");
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: title,
+                completed: false,
+                userId: 1
+            })
+        });
+        
+        const newTodo = await response.json();
+        console.log("Szerver válasza:", newTodo);
+        
+        const html = createTodoHTML(newTodo);
+        todoList.insertAdjacentHTML("afterbegin", html);
+        
+        newTodoInput.value = "";
+        showStatus("✅ Hozzáadva!", "success");
+        
+    } catch (error) {
+        console.error("Hiba:", error);
+        showStatus("❌ Nem sikerült menteni!", "error");
+    }
+}
+
+// ==========================================
+// ESEMÉNYKEZELŐ
+// ==========================================
+
+addForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const title = newTodoInput.value.trim();
+    
+    if (title === "") {
+        showStatus("⚠️ Írj be valamit!", "error");
+        return;
+    }
+    
+    addTodo(title);
+});
+
+// ==========================================
+// INDÍTÁS
+// ==========================================
+
+loadTodos();
+</script>
+
+</body>
+</html>
