@@ -114,7 +114,7 @@
 <li><strong><code>try/catch</code></strong> – Hiba esetén (pl. nincs internet) a <code>catch</code> ágba kerül.</li>
 </ol>
 <h2 id="a-jsonplaceholder-api">A JSONPlaceholder API</h2>
-<p>A gyakorlathoz a <strong>JSONPlaceholder</strong> API-t használjuk – ez egy ingyenes, nyilvános &quot;teszt szerver&quot;, ami hamis adatokat ad vissza.</p>
+<p>A gyakorlathoz a <strong>JSONPlaceholder</strong> API-t használjuk – ez egy ingyenes, nyilvános &quot;teszt szerver&quot;, ami szintetikus adatokat ad vissza.</p>
 <p><strong>Alap URL:</strong> <code>https://jsonplaceholder.typicode.com</code></p>
 <table>
 <thead>
@@ -142,13 +142,13 @@
 <h5>Note</h5>
 <p>A JSONPlaceholder egy <strong>szimulált</strong> API. A POST kérések &quot;működnek&quot; (visszaadják a várt választ), de nem módosítják ténylegesen az adatbázist. Ez tökéletes tanuláshoz!</p>
 </div>
-<hr>
 <h2 id="gyakorlat-todo-alkalmazás">Gyakorlat: Todo Alkalmazás</h2>
 <p>Építsünk egy egyszerű teendő-listát, ami:</p>
 <ol>
 <li>Betölti a teendőket a szerverről (GET)</li>
 <li>Új teendőt küld a szerverre (POST)</li>
 </ol>
+<p><img src="fetch-screenshot.png" alt="fetch-screenshot"></p>
 <h3 id="1-lépés-html-váz">1. lépés: HTML váz</h3>
 <pre><code class="lang-html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&quot;hu&quot;&gt;
@@ -157,124 +157,7 @@
     &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
     &lt;title&gt;Todo App&lt;/title&gt;
     &lt;style&gt;
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f0f0f0;
-            padding: 40px 20px;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        header {
-            background: #5a67d8;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        /* Űrlap stílusok */
-        .add-form {
-            padding: 15px;
-            background: #f7f7f7;
-            display: flex;
-            gap: 10px;
-        }
-
-        .add-form input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .add-form button {
-            padding: 10px 20px;
-            background: #48bb78;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .add-form button:hover {
-            background: #38a169;
-        }
-
-        /* Státusz üzenet */
-        #status {
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        #status.loading { background: #e6f3ff; color: #0066cc; }
-        #status.error { background: #ffe6e6; color: #cc0000; }
-        #status.success { background: #e6ffe6; color: #006600; }
-
-        /* Lista stílusok */
-        #todo-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .todo-item {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .todo-item:last-child {
-            border-bottom: none;
-        }
-
-        .todo-id {
-            background: #eee;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .todo-title {
-            flex: 1;
-        }
-
-        .todo-status {
-            font-size: 12px;
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
-
-        .todo-status.done {
-            background: #e6ffe6;
-            color: #006600;
-        }
-
-        .todo-status.pending {
-            background: #fff3e6;
-            color: #cc6600;
-        }
+        
     &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -299,10 +182,6 @@
     &lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;script&gt;
-    // A JavaScript kód ide kerül
-&lt;/script&gt;
-
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
@@ -318,60 +197,22 @@ const statusDiv = document.getElementById(&quot;status&quot;);
 
 // Státusz üzenet megjelenítése
 function showStatus(message, type) {
-    statusDiv.textContent = message;
-    statusDiv.className = type;
+
 }
 
 // Egy teendő HTML-jének létrehozása
 function createTodoHTML(todo) {
-    const statusClass = todo.completed ? &quot;done&quot; : &quot;pending&quot;;
-    const statusText = todo.completed ? &quot;Kész&quot; : &quot;Folyamatban&quot;;
-    
-    return `
-        &lt;li class=&quot;todo-item&quot;&gt;
-            &lt;span class=&quot;todo-id&quot;&gt;#${todo.id}&lt;/span&gt;
-            &lt;span class=&quot;todo-title&quot;&gt;${todo.title}&lt;/span&gt;
-            &lt;span class=&quot;todo-status ${statusClass}&quot;&gt;${statusText}&lt;/span&gt;
-        &lt;/li&gt;
-    `;
+
 }
 
 // Teendők betöltése a szerverről
 async function loadTodos() {
-    showStatus(&quot;⏳ Betöltés...&quot;, &quot;loading&quot;);
 
-    try {
-        const response = await fetch(API_URL + &quot;?_limit=10&quot;);
-        const todos = await response.json();
-        
-        // Sikerült! Megjelenítjük a teendőket
-        let html = &quot;&quot;;
-        
-        for (let i = 0; i &lt; todos.length; i++) {
-            html += createTodoHTML(todos[i]);
-        }
-        
-        todoList.innerHTML = html;
-        showStatus(&quot;✅ Betöltve!&quot;, &quot;success&quot;);
-        
-    } catch (error) {
-        // Hiba történt
-        console.error(&quot;Hiba:&quot;, error);
-        showStatus(&quot;❌ Nem sikerült betölteni!&quot;, &quot;error&quot;);
-    }
 }
 
 // Indítás
 loadTodos();
 </code></pre>
-<h4 id="mi-történik-itt">Mi történik itt?</h4>
-<ol>
-<li><code>await fetch(API_URL + &quot;?_limit=10&quot;)</code> – Kérést küldünk, max 10 elemet kérünk.</li>
-<li><code>await response.json()</code> – A választ JSON-né alakítjuk.</li>
-<li><code>for</code> ciklussal végigmegyünk a teendőkön és HTML-t készítünk.</li>
-<li><code>todoList.innerHTML = html</code> – Beillesztjük a listába.</li>
-</ol>
-<hr>
 <h3 id="3-lépés-új-teendő-küldése-post">3. lépés: Új teendő küldése (POST)</h3>
 <p>Most tegyük lehetővé új teendők hozzáadását!</p>
 <pre><code class="lang-javascript">// Űrlap elemek
@@ -380,50 +221,12 @@ const newTodoInput = document.getElementById(&quot;new-todo&quot;);
 
 // Új teendő küldése a szerverre
 async function addTodo(title) {
-    showStatus(&quot;⏳ Mentés...&quot;, &quot;loading&quot;);
-
-    try {
-        const response = await fetch(API_URL, {
-            method: &quot;POST&quot;,
-            headers: {
-                &quot;Content-Type&quot;: &quot;application/json&quot;
-            },
-            body: JSON.stringify({
-                title: title,
-                completed: false,
-                userId: 1
-            })
-        });
-        
-        const newTodo = await response.json();
-        
-        // Sikerült! Hozzáadjuk a listához
-        console.log(&quot;Szerver válasza:&quot;, newTodo);
-        
-        const html = createTodoHTML(newTodo);
-        todoList.insertAdjacentHTML(&quot;afterbegin&quot;, html);
-        
-        newTodoInput.value = &quot;&quot;;  // Űrlap ürítése
-        showStatus(&quot;✅ Hozzáadva!&quot;, &quot;success&quot;);
-        
-    } catch (error) {
-        console.error(&quot;Hiba:&quot;, error);
-        showStatus(&quot;❌ Nem sikerült menteni!&quot;, &quot;error&quot;);
-    }
+    
 }
 
 // Űrlap beküldése
 addForm.addEventListener(&quot;submit&quot;, function(event) {
-    event.preventDefault();  // Ne töltse újra az oldalt!
     
-    const title = newTodoInput.value.trim();
-    
-    if (title === &quot;&quot;) {
-        showStatus(&quot;⚠️ Írj be valamit!&quot;, &quot;error&quot;);
-        return;
-    }
-    
-    addTodo(title);
 });
 </code></pre>
 <h4 id="a-post-kérés-felépítése">A POST kérés felépítése</h4>
@@ -442,270 +245,6 @@ addForm.addEventListener(&quot;submit&quot;, function(event) {
 <h5>Warning</h5>
 <p>A <code>body</code>-ban <strong>mindig</strong> <code>JSON.stringify()</code>-t kell használni! A <code>fetch()</code> nem tudja automatikusan átalakítani az objektumot.</p>
 </div>
-<hr>
-<h2 id="a-teljes-kód">A teljes kód</h2>
-<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;hu&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Todo App&lt;/title&gt;
-    &lt;style&gt;
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f0f0f0;
-            padding: 40px 20px;
-            margin: 0;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        header {
-            background: #5a67d8;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 1.5em;
-        }
-
-        .add-form {
-            padding: 15px;
-            background: #f7f7f7;
-            display: flex;
-            gap: 10px;
-        }
-
-        .add-form input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        .add-form button {
-            padding: 10px 20px;
-            background: #48bb78;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .add-form button:hover {
-            background: #38a169;
-        }
-
-        #status {
-            padding: 10px;
-            text-align: center;
-            font-size: 14px;
-        }
-
-        #status.loading { background: #e6f3ff; color: #0066cc; }
-        #status.error { background: #ffe6e6; color: #cc0000; }
-        #status.success { background: #e6ffe6; color: #006600; }
-
-        #todo-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .todo-item {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .todo-item:last-child {
-            border-bottom: none;
-        }
-
-        .todo-id {
-            background: #eee;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .todo-title {
-            flex: 1;
-        }
-
-        .todo-status {
-            font-size: 12px;
-            padding: 3px 8px;
-            border-radius: 4px;
-        }
-
-        .todo-status.done {
-            background: #e6ffe6;
-            color: #006600;
-        }
-
-        .todo-status.pending {
-            background: #fff3e6;
-            color: #cc6600;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;div class=&quot;container&quot;&gt;
-    &lt;header&gt;
-        &lt;h1&gt;📝 Todo Lista&lt;/h1&gt;
-    &lt;/header&gt;
-
-    &lt;form class=&quot;add-form&quot; id=&quot;add-form&quot;&gt;
-        &lt;input type=&quot;text&quot; id=&quot;new-todo&quot; placeholder=&quot;Új teendő...&quot; required&gt;
-        &lt;button type=&quot;submit&quot;&gt;Hozzáad&lt;/button&gt;
-    &lt;/form&gt;
-
-    &lt;div id=&quot;status&quot;&gt;&lt;/div&gt;
-
-    &lt;ul id=&quot;todo-list&quot;&gt;&lt;/ul&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-// ==========================================
-// GLOBÁLIS VÁLTOZÓK
-// ==========================================
-const API_URL = &quot;https://jsonplaceholder.typicode.com/todos&quot;;
-
-const todoList = document.getElementById(&quot;todo-list&quot;);
-const statusDiv = document.getElementById(&quot;status&quot;);
-const addForm = document.getElementById(&quot;add-form&quot;);
-const newTodoInput = document.getElementById(&quot;new-todo&quot;);
-
-// ==========================================
-// SEGÉDFÜGGVÉNYEK
-// ==========================================
-
-function showStatus(message, type) {
-    statusDiv.textContent = message;
-    statusDiv.className = type;
-}
-
-function createTodoHTML(todo) {
-    const statusClass = todo.completed ? &quot;done&quot; : &quot;pending&quot;;
-    const statusText = todo.completed ? &quot;Kész&quot; : &quot;Folyamatban&quot;;
-    
-    return `
-        &lt;li class=&quot;todo-item&quot;&gt;
-            &lt;span class=&quot;todo-id&quot;&gt;#${todo.id}&lt;/span&gt;
-            &lt;span class=&quot;todo-title&quot;&gt;${todo.title}&lt;/span&gt;
-            &lt;span class=&quot;todo-status ${statusClass}&quot;&gt;${statusText}&lt;/span&gt;
-        &lt;/li&gt;
-    `;
-}
-
-// ==========================================
-// GET - TEENDŐK BETÖLTÉSE
-// ==========================================
-
-async function loadTodos() {
-    showStatus(&quot;⏳ Betöltés...&quot;, &quot;loading&quot;);
-
-    try {
-        const response = await fetch(API_URL + &quot;?_limit=10&quot;);
-        const todos = await response.json();
-        
-        let html = &quot;&quot;;
-        for (let i = 0; i &lt; todos.length; i++) {
-            html += createTodoHTML(todos[i]);
-        }
-        
-        todoList.innerHTML = html;
-        showStatus(&quot;✅ Betöltve!&quot;, &quot;success&quot;);
-        
-    } catch (error) {
-        console.error(&quot;Hiba:&quot;, error);
-        showStatus(&quot;❌ Nem sikerült betölteni!&quot;, &quot;error&quot;);
-    }
-}
-
-// ==========================================
-// POST - ÚJ TEENDŐ HOZZÁADÁSA
-// ==========================================
-
-async function addTodo(title) {
-    showStatus(&quot;⏳ Mentés...&quot;, &quot;loading&quot;);
-
-    try {
-        const response = await fetch(API_URL, {
-            method: &quot;POST&quot;,
-            headers: {
-                &quot;Content-Type&quot;: &quot;application/json&quot;
-            },
-            body: JSON.stringify({
-                title: title,
-                completed: false,
-                userId: 1
-            })
-        });
-        
-        const newTodo = await response.json();
-        console.log(&quot;Szerver válasza:&quot;, newTodo);
-        
-        const html = createTodoHTML(newTodo);
-        todoList.insertAdjacentHTML(&quot;afterbegin&quot;, html);
-        
-        newTodoInput.value = &quot;&quot;;
-        showStatus(&quot;✅ Hozzáadva!&quot;, &quot;success&quot;);
-        
-    } catch (error) {
-        console.error(&quot;Hiba:&quot;, error);
-        showStatus(&quot;❌ Nem sikerült menteni!&quot;, &quot;error&quot;);
-    }
-}
-
-// ==========================================
-// ESEMÉNYKEZELŐ
-// ==========================================
-
-addForm.addEventListener(&quot;submit&quot;, function(event) {
-    event.preventDefault();
-    
-    const title = newTodoInput.value.trim();
-    
-    if (title === &quot;&quot;) {
-        showStatus(&quot;⚠️ Írj be valamit!&quot;, &quot;error&quot;);
-        return;
-    }
-    
-    addTodo(title);
-});
-
-// ==========================================
-// INDÍTÁS
-// ==========================================
-
-loadTodos();
-&lt;/script&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<hr>
 <h2 id="összefoglaló">Összefoglaló</h2>
 <table>
 <thead>
@@ -740,13 +279,6 @@ loadTodos();
 <li><strong><code>try/catch</code></strong> – Hibakezelés (pl. nincs internet).</li>
 <li><strong><code>event.preventDefault()</code></strong> – Megakadályozza az oldal újratöltését.</li>
 <li><strong><code>JSON.stringify()</code></strong> – Objektumot JSON stringgé alakít (POST-nál kötelező).</li>
-</ol>
-<hr>
-<h2 id="házi-feladat">Házi feladat</h2>
-<ol>
-<li>Módosítsd az alkalmazást úgy, hogy a <code>/posts</code> végpontot használja a <code>/todos</code> helyett!</li>
-<li>Adj hozzá egy második input mezőt a post &quot;body&quot; tartalmának!</li>
-<li>Jelenítsd meg a postok szerzőjét is (<code>userId</code>)!</li>
 </ol>
 
 </article>

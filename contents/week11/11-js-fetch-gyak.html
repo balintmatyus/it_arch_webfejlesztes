@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Gyakorl&#243; Feladat: Felhaszn&#225;l&#243;k Kezel&#233;se (AJAX) | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Gyakorl&#243; Feladat: Felhaszn&#225;l&#243;k Kezel&#233;se (AJAX) | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week11/11-js-fetch-gyak.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="gyakorló-feladat-felhasználók-kezelése-ajax">Gyakorló Feladat: Felhasználók Kezelése (AJAX)</h1>
+
+<h2 id="a-feladat-célja">A feladat célja</h2>
+<p>Készíts egy egyszerű webalkalmazást, amely:</p>
+<ol>
+<li>Lekéri a felhasználókat a JSONPlaceholder API-ról</li>
+<li>Megjeleníti őket egy listában</li>
+<li>Lehetővé teszi új felhasználó hozzáadását</li>
+</ol>
+<hr>
+<h2 id="előkészületek">Előkészületek</h2>
+<p><strong>API végpont:</strong> <code>https://jsonplaceholder.typicode.com/users</code></p>
+<p>Egy felhasználó objektum struktúrája:</p>
+<pre><code class="lang-javascript">{
+    id: 1,
+    name: &quot;Leanne Graham&quot;,
+    email: &quot;Sincere@april.biz&quot;,
+    phone: &quot;1-770-736-8031&quot;
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A JSONPlaceholder egy teszt API – a POST kérés &quot;működik&quot; (visszaad egy választ), de valójában nem ment az adatbázisba.</p>
+</div>
+<hr>
+<h2 id="1-lépés-html-struktúra">1. lépés: HTML struktúra</h2>
+<p>Hozz létre egy <code>index.html</code> fájlt az alábbi elemekkel:</p>
+<ul>
+<li>[ ] Egy <code>&lt;header&gt;</code> a cím számára (pl. &quot;👥 Felhasználók&quot;)</li>
+<li>[ ] Egy <code>&lt;form&gt;</code> három beviteli mezővel:
+<ul>
+<li>Név (<code>type=&quot;text&quot;</code>)</li>
+<li>Email (<code>type=&quot;email&quot;</code>)</li>
+<li>Telefon (<code>type=&quot;text&quot;</code>)</li>
+<li>Küldés gomb</li>
+</ul>
+</li>
+<li>[ ] Egy <code>&lt;div&gt;</code> a státusz üzenetek megjelenítésére (<code>id=&quot;status&quot;</code>)</li>
+<li>[ ] Egy <code>&lt;ul&gt;</code> a felhasználók listájának (<code>id=&quot;user-list&quot;</code>)</li>
+</ul>
+<p><strong>Tipp:</strong> Használd a tananyagban látott Todo alkalmazás HTML struktúráját mintaként!</p>
+<hr>
+<h2 id="2-lépés-css-stílusok">2. lépés: CSS stílusok</h2>
+<p>Adj hozzá alapvető stílusokat:</p>
+<ul>
+<li>[ ] A <code>.container</code> legyen középre igazítva, fehér háttérrel</li>
+<li>[ ] A form mezői legyenek egymás alatt, megfelelő padding-gel</li>
+<li>[ ] A státusz div háttérszíne változzon a típus szerint:
+<ul>
+<li><code>.loading</code> – kékes háttér</li>
+<li><code>.error</code> – pirosas háttér</li>
+<li><code>.success</code> – zöldes háttér</li>
+</ul>
+</li>
+<li>[ ] A lista elemek legyenek kártyaszerűek, elválasztó vonallal</li>
+</ul>
+<hr>
+<h2 id="3-lépés-javascript--változók-és-segédfüggvények">3. lépés: JavaScript – Változók és segédfüggvények</h2>
+<p>Hozd létre a szükséges változókat és segédfüggvényeket:</p>
+<ul>
+<li>[ ] Mentsd el az API URL-t egy konstansba</li>
+<li>[ ] Szerezd meg a DOM elemek referenciáit:
+<ul>
+<li>A lista (<code>#user-list</code>)</li>
+<li>A státusz div (<code>#status</code>)</li>
+<li>Az űrlap és a beviteli mezők</li>
+</ul>
+</li>
+<li>[ ] Írj egy <code>showStatus(message, type)</code> függvényt, ami:
+<ul>
+<li>Beállítja a státusz div szövegét</li>
+<li>Beállítja a megfelelő CSS osztályt</li>
+</ul>
+</li>
+<li>[ ] Írj egy <code>createUserHTML(user)</code> függvényt, ami:
+<ul>
+<li>Kap egy user objektumot</li>
+<li>Visszaad egy HTML stringet (pl. <code>&lt;li&gt;...&lt;/li&gt;</code>)</li>
+<li>Jelenítse meg a nevet, emailt és telefont</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-lépés-get-kérés--felhasználók-betöltése">4. lépés: GET kérés – Felhasználók betöltése</h2>
+<p>Írj egy <code>async function loadUsers()</code> függvényt:</p>
+<ul>
+<li>[ ] Jelenítsd meg a &quot;Betöltés...&quot; státuszt</li>
+<li>[ ] Használj <code>try/catch</code> blokkot</li>
+<li>[ ] A <code>try</code> ágban:
+<ul>
+<li>Küldj GET kérést a <code>/users</code> végpontra (használd a <code>?_limit=5</code> paramétert)</li>
+<li>Várd meg a választ (<code>await</code>)</li>
+<li>Alakítsd JSON-né (<code>await response.json()</code>)</li>
+<li>Járd végig a kapott tömböt</li>
+<li>Minden elemhez generálj HTML-t a segédfüggvénnyel</li>
+<li>Illeszd be a listába</li>
+<li>Jelenítsd meg a sikeres státuszt</li>
+</ul>
+</li>
+<li>[ ] A <code>catch</code> ágban:
+<ul>
+<li>Írd ki a hibát a konzolra</li>
+<li>Jelenítsd meg a hiba státuszt</li>
+</ul>
+</li>
+<li>[ ] Hívd meg a függvényt az oldal betöltésekor</li>
+</ul>
+<p><strong>Ellenőrzés:</strong> Nyisd meg az oldalt böngészőben – látnod kell 5 felhasználót!</p>
+<hr>
+<h2 id="5-lépés-post-kérés--új-felhasználó-hozzáadása">5. lépés: POST kérés – Új felhasználó hozzáadása</h2>
+<p>Írj egy <code>async function addUser(name, email, phone)</code> függvényt:</p>
+<ul>
+<li>[ ] Jelenítsd meg a &quot;Mentés...&quot; státuszt</li>
+<li>[ ] Használj <code>try/catch</code> blokkot</li>
+<li>[ ] A <code>try</code> ágban:
+<ul>
+<li>Küldj POST kérést az API-ra</li>
+<li>Állítsd be a <code>method</code>-ot &quot;POST&quot;-ra</li>
+<li>Állítsd be a <code>headers</code>-ben a <code>Content-Type</code>-ot</li>
+<li>A <code>body</code>-ban küldd el az adatokat <code>JSON.stringify()</code>-jal</li>
+<li>Várd meg és dolgozd fel a választ</li>
+<li>Add hozzá az új felhasználót a lista <strong>elejére</strong></li>
+<li>Ürítsd ki az űrlap mezőit</li>
+<li>Jelenítsd meg a sikeres státuszt</li>
+</ul>
+</li>
+<li>[ ] A <code>catch</code> ágban kezeld a hibát</li>
+</ul>
+<hr>
+<h2 id="6-lépés-űrlap-eseménykezelő">6. lépés: Űrlap eseménykezelő</h2>
+<p>Kösd össze az űrlapot a POST függvénnyel:</p>
+<ul>
+<li>[ ] Adj hozzá <code>submit</code> eseménykezelőt az űrlaphoz</li>
+<li>[ ] Akadályozd meg az oldal újratöltését (<code>event.preventDefault()</code>)</li>
+<li>[ ] Olvasd ki a beviteli mezők értékeit</li>
+<li>[ ] Ellenőrizd, hogy a név mező nem üres-e
+<ul>
+<li>Ha üres, jelenítsd meg a hibaüzenetet és állj meg (<code>return</code>)</li>
+</ul>
+</li>
+<li>[ ] Hívd meg az <code>addUser()</code> függvényt a megfelelő paraméterekkel</li>
+</ul>
+<hr>
+<h2 id="7-lépés-tesztelés">7. lépés: Tesztelés</h2>
+<p>Ellenőrizd az alkalmazás működését:</p>
+<ul>
+<li>[ ] Az oldal betöltésekor megjelennek a felhasználók?</li>
+<li>[ ] A &quot;Betöltés...&quot; üzenet látszik rövid ideig?</li>
+<li>[ ] Új felhasználó hozzáadása működik?</li>
+<li>[ ] Az új felhasználó a lista elején jelenik meg?</li>
+<li>[ ] Üres név esetén hibaüzenet jelenik meg?</li>
+<li>[ ] Az űrlap kiürül sikeres hozzáadás után?</li>
+<li>[ ] A konzolban nincsenek hibák?</li>
+</ul>
+<hr>
+<h2 id="bónusz-feladatok-opcionális">Bónusz feladatok (opcionális)</h2>
+<p>Ha elkészültél, próbáld ki ezeket:</p>
+<ol>
+<li><p><strong>Validáció bővítése:</strong> Ellenőrizd, hogy az email mező tartalmaz-e <code>@</code> karaktert!</p>
+</li>
+<li><p><strong>Törlés gomb:</strong> Adj hozzá minden felhasználóhoz egy törlés gombot, ami eltávolítja az elemet a listából (csak a DOM-ból, API hívás nélkül)!</p>
+</li>
+<li><p><strong>Keresés:</strong> Adj hozzá egy kereső mezőt, ami szűri a megjelenített felhasználókat név alapján!</p>
+</li>
+</ol>
+<hr>
+<h2 id="segítség-ha-elakadtál">Segítség, ha elakadtál</h2>
+<p><strong>GET kérés alapstruktúra:</strong></p>
+<pre><code class="lang-javascript">async function loadData() {
+    try {
+        const response = await fetch(/* URL ide */);
+        const data = await response.json();
+        // feldolgozás...
+    } catch (error) {
+        // hibakezelés...
+    }
+}
+</code></pre>
+<p><strong>POST kérés alapstruktúra:</strong></p>
+<pre><code class="lang-javascript">async function sendData() {
+    try {
+        const response = await fetch(/* URL */, {
+            method: /* ??? */,
+            headers: {
+                /* ??? */
+            },
+            body: /* ??? */
+        });
+        const result = await response.json();
+        // feldolgozás...
+    } catch (error) {
+        // hibakezelés...
+    }
+}
+</code></pre>
+<p><strong>Elem hozzáadása a lista elejére:</strong></p>
+<pre><code class="lang-javascript">lista.insertAdjacentHTML(&quot;afterbegin&quot;, html);
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week11/11-js-fetch-gyak.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

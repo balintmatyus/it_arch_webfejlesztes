@@ -907,10 +907,30 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week11/11-js-fetch-gyak.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week11/11-js-fetch-gyak.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "contents/week11/11-js-fetch.md",
       "output": {
         ".html": {
           "relative_path": "contents/week11/11-js-fetch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "contents/week11/fetch-screenshot.png",
+      "output": {
+        "resource": {
+          "relative_path": "contents/week11/fetch-screenshot.png"
         }
       },
       "version": ""
