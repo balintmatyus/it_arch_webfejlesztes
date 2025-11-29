@@ -101,9 +101,9 @@
 - name: 11. hét
   items:
   - name: 💡 AJAX és fetch API
-    href: todo.md
+    href: week11/11-js-fetch.md
   - name: 🛠 Gyakorló feladatok
-    href: todo.md
+    href: week11/11-js-fetch-gyak.md
 - name: 12. hét
   items:
   - name: 💡 Google Analytics
