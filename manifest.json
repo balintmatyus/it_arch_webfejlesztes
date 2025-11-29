@@ -907,6 +907,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week11/11-js-fetch.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week11/11-js-fetch.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
