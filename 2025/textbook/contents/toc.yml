@@ -106,7 +106,8 @@
     href: week11/11-js-fetch-gyak.md
 - name: 12. hét
   items:
-  - name: 💡 Google Analytics
-    href: todo.md
-  - name: 🛠 Projektfeladat
-    href: todo.md
+  - name: 💡 Google Analytics bevezető
+    href: week12/12-ga-introduction.md
+  - name: 💡 Google Analytics tracking
+    href: week12/12-ga-tracking.md
+
