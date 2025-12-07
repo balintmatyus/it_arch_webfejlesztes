@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Google Analytics – &#193;tfog&#243; tananyag | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Google Analytics – &#193;tfog&#243; tananyag | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week12/12-ga-introduction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="google-analytics--átfogó-tananyag">Google Analytics – Átfogó tananyag</h1>
+
+<h2 id="bevezetés">Bevezetés</h2>
+<p>Ez az anyag a Google Analytics szolgáltatást mutatja be, amely a világ egyik legnépszerűbb webanalitikai eszköze.</p>
+<p>Segítségével mérhetjük:</p>
+<ul>
+<li>weboldalaink és mobilapplikációink forgalmát,</li>
+<li>látogatóink viselkedését,</li>
+<li>kampányaink sikerességét,</li>
+<li>és részletes, interaktív statisztikákat készíthetünk.</li>
+</ul>
+<p>A Google Analytics a <strong>Google Marketing Platform</strong> része, ahol számos más marketing eszköz is elérhető.</p>
+<div class="NOTE">
+<h5>Note</h5>
+</div>
+<p>A tananyag során érdemes belépve követni a saját Google Analytics fiókodban is, így azonnal látod a gyakorlatban is, miről van szó.</p>
+<hr>
+<h1 id="1-google-marketing-platform">1. Google Marketing Platform</h1>
+<p>A Google Marketing Platform egy <strong>egységes marketing felület</strong>, amelyet elsősorban vállalatok számára fejlesztettek.</p>
+<p>Előnye, hogy bármelyik Google marketing eszköz integrálható egymással. A legfontosabbak:</p>
+<ul>
+<li><strong>Google Analytics</strong> – web- és alkalmazásforgalom elemzése</li>
+<li><strong>Google Ads</strong> – hirdetések kezelése</li>
+<li><strong>Google Adsense</strong> – weboldalak bevételszerzése hirdetésekkel</li>
+</ul>
+<div class="alert alert-question">
+<h5>QUESTION</h5>
+</div>
+<p>Miért lehet előnyös, ha minden marketing eszközt egy felületen látsz és kezelsz?</p>
+<hr>
+<h1 id="2-google-analytics-alapjai">2. Google Analytics alapjai</h1>
+<h2 id="mi-az-a-google-analytics">Mi az a Google Analytics?</h2>
+<ul>
+<li><strong>Legnépszerűbb webanalitikai eszköz</strong></li>
+<li>Felhasználható <strong>weboldalak és mobil appok mérésére</strong></li>
+<li><strong>Google-fiók</strong> szükséges hozzá</li>
+<li>Egy fiókon belül több <strong>tulajdon</strong> (property) és <strong>adatfolyam</strong> hozható létre</li>
+</ul>
+<hr>
+<h2 id="fiókok-és-demo-fiók">Fiókok és Demo fiók</h2>
+<ul>
+<li>Több Analytics-fiók kezelhető egy Google-fiókon belül</li>
+<li>Elérhető egy <strong>Demo fiók</strong>, amely automatikusan létrejön, és a <strong>Google Merchandise Store</strong> adatait tartalmazza</li>
+<li>Felső sávban válthatunk a fiókok és tulajdonok között</li>
+<li><strong>Forgalomfigyelő kereső sáv</strong> segíti a navigációt és a gyors elemzést</li>
+</ul>
+<hr>
+<h1 id="3-az-analytics-komponensei">3. Az Analytics komponensei</h1>
+<h2 id="kereső-sáv">Kereső sáv</h2>
+<ul>
+<li>Széleskörű keresési lehetőségek</li>
+<li>Jelentések és szöveges lekérdezések futtatása</li>
+<li>Egy kulcsszó után is releváns találatokat ad</li>
+<li>Google Analytics Súgóban való keresés (magyar nyelven is elérhető)</li>
+<li>Interaktív bemutatók és videós anyagok is elérhetők</li>
+</ul>
+<hr>
+<h2 id="főoldal">Főoldal</h2>
+<ul>
+<li>Minden belépéskor a főoldal fogad</li>
+<li>Áttekinthetjük a legfontosabb, személyre szabott adatokat</li>
+<li><strong>Statisztika ikon</strong> → előre definiált kérdésekre ad válaszokat</li>
+<li>Kereső sávban új kérdések is feltehetők</li>
+<li>Példa: Hány felhasználó volt Magyarországról a múlt hónapban?</li>
+</ul>
+<div class="alert alert-task">
+<h5>TASK</h5>
+</div>
+<p>Írd be a keresőbe a fenti példát a saját Analytics fiókodban!</p>
+<hr>
+<h1 id="4-jelentések">4. Jelentések</h1>
+<h2 id="jelentések-pillanatképe">Jelentések pillanatképe</h2>
+<ul>
+<li>Előre elkészített jelentések, diagramokkal</li>
+<li>Az egyes kártyák alján további részletező jelentések linkjei</li>
+</ul>
+<hr>
+<h2 id="valós-idejű-jelentések">Valós idejű jelentések</h2>
+<ul>
+<li>Azonnali, folyamatosan frissülő adatok</li>
+<li>Pl. éppen hány felhasználó van az oldalon, honnan érkeztek, milyen aloldalt néznek</li>
+</ul>
+<hr>
+<h2 id="összehasonlítás-funkció">Összehasonlítás funkció</h2>
+<ul>
+<li><strong>Összehasonlítás hozzáadása</strong> opcióval szűrés demográfiai (kor, nem, földrajzi hely) vagy egyéb tulajdonságok szerint</li>
+<li>Maximum 5 feltétel adható meg</li>
+<li>Példa: Kor pontosan 18–24</li>
+<li>A szűrések színes jelölésekkel jelennek meg minden jelentésben</li>
+</ul>
+<hr>
+<h2 id="életciklus-life-cycle-jelentések">Életciklus (Life Cycle) jelentések</h2>
+<p>Az üzleti célok alapján rendezett statisztikák.</p>
+<h3 id="ügyfélszerzés">Ügyfélszerzés</h3>
+<ul>
+<li>Mutatja, milyen csatornákon keresztül érkeznek a látogatók</li>
+<li>Új felhasználók és munkamenetek bontásban</li>
+</ul>
+<h3 id="elköteleződés">Elköteleződés</h3>
+<ul>
+<li>Látogatások hossza</li>
+<li>Oldalmegtekintések és események</li>
+<li>Fontos események (konverziók), pl. <strong>purchase</strong> → bevétel</li>
+</ul>
+<div class="alert alert-task">
+<h5>TASK</h5>
+</div>
+<p>Nyisd meg az Életciklus → Ügyfélszerzés riportot a demo fiókodban és nézd meg, melyik csatorna hozta a legtöbb új látogatót az elmúlt héten.</p>
+<hr>
+<h3 id="bevételszerzés">Bevételszerzés</h3>
+<ul>
+<li>Tranzakciók, termékek és bevétel</li>
+<li>Vásárlási út → státusz és elhagyási arány</li>
+<li>Promóciók → legsikeresebb kampányok</li>
+<li>Megtartás → felhasználók visszatérése</li>
+</ul>
+<hr>
+<h2 id="search-console-integráció">Search Console integráció</h2>
+<ul>
+<li>Mely keresések hoztak látogatókat és konverziókat</li>
+<li>SEO-optimalizáció segítése</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+</div>
+<p>A Search Console összekapcsolása az Analytics-szel kifejezetten hasznos a SEO szempontjából.</p>
+<hr>
+<h2 id="felhasználó-szekció">Felhasználó szekció</h2>
+<ul>
+<li>Részletes adatok a közönségről
+<ul>
+<li>Demográfia</li>
+<li>Érdeklődési kör</li>
+<li>Technológia (pl. böngésző, eszköz)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="5-felfedezés-exploration">5. Felfedezés (Exploration)</h1>
+<ul>
+<li>Drag &amp; Drop felület</li>
+<li>Saját riportok és vizualizációk</li>
+<li>Szegmensek, dimenziók és mutatók kombinálása</li>
+<li>Eredmények megoszthatók</li>
+<li>Célközönség létrehozása a riportok alapján</li>
+</ul>
+<div class="alert alert-task">
+<h5>TASK</h5>
+</div>
+<p>Próbálj ki egy Felfedezés riportot: hozz létre egy saját grafikont, amely a felhasználók számát és az átlagos munkamenet-időt hasonlítja össze.</p>
+<hr>
+<h1 id="6-hirdetések">6. Hirdetések</h1>
+<ul>
+<li>Az adott tulajdonhoz tartozó hirdetések megtekintése</li>
+<li>Konverziók bontása elérési csatornák szerint</li>
+<li>Diagramokkal támogatott megjelenítés</li>
+</ul>
+<hr>
+<h1 id="7-adminisztrálás">7. Adminisztrálás</h1>
+<ul>
+<li>Fiókok és tulajdonok kezelése</li>
+<li>Felhasználók és jogosultságok beállítása</li>
+<li>Tulajdonok létrehozása és törlése</li>
+<li>Beállítások módosítása</li>
+<li>Integráció más Google-szolgáltatásokkal:
+<ul>
+<li><strong>Adsense</strong></li>
+<li><strong>Google Ads</strong></li>
+<li><strong>AdManager</strong></li>
+<li><strong>Search Console</strong></li>
+<li><strong>Search Ads 360</strong></li>
+<li><strong>BigQuery</strong></li>
+</ul>
+</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+</div>
+<p>Az Adminisztrálás menüben való jogosultságkezelés lehetővé teszi, hogy a többen is hozzáférjenek az adatokhoz, anélkül, hogy a teljes fiókot átadnád.</p>
+<hr>
+<h1 id="8-összefoglalás">8. Összefoglalás</h1>
+<ul>
+<li>Ingyenes, egyszerű, de erőteljes eszköz</li>
+<li>Versenyképes más analitikai platformokkal (pl. Facebook Insights)</li>
+<li>Átfogó elemzési lehetőségek</li>
+<li>Folyamatos fejlődés:
+<ul>
+<li>új funkciók,</li>
+<li>integrációk,</li>
+<li>magyar nyelv,</li>
+<li>felhasználóbarátabb design.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="9-hasznos-linkek">9. Hasznos linkek</h1>
+<ul>
+<li><a href="https://ga-dev-tools.google/ga4/campaign-url-builder">Kampány URL Builder</a></li>
+<li><a href="https://support.google.com/analytics/answer/13590312?hl=hu">Google Analytics súgó</a></li>
+<li><a href="https://developers.google.com/analytics">Fejlesztői dokumentáció</a></li>
+</ul>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week12/12-ga-introduction.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

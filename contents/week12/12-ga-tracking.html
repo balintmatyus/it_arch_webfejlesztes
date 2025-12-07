@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Google Analytics regisztr&#225;ci&#243; &#233;s k&#246;vetők&#243;dok | Informatika &#233;s IT Architekt&#250;ra alapjai </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Google Analytics regisztr&#225;ci&#243; &#233;s k&#246;vetők&#243;dok | Informatika &#233;s IT Architekt&#250;ra alapjai ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week12/12-ga-tracking.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="Informatika &#233;s IT Architekt&#250;ra alapjai">
+            Informatika &#233;s IT Architekt&#250;ra alapjai
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="google-analytics-regisztráció-és-követőkódok">Google Analytics regisztráció és követőkódok</h1>
+
+<h2 id="bevezetés">Bevezetés</h2>
+<p>Ez az anyag a Google Analytics használatának első lépéseit mutatja be:</p>
+<ul>
+<li>Hogyan hozzunk létre Google Analytics fiókot</li>
+<li>Hogyan állítsunk be tulajdont</li>
+<li>Hogyan nyerjük ki és illesszük be a követőkódot</li>
+<li>Hogyan ellenőrizzük, hogy az adatgyűjtés működik</li>
+</ul>
+<hr>
+<h1 id="1-előkészületek">1. Előkészületek</h1>
+<p>A Google Analytics használatához szükséges:</p>
+<ul>
+<li><strong>Meglévő Google-fiók</strong></li>
+<li>Belépés: <a href="https://analytics.google.com">https://analytics.google.com</a></li>
+<li>Fontos: Google-fiókonként maximum <strong>100 Analytics-fiók</strong> hozható létre</li>
+</ul>
+<p>Első lépés: kattintsunk a <strong>Mérés indítása</strong> gombra.</p>
+<hr>
+<h1 id="2-analytics-fiók-létrehozása">2. Analytics-fiók létrehozása</h1>
+<ol>
+<li><strong>Fiók név megadása</strong></li>
+</ol>
+<ul>
+<li>Célszerű cégnév vagy projekt neve</li>
+</ul>
+<ol start="2">
+<li><strong>Adatmegosztási beállítások kiválasztása</strong></li>
+</ol>
+<ul>
+<li>Opcionális, de érdemes elfogadni pl. <em>Hozzájárulások modellezése és üzleti statisztikák</em></li>
+</ul>
+<ol start="3">
+<li>Kattintsunk a <strong>Tovább</strong> gombra</li>
+</ol>
+<hr>
+<h1 id="3-tulajdon-létrehozása">3. Tulajdon létrehozása</h1>
+<h2 id="tulajdon-alapadatok">Tulajdon alapadatok</h2>
+<ul>
+<li>Tulajdon neve (pl. weboldal neve)</li>
+<li>Ország: <strong>Magyarország</strong></li>
+<li>Időzóna: <strong>Magyar idő</strong></li>
+<li>Pénznem: <strong>Magyar forint (HUF)</strong></li>
+</ul>
+<div class="WARNING">
+<h5>Warning</h5>
+</div>
+<p>A <em>Universal Analytics</em> tulajdon 2023. július 1. óta nem gyűjt adatokat. Csak GA4 tulajdont tudsz használni!</p>
+<hr>
+<h2 id="vállalkozás-adatai">Vállalkozás adatai</h2>
+<ul>
+<li>Iparági besorolás</li>
+<li>Vállalatméret (lehet fiktív is)</li>
+<li>Következő gomb</li>
+</ul>
+<hr>
+<h2 id="üzleti-célok">Üzleti célok</h2>
+<ul>
+<li>Választható opciók, pl. Alapjelentések</li>
+<li>Kezdőknek javasolt az <strong>Alapjelentések</strong> választása</li>
+<li>Létrehozás gomb</li>
+</ul>
+<div class="alert alert-task">
+<h5>TASK</h5>
+</div>
+<p>Próbáld ki: állítsd be a saját üzleti céljaidat, majd nézd meg, hogyan változnak a jelentések az Analytics felületén!</p>
+<hr>
+<h2 id="gdpr-és-szerződési-feltételek">GDPR és szerződési feltételek</h2>
+<ul>
+<li>Magyar GDPR elfogadása kötelező</li>
+<li>Ha adatmegosztásra is engedélyt adtunk (pl. Google-termékekkel), további feltételek jóváhagyása szükséges</li>
+</ul>
+<hr>
+<h1 id="4-követőkód-kinyerése">4. Követőkód kinyerése</h1>
+<p>A követőkód beállítása után lesz mérhető a weboldal forgalma.</p>
+<h3 id="hozzáférés-a-kódhoz">Hozzáférés a kódhoz</h3>
+<ol>
+<li><p>Adminisztrálás fül</p>
+</li>
+<li><p>Tulajdonbeállítások</p>
+</li>
+<li><p><strong>Adatgyűjtés és -módosítás → Adatfolyamok</strong></p>
+</li>
+</ol>
+<hr>
+<h2 id="platform-kiválasztása">Platform kiválasztása</h2>
+<ul>
+<li>Válasszuk ki a platformot: <strong>Web</strong></li>
+<li>Mobil applikáció esetén iOS vagy Android is elérhető</li>
+</ul>
+<hr>
+<h2 id="adatfolyam-létrehozása">Adatfolyam létrehozása</h2>
+<ul>
+<li>Weboldal <strong>URL-címe</strong> (pl. <a href="https://sajatoldal.hu">https://sajatoldal.hu</a>)</li>
+<li>Adatfolyam neve (pl. Főoldal mérés)</li>
+<li>Ezután az adatfolyam létrejön</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+</div>
+<p>GitHub Pages oldalhoz is beállítható.</p>
+<hr>
+<h2 id="címke-utasítások">Címke utasítások</h2>
+<ul>
+<li>Ha nem nyílik meg automatikusan a telepítési ablak, kattintsunk a <strong>Címke utasítások megjelenítése</strong> gombra</li>
+<li>Két fő lehetőség:
+<ul>
+<li><strong>Támogatott webhelykészítő</strong> (pl. WordPress, Wix)</li>
+<li><strong>Kézi telepítés</strong> → HTML-kód beillesztése</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="5-követőkód-telepítése">5. Követőkód telepítése</h1>
+<h2 id="kézi-telepítés">Kézi telepítés</h2>
+<ul>
+<li>Másoljuk ki a kapott kódot</li>
+<li>Illesszük be a weboldalunk <code>&lt;head&gt;</code> nyitótagja után</li>
+</ul>
+<pre><code class="lang-html">&lt;head&gt;
+    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX&quot;&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    &lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+<div class="alert alert-task">
+<h5>TASK</h5>
+</div>
+<p>Próbáld ki: illeszd be a fenti kódot egy egyszerű HTML-oldaladba, majd nézd meg a Valós idejű riportot az Analytics-ben!</p>
+<h2 id="sikeres-beállítás">Sikeres beállítás</h2>
+<ul>
+<li>Ha mindent jól csináltunk:
+<ul>
+<li>1–2 percen belül megjelennek az első látogatási adatok</li>
+<li>Ellenőrizhető a <strong>Valós idejű jelentések</strong> menüpontban</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/balintmatyus/it_arch_webfejlesztes/blob/main/2025/textbook/contents/week12/12-ga-tracking.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

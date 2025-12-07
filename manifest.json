@@ -937,6 +937,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "contents/week12/12-ga-introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week12/12-ga-introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "contents/week12/12-ga-tracking.md",
+      "output": {
+        ".html": {
+          "relative_path": "contents/week12/12-ga-tracking.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "docs/getting-started.md",
       "output": {
         ".html": {
